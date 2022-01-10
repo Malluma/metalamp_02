@@ -16,7 +16,7 @@ module.exports = {
 	output: {
 		filename: filename('js'),
 		path: path.resolve(__dirname, 'dist'),
-		assetModuleFilename: `assets/${filename('[ext]')}`,
+		assetModuleFilename: `assets/[name].[hash][ext]`,
 		clean: true, // Очищает директорию dist перед обновлением бандла
 		// Свойство стало доступно с версии 5.20.0, до этого использовался
 		// CleanWebpackPlugin
@@ -32,7 +32,6 @@ module.exports = {
 		port: 4200,
 		hot: isDev
 	},
-	devtool: isDev ? 'source-map' : '',
 	plugins: [
 		new HTMLWebpackPlugin({
 			template: './src/index.html',
@@ -43,7 +42,7 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: filename('css')
 		}),
-		new ESLintPlugin({exclude: 'node-modules'})
+		new ESLintPlugin({ exclude: 'node-modules' })
 	],
 	module: {
 		rules: [
@@ -57,7 +56,7 @@ module.exports = {
 			},
 			{
 				test: /\.(png|jpg|gif)$/,
-				use: ['file-loader']
+				type: 'asset/resource'
 			},
 			{
 				test: /\.(svg|ttf|woff|woff2|eot)$/,
@@ -69,7 +68,7 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: ['@babel/preset-env']						
+						presets: ['@babel/preset-env']
 					}
 				}
 			}

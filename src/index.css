@@ -1,13 +1,20 @@
-@import "~normalize.css";
+/*@import "~normalize.css";*/
 @import "./assets/fonts/Montserrat/Montserrat.css";
 @import "./assets/brands-icons/brands-icons.css";
 @import "./assets/material-icons/material-icons.css";
 
 .test {
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: lightskyblue;
+	font-family: Arial;
 }
+
+.test2 {
+	background-image: url('./assets/images/test.png');
+	display: block;
+	height: 140px;
+}
+
 .color-card {
+	font-family: 'Montserrat';
 	background-color: lemonchiffon;
 	font-family: "Montserrat";
 }

@@ -1,0 +1,2 @@
+!function(){"use strict";console.log("Hello, I am index.js!!"),(()=>{const o=Array.from(new Set([1,2,3,2,1]));console.log(`babel-test array [1,2,3]: ${o}`)})()}();
+//# sourceMappingURL=main.ca80151894651cf18a74.js.map
