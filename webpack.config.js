@@ -34,7 +34,7 @@ module.exports = {
 	},
 	plugins: [
 		new HTMLWebpackPlugin({
-			template: './src/index.html',
+			template: './src/index.pug',
 			minify: {
 				collapseWhitespace: isProd
 			}
@@ -46,6 +46,10 @@ module.exports = {
 	],
 	module: {
 		rules: [
+			{
+				test: /\.html$/i,
+				use: 'html-loader'
+			},
 			{
 				test: /\.css$/,
 				use: [MiniCssExtractPlugin.loader, 'css-loader']
@@ -61,6 +65,11 @@ module.exports = {
 			{
 				test: /\.(svg|ttf|woff|woff2|eot)$/,
 				type: 'asset/resource'
+			},
+			{
+				test: /\.pug$/,
+				loader: 'pug-loader',
+				exclude: /(node_modules|bower_components)/,
 			},
 			{
 				test: /\.m?js$/,

@@ -1,0 +1,12 @@
+include pug/libs/_libs
+
+doctype html
+html(lang='en')
+	include pug/_head
+	body
+		h1 Jade - node template engine
+		#container.col
+		p You are amazing
+		//+image('livai')
+		img(src = require('./assets/images/livai.png'))
+		p Jade is a terse and simple
