@@ -1,0 +1,50 @@
+.color-block {
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	font-family: 'Montserrat';
+	font-size: 19px;
+	
+	&__name {
+		font-weight: bold;
+	}
+
+	&__code {
+		font-weight: 400;
+	}
+	&__rectangle {
+		width: 70px;
+		height: 70px;
+		border-radius: 6px;
+		margin-right: 40px;
+	}
+
+	&__dark-shade-100 {
+		background-color: $dark-shade-100;
+	}
+
+	&__dark-shade-75 {
+		background-color: $dark-shade-75;
+	}
+
+	&__dark-shade-50 {
+		background-color: $dark-shade-50;
+	}
+
+	&__dark-shade-25 {
+		background-color: $dark-shade-25;
+	}
+
+	&__dark-shade-5 {
+		background-color: $dark-shade-5;
+	}
+
+	&__purple {
+		background-color: $purple;
+	}
+
+	&__green {
+		background-color: $green;
+	}
+
+}

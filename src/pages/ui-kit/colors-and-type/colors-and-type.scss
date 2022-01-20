@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+
+  .color-and-type__logo {
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 72px;
+    max-width: 1132.26px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .color-blocks {
+      //margin-left: 150px;
+      //margin-right: 415px;
+
+      .colors-and-type__color-block {
+        margin-bottom: 20px;
+
+      }
+    }
+
+    .color-and-type__type_block {
+      margin-bottom: 51px;
+      max-width: 436px;
+    }
+
+  }
+}

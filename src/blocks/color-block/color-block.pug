@@ -1,0 +1,6 @@
+mixin color-block(colorName, colorCode, colorClass, positioningClass)
+	.color-block(class= positioningClass)
+		.color-block__rectangle(class='color-block__'+colorClass)
+		.color-block__description
+			.color-block__name= colorName
+			.color-block__code= colorCode

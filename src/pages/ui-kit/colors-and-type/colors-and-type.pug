@@ -1,0 +1,27 @@
+include ../../../blocks/logo/logo.pug
+include ../../../blocks/color-block/color-block.pug
+include ../../../blocks/type-block/type-block.pug
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Colors & Type
+  body
+    +logo('color-and-type__logo')
+    .content-wrapper
+      .color-blocks
+        +color-block('Dark Shade 100%', '#1F2041', 'dark-shade-100', 'colors-and-type__color-block')
+        +color-block('Dark Shade 75%', '#1F2041', 'dark-shade-75', 'colors-and-type__color-block')
+        +color-block('Dark Shade 50%', '#1F2041', 'dark-shade-50', 'colors-and-type__color-block')
+        +color-block('Dark Shade 25%', '#1F2041', 'dark-shade-25', 'colors-and-type__color-block')
+        +color-block('Dark Shade 5%', '#1F2041', 'dark-shade-5', 'colors-and-type__color-block')
+        +color-block('Purple', '#BC9CFF', 'purple', 'colors-and-type__color-block')
+        +color-block('Green', '#6FCF97', 'green', 'colors-and-type__color-block')
+      .type-blocks
+        +type-block('H1', 'This one is the sub-section or widget title', 'H1', 'color-and-type__type_block')
+        +type-block('H2', 'Next one is the item title inside widgets', 'H2', 'color-and-type__type_block')
+        +type-block('H3', 'This is a label or CTA text', 'H3', 'color-and-type__type_block')
+        +type-block('Body', 'This is the body text which is used for most <br> of the design, like paragraphs, lists, etс.', 'body', 'color-and-type__type_block')

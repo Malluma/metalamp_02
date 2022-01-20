@@ -1,0 +1,51 @@
+@mixin font ($size, $weight: 400, $dark: 1) {
+  font-size: $size;
+  font-weight: $weight;
+  color: rgba(31, 32, 65, $dark);
+}
+
+.type-block {
+  font-family: 'Montserrat';
+  display: flex;
+
+  &__tag {
+    margin-right: 30px;
+    min-width: 37px;
+    text-align: right;
+
+    &_H1 {
+      @include font(24px, 400, 0.25);
+    }
+    
+    &_H2 {
+      @include font(19px, 400, 0.25);
+    }
+    
+    &_H3 {
+      @include font(12px, 400, 0.25);
+    }
+    
+    &_body {
+      @include font(14px, 400, 0.25);
+    }
+  }
+  
+  &__description {
+    &_H1 {
+      @include font(24px, 700);
+    }
+  
+    &_H2 {
+      @include font(19px, 700);
+    }
+  
+    &_H3 {
+      @include font(12px, 700);
+      text-transform: uppercase;
+    }
+  
+    &_body {
+      @include font(14px, 400, 0.75);
+    }
+  }
+}

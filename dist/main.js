@@ -18,10 +18,10 @@ const unused = 42;
 
 /***/ }),
 
-/***/ "./src/styles/test.scss":
-/*!******************************!*\
-  !*** ./src/styles/test.scss ***!
-  \******************************/
+/***/ "./src/styles/index.scss":
+/*!*******************************!*\
+  !*** ./src/styles/index.scss ***!
+  \*******************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -30,9 +30,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/styles/index.css":
+/***/ "./src/styles/test.scss":
 /*!******************************!*\
-  !*** ./src/styles/index.css ***!
+  !*** ./src/styles/test.scss ***!
   \******************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -89,7 +89,7 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_test_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/test.scss */ "./src/styles/test.scss");
-/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/index.css */ "./src/styles/index.css");
+/* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/index.scss */ "./src/styles/index.scss");
 /* harmony import */ var _babel_test___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./babel-test_ */ "./src/babel-test_.js");
 
 

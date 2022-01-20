@@ -1,0 +1,4 @@
+mixin type-block(tag, description, type, positioningClass)
+  .type-block(class= positioningClass)
+    .type-block__tag(class= 'type-block__tag_'+type)= tag
+    .type-block__description(class= 'type-block__description_'+type)= description
