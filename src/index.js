@@ -1,4 +1,3 @@
-import './styles/test.scss';
 import './styles/index.scss';
 import babelTest from './babel-test_';
 

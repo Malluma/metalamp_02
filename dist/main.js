@@ -28,18 +28,6 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
-/***/ }),
-
-/***/ "./src/styles/test.scss":
-/*!******************************!*\
-  !*** ./src/styles/test.scss ***!
-  \******************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
 /***/ })
 
 /******/ 	});
@@ -88,14 +76,12 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _styles_test_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/test.scss */ "./src/styles/test.scss");
-/* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/index.scss */ "./src/styles/index.scss");
-/* harmony import */ var _babel_test___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./babel-test_ */ "./src/babel-test_.js");
-
+/* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.scss */ "./src/styles/index.scss");
+/* harmony import */ var _babel_test___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./babel-test_ */ "./src/babel-test_.js");
 
 
 console.log('Hello, I am index.js!!');
-(0,_babel_test___WEBPACK_IMPORTED_MODULE_2__["default"])();
+(0,_babel_test___WEBPACK_IMPORTED_MODULE_1__["default"])();
 }();
 /******/ })()
 ;
