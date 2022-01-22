@@ -1,0 +1,52 @@
+.text-field {
+
+  font-family: 'Montserrat';
+
+  &__label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  &__label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  &__label-span {
+    font-weight: bold;
+  }
+
+  &__label-top-right-span {
+    color: $dark-shade-50;
+  }
+
+  &__input {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    display: block;
+    margin: 0;
+    background: $white;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    color: $dark-shade-75;
+    padding: 13px 15px;
+
+    &:hover,
+    &:focus {
+      border: 1px solid $dark-shade-50;
+    }
+
+    &::placeholder {
+      color: $dark-shade-25;
+    }
+  }
+
+  &__input_focus{
+    border: 1px solid $dark-shade-50;
+  }
+
+}

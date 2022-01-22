@@ -1,0 +1,9 @@
+mixin text-field(options)
+  -
+    let inputModClass = ""
+    options.focus ? inputModClass= "text-field__input_focus": inputModClass= ""
+
+  .text-field(class= options.positioningClass)
+    label.text-field__label
+      .text-field__label-wrapper #[span(class="text-field__label-span") #{options.label}] #[span(class="text-field__label-top-right-span") #{options.topRightText}]
+      input.text-field__input(class= inputModClass placeholder= options.placeholder type="text" value= options.value)

@@ -4,11 +4,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-const fs = require('fs');
 
+const fs = require('fs');
 const PAGES_DIR = path.resolve(__dirname, './src/pages');
 const PAGES = fs.readdirSync(PAGES_DIR)
-console.log(PAGES)
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
