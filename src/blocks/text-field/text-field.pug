@@ -1,9 +1,10 @@
-mixin text-field(options)
+mixin text-field(params)
   -
-    let inputModClass = ""
-    options.focus ? inputModClass= "text-field__input_focus": inputModClass= ""
+    let inputModClass = "";
+    params.dateMasked ? inputModClass = "text-field__input_masked js-text-field__input_masked": inputModClass = "";
+    params.focus ? inputModClass += "text-field__input_focus": inputModClass += "";
 
-  .text-field(class= options.positioningClass)
+  .text-field
     label.text-field__label
-      .text-field__label-wrapper #[span(class="text-field__label-span") #{options.label}] #[span(class="text-field__label-top-right-span") #{options.topRightText}]
-      input.text-field__input(class= inputModClass placeholder= options.placeholder type="text" value= options.value)
+      .text-field__label-wrapper #[span(class="text-field__label-span") #{params.label}] #[span(class="text-field__sublabel-span") #{params.sublabel}]
+      input.text-field__input(class= inputModClass type= "text" value= params.value, placeholder= params.placeholder)

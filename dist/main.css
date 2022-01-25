@@ -237,7 +237,7 @@
 .text-field__label-span {
   font-weight: bold;
 }
-.text-field__label-top-right-span {
+.text-field__sublabel-span {
   color: rgba(31, 32, 65, 0.5);
 }
 .text-field__input {
@@ -260,6 +260,48 @@
   color: rgba(31, 32, 65, 0.25);
 }
 .text-field__input_focus {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+
+.dropdown {
+  font-family: "Montserrat";
+}
+.dropdown__label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.dropdown__label-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.dropdown__label-span {
+  font-weight: bold;
+}
+.dropdown__sublabel-span {
+  color: rgba(31, 32, 65, 0.5);
+}
+.dropdown__input {
+  font-family: "Montserrat";
+  font-size: 14px;
+  display: block;
+  margin: 0;
+  background: #ffffff;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+  color: rgba(31, 32, 65, 0.75);
+  padding: 13px 15px;
+}
+.dropdown__input:hover, .dropdown__input:focus {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+.dropdown__input::placeholder {
+  color: rgba(31, 32, 65, 0.25);
+}
+.dropdown__input_focus {
   border: 1px solid rgba(31, 32, 65, 0.5);
 }
 
