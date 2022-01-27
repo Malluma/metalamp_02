@@ -2,6 +2,9 @@ mixin dropdown(params)
   .dropdown
     label.dropdown__label
       .dropdown__label-wrapper #[span(class="dropdown__label-span") #{params.label}] #[span(class="dropdown__sublabel-span") #{params.sublabel}]
-      input.dropdown__input(class= inputModClass type= "text" value= params.value, placeholder= params.placeholder)
+      .dropdown__input-flex-wrap
+        input.dropdown__input(class= inputModClass type= "text" value= params.value, placeholder= params.placeholder)
+        .dropdown__arrow-btn-flex-wrap
+          .dropdown__arrow-btn(class= "icon-expand_more")
     
 

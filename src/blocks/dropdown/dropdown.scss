@@ -22,6 +22,10 @@
     color: $dark-shade-50;
   }
 
+  &__input-flex-wrap{
+    display: flex;  
+  }
+
   &__input {
     font-family: 'Montserrat';
     font-size: 14px;
@@ -34,6 +38,7 @@
     width: 100%;
     color: $dark-shade-75;
     padding: 13px 15px;
+    padding-right: 44px;
 
     &:hover,
     &:focus {
@@ -48,6 +53,17 @@
       border: 1px solid $dark-shade-50;
     }
 
+  }
+
+  &__arrow-btn{
+    position: absolute;
+    left: -30px;
+  }
+
+  &__arrow-btn-flex-wrap{
+    position: relative;
+    display: flex;
+    align-items: center;
   }
 
 }
