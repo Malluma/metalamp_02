@@ -1,4 +1,8 @@
 /*@import "~normalize.css";*/
+.html{
+	font-family: 'Montserrat';
+}
+
 @import './colors.scss';
 @import './Montserrat.css';
 @import './brands-icons.css';
@@ -9,7 +13,3 @@
 @import '../blocks/dropdown/dropdown.scss';
 @import '../pages/colors-and-type/colors-and-type.scss';
 @import '../pages/form-elements/form-elements.scss';
-
-.html{
-	font-family: 'Montserrat';
-}

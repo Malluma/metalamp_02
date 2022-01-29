@@ -1,10 +1,22 @@
 mixin dropdown(params)
-  .dropdown
+  - const { label, sublabel, value, placeholder, list } = params;
+  .dropdown(class= "js-dropdown")
     label.dropdown__label
-      .dropdown__label-wrapper #[span(class="dropdown__label-span") #{params.label}] #[span(class="dropdown__sublabel-span") #{params.sublabel}]
+      .dropdown__label-wrapper #[span(class="dropdown__label-span") #{label}] #[span(class="dropdown__sublabel-span") #{sublabel}]
       .dropdown__input-flex-wrap
-        input.dropdown__input(class= inputModClass type= "text" value= params.value, placeholder= params.placeholder)
+        input.dropdown__input(class= "js-dropdown__input" type= "text" value= value, placeholder= placeholder)
         .dropdown__arrow-btn-flex-wrap
-          .dropdown__arrow-btn(class= "icon-expand_more")
+          .dropdown__arrow-btn(class= "icon-expand_more js-dropdown__arrow-btn")
+      .dropdown__list
+        each value, element in list
+          .dropdown__item.js-dropdown__item
+                span.dropdown__item-text= element
+                .dropdown__number-wrap.js-dropdown__number-wrap
+                  button.dropdown__counter-btn.js-dropdown__minus-btn(disabled type="button") -
+                  span.dropdown__number= value
+                  button.dropdown__counter-btn.js-dropdown__plus-btn(type="button") +
+        .dropdown__list-footer
+          .dropdown__clean-btn.dropdown__list-footer-btn Очистить
+          .dropdown__apply-btn.dropdown__list-footer-btn Применить
     
 

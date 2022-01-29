@@ -18,7 +18,7 @@ html(lang="ru")
         .form-elements__text-field
           +text-field({label:"text field", sublabel: "Hover/Focus", value: "This is pretty awesome", dateMasked: false, focus: true})
         .form-elements__text-field
-          - const guestsList = ["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]
+          - const guestsList = {"Взрослые" : 0, "Дети" : 0, "Младенцы" : 0}
           +dropdown({label: "dropdown", value: "Сколько гостей", list: guestsList})
         .form-elements__text-field
           +text-field({label: "masked text field", placeholder: "ДД.ММ.ГГГГ", positioningClass: "form-elements__text-field", dateMasked: true})

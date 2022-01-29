@@ -18,6 +18,38 @@ const unused = 42;
 
 /***/ }),
 
+/***/ "./src/blocks/dropdown/dropdown.js":
+/*!*****************************************!*\
+  !*** ./src/blocks/dropdown/dropdown.js ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+function dropdown(_ref) {
+  let {
+    arrowToggle = false
+  } = _ref;
+  const selector = document.querySelectorAll('.js-dropdown');
+  selector.forEach((item, index) => {
+    const input = item.querySelector('.js-dropdown__input');
+    const arrowBtn = item.querySelector('.js-dropdown__arrow-btn');
+  }); // функция открытия/закрытия dropdown
+
+  function toggleDropdown() {
+    let expand = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
+    if (expand) {//const listItem = document.createElement()
+    }
+  }
+
+  ;
+  arrowBtn.addEventListener('click', toggleDropdown);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (dropdown);
+
+/***/ }),
+
 /***/ "./src/blocks/text-field/text-field.js":
 /*!*********************************************!*\
   !*** ./src/blocks/text-field/text-field.js ***!
@@ -47,6 +79,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.scss */ "./src/styles/index.scss");
 /* harmony import */ var _babel_test___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./babel-test_ */ "./src/babel-test_.js");
 /* harmony import */ var _blocks_text_field_text_field__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/text-field/text-field */ "./src/blocks/text-field/text-field.js");
+/* harmony import */ var _blocks_dropdown_dropdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/dropdown/dropdown */ "./src/blocks/dropdown/dropdown.js");
+
 
 
 
