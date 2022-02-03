@@ -82,6 +82,10 @@
     padding-right: 7px;
   }
 
+  &__list_is-hidden{
+    display: none;
+  }
+
   &__item{
     display: flex;
     justify-content: space-between;

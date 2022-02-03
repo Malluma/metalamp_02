@@ -336,6 +336,9 @@
   padding-left: 15px;
   padding-right: 7px;
 }
+.dropdown__list_is-hidden {
+  display: none;
+}
 .dropdown__item {
   display: flex;
   justify-content: space-between;

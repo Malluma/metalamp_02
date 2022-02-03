@@ -25,28 +25,52 @@ const unused = 42;
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-function dropdown(_ref) {
-  let {
-    arrowToggle = false
-  } = _ref;
-  const selector = document.querySelectorAll('.js-dropdown');
-  selector.forEach((item, index) => {
-    const input = item.querySelector('.js-dropdown__input');
-    const arrowBtn = item.querySelector('.js-dropdown__arrow-btn');
-  }); // функция открытия/закрытия dropdown
+function initDropdown() {
+  const dropdowns = document.querySelectorAll('.js-dropdown');
+  dropdowns.forEach(dropdown => {
+    const arrowBtn = dropdown.querySelector('.js-dropdown__arrow-btn');
+    const list = dropdown.querySelector('.js-dropdown__list');
+    const input = dropdown.querySelector('.js-dropdown__input');
+    const plusBtns = dropdown.querySelectorAll('.js-dropdown__plus-btn');
+    const minusBtns = dropdown.querySelectorAll('.js-dropdown__minus-btn');
+    const number = dropdown.querySelector('js-dropdown__number');
 
-  function toggleDropdown() {
-    let expand = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-
-    if (expand) {//const listItem = document.createElement()
+    function toggleDropdown() {
+      list.classList.toggle('dropdown__list_is-hidden');
     }
-  }
 
-  ;
-  arrowBtn.addEventListener('click', toggleDropdown);
+    ;
+
+    function changeNumber(e) {
+      let numberElem;
+      let number;
+      let btnMinus;
+
+      if (e.target.textContent === '+') {
+        numberElem = e.target.previousElementSibling;
+        btnMinus = numberElem.previousElementSibling;
+        number = Number(numberElem.textContent);
+        numberElem.textContent = number + 1;
+        btnMinus.disabled = false;
+      } else {
+        numberElem = e.target.nextElementSibling;
+        number = Number(numberElem.textContent);
+        numberElem.textContent = number - 1;
+        e.target.disabled = numberElem.textContent === '0';
+      }
+    }
+
+    arrowBtn.addEventListener('click', toggleDropdown);
+    plusBtns.forEach((plusBtn, index) => {
+      plusBtn.addEventListener('click', changeNumber);
+    });
+    minusBtns.forEach((minusBtn, index) => {
+      minusBtn.addEventListener('click', changeNumber);
+    });
+  }); //forEach dropdown
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (dropdown);
+/* harmony default export */ __webpack_exports__["default"] = (initDropdown);
 
 /***/ }),
 
@@ -86,6 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 console.log('Hello, I am index.js!!');
 (0,_babel_test___WEBPACK_IMPORTED_MODULE_1__["default"])();
+(0,_blocks_dropdown_dropdown__WEBPACK_IMPORTED_MODULE_3__["default"])();
 
 /***/ }),
 
