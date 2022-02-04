@@ -41,7 +41,28 @@ function initDropdown() {
 
     ;
 
+    function updateDropdownText(numStr) {
+      const lastDigit = numStr.substring(numStr.length - 1);
+      const twoLastDigits = numStr.substring(numStr.length - 2);
+      const declension = JSON.parse(input.dataset.declension); //окончание на 1 (но не 11) - гость
+      //окончание на 2,3,4 ( но не 12,13,14) - гостя
+      //окончание на 0 5 6 7 8 9 - гостей
+      //окончание на 11, 12, 13, 14 - гостей
+
+      console.log(lastDigit);
+      console.log(twoLastDigits);
+
+      if (twoLastDigits === "11" || twoLastDigits === "12" || twoLastDigits === "13" || twoLastDigits === "14" || lastDigit === "0" || lastDigit === "5" || lastDigit === "6" || lastDigit === "7" || lastDigit === "8" || lastDigit === "9") {
+        input.value = `${numStr} ${declension[2]}`;
+      } else if (lastDigit === "2" || lastDigit === "3" || lastDigit === "4") {
+        input.value = `${numStr} ${declension[1]}`;
+      } else {
+        input.value = `${numStr} ${declension[0]}`;
+      }
+    }
+
     function changeNumber(e) {
+      console.log('changeNumber');
       let numberElem;
       let number;
       let btnMinus;
@@ -58,6 +79,8 @@ function initDropdown() {
         numberElem.textContent = number - 1;
         e.target.disabled = numberElem.textContent === '0';
       }
+
+      updateDropdownText(numberElem.textContent);
     }
 
     arrowBtn.addEventListener('click', toggleDropdown);

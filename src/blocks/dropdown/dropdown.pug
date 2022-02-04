@@ -1,10 +1,10 @@
 mixin dropdown(params)
-  - const { label, sublabel, value, placeholder, list } = params;
+  - const { label, sublabel, value, placeholder, list, declension } = params;
   .dropdown(class= "js-dropdown")
     label.dropdown__label
       .dropdown__label-wrapper #[span(class="dropdown__label-span") #{label}] #[span(class="dropdown__sublabel-span") #{sublabel}]
       .dropdown__input-flex-wrap
-        input.dropdown__input(class= "js-dropdown__input" readonly type= "text" value= value, placeholder= placeholder)
+        input.dropdown__input(class= "js-dropdown__input" readonly type= "text" value= value, placeholder= placeholder, data-declension= declension)
         .dropdown__arrow-btn-flex-wrap
           .dropdown__arrow-btn.js-dropdown__arrow-btn(class= "icon-expand_more")
       .dropdown__list.js-dropdown__list.dropdown__list_is-hidden
