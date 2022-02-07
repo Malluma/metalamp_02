@@ -1,19 +1,19 @@
 mixin dropdown(params)
-  - const { label, sublabel, value, placeholder, list, declension } = params;
+  - const { label, sublabel, value, placeholder, list } = params;
   .dropdown(class= "js-dropdown")
     label.dropdown__label
       .dropdown__label-wrapper #[span(class="dropdown__label-span") #{label}] #[span(class="dropdown__sublabel-span") #{sublabel}]
       .dropdown__input-flex-wrap
-        input.dropdown__input(class= "js-dropdown__input" readonly type= "text" value= value, placeholder= placeholder, data-declension= declension)
+        input.dropdown__input(class= "js-dropdown__input" readonly type= "text" value= value, placeholder= placeholder)
         .dropdown__arrow-btn-flex-wrap
           .dropdown__arrow-btn.js-dropdown__arrow-btn(class= "icon-expand_more")
-      .dropdown__list.js-dropdown__list.dropdown__list_is-hidden
-        each value, element in list
+      .dropdown__list.js-dropdown__list.dropdown__list_is-hidden(data-list= list)
+        each obj, index in list
           .dropdown__item.js-dropdown__item
-                span.dropdown__item-text= element
+                span.dropdown__item-text= obj.name
                 .dropdown__number-wrap.js-dropdown__number-wrap
                   button.dropdown__counter-btn.js-dropdown__minus-btn(disabled type="button") -
-                  span.dropdown__number.js-dropdown__number= value
+                  span.dropdown__number.js-dropdown__number(data-key= obj.declensions[0])= obj.number
                   button.dropdown__counter-btn.js-dropdown__plus-btn(type="button") +
         .dropdown__list-footer
           .dropdown__clean-btn.dropdown__list-footer-btn Очистить
