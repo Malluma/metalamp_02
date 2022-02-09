@@ -270,6 +270,7 @@
 .dropdown {
   font-family: "Montserrat";
   font-size: 12px;
+  max-width: 320px;
 }
 .dropdown__label {
   display: block;
@@ -302,11 +303,16 @@
   box-sizing: border-box;
   width: 100%;
   color: rgba(31, 32, 65, 0.75);
-  padding: 12px 15px;
-  padding-right: 44px;
+  padding: 12px 90px 12px 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .dropdown__input:hover, .dropdown__input:focus {
   border: 1px solid rgba(31, 32, 65, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .dropdown__input::placeholder {
   color: rgba(31, 32, 65, 0.25);
@@ -422,6 +428,10 @@ body .text-fields {
 }
 body .form-elements__text-field {
   width: 320px;
+  margin-bottom: 20px;
+}
+body .form-elements__text-field-short {
+  width: 266px;
   margin-bottom: 20px;
 }
 

@@ -1,18 +1,22 @@
 function initDropdown() {
 
-  const dropdowns = document.querySelectorAll('.js-dropdown');
+  const dropdowns = document.querySelectorAll(".js-dropdown");
 
   dropdowns.forEach((dropdown) => {
 
-    const arrowBtn  = dropdown.querySelector('.js-dropdown__arrow-btn'); 
-    const list      = dropdown.querySelector('.js-dropdown__list');
-    const input     = dropdown.querySelector('.js-dropdown__input');                                                                               
-    const plusBtns  = dropdown.querySelectorAll('.js-dropdown__plus-btn');
-    const minusBtns = dropdown.querySelectorAll('.js-dropdown__minus-btn');
-    const number    = dropdown.querySelector('js-dropdown__number');
+    const arrowBtn  = dropdown.querySelector(".js-dropdown__arrow-btn"); 
+    const list      = dropdown.querySelector(".js-dropdown__list");
+    const input     = dropdown.querySelector(".js-dropdown__input");                                                                             
+    const plusBtns  = dropdown.querySelectorAll(".js-dropdown__plus-btn");
+    const minusBtns = dropdown.querySelectorAll(".js-dropdown__minus-btn");
+    const cleanBtn = dropdown.querySelector(".js-dropdown__clean-btn");
+    const applyBtn = dropdown.querySelector(".js-dropdown__apply-btn"); 
+    const numberElems = dropdown.querySelectorAll(".js-dropdown__number");
     
+    const initValue = input.value; 
     const groupedListArray = []
     createGroupedListArray()
+    console.log(numberElems)
 
     function createGroupedListArray(){
       
@@ -38,10 +42,16 @@ function initDropdown() {
       }
     }
 
+    function cleanGroupedListArray(){
+
+      for (const el of groupedListArray) {
+        el.number = 0;
+      }
+
+    }
+
     function toggleDropdown() {
-
-      list.classList.toggle('dropdown__list_is-hidden');
-
+      list.classList.toggle("dropdown__list_is-hidden");
     };
     
     function updateGroupedListArray(number, currentItemKey){
@@ -51,7 +61,7 @@ function initDropdown() {
 
     }
 
-    function updateInputText(){
+    function updateResultText(){
       
       input.value = "";
 
@@ -82,6 +92,10 @@ function initDropdown() {
         }
       }
 
+      if (input.value === "") {
+        input.value = initValue;
+      }
+
     }
 
     function changeNumber(e){
@@ -91,7 +105,7 @@ function initDropdown() {
       let btnMinus;
       let plusMinus1 = 1;
 
-      if (e.target.textContent === '+') {
+      if (e.target.textContent === "+") {
         numberElem = e.target.previousElementSibling;
         btnMinus = numberElem.previousElementSibling;
         number = Number(numberElem.textContent);
@@ -101,23 +115,56 @@ function initDropdown() {
         numberElem = e.target.nextElementSibling;
         number = Number(numberElem.textContent);
         numberElem.textContent = number - 1;
-        e.target.disabled = numberElem.textContent === '0';
+        e.target.disabled = numberElem.textContent === "0";
         plusMinus1 = -1;
       }
       
       const currentItemKey = numberElem.dataset.key;
       updateGroupedListArray(plusMinus1, currentItemKey);
-      updateInputText(numberElem.textContent, currentItemKey);
 
     }
 
-    arrowBtn.addEventListener('click', toggleDropdown);
-    plusBtns.forEach((plusBtn, index) => {
-      plusBtn.addEventListener('click', changeNumber);
-    })
-    minusBtns.forEach((minusBtn, index) => {
-      minusBtn.addEventListener('click', changeNumber);
-    })
+    function clean(){
+      
+      numberElems.forEach((numberElem) => {
+        console.log(`number elem ${numberElem}`)
+        numberElem.textContent = "0";
+        let btnMinus = numberElem.previousElementSibling;
+        btnMinus.disabled = true;
+      })
+
+      cleanGroupedListArray();
+
+      input.value = initValue;
+
+    }
+
+    function apply(){
+
+      updateResultText();
+
+    }
+
+    function initDropdown(){
+
+      updateResultText();//если дропдаун подан с изначально непустыми значениями
+      arrowBtn.addEventListener("click", toggleDropdown);
+      plusBtns.forEach((plusBtn, index) => {
+        plusBtn.addEventListener("click", changeNumber);
+      })
+      minusBtns.forEach((minusBtn, index) => {
+        minusBtn.addEventListener("click", changeNumber);
+        const numberElem = minusBtn.nextElementSibling;
+        console.log(numberElem.textContent)
+        console.log(numberElem.textContent === "0" ? true : false);
+        minusBtn.disabled = numberElem.textContent === "0" ? true : false;
+      })
+      cleanBtn.addEventListener("click", clean);
+      applyBtn.addEventListener("click", apply);
+
+    }
+
+    initDropdown();
 
   })//forEach dropdown
  

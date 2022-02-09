@@ -2,6 +2,7 @@
 
   font-family: 'Montserrat';
   font-size: 12px;
+  max-width: 320px;
 
   &__label {
     display: block;
@@ -39,12 +40,17 @@
     box-sizing: border-box;
     width: 100%;
     color: $dark-shade-75;
-    padding: 12px 15px;
-    padding-right: 44px;
+    padding: 12px 90px 12px 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     &:hover,
     &:focus {
       border: 1px solid $dark-shade-50;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     &::placeholder {
