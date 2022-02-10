@@ -18,29 +18,29 @@ html(lang="ru")
         .form-elements__text-field
           +text-field({label:"text field", sublabel: "Hover/Focus", value: "This is pretty awesome", dateMasked: false, focus: true})
         .form-elements__text-field
-          +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: false,
+          +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: false, applyCleanBtns: true,
             list: [{name: "Взрослые", number: 0, declensions: ["гость", "гостя", "гостей"]},
                    {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
                    {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"]}]})
         .form-elements__text-field
           +text-field({label: "masked text field", placeholder: "ДД.ММ.ГГГГ", positioningClass: "form-elements__text-field", dateMasked: true})
         .form-elements__text-field-short
-          +dropdown({label: "dropdown", sublabel:"Default", initValue: "удобства", expanded: false,
+          +dropdown({label: "dropdown", sublabel:"Default", initValue: "удобства", expanded: false, applyCleanBtns: false,
             list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},
                    {name: "Кровати", number: 2, declensions: ["кровать", "кровати", "кроватей"]},
                    {name: "Ванные комнаты", number: 1, declensions: ["ванная комната", "ванных комнаты", "ванных комнат"]}]})
         .form-elements__text-field-short
-          +dropdown({label: "dropdown", sublabel:"Expanded", initValue: "удобства", expanded: true,
+          +dropdown({label: "dropdown", sublabel:"Expanded", initValue: "удобства", expanded: true, applyCleanBtns: false,
             list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},
                    {name: "Кровати", number: 2, declensions: ["кровать", "кровати", "кроватей"]},
                    {name: "Ванные комнаты", number: 1, declensions: ["ванная комната", "ванных комнаты", "ванных комнат"]}]})
         .form-elements__text-field
-          +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true,
+          +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true, applyCleanBtns: true,
             list: [{name: "Взрослые", number: 0, declensions: ["гость", "гостя", "гостей"]},
                    {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
                    {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"]}]})
         .form-elements__text-field
-          +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true,
+          +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true, applyCleanBtns: true,
             list: [{name: "Взрослые", number: 2, declensions: ["гость", "гостя", "гостей"]},
                    {name: "Дети", number: 1, declensions: ["гость", "гостя", "гостей"]},
                    {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"]}]})

@@ -25,7 +25,9 @@
   }
 
   &__input-flex-wrap{
-    display: flex;  
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
   }
 
   &__input {
@@ -82,10 +84,10 @@
     border-top: none;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
-    padding-top: 7px;
-    padding-bottom: 13px;
-    padding-left: 15px;
-    padding-right: 7px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    padding-left: 14px;
+    padding-right: 6px;
   }
 
   &__list_is-hidden{
@@ -101,15 +103,6 @@
     font-weight: bold;
   }
 
-  &__item-text{
-    //padding: 0 8px;
-    padding: 0;
-  }
-
-  &__number{
-    padding: 0 11px;  
-  }
-
   &__counter-btn{
     width: 30px;
     height: 30px;
@@ -119,16 +112,26 @@
     color: $dark-shade-50;
     font-family: 'Montserrat';
     font-size: 18px;
+    text-align: center;
+    align-items: center;
     &:disabled{
       border-color: $dark-shade-25; 
       color: $dark-shade-25; 
     }
   }
 
+  &__number-wrap{
+    min-width: 92px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__list-footer{
     display: flex;
     justify-content: space-between;
     padding-top: 13px;
+    padding-bottom: 11px;
   }
 
   &__list-footer-btn{
@@ -136,6 +139,10 @@
     font-weight: bold;
     text-transform: uppercase;
 
+  }
+
+  &__clean-btn_is-hidden{
+    visibility: hidden;
   }
 
 }

@@ -39,7 +39,6 @@ function initDropdown() {
     const initValue = input.value;
     const groupedListArray = [];
     createGroupedListArray();
-    console.log(numberElems);
 
     function createGroupedListArray() {
       //создаем сгруппированный массив списка dropboxа: например 
@@ -140,6 +139,7 @@ function initDropdown() {
 
       const currentItemKey = numberElem.dataset.key;
       updateGroupedListArray(plusMinus1, currentItemKey);
+      setCleanBtnVisibility();
     }
 
     function clean() {
@@ -150,11 +150,29 @@ function initDropdown() {
         btnMinus.disabled = true;
       });
       cleanGroupedListArray();
+      setCleanBtnVisibility();
       input.value = initValue;
     }
 
     function apply() {
       updateResultText();
+    }
+
+    function setCleanBtnVisibility() {
+      if (cleanBtn) {
+        let allZeros = true;
+        groupedListArray.forEach(item => {
+          if (item.number) {
+            allZeros = false;
+          }
+        });
+
+        if (allZeros) {
+          cleanBtn.classList.add("dropdown__clean-btn_is-hidden");
+        } else {
+          cleanBtn.classList.remove("dropdown__clean-btn_is-hidden");
+        }
+      }
     }
 
     function initDropdown() {
@@ -167,12 +185,14 @@ function initDropdown() {
       minusBtns.forEach((minusBtn, index) => {
         minusBtn.addEventListener("click", changeNumber);
         const numberElem = minusBtn.nextElementSibling;
-        console.log(numberElem.textContent);
-        console.log(numberElem.textContent === "0" ? true : false);
         minusBtn.disabled = numberElem.textContent === "0" ? true : false;
       });
-      cleanBtn.addEventListener("click", clean);
-      applyBtn.addEventListener("click", apply);
+
+      if (cleanBtn) {
+        setCleanBtnVisibility();
+        cleanBtn.addEventListener("click", clean);
+        applyBtn.addEventListener("click", apply);
+      }
     }
 
     initDropdown();

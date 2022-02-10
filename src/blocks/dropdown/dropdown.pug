@@ -1,5 +1,5 @@
 mixin dropdown(params)
-  - const { label, sublabel, initValue, expanded, placeholder, list } = params;
+  - const { label, sublabel, initValue, expanded, placeholder, list, applyCleanBtns } = params;
   - const listIsHidden = expanded ? "" : "dropdown__list_is-hidden";
   .dropdown(class= "js-dropdown")
     label.dropdown__label
@@ -12,12 +12,13 @@ mixin dropdown(params)
         each obj, index in list
           .dropdown__item.js-dropdown__item
                 span.dropdown__item-text= obj.name
-                .dropdown__number-wrap.js-dropdown__number-wrap
+                .dropdown__number-wrap
                   button.dropdown__counter-btn.js-dropdown__minus-btn(disabled type="button") -
                   span.dropdown__number.js-dropdown__number(data-key= obj.declensions[0])= obj.number
                   button.dropdown__counter-btn.js-dropdown__plus-btn(type="button") +
-        .dropdown__list-footer
-          .dropdown__list-footer-btn.js-dropdown__clean-btn Очистить
-          .dropdown__list-footer-btn.js-dropdown__apply-btn Применить
+        if (applyCleanBtns)
+          .dropdown__list-footer
+            .dropdown__list-footer-btn.js-dropdown__clean-btn Очистить
+            .dropdown__list-footer-btn.js-dropdown__apply-btn Применить
     
 
