@@ -69,7 +69,6 @@ function initDropdown() {
         //окончание на 2,3,4 ( но не 12,13,14) - гостя
         //окончание на 0 5 6 7 8 9 - гостей
         //окончание на 11, 12, 13, 14 - гостей
-        console.log(el)
         const num = String(el.number)
         if (num === "0") {
           continue;
@@ -170,10 +169,10 @@ function initDropdown() {
 
       updateResultText();//если дропдаун подан с изначально непустыми значениями
       arrowBtn.addEventListener("click", toggleDropdown);
-      plusBtns.forEach((plusBtn, index) => {
+      plusBtns.forEach((plusBtn) => {
         plusBtn.addEventListener("click", changeNumber);
       })
-      minusBtns.forEach((minusBtn, index) => {
+      minusBtns.forEach((minusBtn) => {
         minusBtn.addEventListener("click", changeNumber);
         const numberElem = minusBtn.nextElementSibling;
         minusBtn.disabled = numberElem.textContent === "0" ? true : false;

@@ -18,6 +18,45 @@ const unused = 42;
 
 /***/ }),
 
+/***/ "./src/blocks/date-dropdown/date-dropdown.js":
+/*!***************************************************!*\
+  !*** ./src/blocks/date-dropdown/date-dropdown.js ***!
+  \***************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/index.es.js");
+
+let applyBtn = {
+  content: 'применить',
+  className: 'js-date-dropdown__applyBtn',
+  onClick: dp => {
+    console.log('APPLY BTN!!');
+  }
+};
+const calendar = new air_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-date-dropdown__1', {
+  multipleDates: true,
+  buttons: ['clear', applyBtn],
+  range: true,
+  dynamicRange: true,
+
+  onSelect(_ref) {
+    let {
+      date,
+      formattedDate,
+      datepicker
+    } = _ref;
+    const selectedDate = document.querySelector(".-range-from-");
+
+    if (date.length === 1 && selectedDate.classList.contains('-focus-')) {//selectedDate.classList.add("-range-from-to-delete-before-after")
+    } else {//selectedDate.classList.remove("-range-from-to-delete-before-after")
+    }
+  }
+
+});
+
+/***/ }),
+
 /***/ "./src/blocks/dropdown/dropdown.js":
 /*!*****************************************!*\
   !*** ./src/blocks/dropdown/dropdown.js ***!
@@ -92,7 +131,6 @@ function initDropdown() {
         //окончание на 2,3,4 ( но не 12,13,14) - гостя
         //окончание на 0 5 6 7 8 9 - гостей
         //окончание на 11, 12, 13, 14 - гостей
-        console.log(el);
         const num = String(el.number);
 
         if (num === "0") {
@@ -179,10 +217,10 @@ function initDropdown() {
       updateResultText(); //если дропдаун подан с изначально непустыми значениями
 
       arrowBtn.addEventListener("click", toggleDropdown);
-      plusBtns.forEach((plusBtn, index) => {
+      plusBtns.forEach(plusBtn => {
         plusBtn.addEventListener("click", changeNumber);
       });
-      minusBtns.forEach((minusBtn, index) => {
+      minusBtns.forEach(minusBtn => {
         minusBtn.addEventListener("click", changeNumber);
         const numberElem = minusBtn.nextElementSibling;
         minusBtn.disabled = numberElem.textContent === "0" ? true : false;
@@ -233,6 +271,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_test___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./babel-test_ */ "./src/babel-test_.js");
 /* harmony import */ var _blocks_text_field_text_field__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/text-field/text-field */ "./src/blocks/text-field/text-field.js");
 /* harmony import */ var _blocks_dropdown_dropdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/dropdown/dropdown */ "./src/blocks/dropdown/dropdown.js");
+/* harmony import */ var _blocks_date_dropdown_date_dropdown__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/date-dropdown/date-dropdown */ "./src/blocks/date-dropdown/date-dropdown.js");
+
 
 
 
@@ -419,7 +459,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_jquery-mask-plugin_dist_jquery_mask_js"], function() { return __webpack_require__("./src/index.js"); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_air-datepicker_index_es_js-node_modules_jquery-mask-plugin_dist_jquery_mask_js"], function() { return __webpack_require__("./src/index.js"); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
