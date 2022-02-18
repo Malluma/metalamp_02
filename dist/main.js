@@ -25,34 +25,53 @@ const unused = 42;
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/index.es.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/index.es.js");
+
 
 let applyBtn = {
   content: 'применить',
   className: 'js-date-dropdown__applyBtn',
-  onClick: dp => {
-    console.log('APPLY BTN!!');
-  }
+  onClick: dp => {}
 };
-const calendar = new air_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-date-dropdown__1', {
+
+function onSelectAirDP(_ref) {
+  let {
+    datepicker
+  } = _ref;
+  const [first, second] = datepicker.selectedDates;
+  const oneDateSelected = datepicker.selectedDates.length === 1;
+  const twoDatesSelected = datepicker.selectedDates.length === 2;
+
+  if (oneDateSelected) {
+    fixFocusDisplay(first, datepicker); //this._setState(first, '');
+  } else if (twoDatesSelected) {//this._setState(first, second);
+  } //this._update(datepicker);
+
+}
+
+function fixFocusDisplay(date, datepicker) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = date.getDate();
+  const selector = `.air-datepicker-cell[data-year=${year}][data-month=${month}][data-date=${day}]`;
+  const $selectedCell = jquery__WEBPACK_IMPORTED_MODULE_0___default()(selector, datepicker.$datepicker);
+
+  if ($selectedCell.hasClass('-focus-')) {
+    $selectedCell.addClass('-range-from-');
+    $selectedCell.addClass('-range-to-');
+    console.log($selectedCell);
+  }
+}
+
+const calendar = new air_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"]('.js-date-dropdown__1', {
   multipleDates: true,
+  multipleDatesSeparator: ' - ',
   buttons: ['clear', applyBtn],
   range: true,
   dynamicRange: true,
-
-  onSelect(_ref) {
-    let {
-      date,
-      formattedDate,
-      datepicker
-    } = _ref;
-    const selectedDate = document.querySelector(".-range-from-");
-
-    if (date.length === 1 && selectedDate.classList.contains('-focus-')) {//selectedDate.classList.add("-range-from-to-delete-before-after")
-    } else {//selectedDate.classList.remove("-range-from-to-delete-before-after")
-    }
-  }
-
+  onSelect: onSelectAirDP
 });
 
 /***/ }),
