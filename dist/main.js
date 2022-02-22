@@ -71,6 +71,14 @@ const calendar = new air_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"]('.js
   buttons: ['clear', applyBtn],
   range: true,
   dynamicRange: true,
+  moveToOtherMonthsOnSelect: false,
+  navTitles: {
+    days: 'MMMM yyyy',
+    months: 'yyyy',
+    years: 'yyyy1 - yyyy2'
+  },
+  prevHtml: "<div class ='icon-arrow_back'></div>",
+  nextHtml: "<div class ='icon-arrow_forward'></div>",
   onSelect: onSelectAirDP
 });
 
