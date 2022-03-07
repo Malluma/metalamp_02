@@ -9,7 +9,7 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-const unused = 42;
+//const unused = 42;
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   const arr = Array.from(new Set([1, 2, 3, 2, 1])); // => [1, 2, 3]
 
@@ -30,10 +30,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/index.es.js");
 
 
+
+class Datepicker {
+  constructor(options) {
+    this.startDateInput = options.startDateInput;
+    this.endDateInput = options.endDateInput;
+    this.id = options.id;
+    console.log(`in class id: ${this.id}`);
+    const datepicker = new air_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"](`#${this.id}`, this.createAirDatepickerOptions());
+    return datepicker;
+  }
+
+  createAirDatepickerOptions() {
+    return {
+      multipleDates: true,
+      multipleDatesSeparator: ' - ',
+      buttons: ['clear', applyBtn],
+      range: true,
+      dynamicRange: true,
+      moveToOtherMonthsOnSelect: false,
+      navTitles: {
+        days: 'MMMM yyyy',
+        months: 'yyyy',
+        years: 'yyyy1 - yyyy2'
+      },
+      prevHtml: "<div class ='icon-arrow_back'></div>",
+      nextHtml: "<div class ='icon-arrow_forward'></div>",
+      onSelect: onSelectAirDP
+    };
+  }
+
+}
+
 let applyBtn = {
   content: 'применить',
   className: 'js-date-dropdown__applyBtn',
-  onClick: dp => {}
+  onClick: dp => {
+    console.log(dp);
+    console.log(dp.selectedDates);
+    const [startDate, endDate] = datepicker.selectedDates;
+  }
 };
 
 function onSelectAirDP(_ref) {
@@ -65,21 +101,23 @@ function fixFocusDisplay(date, datepicker) {
   }
 }
 
-const calendar = new air_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"]('.js-date-dropdown__1', {
-  multipleDates: true,
-  multipleDatesSeparator: ' - ',
-  buttons: ['clear', applyBtn],
-  range: true,
-  dynamicRange: true,
-  moveToOtherMonthsOnSelect: false,
-  navTitles: {
-    days: 'MMMM yyyy',
-    months: 'yyyy',
-    years: 'yyyy1 - yyyy2'
-  },
-  prevHtml: "<div class ='icon-arrow_back'></div>",
-  nextHtml: "<div class ='icon-arrow_forward'></div>",
-  onSelect: onSelectAirDP
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(() => {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-date-dropdown__start').each((index, startDateInput) => {
+    console.log('node');
+    console.log(startDateInput);
+    const $startDateInput = jquery__WEBPACK_IMPORTED_MODULE_0___default()(startDateInput);
+    const $startDateLabel = $startDateInput.parent();
+    const $endDateLabel = $startDateLabel.next();
+    const endDateInput = $endDateLabel.children('.js-date-dropdown__end')[0];
+    const currentId = `js-date-dropdown__start${index}`;
+    console.log(`currentId ${currentId}`);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(startDateInput).attr('id', currentId);
+    const datepicker = new Datepicker({
+      startDateInput: startDateInput,
+      endDateInput: endDateInput,
+      id: currentId
+    });
+  });
 });
 
 /***/ }),
@@ -303,9 +341,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ //babelTest();
 
-console.log('Hello, I am index.js!!');
-(0,_babel_test___WEBPACK_IMPORTED_MODULE_1__["default"])();
 (0,_blocks_dropdown_dropdown__WEBPACK_IMPORTED_MODULE_3__["default"])();
 
 /***/ }),

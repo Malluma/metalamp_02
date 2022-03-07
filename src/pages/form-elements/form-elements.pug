@@ -26,7 +26,9 @@ html(lang="ru")
         .form-elements__text-field
           +text-field({label: "masked text field", placeholder: "ДД.ММ.ГГГГ", positioningClass: "form-elements__text-field", dateMasked: true})
         .form-elements__text-field
-          +date-dropdown({type: "double", label_1: "date dropdown", label_2: "date dropdown" }) 
+          +date-dropdown({type: "double", label_1: "date dropdown", label_2: "date dropdown" })
+        .form-elements__text-field
+         +date-dropdown({type: "double", label_1: "date dropdown 2", label_2: "date dropdown 2" })
         .form-elements__text-field-short
           +dropdown({label: "dropdown", sublabel:"Default", initValue: "удобства", expanded: false, applyCleanBtns: false,
             list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},

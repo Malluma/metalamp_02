@@ -4,6 +4,5 @@ import textField from './blocks/text-field/text-field';
 import initDropdown from './blocks/dropdown/dropdown';
 import dateDropdown from './blocks/date-dropdown/date-dropdown';
 
-console.log('Hello, I am index.js!!')
-babelTest();
+//babelTest();
 initDropdown();

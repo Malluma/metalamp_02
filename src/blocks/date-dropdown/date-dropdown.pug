@@ -2,6 +2,6 @@ mixin date-dropdown(params)
   - const { type, label_1, label_2, value_1, value_2 } = params;
   .date-dropdown
     label.date-dropdown__label= label_1
-      input.date-dropdown__input(class= "js-date-dropdown__1" readonly type= "text" value= value_1, placeholder= 'ДД.ММ.ГГГГ')
+      input.date-dropdown__input(class= "js-date-dropdown__start" readonly type= "text" value= value_1, placeholder= 'ДД.ММ.ГГГГ')
     label.date-dropdown__label= label_2
-      input.date-dropdown__input(class= "js-date-dropdown__2" readonly type= "text" value= value_2, placeholder= 'ДД.ММ.ГГГГ')
+      input.date-dropdown__input(class= "js-date-dropdown__end" readonly type= "text" value= value_2, placeholder= 'ДД.ММ.ГГГГ')

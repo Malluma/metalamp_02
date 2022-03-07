@@ -485,6 +485,20 @@ body .form-elements-dropdown-date {
 }
 
 .air-datepicker {
+  --adp-transition-offset: 8px;
+  --adp-border-color-inline: #d7d7d7;
+  --adp-day-cell-height: 40px;
+  --adp-month-cell-height: 42px;
+  --adp-year-cell-height: 56px;
+  --adp-pointer-size: 10px;
+  --adp-poiner-border-radius: 2px;
+  --adp-pointer-offset: 14px;
+  --adp-mobile-font-size: 16px;
+  --adp-mobile-nav-height: 40px;
+  --adp-mobile-width: 320px;
+  --adp-mobile-day-cell-height: 38px;
+  --adp-mobile-month-cell-height: 48px;
+  --adp-mobile-year-cell-height: 64px;
   font-family: "Montserrat";
   font-size: 12px;
   color: rgba(31, 32, 65, 0.5);
@@ -506,6 +520,92 @@ body .form-elements-dropdown-date {
   position: absolute;
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   z-index: 100;
+}
+.air-datepicker:not(.-custom-position-) {
+  opacity: 0;
+}
+.air-datepicker.-from-top- {
+  transform: translateY(calc(var(--adp-transition-offset) * -1));
+}
+.air-datepicker.-from-right- {
+  transform: translateX(var(--adp-transition-offset));
+}
+.air-datepicker.-from-bottom- {
+  transform: translateY(var(--adp-transition-offset));
+}
+.air-datepicker.-from-left- {
+  transform: translateX(calc(var(--adp-transition-offset) * -1));
+}
+.air-datepicker.-active-:not(.-custom-position-) {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.air-datepicker.-active-.-custom-position- {
+  transition: none;
+}
+.air-datepicker.-inline- {
+  border-color: rgba(31, 32, 65, 0.25);
+  box-shadow: none;
+  position: static;
+  left: auto;
+  right: auto;
+  opacity: 1;
+  transform: none;
+}
+.air-datepicker.-inline- .air-datepicker--pointer {
+  display: none;
+}
+.air-datepicker--navigation {
+  grid-area: nav;
+}
+.air-datepicker--content {
+  box-sizing: content-box;
+  grid-area: body;
+  padding: 0px 5px;
+}
+.air-datepicker-overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-out, left 0s, height 0s, width 0s;
+  transition-delay: 0s, 0.3s, 0.3s, 0.3s;
+  z-index: 99;
+}
+.air-datepicker-overlay.-active- {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease-out, height 0s, width 0s;
+}
+.air-datepicker .air-datepicker.-is-mobile- {
+  --adp-font-size: 12px;
+  --adp-day-cell-height: var(--adp-mobile-day-cell-height);
+  --adp-month-cell-height: var(--adp-mobile-month-cell-height);
+  --adp-year-cell-height: var(--adp-mobile-year-cell-height);
+  --adp-nav-height: var(--adp-mobile-nav-height);
+  --adp-nav-action-size: var(--adp-mobile-nav-height);
+  position: fixed;
+  width: var(--adp-mobile-width);
+  border: none;
+}
+.air-datepicker .air-datepicker.-is-mobile- * {
+  -webkit-tap-highlight-color: transparent;
+}
+.air-datepicker .air-datepicker.-is-mobile-.air-datepicker--pointer {
+  display: none;
+}
+.air-datepicker .air-datepicker.-is-mobile-:not(.-custom-position-) {
+  transform: translate(-50%, calc(-50% + var(--adp-transition-offset)));
+}
+.air-datepicker .air-datepicker.-is-mobile-.-active-:not(.-custom-position-) {
+  transform: translate(-50%, -50%);
+}
+.air-datepicker.-custom-position- {
+  transition: none;
 }
 
 .air-datepicker-cell {
@@ -544,29 +644,31 @@ body .form-elements-dropdown-date {
 .air-datepicker-cell.-day-.-other-month-, .air-datepicker-cell.-year-.-other-decade- {
   color: rgba(31, 32, 65, 0.25);
 }
-.air-datepicker-cell.-day-.-other-month-.-range-to-, .air-datepicker-cell.-year-.-other-decade-.-range-to- {
+.air-datepicker-cell.-day-.-other-month-.-range-to- {
   color: #ffffff;
 }
-.air-datepicker-cell.-range-from- {
+.air-datepicker-cell.-range-from-:not(.-month-) {
   color: #ffffff;
   font-weight: bold;
   background: linear-gradient(180deg, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
 }
-.air-datepicker-cell.-range-to- {
+.air-datepicker-cell.-range-to-:not(.-month-) {
   color: #ffffff;
   font-weight: bold;
   background: linear-gradient(180deg, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
 }
-.air-datepicker-cell.-in-range- {
+.air-datepicker-cell.-in-range-:not(.-month-) {
   background: linear-gradient(180deg, rgba(188, 156, 255, 0.25), rgba(139, 164, 249, 0.25));
   border-radius: 0;
 }
 .air-datepicker-cell.-selected-, .air-datepicker-cell.-selected-.-other-month- {
   position: relative;
+  font-weight: bold;
+  color: #ffffff;
 }
 .air-datepicker-cell.-selected-::after, .air-datepicker-cell.-selected-.-other-month-::after {
   content: "";
@@ -686,105 +788,6 @@ body .form-elements-dropdown-date {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.air-datepicker {
-  --adp-transition-offset: 8px;
-  --adp-border-color-inline: #d7d7d7;
-  --adp-day-cell-height: 40px;
-  --adp-month-cell-height: 42px;
-  --adp-year-cell-height: 56px;
-  --adp-pointer-size: 10px;
-  --adp-poiner-border-radius: 2px;
-  --adp-pointer-offset: 14px;
-  --adp-mobile-font-size: 16px;
-  --adp-mobile-nav-height: 40px;
-  --adp-mobile-width: 320px;
-  --adp-mobile-day-cell-height: 38px;
-  --adp-mobile-month-cell-height: 48px;
-  --adp-mobile-year-cell-height: 64px ;
-}
-
-.air-datepicker-overlay {
-  --adp-overlay-background-color: rgba(0, 0, 0, .3);
-  --adp-overlay-transition-duration: .3s;
-  --adp-overlay-transition-ease: ease-out;
-  --adp-overlay-z-index: 99 ;
-}
-
-.air-datepicker:not(.-custom-position-) {
-  opacity: 0;
-}
-
-.air-datepicker.-from-top- {
-  transform: translateY(calc(var(--adp-transition-offset) * -1));
-}
-
-.air-datepicker.-from-right- {
-  transform: translateX(var(--adp-transition-offset));
-}
-
-.air-datepicker.-from-bottom- {
-  transform: translateY(var(--adp-transition-offset));
-}
-
-.air-datepicker.-from-left- {
-  transform: translateX(calc(var(--adp-transition-offset) * -1));
-}
-
-.air-datepicker.-active-:not(.-custom-position-) {
-  transform: translate(0, 0);
-  opacity: 1;
-}
-
-.air-datepicker.-active-.-custom-position- {
-  transition: none;
-}
-
-.air-datepicker.-inline- {
-  border-color: rgba(31, 32, 65, 0.25);
-  box-shadow: none;
-  position: static;
-  left: auto;
-  right: auto;
-  opacity: 1;
-  transform: none;
-}
-
-.air-datepicker.-inline- .air-datepicker--pointer {
-  display: none;
-}
-
-.air-datepicker.-is-mobile- {
-  --adp-font-size: 12px;
-  --adp-day-cell-height: var(--adp-mobile-day-cell-height);
-  --adp-month-cell-height: var(--adp-mobile-month-cell-height);
-  --adp-year-cell-height: var(--adp-mobile-year-cell-height);
-  --adp-nav-height: var(--adp-mobile-nav-height);
-  --adp-nav-action-size: var(--adp-mobile-nav-height);
-  position: fixed;
-  width: var(--adp-mobile-width);
-  border: none;
-}
-
-.air-datepicker.-is-mobile- * {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.air-datepicker.-is-mobile- .air-datepicker--pointer {
-  display: none;
-}
-
-.air-datepicker.-is-mobile-:not(.-custom-position-) {
-  transform: translate(-50%, calc(-50% + var(--adp-transition-offset)));
-}
-
-.air-datepicker.-is-mobile-.-active-:not(.-custom-position-) {
-  transform: translate(-50%, -50%);
-}
-
-.air-datepicker.-custom-position- {
-  transition: none;
-}
-
 .air-datepicker-global-container {
   position: absolute;
   left: 0;
@@ -895,40 +898,6 @@ body .form-elements-dropdown-date {
 .-left-center- .air-datepicker--pointer,
 .-right-center- .air-datepicker--pointer {
   top: calc(50% - var(--adp-pointer-size) / 2);
-}
-
-.air-datepicker--navigation {
-  grid-area: nav;
-}
-
-.air-datepicker--content {
-  box-sizing: content-box;
-  grid-area: body;
-  padding: 0px 5px;
-}
-
-.-only-timepicker- .air-datepicker--content {
-  display: none;
-}
-
-.air-datepicker-overlay {
-  position: fixed;
-  background: var(--adp-overlay-background-color);
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  transition: opacity var(--adp-overlay-transition-duration) var(--adp-overlay-transition-ease), left 0s, height 0s, width 0s;
-  transition-delay: 0s, var(--adp-overlay-transition-duration), var(--adp-overlay-transition-duration), var(--adp-overlay-transition-duration);
-  z-index: var(--adp-overlay-z-index);
-}
-
-.air-datepicker-overlay.-active- {
-  opacity: 1;
-  width: 100%;
-  height: 100%;
-  transition: opacity var(--adp-overlay-transition-duration) var(--adp-overlay-transition-ease), height 0s, width 0s;
 }
 
 /*# sourceMappingURL=main.css.map*/
