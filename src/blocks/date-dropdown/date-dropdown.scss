@@ -30,6 +30,7 @@ $adp-color-disabled: #aeaeae;
     &:hover,
     &:focus {
       border: 1px solid $dark-shade-50;
+      outline: none;
     }
   }
 }

@@ -10,7 +10,7 @@ class Datepicker{
     this.id = options.id;
     console.log(`in class id: ${this.id}`)
 
-    const datepicker = new AirDatepicker(`#${this.id}`, this.createAirDatepickerOptions());
+    const datepicker = new AirDatepicker(`.${this.id}`, this.createAirDatepickerOptions());
 
     return datepicker;
   }
@@ -20,7 +20,8 @@ class Datepicker{
     return {
       multipleDates: true,
       multipleDatesSeparator: ' - ',
-      buttons: ['clear', applyBtn],
+      //buttons: ['clear', this.createApplyBtn()],
+      buttons: [this.createClearBtn(), this.createApplyBtn()],
       range: true,
       dynamicRange: true,
       moveToOtherMonthsOnSelect: false,
@@ -31,64 +32,89 @@ class Datepicker{
       },
       prevHtml: "<div class ='icon-arrow_back'></div>",
       nextHtml: "<div class ='icon-arrow_forward'></div>",
-      onSelect: onSelectAirDP
+      onSelect: (dp) => this.onSelectAirDP(dp)
     }
 
   }
-}
 
-let applyBtn = {
-  content: 'применить',
-  className: 'js-date-dropdown__applyBtn',
-  onClick: (dp) => {
-    console.log(dp);
-    console.log(dp.selectedDates);
-    const [startDate, endDate] = datepicker.selectedDates;
 
-  }
-}
-
-function onSelectAirDP({ datepicker }) {
-
-  const [first, second] = datepicker.selectedDates;
-  const oneDateSelected = datepicker.selectedDates.length === 1;
-  const twoDatesSelected = datepicker.selectedDates.length === 2;
-
-  if (oneDateSelected) {
-    fixFocusDisplay(first, datepicker);
-    //this._setState(first, '');
-  } else if (twoDatesSelected) {
-    //this._setState(first, second);
+  createClearBtn(){
+      return  {
+      content: 'очистить',
+      className: 'js-date-dropdown__clearBtn',
+      onClick: (datepicker) => {
+        //datepicker.selectedDates = [];
+        datepicker.clear();
+        //this.startDateInput.value = '';
+        this.endDateInput.value = '';
+      }
+    }
   }
 
-  //this._update(datepicker);
-}
-
-function fixFocusDisplay(date, datepicker) {
-  const year = date.getFullYear();
-  const month = date.getMonth();
-  const day = date.getDate();
-  const selector = `.air-datepicker-cell[data-year=${year}][data-month=${month}][data-date=${day}]`;
-  const $selectedCell = $(selector, datepicker.$datepicker);
-
-  if ($selectedCell.hasClass('-focus-')) {
-    $selectedCell.addClass('-range-from-');
-    $selectedCell.addClass('-range-to-');
-    console.log($selectedCell)
+  createApplyBtn(){
+      return  {
+      content: 'применить',
+      className: 'js-date-dropdown__applyBtn',
+      onClick: (datepicker) => {
+        const [startDate, endDate] = datepicker.selectedDates;
+        this.startDateInput.value = startDate.toLocaleDateString();
+        this.endDateInput.value = endDate.toLocaleDateString();
+        datepicker.hide();
+      }
+    }
   }
-}
+
+  
+  onSelectAirDP({ datepicker }) {
+  
+    const [first, second] = datepicker.selectedDates;
+    const oneDateSelected = datepicker.selectedDates.length === 1;
+    const twoDatesSelected = datepicker.selectedDates.length === 2;
+    
+
+    if (oneDateSelected) {
+      this.fixFocusDisplay(first, datepicker);
+      //this._setState(first, '');
+    } else if (twoDatesSelected) {
+      //this._setState(first, second);
+    }
+
+    this.startDateInput.value = '';
+    //this._update(datepicker);
+  }
+  
+  fixFocusDisplay(date, datepicker) {
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const day = date.getDate();
+    const selector = `.air-datepicker-cell[data-year=${year}][data-month=${month}][data-date=${day}]`;
+    const $selectedCell = $(selector, datepicker.$datepicker);
+  
+    if ($selectedCell.hasClass('-focus-')) {
+      $selectedCell.addClass('-range-from-');
+      $selectedCell.addClass('-range-to-');
+      console.log($selectedCell)
+    }
+  }
+
+}//class Datepicker
 
 $(() => {
   $('.js-date-dropdown__start').each((index, startDateInput) => {
-    console.log('node');
-    console.log(startDateInput);
     const $startDateInput = $(startDateInput);
     const $startDateLabel = $startDateInput.parent();
     const $endDateLabel = $startDateLabel.next();
     const endDateInput = $endDateLabel.children('.js-date-dropdown__end')[0];
-    const currentId = `js-date-dropdown__start${index}`;
-    console.log(`currentId ${currentId}`);
-    $(startDateInput).attr('id', currentId);
-    const datepicker = new Datepicker({startDateInput: startDateInput, endDateInput: endDateInput, id: currentId});
+    const currentElId = `js-air-datepicker_${index}`;
+    //$(startDateInput).attr('id', currentElId);
+    $(startDateInput).addClass(currentElId);
+    $(endDateInput).addClass(currentElId);
+    console.log(startDateInput);
+    console.log($startDateInput);
+    console.log(endDateInput);
+    const datepicker  = new Datepicker({startDateInput: startDateInput, endDateInput: endDateInput, id: currentElId});
+    $(endDateInput).on('focus', function() {
+      datepicker.show();
+    });
   });
 });

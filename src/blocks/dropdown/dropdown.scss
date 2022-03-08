@@ -50,6 +50,7 @@
     &:hover,
     &:focus {
       border: 1px solid $dark-shade-50;
+      outline: none;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

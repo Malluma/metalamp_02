@@ -264,6 +264,7 @@
 }
 .text-field__input:hover, .text-field__input:focus {
   border: 1px solid rgba(31, 32, 65, 0.5);
+  outline: none;
 }
 .text-field__input::placeholder {
   color: rgba(31, 32, 65, 0.25);
@@ -317,6 +318,7 @@
 }
 .dropdown__input:hover, .dropdown__input:focus {
   border: 1px solid rgba(31, 32, 65, 0.5);
+  outline: none;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -482,6 +484,7 @@ body .form-elements-dropdown-date {
 }
 .date-dropdown__input:hover, .date-dropdown__input:focus {
   border: 1px solid rgba(31, 32, 65, 0.5);
+  outline: none;
 }
 
 .air-datepicker {
