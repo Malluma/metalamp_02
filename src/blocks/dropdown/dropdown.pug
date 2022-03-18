@@ -1,3 +1,5 @@
+include ../btn-expand/btn-expand.pug
+
 mixin dropdown(params)
   - const { label, sublabel, initValue, expanded, placeholder, list, applyCleanBtns } = params;
   - const listIsHidden = expanded ? "" : "dropdown__list_is-hidden";
@@ -6,8 +8,7 @@ mixin dropdown(params)
       .dropdown__label-wrapper #[span(class="dropdown__label-span") #{label}] #[span(class="dropdown__sublabel-span") #{sublabel}]
       .dropdown__input-flex-wrap
         input.dropdown__input(class= "js-dropdown__input" readonly type= "text" value= initValue, placeholder= placeholder)
-        .dropdown__arrow-btn-flex-wrap
-          .dropdown__arrow-btn.js-dropdown__arrow-btn(class= "icon-expand_more")
+        +btn-expand('js-dropdown__arrow-btn')
       .dropdown__list.js-dropdown__list(class= listIsHidden, data-list= list)
         each obj, index in list
           .dropdown__item.js-dropdown__item
