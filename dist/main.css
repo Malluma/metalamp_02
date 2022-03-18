@@ -138,6 +138,18 @@
   font-family: "Montserrat";
 }
 
+.btn-expand__flex-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.btn-expand__pic {
+  color: rgba(31, 32, 65, 0.75);
+  font-size: 13px;
+  position: absolute;
+  left: -30px;
+}
+
 .color-block {
   display: flex;
   justify-items: center;
@@ -457,39 +469,10 @@ body .form-elements-dropdown-date {
   width: 150px;
 }
 
-.date-dropdown {
-  font-family: "Montserrat";
-  display: flex;
-  justify-content: space-between;
-}
-.date-dropdown__label {
-  display: block;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: bold;
-}
-.date-dropdown__input {
-  font-family: "Montserrat";
-  font-size: 14px;
-  display: block;
-  margin: 0;
-  background: #ffffff;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
-  box-sizing: border-box;
-  width: 100%;
-  color: rgba(31, 32, 65, 0.75);
-  padding: 12px 15px;
-  width: 150px;
-}
-.date-dropdown__input:hover, .date-dropdown__input:focus {
-  border: 1px solid rgba(31, 32, 65, 0.5);
-  outline: none;
-}
-
 .air-datepicker {
   --adp-transition-offset: 8px;
   --adp-border-color-inline: #d7d7d7;
+  --adp-color-disabled: #aeaeae;
   --adp-day-cell-height: 40px;
   --adp-month-cell-height: 42px;
   --adp-year-cell-height: 56px;
@@ -607,6 +590,9 @@ body .form-elements-dropdown-date {
 .air-datepicker .air-datepicker.-is-mobile-.-active-:not(.-custom-position-) {
   transform: translate(-50%, -50%);
 }
+.air-datepicker .air-datepicker_date2-position {
+  left: 520px;
+}
 .air-datepicker.-custom-position- {
   transition: none;
 }
@@ -684,7 +670,7 @@ body .form-elements-dropdown-date {
 }
 .air-datepicker-cell.-disabled- {
   cursor: default;
-  color: #aeaeae;
+  color: var(--adp-color-disabled);
 }
 
 .air-datepicker-body {
@@ -901,6 +887,55 @@ body .form-elements-dropdown-date {
 .-left-center- .air-datepicker--pointer,
 .-right-center- .air-datepicker--pointer {
   top: calc(50% - var(--adp-pointer-size) / 2);
+}
+
+.date-dropdown {
+  font-family: "Montserrat";
+  display: flex;
+  justify-content: space-between;
+}
+.date-dropdown__label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+.date-dropdown__input {
+  font-family: "Montserrat";
+  font-size: 14px;
+  display: block;
+  margin: 0;
+  background: #ffffff;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+  color: rgba(31, 32, 65, 0.75);
+  padding: 12px 15px;
+  max-width: 150px;
+}
+.date-dropdown__input:hover, .date-dropdown__input:focus {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  outline: none;
+}
+.date-dropdown__input-flex-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.date-dropdown__arrow-btn {
+  color: rgba(31, 32, 65, 0.75);
+  font-size: 13px;
+  position: absolute;
+  left: -30px;
+}
+.date-dropdown__arrow-btn-flex-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.date-dropdown__input.date-dropdown__double {
+  max-width: 266px;
 }
 
 /*# sourceMappingURL=main.css.map*/

@@ -1,0 +1,16 @@
+.btn-expand{
+
+  &__flex-wrap{
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  &__pic{
+    color: $dark-shade-75;
+    font-size: 13px;
+    position: absolute;
+    left: -30px;
+  }
+
+}

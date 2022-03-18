@@ -18,6 +18,121 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/blocks/date-dropdown/Datepicker1Field.js":
+/*!******************************************************!*\
+  !*** ./src/blocks/date-dropdown/Datepicker1Field.js ***!
+  \******************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/index.es.js");
+/* harmony import */ var _utilityForDatepickerClasses__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utilityForDatepickerClasses */ "./src/blocks/date-dropdown/utilityForDatepickerClasses.js");
+
+
+
+class Datepicker1Field {
+  constructor(options) {
+    this.DateInput = options.startEndDateInput;
+    this.airDatepicker = new air_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"](`.${options.id}`, (0,_utilityForDatepickerClasses__WEBPACK_IMPORTED_MODULE_1__.createAirDatepickerOptions)(this.createClearBtn(), this.createApplyBtn(), this));
+  }
+
+  createClearBtn() {
+    return {
+      content: 'очистить',
+      className: 'js-date-dropdown__clearBtn',
+      onClick: datepicker => this.clearDatepicker(datepicker)
+    };
+  }
+
+  clearDatepicker(datepicker) {
+    datepicker.clear();
+    this.clearDateFields();
+  }
+
+  clearDateFields() {
+    this.DateInput.value = '';
+  }
+
+  createApplyBtn() {
+    return {
+      content: 'применить',
+      className: 'js-date-dropdown__applyBtn',
+      onClick: datepicker => {
+        let [startDate, endDate] = datepicker.selectedDates;
+        const options = {
+          month: 'short',
+          day: 'numeric'
+        };
+        startDate = startDate.toLocaleDateString('ru-RU', options).slice(0, -1);
+        endDate = endDate.toLocaleDateString('ru-RU', options).slice(0, -1);
+        this.DateInput.value = `${startDate} - ${endDate}`;
+        datepicker.hide();
+      }
+    };
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Datepicker1Field);
+
+/***/ }),
+
+/***/ "./src/blocks/date-dropdown/Datepicker2Fields.js":
+/*!*******************************************************!*\
+  !*** ./src/blocks/date-dropdown/Datepicker2Fields.js ***!
+  \*******************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/index.es.js");
+/* harmony import */ var _utilityForDatepickerClasses__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utilityForDatepickerClasses */ "./src/blocks/date-dropdown/utilityForDatepickerClasses.js");
+
+
+
+class Datepicker2Fields {
+  constructor(options) {
+    this.DateInput1 = options.startDateInput;
+    this.DateInput2 = options.endDateInput;
+    this.airDatepicker = new air_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"](`.${options.id}`, (0,_utilityForDatepickerClasses__WEBPACK_IMPORTED_MODULE_1__.createAirDatepickerOptions)(this.createClearBtn(), this.createApplyBtn(), this));
+  }
+
+  createClearBtn() {
+    return {
+      content: 'очистить',
+      className: 'js-date-dropdown__clearBtn',
+      onClick: datepicker => this.clearDatepicker(datepicker)
+    };
+  }
+
+  clearDatepicker(datepicker) {
+    datepicker.clear();
+    this.clearDateFields();
+  }
+
+  clearDateFields() {
+    this.DateInput1.value = '';
+    this.DateInput2.value = '';
+  }
+
+  createApplyBtn() {
+    return {
+      content: 'применить',
+      className: 'js-date-dropdown__applyBtn',
+      onClick: datepicker => {
+        const [startDate, endDate] = datepicker.selectedDates;
+        this.DateInput1.value = startDate.toLocaleDateString();
+        this.DateInput2.value = endDate.toLocaleDateString();
+        datepicker.hide();
+      }
+    };
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Datepicker2Fields);
+
+/***/ }),
+
 /***/ "./src/blocks/date-dropdown/date-dropdown.js":
 /*!***************************************************!*\
   !*** ./src/blocks/date-dropdown/date-dropdown.js ***!
@@ -27,122 +142,100 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var air_datepicker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! air-datepicker */ "./node_modules/air-datepicker/index.es.js");
+/* harmony import */ var _Datepicker1Field__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Datepicker1Field */ "./src/blocks/date-dropdown/Datepicker1Field.js");
+/* harmony import */ var _Datepicker2Fields__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Datepicker2Fields */ "./src/blocks/date-dropdown/Datepicker2Fields.js");
 
-
-
-class Datepicker {
-  constructor(options) {
-    this.startDateInput = options.startDateInput;
-    this.endDateInput = options.endDateInput;
-    this.id = options.id;
-    console.log(`in class id: ${this.id}`);
-    const datepicker = new air_datepicker__WEBPACK_IMPORTED_MODULE_1__["default"](`.${this.id}`, this.createAirDatepickerOptions());
-    return datepicker;
-  }
-
-  createAirDatepickerOptions() {
-    return {
-      multipleDates: true,
-      multipleDatesSeparator: ' - ',
-      //buttons: ['clear', this.createApplyBtn()],
-      buttons: [this.createClearBtn(), this.createApplyBtn()],
-      range: true,
-      dynamicRange: true,
-      moveToOtherMonthsOnSelect: false,
-      navTitles: {
-        days: 'MMMM yyyy',
-        months: 'yyyy',
-        years: 'yyyy1 - yyyy2'
-      },
-      prevHtml: "<div class ='icon-arrow_back'></div>",
-      nextHtml: "<div class ='icon-arrow_forward'></div>",
-      onSelect: dp => this.onSelectAirDP(dp)
-    };
-  }
-
-  createClearBtn() {
-    return {
-      content: 'очистить',
-      className: 'js-date-dropdown__clearBtn',
-      onClick: datepicker => {
-        //datepicker.selectedDates = [];
-        datepicker.clear(); //this.startDateInput.value = '';
-
-        this.endDateInput.value = '';
-      }
-    };
-  }
-
-  createApplyBtn() {
-    return {
-      content: 'применить',
-      className: 'js-date-dropdown__applyBtn',
-      onClick: datepicker => {
-        const [startDate, endDate] = datepicker.selectedDates;
-        this.startDateInput.value = startDate.toLocaleDateString();
-        this.endDateInput.value = endDate.toLocaleDateString();
-        datepicker.hide();
-      }
-    };
-  }
-
-  onSelectAirDP(_ref) {
-    let {
-      datepicker
-    } = _ref;
-    const [first, second] = datepicker.selectedDates;
-    const oneDateSelected = datepicker.selectedDates.length === 1;
-    const twoDatesSelected = datepicker.selectedDates.length === 2;
-
-    if (oneDateSelected) {
-      this.fixFocusDisplay(first, datepicker); //this._setState(first, '');
-    } else if (twoDatesSelected) {//this._setState(first, second);
-    }
-
-    this.startDateInput.value = ''; //this._update(datepicker);
-  }
-
-  fixFocusDisplay(date, datepicker) {
-    const year = date.getFullYear();
-    const month = date.getMonth();
-    const day = date.getDate();
-    const selector = `.air-datepicker-cell[data-year=${year}][data-month=${month}][data-date=${day}]`;
-    const $selectedCell = jquery__WEBPACK_IMPORTED_MODULE_0___default()(selector, datepicker.$datepicker);
-
-    if ($selectedCell.hasClass('-focus-')) {
-      $selectedCell.addClass('-range-from-');
-      $selectedCell.addClass('-range-to-');
-      console.log($selectedCell);
-    }
-  }
-
-} //class Datepicker
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(() => {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-date-dropdown__start').each((index, startDateInput) => {
+  //single date dropdown
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-date-dropdown__double-start').each((index, startDateInput) => {
+    const currentElId = `js-air-datepicker_double${index}`;
     const $startDateInput = jquery__WEBPACK_IMPORTED_MODULE_0___default()(startDateInput);
-    const $startDateLabel = $startDateInput.parent();
+    const $startDateLabel = $startDateInput.parent().parent();
     const $endDateLabel = $startDateLabel.next();
-    const endDateInput = $endDateLabel.children('.js-date-dropdown__end')[0];
-    const currentElId = `js-air-datepicker_${index}`; //$(startDateInput).attr('id', currentElId);
-
+    const endDateInput = $endDateLabel.find('.js-date-dropdown__double-end')[0];
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(startDateInput).addClass(currentElId);
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(endDateInput).addClass(currentElId);
-    console.log(startDateInput);
-    console.log($startDateInput);
-    console.log(endDateInput);
-    const datepicker = new Datepicker({
+    const datepicker2FieldsInstance = new _Datepicker2Fields__WEBPACK_IMPORTED_MODULE_2__["default"]({
       startDateInput: startDateInput,
       endDateInput: endDateInput,
       id: currentElId
     });
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(endDateInput).on('focus', function () {
-      datepicker.show();
+  }); //double date dropdown
+
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-date-dropdown__single').each((index, startEndDateInput) => {
+    const currentElId = `js-air-datepicker_single${index}`;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(startEndDateInput).addClass(currentElId);
+    const datepicker1FieldInstance = new _Datepicker1Field__WEBPACK_IMPORTED_MODULE_1__["default"]({
+      startEndDateInput: startEndDateInput,
+      id: currentElId
     });
   });
 });
+
+/***/ }),
+
+/***/ "./src/blocks/date-dropdown/utilityForDatepickerClasses.js":
+/*!*****************************************************************!*\
+  !*** ./src/blocks/date-dropdown/utilityForDatepickerClasses.js ***!
+  \*****************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createAirDatepickerOptions": function() { return /* binding */ createAirDatepickerOptions; }
+/* harmony export */ });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function createAirDatepickerOptions(clearBtn, applyBtn, localDatepicker) {
+  return {
+    multipleDates: true,
+    multipleDatesSeparator: ' - ',
+    buttons: [clearBtn, applyBtn],
+    range: true,
+    dynamicRange: true,
+    moveToOtherMonthsOnSelect: false,
+    navTitles: {
+      days: 'MMMM yyyy',
+      months: 'yyyy',
+      years: 'yyyy1 - yyyy2'
+    },
+    prevHtml: "<div class ='icon-arrow_back'></div>",
+    nextHtml: "<div class ='icon-arrow_forward'></div>",
+    onSelect: dp => onSelectAirDP(dp, localDatepicker)
+  };
+}
+
+function onSelectAirDP(_ref, localDatepicker) {
+  let {
+    datepicker
+  } = _ref;
+  const date1 = datepicker.selectedDates[0];
+
+  if (datepicker.selectedDates.length === 1) {
+    fixFocusCircle(date1, datepicker);
+  }
+
+  localDatepicker.clearDateFields();
+}
+
+function fixFocusCircle(date, airDatepicker) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = date.getDate();
+  const selector = `.air-datepicker-cell[data-year=${year}][data-month=${month}][data-date=${day}]`;
+  const $selectedCell = jquery__WEBPACK_IMPORTED_MODULE_0___default()(selector, airDatepicker.$datepicker);
+
+  if ($selectedCell.hasClass('-focus-')) {
+    $selectedCell.addClass('-range-from-');
+    $selectedCell.addClass('-range-to-');
+  }
+}
+
+
 
 /***/ }),
 
