@@ -150,6 +150,21 @@
   left: -30px;
 }
 
+.btn-icon__flex-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.btn-icon__pic {
+  font-size: 18px;
+  position: absolute;
+  left: -30px;
+  color: transparent;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
 .color-block {
   display: flex;
   justify-items: center;
@@ -283,6 +298,11 @@
 }
 .text-field__input_focus {
   border: 1px solid rgba(31, 32, 65, 0.5);
+}
+.text-field__input-flex-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dropdown {
@@ -467,6 +487,10 @@ body .form-elemments-2dates-flex {
 }
 body .form-elements-dropdown-date {
   width: 150px;
+}
+body .form-elements__checkbox {
+  width: 13.875rem;
+  margin-bottom: 2.555rem;
 }
 
 .air-datepicker {
@@ -923,19 +947,54 @@ body .form-elements-dropdown-date {
   align-items: center;
   justify-content: center;
 }
-.date-dropdown__arrow-btn {
-  color: rgba(31, 32, 65, 0.75);
-  font-size: 13px;
-  position: absolute;
-  left: -30px;
-}
-.date-dropdown__arrow-btn-flex-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
 .date-dropdown__input.date-dropdown__double {
   max-width: 266px;
+}
+
+.checkbox {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: none;
+  color: rgba(31, 32, 65, 0.5);
+  display: flex;
+  margin-bottom: 0.75em;
+}
+.checkbox__visible-input {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 0.7em;
+  flex-shrink: 0;
+}
+.checkbox__hidden-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.checkbox__hidden-input:checked + .checkbox__visible-input {
+  border-color: #bc9cff;
+  background: no-repeat center url(assets/check-mark.0c20ec2907d6a39cb51b.svg);
+}
+.checkbox__hidden-input:focus + .checkbox__visible-input {
+  box-shadow: 0 0 0 0.05em rgba(31, 32, 65, 0.5);
+}
+.checkbox__label {
+  display: flex;
+}
+
+.checkbox-list {
+  font-family: "Montserrat";
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1f2041;
+}
+.checkbox-list__label {
+  margin-bottom: 1.4em;
 }
 
 /*# sourceMappingURL=main.css.map*/

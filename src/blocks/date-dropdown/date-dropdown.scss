@@ -39,19 +39,6 @@
     align-items: center; 
     justify-content: center;
   }
-  
-  &__arrow-btn{
-    color: $dark-shade-75;
-    font-size: 13px;
-    position: absolute;
-    left: -30px;
-  }
-
-  &__arrow-btn-flex-wrap{
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
 
   &__input.date-dropdown__double{
     max-width: 266px;

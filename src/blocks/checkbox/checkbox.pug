@@ -1,0 +1,12 @@
+mixin checkbox(params)
+  - const {id, label, checked} = params;
+
+  .checkbox
+    label.checkbox__label()
+      input.checkbox__hidden-input(type="checkbox" name=id checked=checked)
+      .checkbox__visible-input
+      .checkbpx__label-text= label
+   
+    
+          
+                

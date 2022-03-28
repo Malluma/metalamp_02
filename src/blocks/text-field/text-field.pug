@@ -1,10 +1,16 @@
+include ../btn-icon/btn-icon.pug
+
 mixin text-field(params)
   -
     let inputModClass = "";
     params.dateMasked ? inputModClass = "text-field__input_masked js-text-field__input_masked": inputModClass = "";
     params.focus ? inputModClass += "text-field__input_focus": inputModClass += "";
-
+    const flexWrapClass = (params.type === 'subscription') ? "text-field__input-flex-wrap" : "";
+  
   .text-field
     label.text-field__label
       .text-field__label-wrapper #[span(class="text-field__label-span") #{params.label}] #[span(class="text-field__sublabel-span") #{params.sublabel}]
-      input.text-field__input(class= inputModClass type= "text" value= params.value, placeholder= params.placeholder)
+      div(class= flexWrapClass)
+        input.text-field__input(class= inputModClass type= "text" value= params.value, placeholder= params.placeholder)
+        if params.type === 'subscription'
+          +btn-icon('icon-arrow_forward')

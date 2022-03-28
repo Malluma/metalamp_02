@@ -1,0 +1,9 @@
+include ../checkbox/checkbox.pug
+
+mixin checkbox-list(params)
+  .checkbox-list
+    .checkbox-list__label #{params.label}
+    each item in params.list
+      +checkbox(item)
+          
+                

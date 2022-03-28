@@ -1,0 +1,20 @@
+.btn-icon{
+
+  &__flex-wrap{
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  &__pic{
+    font-size: 18px;
+    position: absolute;
+    left: -30px;
+
+    color: transparent;
+    background: $primaryGradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+}

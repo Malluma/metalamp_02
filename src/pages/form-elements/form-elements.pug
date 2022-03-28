@@ -2,6 +2,7 @@ include ../../blocks/logo/logo.pug
 include ../../blocks/text-field/text-field.pug
 include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/date-dropdown/date-dropdown.pug
+include ../../blocks/checkbox-list/checkbox-list.pug
 
 doctype html
 html(lang="ru")
@@ -29,6 +30,13 @@ html(lang="ru")
           +date-dropdown({type: "double", label_1: "date dropdown", label_2: "date dropdown" })
         .form-elements__text-field
           +date-dropdown({type: "single", label_1: "filter date dropdown"})
+        .form-elements__text-field-short
+          +text-field({type: "subscription", label: "subscription text field", placeholder: "Email"})
+        .form-elements__checkbox
+          +checkbox-list({label: "checkbox buttons", list: [
+                    {label: 'Можно курить', id: canSmoke, checked: false}, 
+                    {label: 'Можно с питомцами', id: withPets, checked: true},
+                    {label: 'Можно пригласить гостей (до 10 человек)', id: guests10, checked: true}]})
         .form-elements__text-field
          +date-dropdown({type: "double", label_1: "date dropdown 2", label_2: "date dropdown 2" })
         .form-elements__text-field-short

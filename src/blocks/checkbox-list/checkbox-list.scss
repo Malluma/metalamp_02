@@ -1,0 +1,11 @@
+.checkbox-list {
+  font-family: 'Montserrat';
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $dark-shade-100;
+
+  &__label {
+    margin-bottom: 1.4em;
+  }
+}
