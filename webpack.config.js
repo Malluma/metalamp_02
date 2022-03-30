@@ -9,39 +9,42 @@ const fs = require('fs');
 const PAGES_DIR = path.resolve(__dirname, './src/pages');
 const PAGES = fs.readdirSync(PAGES_DIR)
 
-const isDev = process.env.NODE_ENV === 'development'
-const isProd = !isDev
+let mode = 'development';
+if (process.env.NODE_ENV === 'production') {
+  mode = 'production';
+}
 
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
+const filename = ext => mode === 'development' ? `[name].${ext}` : `[name].[hash].${ext}`
 
 module.exports = {
-    mode: 'development',
-    entry: './src/index.js',
-    output: {
-      filename: filename('js'),
-      path: path.resolve(__dirname, 'dist'),
-      assetModuleFilename: `assets/[name].[hash][ext]`,
-      clean: true, // Очищает директорию dist перед обновлением бандла
-      // Свойство стало доступно с версии 5.20.0, до этого использовался
-      // CleanWebpackPlugin
+  mode: mode,
+  entry: './src/index.js',
+  output: {
+    //filename: mode === 'development' ? `[name].js` : `[name].[hash].js`,
+    filename: filename('js'),
+    path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: mode === 'development' ? `assets/[name][ext]` : `assets/[name][hash][ext]`,
+    clean: true, // Очищает директорию dist перед обновлением бандла
+  },
+  devtool: 'source-map',
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
     },
-    devtool: 'source-map',
-    optimization: {
-      splitChunks: {
-        chunks: 'all'
-      },
-      minimizer: [new CssMinimizerPlugin(), new TerserPlugin()]
-    },
-    devServer: {
-      port: 4200,
-      hot: isDev
-    },
-    plugins: [
-      ...PAGES.map(page => new HTMLWebpackPlugin({
-          filename: `${page}.html`,
-          template: `${PAGES_DIR}/${page}/${page}.pug`
-        }
-      )),
+    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()]
+  },
+  devServer: {
+    port: 4200,
+    hot: mode === 'development'
+  },
+  plugins: [
+    ...PAGES.map(page => new HTMLWebpackPlugin({
+      filename: mode === 'development' ? `${page}.html` : `${page}.[hash].html`,
+      template: `${PAGES_DIR}/${page}/${page}.pug`,
+      minify: {
+        collapseWhitespace: mode === 'production',
+      }
+    })),
     new MiniCssExtractPlugin({
       filename: filename('css')
     }),
@@ -54,7 +57,15 @@ module.exports = {
   module: {
     rules: [{
         test: /\.html$/i,
-        use: 'html-loader'
+        use: 'html-loader',
+        //loader: 'html-loader',
+        //options: {
+        //  minimize: {
+        //    removeComments: false,
+        //    collapseWhitespace: false,
+        //  },
+       // }
+
       },
       {
         test: /\.css$/,
@@ -76,6 +87,9 @@ module.exports = {
         test: /\.pug$/,
         loader: 'pug-loader',
         exclude: /(node_modules|bower_components)/,
+        options: {
+          pretty: true,
+          },
       },
       {
         test: /\.m?js$/,
