@@ -20,7 +20,6 @@ module.exports = {
   mode: mode,
   entry: './src/index.js',
   output: {
-    //filename: mode === 'development' ? `[name].js` : `[name].[hash].js`,
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: mode === 'development' ? `assets/[name][ext]` : `assets/[name][hash][ext]`,
@@ -38,7 +37,7 @@ module.exports = {
     hot: mode === 'development'
   },
   plugins: [
-    ...PAGES.map(page => new HTMLWebpackPlugin({
+      ...PAGES.map(page => new HTMLWebpackPlugin({
       filename: mode === 'development' ? `${page}.html` : `${page}.[hash].html`,
       template: `${PAGES_DIR}/${page}/${page}.pug`,
       minify: {
@@ -58,14 +57,6 @@ module.exports = {
     rules: [{
         test: /\.html$/i,
         use: 'html-loader',
-        //loader: 'html-loader',
-        //options: {
-        //  minimize: {
-        //    removeComments: false,
-        //    collapseWhitespace: false,
-        //  },
-       // }
-
       },
       {
         test: /\.css$/,

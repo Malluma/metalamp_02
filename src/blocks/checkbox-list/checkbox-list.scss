@@ -4,8 +4,26 @@
   font-weight: 700;
   text-transform: uppercase;
   color: $dark-shade-100;
+  padding-right: 0;
 
-  &__label {
+  &__label-flex-wrap{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
     margin-bottom: 1.4em;
   }
+
+  &__btn-expand{
+    color: $dark-shade-75;
+    font-size: 13px;
+  }
+
+  &__btn-expand-rotate{
+    transform: rotate(-180deg)
+  }
+
+  &__hidden{
+    display: none;
+  }
+
 }

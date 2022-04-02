@@ -36,6 +36,10 @@ html(lang="ru")
           +checkbox-list({label: "checkbox buttons", list: [
                     {label: 'Можно курить', id: canSmoke, checked: false}, 
                     {label: 'Можно с питомцами', id: withPets, checked: true},
+                    {label: 'Можно пригласить гостей (до 10 человек)', id: guests10, checked: true}]})    
+          +checkbox-list({label: "checkbox buttons", type: 'expandable', list: [
+                    {label: 'Можно курить', id: canSmoke, checked: false}, 
+                    {label: 'Можно с питомцами', id: withPets, checked: true},
                     {label: 'Можно пригласить гостей (до 10 человек)', id: guests10, checked: true}]})
         .form-elements__text-field
          +date-dropdown({type: "double", label_1: "date dropdown 2", label_2: "date dropdown 2" })

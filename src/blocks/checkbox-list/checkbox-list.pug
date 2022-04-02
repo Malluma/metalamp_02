@@ -1,9 +1,15 @@
 include ../checkbox/checkbox.pug
 
 mixin checkbox-list(params)
-  .checkbox-list
-    .checkbox-list__label #{params.label}
-    each item in params.list
-      +checkbox(item)
+  -const jsClass = params.type === 'expandable' ? 'js-checkbox-list': ''
+
+  .checkbox-list(class= jsClass)
+    .checkbox-list__label-flex-wrap
+      .checkbox-list__label #{params.label}
+      if params.type === 'expandable'
+        .checkbox-list__btn-expand.js-checkbox-list__btn-expand(class= "icon-expand_more")
+    .checkbox-list__list.js-checkbox-list__list  
+      each item in params.list
+        +checkbox(item)
           
                 
