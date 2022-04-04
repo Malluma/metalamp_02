@@ -19,7 +19,8 @@
   }
 
   &__btn-expand-rotate{
-    transform: rotate(-180deg)
+    transform: rotate(-180deg);
+    padding-left: 0;
   }
 
   &__hidden{

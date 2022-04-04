@@ -1,15 +1,18 @@
 include ../checkbox/checkbox.pug
 
 mixin checkbox-list(params)
-  -const jsClass = params.type === 'expandable' ? 'js-checkbox-list': ''
+  - const { label, expandable, type, collapsed, list} = params;
+  - const jsClassExpandable = expandable === true ? 'js-checkbox-list': ''
+  - const listCollapsed = collapsed ? 'checkbox-list__hidden' : ''
+  - const btnRotated = collapsed ? '' : 'checkbox-list__btn-expand-rotate'
 
-  .checkbox-list(class= jsClass)
+  .checkbox-list(class= jsClassExpandable)
     .checkbox-list__label-flex-wrap
-      .checkbox-list__label #{params.label}
-      if params.type === 'expandable'
-        .checkbox-list__btn-expand.js-checkbox-list__btn-expand(class= "icon-expand_more")
-    .checkbox-list__list.js-checkbox-list__list  
-      each item in params.list
-        +checkbox(item)
+      .checkbox-list__label #{label}
+      if expandable
+        .checkbox-list__btn-expand(class=`icon-expand_more js-checkbox-list__btn-expand ${btnRotated}`)
+    .checkbox-list__list(class=`js-checkbox-list__list ${listCollapsed}`)  
+      each item in list
+        +checkbox(item, type)
           
                 

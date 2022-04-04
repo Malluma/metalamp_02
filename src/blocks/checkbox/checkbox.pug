@@ -1,11 +1,15 @@
-mixin checkbox(params)
-  - const {id, label, checked} = params;
+mixin checkbox(item, type)
+  - const {label, description, id, checked} = item;
+  - const typeClass = type === 'rich' ? 'checkbox__label-text_rich' : ''
 
   .checkbox
-    label.checkbox__label()
+    label.checkbox__label
       input.checkbox__hidden-input(type="checkbox" name=id checked=checked)
       .checkbox__visible-input
-      .checkbpx__label-text= label
+      .checkbox__label-flex-wrap
+        .checkbpx__label-text(class= typeClass)= label
+        if (type === 'rich')
+          .checkbox__description= description
    
     
           
