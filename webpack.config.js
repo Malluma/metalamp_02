@@ -6,8 +6,11 @@ const TerserPlugin = require('terser-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const fs = require('fs');
-const PAGES_DIR = path.resolve(__dirname, './src/pages');
-const PAGES = fs.readdirSync(PAGES_DIR)
+const pagesDir = path.resolve(__dirname, './src/pages');
+const pagesNames = fs.readdirSync(pagesDir);
+const pagesPaths = pagesNames.reduce((result, pageName) => { 
+  return {...result, [pageName]: path.resolve(pagesDir, pageName, `${pageName}.js`)}
+}, {})
 
 let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
@@ -18,12 +21,12 @@ const filename = ext => mode === 'development' ? `[name].${ext}` : `[name].[hash
 
 module.exports = {
   mode: mode,
-  entry: './src/index.js',
+  entry: pagesPaths,
   output: {
-    filename: filename('js'),
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: mode === 'development' ? `assets/[name][ext]` : `assets/[name][hash][ext]`,
-    clean: true, // Очищает директорию dist перед обновлением бандла
+    clean: true,
   },
   devtool: 'source-map',
   optimization: {
@@ -37,9 +40,9 @@ module.exports = {
     hot: mode === 'development'
   },
   plugins: [
-      ...PAGES.map(page => new HTMLWebpackPlugin({
+    ...pagesNames.map(page => new HTMLWebpackPlugin({
       filename: mode === 'development' ? `${page}.html` : `${page}.[hash].html`,
-      template: `${PAGES_DIR}/${page}/${page}.pug`,
+      template: `${pagesDir}/${page}/${page}.pug`,
       minify: {
         collapseWhitespace: mode === 'production',
       }
@@ -64,7 +67,14 @@ module.exports = {
       },
       {
         test: /\.s[ca]ss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'resolve-url-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            }
+          }
+        ]
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -80,7 +90,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         options: {
           pretty: true,
-          },
+        },
       },
       {
         test: /\.m?js$/,

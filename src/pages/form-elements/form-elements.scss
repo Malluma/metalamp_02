@@ -1,3 +1,17 @@
+@import '../../styles/variables.scss';
+@import '../../styles/Montserrat.css';
+@import '../../styles/brands-icons.css';
+@import '../../styles/material-icons.css';
+
+@import '../../blocks/btn-expand/btn-expand.scss';
+@import '../../blocks/btn-icon/btn-icon.scss';
+@import '../../blocks/text-field/text-field';
+@import '../../blocks/dropdown/dropdown.scss';
+@import '../../blocks/date-dropdown/date-dropdown.scss';
+@import '../../blocks/checkbox/checkbox.scss';
+@import '../../blocks/checkbox-list/checkbox-list.scss';
+@import '../../blocks/facility/facility.scss';
+
 body {
   margin: 0;
 
@@ -32,6 +46,11 @@ body {
 
   .form-elements__expandable-checkbox {
     width: 250px;
+    margin-bottom: 20px;
+  }
+
+  .form-elements__facilities{
+    width: 280px;
     margin-bottom: 20px;
   }
 

@@ -26,6 +26,7 @@
 		"mini-css-extract-plugin": "^2.4.6",
 		"pug": "^2.0.4",
 		"pug-loader": "^2.4.0",
+		"resolve-url-loader": "^5.0.0",
 		"sass": "^1.46.0",
 		"sass-loader": "^12.4.0",
 		"style-loader": "^3.3.1",

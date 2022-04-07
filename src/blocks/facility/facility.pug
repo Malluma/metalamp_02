@@ -1,0 +1,9 @@
+mixin facility(options)
+
+  -const{ type, name, icon } = options
+
+  .facility
+    .facility__icon(class= icon)
+    .facility__description
+      .facility__type= type
+      .facility__name= name

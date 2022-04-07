@@ -3,6 +3,7 @@ include ../../blocks/text-field/text-field.pug
 include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/date-dropdown/date-dropdown.pug
 include ../../blocks/checkbox-list/checkbox-list.pug
+include ../../blocks/facility/facility.pug
 
 doctype html
 html(lang="ru")
@@ -69,6 +70,9 @@ html(lang="ru")
                     {label: "Кроватка", id: "crib", checked: true},
                     {label: "Телевизор", id: "tv", checked: false},                
                     {label: "Шампунь", id: "shampoo", checked: false}]})
+        .form-elements__facilities
+          +facility({type: "Комфорт", name: "Шумопоглощающие стены", icon: "icon-insert_emoticon"})
+          +facility({type: "Удобство", name: "Окно в каждой из спален", icon: "icon-location_city"})
         .form-elements__text-field
           +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true, applyCleanBtns: true,
             list: [{name: "Взрослые", number: 0, declensions: ["гость", "гостя", "гостей"]},

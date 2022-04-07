@@ -1,0 +1,18 @@
+.facility{
+
+  font-family: 'Montserrat';
+  font-size: 14px;
+  color: $dark-shade-75;
+  border-bottom: $dark-shade-10; 
+  display: flex;
+
+  &__icon{
+    width: 3em;
+    height: 3em;
+  }
+
+  &__type{
+    font-weight: 700;
+  }
+
+}
