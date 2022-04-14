@@ -1,12 +1,9 @@
-import CheckboxList from './CheckboxList';
+import CheckboxList from './Checkbox-list-class';
 
 const checkboxLists = document.querySelectorAll(".js-checkbox-list");
 
 checkboxLists.forEach((checkboxList) => {
 
-  const list = checkboxList.querySelector('.js-checkbox-list__list');
-  const btn = checkboxList.querySelector('.js-checkbox-list__btn-expand');
-  
-  const checkboxListInstance = new CheckboxList(list, btn); 
+  const checkboxListInstance = new CheckboxList(checkboxList); 
 
 })
