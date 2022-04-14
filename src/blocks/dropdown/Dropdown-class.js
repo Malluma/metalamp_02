@@ -1,56 +1,47 @@
 class Dropdown {
 
-  constructor(list, expandBtn, input, plusBtns, numberElems, minusBtns, applyBtn, cleanBtn) {
+  constructor(htmlDropdown) {
 
-    this.listHtml = list;
-    this.expandBtn = expandBtn;
-    this.input = input;
-    this.plusBtns = plusBtns;
-    this.numberElems = numberElems;
-    this.minusBtns = minusBtns;
-    this.applyBtn = applyBtn;
-    this.cleanBtn = cleanBtn;
-
-    console.log(this.listHtml)
-    console.log(this.expandBtn)
-    console.log(this.input)
-    console.log(this.plusBtns)
-    console.log(this.numberElems)
-    console.log(this.minusBtns)
-    console.log(this.applyBtn)
-    console.log(this.cleanBtn)
-
+    this.htmlDropdown = htmlDropdown;
+    this.listHtml = this.htmlDropdown.querySelector(".js-dropdown__list");
+    this.expandBtn = this.htmlDropdown.querySelector(".js-dropdown__expand-btn");
+    this.input = this.htmlDropdown.querySelector(".js-dropdown__input");
+    this.plusBtns = this.htmlDropdown.querySelectorAll(".js-dropdown__plus-btn");
+    this.numberElems = this.htmlDropdown.querySelectorAll(".js-dropdown__number");
+    this.minusBtns = this.htmlDropdown.querySelectorAll(".js-dropdown__minus-btn");
+    this.applyBtn = this.htmlDropdown.querySelector('.js-dropdown__apply-btn');
+    this.cleanBtn = this.htmlDropdown.querySelector('.js-dropdown__clean-btn');
     this.initValue = this.input.value;
     this.groupedListArray = []
+
     this.createGroupedListArray();
-
-    //this.handleApplyBtn = this.handleApplyBtn.bind(this);
-    //this.handleCleanBtn = this.handleCleanBtn.bind(this);
-    //this.toggleDropdown = this.toggleDropdown.bind(this);
-    //this.handleNumberChange = this.handleNumberChange.bind(this);
-
-    this.updateResultText(); //если дропдаун подан с изначально непустыми значениями
+    this.updateResultText();
     this.addEventListeners();
 
   }
 
   addEventListeners(){
+
+    this.handleApplyClick = this.handleApplyClick.bind(this);
+    this.handleCleanClick = this.handleCleanClick.bind(this);
+    this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.handleNumberChange = this.handleNumberChange.bind(this);
     
     this.expandBtn.addEventListener("click", this.toggleDropdown);
-    //this.plusBtns.forEach((plusBtn) => {
-    // plusBtn.addEventListener("click", this.handleNumberChange);
-    //})
-    //this.minusBtns.forEach((minusBtn) => {
-    //  minusBtn.addEventListener("click", this.handleNumberChange);
-    //  const numberElem = minusBtn.nextElementSibling;
-    //  minusBtn.disabled = numberElem.textContent === "0" ? true : false;
-    //})
+    this.plusBtns.forEach((plusBtn) => {
+     plusBtn.addEventListener("click", this.handleNumberChange);
+    })
+    this.minusBtns.forEach((minusBtn) => {
+      minusBtn.addEventListener("click", this.handleNumberChange);
+      const numberElem = minusBtn.nextElementSibling;
+      minusBtn.disabled = numberElem.textContent === "0" ? true : false;
+    })
 
-    //if (this.cleanBtn) {
-    //  this.setCleanBtnVisibility();
-    // this.applyBtn.addEventListener("click", this.handleApplyClick);
-    //  this.clearBtn.addEventListener("click", this.handleCleanClick);
-    //}
+    if (this.cleanBtn) {
+      this.setCleanBtnVisibility();
+      this.applyBtn.addEventListener("click", this.handleApplyClick);
+      this.cleanBtn.addEventListener("click", this.handleCleanClick);
+    }
 
   }
 
@@ -156,6 +147,7 @@ class Dropdown {
 
     const currentItemKey = numberElem.dataset.key;
     this.updateGroupedListArray(plusMinus1, currentItemKey);
+    this.updateResultText();
     this.setCleanBtnVisibility();
 
   }
@@ -178,6 +170,7 @@ class Dropdown {
   handleApplyClick() {
 
     this.updateResultText();
+    this.toggleDropdown();
 
   }
 
@@ -198,11 +191,6 @@ class Dropdown {
         this.cleanBtn.classList.remove("dropdown__clean-btn_is-hidden");
       }
     }
-
-  }
-
-  initDropdown() {
-
 
   }
 
