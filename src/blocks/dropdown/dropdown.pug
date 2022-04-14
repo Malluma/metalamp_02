@@ -8,15 +8,17 @@ mixin dropdown(params)
       .dropdown__label-wrapper #[span(class="dropdown__label-span") #{label}] #[span(class="dropdown__sublabel-span") #{sublabel}]
       .dropdown__input-flex-wrap
         input.dropdown__input(class= "js-dropdown__input" readonly type= "text" value= initValue, placeholder= placeholder)
-        +btn-expand('js-dropdown__arrow-btn')
+        +btn-expand('js-dropdown__expand-btn')
       .dropdown__list.js-dropdown__list(class= listIsHidden, data-list= list)
         each obj, index in list
           .dropdown__item.js-dropdown__item
                 span.dropdown__item-text= obj.name
                 .dropdown__number-wrap
                   button.dropdown__counter-btn.js-dropdown__minus-btn(disabled type="button") -
-                  span.dropdown__number.js-dropdown__number(data-key= obj.declensions[0])= obj.number
+                  span.dropdown__number.js-dropdown__number(data-key= obj.declensions[0] data-notSeparately= obj.notSeparatelyMessage)= obj.number
                   button.dropdown__counter-btn.js-dropdown__plus-btn(type="button") +
+                  if obj.notSeparatelyMessage
+                    .dropdown__notSeparatelyMessage.js-dropdown__notSeparatelyMessage
         if (applyCleanBtns)
           .dropdown__list-footer
             .dropdown__list-footer-btn.js-dropdown__clean-btn Очистить

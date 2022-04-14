@@ -66,18 +66,18 @@
 
   }//input
 
-  &__arrow-btn{
-    color: $dark-shade-75;
-    font-size: 13px;
-    position: absolute;
-    left: -30px;
-  }
+  //&__expand-btn{
+  //  color: $dark-shade-75;
+  //  font-size: 13px;
+  //  position: absolute;
+  //  left: -30px;
+  //}
 
-  &__arrow-btn-flex-wrap{
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
+  //&__expand-btn-flex-wrap{
+  //  position: relative;
+  //  display: flex;
+  //  align-items: center;
+  //}
 
   &__list{
     border: 1px solid $dark-shade-50;
@@ -145,6 +145,19 @@
   &__clean-btn_is-hidden{
     visibility: hidden;
   }
+
+  &__notSeparatelyMessage{
+    padding: 0.5em;
+    background-color: red;
+    display: none;
+  }
+
+  &__notSeparatelyMessage_visible{
+    display: block;
+  }
+
+
+
 
 }
 

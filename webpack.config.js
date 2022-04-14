@@ -17,21 +17,36 @@ if (process.env.NODE_ENV === 'production') {
   mode = 'production';
 }
 
-const filename = ext => mode === 'development' ? `[name].${ext}` : `[name].[hash].${ext}`
+const filename = ext => mode === 'development' ? `[name].${ext}` : `[name].[contenthash].${ext}`
 
 module.exports = {
   mode: mode,
   entry: pagesPaths,
   output: {
-    filename: '[name].[contenthash].js',
+    filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: mode === 'development' ? `assets/[name][ext]` : `assets/[name][hash][ext]`,
     clean: true,
   },
   devtool: 'source-map',
   optimization: {
+    runtimeChunk: 'single',
     splitChunks: {
-      chunks: 'all'
+      chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0,
+      cacheGroups: {
+      vendor: {
+        test: /[\\/]node_modules[\\/]/,
+        name(module) {
+          // получает имя, то есть node_modules/packageName/not/this/part.js
+          // или node_modules/packageName
+          const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+
+          // имена npm-пакетов можно, не опасаясь проблем, использовать 
+          // в URL, но некоторые серверы не любят символы наподобие @
+          return `npm.${packageName.replace('@', '')}`;
+        },}}
     },
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()]
   },
@@ -41,8 +56,9 @@ module.exports = {
   },
   plugins: [
     ...pagesNames.map(page => new HTMLWebpackPlugin({
-      filename: mode === 'development' ? `${page}.html` : `${page}.[hash].html`,
+      filename: `${page}.html`,
       template: `${pagesDir}/${page}/${page}.pug`,
+      chunks: [page],
       minify: {
         collapseWhitespace: mode === 'production',
       }
