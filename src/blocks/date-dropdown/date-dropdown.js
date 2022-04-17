@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import Datepicker1Field from './Datepicker1Field-class';
-import Datepicker2Fields from './Datepicker2Fields-class';
+import Datepicker2Fields from './Datepicker2Fields';
 
 $(() => {
   //single date dropdown

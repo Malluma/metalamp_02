@@ -15,10 +15,10 @@ mixin dropdown(params)
                 span.dropdown__item-text= obj.name
                 .dropdown__number-wrap
                   button.dropdown__counter-btn.js-dropdown__minus-btn(disabled type="button") -
-                  span.dropdown__number.js-dropdown__number(data-key= obj.declensions[0] data-notSeparately= obj.notSeparatelyMessage)= obj.number
-                  button.dropdown__counter-btn.js-dropdown__plus-btn(type="button") +
+                  span.dropdown__number.js-dropdown__number(data-key= obj.declensions[0] data-notseparately= obj.notSeparatelyMessage)= obj.number
+                  button.dropdown__counter-btn.js-dropdown__plus-btn(type="button" data-notseparately= obj.notSeparatelyMessage) +
                   if obj.notSeparatelyMessage
-                    .dropdown__notSeparatelyMessage.js-dropdown__notSeparatelyMessage
+                    .dropdown__notSeparatelyMessage.js-dropdown__notSeparatelyMessage= obj.notSeparatelyMessage
         if (applyCleanBtns)
           .dropdown__list-footer
             .dropdown__list-footer-btn.js-dropdown__clean-btn Очистить

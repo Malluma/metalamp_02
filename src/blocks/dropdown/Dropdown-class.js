@@ -1,35 +1,40 @@
 class Dropdown {
 
-  constructor(htmlDropdown) {
+  constructor(dropdownHtml) {
 
-    this.htmlDropdown = htmlDropdown;
-    this.listHtml = this.htmlDropdown.querySelector(".js-dropdown__list");
-    this.expandBtn = this.htmlDropdown.querySelector(".js-dropdown__expand-btn");
-    this.input = this.htmlDropdown.querySelector(".js-dropdown__input");
-    this.plusBtns = this.htmlDropdown.querySelectorAll(".js-dropdown__plus-btn");
-    this.numberElems = this.htmlDropdown.querySelectorAll(".js-dropdown__number");
-    this.minusBtns = this.htmlDropdown.querySelectorAll(".js-dropdown__minus-btn");
-    this.applyBtn = this.htmlDropdown.querySelector('.js-dropdown__apply-btn');
-    this.cleanBtn = this.htmlDropdown.querySelector('.js-dropdown__clean-btn');
+    this.dropdownHtml = dropdownHtml;
+    this.listHtml = this.dropdownHtml.querySelector(".js-dropdown__list");
+    this.expandBtn = this.dropdownHtml.querySelector(".js-dropdown__expand-btn");
+    this.input = this.dropdownHtml.querySelector(".js-dropdown__input");
+    this.plusBtns = this.dropdownHtml.querySelectorAll(".js-dropdown__plus-btn");
+    this.numberElems = this.dropdownHtml.querySelectorAll(".js-dropdown__number");
+    this.minusBtns = this.dropdownHtml.querySelectorAll(".js-dropdown__minus-btn");
+    this.applyBtn = this.dropdownHtml.querySelector('.js-dropdown__apply-btn');
+    this.cleanBtn = this.dropdownHtml.querySelector('.js-dropdown__clean-btn');
     this.initValue = this.input.value;
+    this.notSeparatelyMessageHtml = undefined;
     this.groupedListArray = []
 
     this.createGroupedListArray();
     this.updateResultText();
+    this.bindMethods();
     this.addEventListeners();
 
   }
 
-  addEventListeners(){
-
+  bindMethods() {
     this.handleApplyClick = this.handleApplyClick.bind(this);
     this.handleCleanClick = this.handleCleanClick.bind(this);
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.handleNumberChange = this.handleNumberChange.bind(this);
-    
+    this.closeMessage = this.closeMessage.bind(this);
+  }
+
+  addEventListeners() {
+
     this.expandBtn.addEventListener("click", this.toggleDropdown);
     this.plusBtns.forEach((plusBtn) => {
-     plusBtn.addEventListener("click", this.handleNumberChange);
+      plusBtn.addEventListener("click", this.handleNumberChange);
     })
     this.minusBtns.forEach((minusBtn) => {
       minusBtn.addEventListener("click", this.handleNumberChange);
@@ -170,8 +175,41 @@ class Dropdown {
   handleApplyClick() {
 
     this.updateResultText();
-    this.toggleDropdown();
+    if (this.cantBeSeparateSelected()) {
+     this.toggleDropdown();
+    }
 
+  }
+
+  //- for example infants can't be selected separately
+  cantBeSeparateSelected() {
+  
+    for (let i = 0; i < this.numberElems.length; i++) {
+      const item = this.numberElems[i];
+      const notSeparatelyMessage = item.dataset.notseparately;
+      if (notSeparatelyMessage && item.textContent !== '0') {
+
+        const somethingElseIsSelected = this.groupedListArray.find((el, index) => el.number > 0 && el.key !== item.dataset.key)
+        if (!somethingElseIsSelected) {
+
+          const messageEl = item.parentElement.querySelector('.js-dropdown__notSeparatelyMessage');
+          messageEl.classList.add("dropdown__notSeparatelyMessage_visible");
+          messageEl.textContent = notSeparatelyMessage;
+          this.notSeparatelyMessageHtml = messageEl;
+          setTimeout(this.closeMessage, 3000);
+          return false;
+        }
+
+      }
+
+    }
+
+    return true;
+
+  }
+
+  closeMessage() {
+    this.notSeparatelyMessageHtml.classList.remove("dropdown__notSeparatelyMessage_visible");
   }
 
   setCleanBtnVisibility() {
