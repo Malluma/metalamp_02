@@ -5,10 +5,12 @@ class Datepicker2Fields {
 
   constructor(options) {
 
-    this.DateInput1 = options.startDateInput;
-    this.DateInput2 = options.endDateInput;
+    this.dateInput1 = options.startDateInput;
+    this.dateInput2 = options.endDateInput;
     this.airDatepicker = new AirDatepicker(`.${options.id}`,
       createAirDatepickerOptions(this.createClearBtn(), this.createApplyBtn(), this));
+    this.handleDate2Click = this.handleDate2Click.bind(this);
+    this.dateInput2.addEventListener('click', this.handleDate2Click)
 
   }
 
@@ -26,8 +28,8 @@ class Datepicker2Fields {
   }
 
   clearDateFields() {
-    this.DateInput1.value = '';
-    this.DateInput2.value = '';
+    this.dateInput1.value = '';
+    this.dateInput2.value = '';
   }
 
   createApplyBtn() {
@@ -36,11 +38,15 @@ class Datepicker2Fields {
       className: 'js-date-dropdown__applyBtn',
       onClick: (datepicker) => {
         const [startDate, endDate] = datepicker.selectedDates;
-        this.DateInput1.value = startDate.toLocaleDateString();
-        this.DateInput2.value = endDate.toLocaleDateString();
+        this.dateInput1.value = startDate.toLocaleDateString();
+        this.dateInput2.value = endDate.toLocaleDateString();
         datepicker.hide();
       }
     }
+  }
+
+  handleDate2Click(){
+    this.airDatepicker.show();
   }
 
 }

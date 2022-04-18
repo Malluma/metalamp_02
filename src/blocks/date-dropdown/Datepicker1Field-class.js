@@ -4,7 +4,7 @@ import {createAirDatepickerOptions} from './utilityForDatepickerClasses';
 class Datepicker1Field {
 
   constructor(options) {
-    this.DateInput = options.startEndDateInput;
+    this.dateInput = options.startEndDateInput;
     this.airDatepicker = new AirDatepicker(`.${options.id}`, 
       createAirDatepickerOptions(this.createClearBtn(), this.createApplyBtn(), this));
   }
@@ -23,7 +23,7 @@ class Datepicker1Field {
   }
 
   clearDateFields() {
-    this.DateInput.value = '';
+    this.dateInput.value = '';
   }
 
   createApplyBtn() {
@@ -39,7 +39,7 @@ class Datepicker1Field {
         startDate = startDate.toLocaleDateString('ru-RU', options).slice(0, -1);
         endDate = endDate.toLocaleDateString('ru-RU', options).slice(0, -1)
 
-        this.DateInput.value = `${startDate} - ${endDate}`;
+        this.dateInput.value = `${startDate} - ${endDate}`;
         datepicker.hide();
       }
     }
