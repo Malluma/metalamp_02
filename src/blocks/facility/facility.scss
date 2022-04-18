@@ -5,14 +5,23 @@
   color: $dark-shade-75;
   border-bottom: $dark-shade-10; 
   display: flex;
+  padding-top: 1.5em;
+  padding-bottom: 1.3em;
+  border-bottom: 1px solid $dark-shade-10;
 
   &__icon{
-    width: 3em;
-    height: 3em;
+    font-size: 2.8em;
+    padding-right: 0.35em;
+    
+    color: transparent;
+    background: $primaryGradient;
+    -webkit-background-clip: text;
+    background-clip: text;
   }
 
   &__type{
     font-weight: 700;
+    margin-bottom: 0.45em;
   }
 
 }
