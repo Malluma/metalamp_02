@@ -189,7 +189,7 @@ class Dropdown {
       const notSeparatelyMessage = item.dataset.notseparately;
       if (notSeparatelyMessage && item.textContent !== '0') {
 
-        const somethingElseIsSelected = this.groupedListArray.find((el, index) => el.number > 0 && el.key !== item.dataset.key)
+        const somethingElseIsSelected = this.groupedListArray.find((el) => el.number > 0 && el.key !== item.dataset.key)
         if (!somethingElseIsSelected) {
 
           const messageEl = item.parentElement.querySelector('.js-dropdown__notSeparatelyMessage');

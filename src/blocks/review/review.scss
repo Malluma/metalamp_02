@@ -1,0 +1,46 @@
+@import '../like-btn/like-btn.scss';
+
+.review{
+  
+  font-family: 'Montserrat';
+  font-size: 14px;
+  color: $dark-shade-75;
+
+  &__user{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.7em;
+
+    &-img{
+      margin-right: 0.6em;
+      width: 48px;
+      height: 48px;
+      border: 2px solid #FFFFFF;
+      box-sizing: border-box;
+      filter: drop-shadow(0px 10px 20px $dark-shade-10);
+      border-radius: 32px;
+
+    }
+    
+    &-name{
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  &__main{
+    padding-left: 0.27em;
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__likes{
+    margin-right: 1em;
+  }
+
+  &__content{
+    line-height: 24px;
+  }
+
+}
+

@@ -1,0 +1,40 @@
+.like-btn{
+  font-family: 'Montserrat';
+  font-size: 10px;
+  font-weight: normal;
+  border: 1px solid;
+  color: $primaryColor;
+  border-radius: 10px;
+  padding: 0.25em 0.9em 0.25em 0.4em;
+  min-width: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &_border-solid-color{
+    border-color: $primaryColor;
+  }
+
+  &_border-gradient{
+    //border-color: $primaryGradient;
+
+  }
+
+  &__icon{
+    height: 1em;
+    box-sizing: border-box;
+
+    &_gradient{
+      color: transparent;
+      background: $primaryGradient;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  
+    &_solid-color{
+      color: $primaryColor;
+    }
+  }
+
+}

@@ -4,6 +4,7 @@ include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/date-dropdown/date-dropdown.pug
 include ../../blocks/checkbox-list/checkbox-list.pug
 include ../../blocks/facility/facility.pug
+include ../../blocks/review/review.pug
 
 doctype html
 html(lang="ru")
@@ -14,74 +15,80 @@ html(lang="ru")
     title Form elements
   body
     +logo("form-elements__logo")
-    .content-wrapper
-      .text-fields
-        .form-elements__text-field
-          +text-field({label: "text field", sublabel:"Default", placeholder: "Email"})
-        .form-elements__text-field
-          +text-field({label:"text field", sublabel: "Hover/Focus", value: "This is pretty awesome", dateMasked: false, focus: true})
-        .form-elements__text-field
-          +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: false, applyCleanBtns: true,
-            list: [{name: "Взрослые", number: 0, declensions: ["гость", "гостя", "гостей"]},
-                   {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
-                   {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
-        .form-elements__text-field
-          +text-field({label: "masked text field", placeholder: "ДД.ММ.ГГГГ", positioningClass: "form-elements__text-field", dateMasked: true})
-        .form-elements__text-field
-          +date-dropdown({type: "double", label_1: "date dropdown", label_2: "date dropdown" })
-        .form-elements__text-field
-          +date-dropdown({type: "single", label_1: "filter date dropdown"})
-        .form-elements__text-field
-          +text-field({type: "subscription", label: "subscription text field", placeholder: "Email"})
-        .form-elements__checkbox
-          +checkbox-list({label: "checkbox buttons", list: [
-                    {label: 'Можно курить', id: 'canSmoke', checked: false}, 
-                    {label: 'Можно с питомцами', id: 'withPets', checked: true},
-                    {label: 'Можно пригласить гостей (до 10 человек)', id: guests10, checked: true}]})    
-        .form-elements__text-field-short
-          +checkbox-list({label: "rich checkbox buttons", type: "rich", list: [
-                    {label: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", id: "wideСorridor", checked: false},                                  
-                    {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера.", id: "assistantForTheDisabled", checked: false}]})
-        .form-elements__text-field
-         +date-dropdown({type: "double", label_1: "date dropdown 2", label_2: "date dropdown 2" })
-        .form-elements__text-field-short
-          +dropdown({label: "dropdown", sublabel:"Default", initValue: "удобства", expanded: false, applyCleanBtns: false,
-            list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},
-                   {name: "Кровати", number: 2, declensions: ["кровать", "кровати", "кроватей"]},
-                   {name: "Ванные комнаты", number: 1, declensions: ["ванная комната", "ванных комнаты", "ванных комнат"]}]})
-        .form-elements__text-field-short
-          +dropdown({label: "dropdown", sublabel:"Expanded", initValue: "удобства", expanded: true, applyCleanBtns: false,
-            list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},
-                   {name: "Кровати", number: 2, declensions: ["кровать", "кровати", "кроватей"]},
-                   {name: "Ванные комнаты", number: 1, declensions: ["ванная комната", "ванных комнаты", "ванных комнат"]}]})
-        .form-elements__expandable-checkbox
-          +checkbox-list({label: "expandable checkbox list", expandable: true, collapsed: true, list: [
-                    {label: "Завтрак", id: "breakfast", checked: false}, 
-                    {label: "Письменный стол", id: "desk", checked: true},
-                    {label: "Стул для кормления", id: "chairForFeeding", checked: true},
-                    {label: "Кроватка", id: "crib", checked: true},
-                    {label: "Телевизор", id: "tv", checked: false},                
-                    {label: "Шампунь", id: "shampoo", checked: false}]})
-        .form-elements__expandable-checkbox
-          +checkbox-list({label: "expandable checkbox list", expandable: true, list: [
-                    {label: "Завтрак", id: "breakfast", checked: false}, 
-                    {label: "Письменный стол", id: "desk", checked: true},
-                    {label: "Стул для кормления", id: "chairForFeeding", checked: true},
-                    {label: "Кроватка", id: "crib", checked: true},
-                    {label: "Телевизор", id: "tv", checked: false},                
-                    {label: "Шампунь", id: "shampoo", checked: false}]})
+    .form-elements
+      .columns
+        .column1
+          .form-elements__text-field
+            +text-field({label: "text field", sublabel:"Default", placeholder: "Email"})
+          .form-elements__text-field
+            +text-field({label:"text field", sublabel: "Hover/Focus", value: "This is pretty awesome", dateMasked: false, focus: true})
+          .form-elements__text-field
+            +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: false, applyCleanBtns: true,
+              list: [{name: "Взрослые", number: 0, declensions: ["гость", "гостя", "гостей"]},
+                    {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
+                    {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
+          .form-elements__text-field
+            +text-field({label: "masked text field", placeholder: "ДД.ММ.ГГГГ", positioningClass: "form-elements__text-field", dateMasked: true})
+          .form-elements__text-field
+            +date-dropdown({type: "double", label_1: "date dropdown", label_2: "date dropdown" })
+          .form-elements__text-field
+            +date-dropdown({type: "single", label_1: "filter date dropdown"})
+          .form-elements__text-field
+            +text-field({type: "subscription", label: "subscription text field", placeholder: "Email"})
+          .form-elements__checkbox
+            +checkbox-list({label: "checkbox buttons", list: [
+                      {label: "Можно курить", id: "canSmoke", checked: false}, 
+                      {label: "Можно с питомцами", id: "withPets", checked: true},
+                      {label: "Можно пригласить гостей (до 10 человек)", id: guests10, checked: true}]})    
+          .form-elements__text-field-short
+            +checkbox-list({label: "rich checkbox buttons", type: "rich", list: [
+                      {label: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", id: "wideСorridor", checked: false},                                  
+                      {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера.", id: "assistantForTheDisabled", checked: false}]})      
+          .form-elements__text-field-short
+            +dropdown({label: "dropdown", sublabel:"Default", initValue: "удобства", expanded: false, applyCleanBtns: false,
+              list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},
+                    {name: "Кровати", number: 2, declensions: ["кровать", "кровати", "кроватей"]},
+                    {name: "Ванные комнаты", number: 1, declensions: ["ванная комната", "ванных комнаты", "ванных комнат"]}]})
+          .form-elements__text-field-short
+            +dropdown({label: "dropdown", sublabel:"Expanded", initValue: "удобства", expanded: true, applyCleanBtns: false,
+              list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},
+                    {name: "Кровати", number: 2, declensions: ["кровать", "кровати", "кроватей"]},
+                    {name: "Ванные комнаты", number: 1, declensions: ["ванная комната", "ванных комнаты", "ванных комнат"]}]})
+          .form-elements__expandable-checkbox
+            +checkbox-list({label: "expandable checkbox list", expandable: true, collapsed: true, list: [
+                      {label: "Завтрак", id: "breakfast", checked: false}, 
+                      {label: "Письменный стол", id: "desk", checked: true},
+                      {label: "Стул для кормления", id: "chairForFeeding", checked: true},
+                      {label: "Кроватка", id: "crib", checked: true},
+                      {label: "Телевизор", id: "tv", checked: false},                
+                      {label: "Шампунь", id: "shampoo", checked: false}]})
+          .form-elements__expandable-checkbox
+            +checkbox-list({label: "expandable checkbox list", expandable: true, list: [
+                      {label: "Завтрак", id: "breakfast", checked: false}, 
+                      {label: "Письменный стол", id: "desk", checked: true},
+                      {label: "Стул для кормления", id: "chairForFeeding", checked: true},
+                      {label: "Кроватка", id: "crib", checked: true},
+                      {label: "Телевизор", id: "tv", checked: false},                
+                      {label: "Шампунь", id: "shampoo", checked: false}]})
+          .form-elements__text-field
+            +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true, applyCleanBtns: true,
+              list: [{name: "Взрослые", number: 0, declensions: ["гость", "гостя", "гостей"]},
+                    {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
+                    {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], 
+                    notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
+          .form-elements__text-field
+            +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true, applyCleanBtns: true,
+              list: [{name: "Взрослые", number: 2, declensions: ["гость", "гостя", "гостей"]},
+                    {name: "Дети", number: 1, declensions: ["гость", "гостя", "гостей"]},
+                    {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], 
+                    notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
+      .form-elements__footer
         .form-elements__facilities
           +facility({type: "Комфорт", name: "Шумопоглощающие стены", icon: "icon-insert_emoticon"})
           +facility({type: "Удобство", name: "Окно в каждой из спален", icon: "icon-location_city"})
-        .form-elements__text-field
-          +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true, applyCleanBtns: true,
-            list: [{name: "Взрослые", number: 0, declensions: ["гость", "гостя", "гостей"]},
-                   {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
-                   {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
-        .form-elements__text-field
-          +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true, applyCleanBtns: true,
-            list: [{name: "Взрослые", number: 2, declensions: ["гость", "гостя", "гостей"]},
-                   {name: "Дети", number: 1, declensions: ["гость", "гостя", "гостей"]},
-                   {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
+        .form-elements__review
+          +review({userImgSrc: require("../../assets/images/user.jpg"), userName: "Мурад Сарафанов", lastVisit: "5 дней назад", likes: "12", 
+            content: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+                  
             
     

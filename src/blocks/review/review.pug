@@ -1,0 +1,16 @@
+include ../like-btn/like-btn.pug
+
+mixin review(options)
+  - const {userImgSrc, userName, lastVisit, likes, content} = options;
+
+  .review
+    .review__user
+      img(class= "review__user-img" src= userImgSrc alt= `user ${userName}`)
+      .review__user-info
+        .review__user-name= userName
+        .review__user-last-visit= lastVisit
+    .review__main
+      .review__likes
+        +like-btn(likes)
+      .review__content= content
+    

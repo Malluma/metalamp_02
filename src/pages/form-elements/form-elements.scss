@@ -11,60 +11,53 @@
 @import '../../blocks/checkbox/checkbox.scss';
 @import '../../blocks/checkbox-list/checkbox-list.scss';
 @import '../../blocks/facility/facility.scss';
+@import '../../blocks/review/review.scss';
 
 body {
   margin: 0;
 
-  .form-elements__logo {
-    margin-top: 30px;
-    margin-left: 30px;
-  }
-
-  .content-wrapper {
-    display: flex;
-    justify-content: space-between;
+  .form-elements {
     margin-top: 72px;
     max-width: 1132.26px;
     margin-left: auto;
     margin-right: auto;
+
+    &__logo {
+      margin-top: 30px;
+      margin-left: 30px;
+    }
+    &__columns{
+      display: flex;
+      margin-bottom: 5rem;
+    }
+    &__text-field {
+      width: 320px;
+      margin-bottom: 20px;
+    }
+    &__text-field-short {
+      width: 266px;
+      margin-bottom: 20px;
+    }
+    &__expandable-checkbox {
+      width: 250px;
+      margin-bottom: 20px;
+    }
+    &__checkbox {
+      width: 13.875rem;
+      margin-bottom: 2.555rem;
+    }
+    &__footer{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__facilities{
+      width: 280px;
+      margin-bottom: 20px;
+    }
+    &__review{
+      width: 709px;
+    }
   }
 
-  .text-fields{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .form-elements__text-field {
-    width: 320px;
-    margin-bottom: 20px;
-  }
-
-  .form-elements__text-field-short {
-    width: 266px;
-    margin-bottom: 20px;
-  }
-
-  .form-elements__expandable-checkbox {
-    width: 250px;
-    margin-bottom: 20px;
-  }
-
-  .form-elements__facilities{
-    width: 280px;
-    margin-bottom: 20px;
-  }
-
-  .form-elemments-2dates-flex{
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .form-elements-dropdown-date{
-    width: 150px;
-  }
-
-  .form-elements__checkbox {
-    width: 13.875rem;
-    margin-bottom: 2.555rem;
-  }
 }
