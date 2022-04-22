@@ -1,8 +1,9 @@
-mixin like-btn(numberOfLikes, active=false, iconColor="gradient", borderColor= "solid-color")
-  - const iconColorClass = `like-btn__icon_${iconColor}`
-  - const borderColorClass = `like-btn_border-${borderColor}`
-  - const activeClass = active ? "active": ""
+mixin like-btn(options)
+  - const {numberOfLikes, active, iconColor, borderColor} = options
+  - const iconColorClass = active ? `like-btn__icon_${iconColor}` : "like-btn__icon_unactive"
+  - const borderColorClass = active ? `like-btn_border-${borderColor}` : "like-btn_border_unactive"
 
-  .like-btn(class= borderColorClass)
-    .like-btn__icon.icon-favorite(class= iconColorClass)
-    .like-btn__number= numberOfLikes
+  .like-btn(class = borderColorClass)
+    .like-btn__internal
+      .like-btn__icon.icon-favorite(class= iconColorClass)
+      .like-btn__number= numberOfLikes
