@@ -1,0 +1,8 @@
+mixin radio(name, value, checked)
+  .radio
+    label.radio__label
+      input.radio__hidden-input(type="radio", name=name, value=value, checked=checked)
+      .radio__visible-input
+        .radio__visible-input-internal
+      .radio__label-txt= value
+

@@ -26,8 +26,6 @@
     &:checked+.checkbox__visible-input {
       border-color: $primaryColor;
       background: no-repeat center url(./check-mark.svg);
-      //background: no-repeat center url(../blocks/checkbox/check-mark.svg);
-      //background: no-repeat center url(../../blocks/checkbox/check-mark.svg);
     }
 
     &:focus~.checkbox__label-flex-wrap{

@@ -5,5 +5,8 @@ mixin like-btn(options)
 
   .like-btn(class = borderColorClass)
     .like-btn__internal
-      .like-btn__icon.icon-favorite(class= iconColorClass)
+      if active
+        .like-btn__icon.icon-favorite(class= iconColorClass)
+      else
+        .like-btn__icon.icon-favorite_border(class= iconColorClass)
       .like-btn__number= numberOfLikes

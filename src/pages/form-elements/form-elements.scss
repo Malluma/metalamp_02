@@ -12,9 +12,12 @@
 @import '../../blocks/checkbox-list/checkbox-list.scss';
 @import '../../blocks/facility/facility.scss';
 @import '../../blocks/review/review.scss';
+@import '../../blocks/like-btn/like-btn.scss';
+@import '../../blocks/radio/radio.scss';
 
 body {
   margin: 0;
+  font-family: 'Montserrat';
 
   .form-elements {
     margin-top: 72px;
@@ -26,10 +29,20 @@ body {
       margin-top: 30px;
       margin-left: 30px;
     }
-    &__columns{
+    &__top{
       display: flex;
+      justify-content: space-between;
       margin-bottom: 5rem;
+
     }
+
+    &__block-title{
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
     &__text-field {
       width: 320px;
       margin-bottom: 20px;
@@ -57,6 +70,23 @@ body {
     }
     &__review{
       width: 709px;
+    }
+    
+    &__likes{
+      width: 90px;
+      &-flex-wrap{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &__radio-btns {
+      width: 13.875rem;
+      margin-bottom: 2.555rem;
+      &-flex-wrap{
+        display: flex;
+        gap: 1.2rem;
+      }
     }
   }
 

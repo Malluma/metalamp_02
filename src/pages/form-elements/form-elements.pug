@@ -5,6 +5,8 @@ include ../../blocks/date-dropdown/date-dropdown.pug
 include ../../blocks/checkbox-list/checkbox-list.pug
 include ../../blocks/facility/facility.pug
 include ../../blocks/review/review.pug
+include ../../blocks/like-btn/like-btn.pug
+include ../../blocks/radio/radio.pug
 
 doctype html
 html(lang="ru")
@@ -16,8 +18,8 @@ html(lang="ru")
   body
     +logo("form-elements__logo")
     .form-elements
-      .columns
-        .column1
+      .form-elements__top
+        .form-elements__top-column1
           .form-elements__text-field
             +text-field({label: "text field", sublabel:"Default", placeholder: "Email"})
           .form-elements__text-field
@@ -34,12 +36,7 @@ html(lang="ru")
           .form-elements__text-field
             +date-dropdown({type: "single", label_1: "filter date dropdown"})
           .form-elements__text-field
-            +text-field({type: "subscription", label: "subscription text field", placeholder: "Email"})
-          .form-elements__checkbox
-            +checkbox-list({label: "checkbox buttons", list: [
-                      {label: "Можно курить", id: "canSmoke", checked: false}, 
-                      {label: "Можно с питомцами", id: "withPets", checked: true},
-                      {label: "Можно пригласить гостей (до 10 человек)", id: guests10, checked: true}]})    
+            +text-field({type: "subscription", label: "subscription text field", placeholder: "Email"})    
           .form-elements__text-field-short
             +checkbox-list({label: "rich checkbox buttons", type: "rich", list: [
                       {label: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", id: "wideСorridor", checked: false},                                  
@@ -82,6 +79,22 @@ html(lang="ru")
                     {name: "Дети", number: 1, declensions: ["гость", "гостя", "гостей"]},
                     {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], 
                     notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
+        .form-elements__top-column2
+          .form-elements__checkbox
+            +checkbox-list({label: "checkbox buttons", list: [
+                      {label: "Можно курить", id: "canSmoke", checked: false}, 
+                      {label: "Можно с питомцами", id: "withPets", checked: true},
+                      {label: "Можно пригласить гостей (до 10 человек)", id: guests10, checked: true}]})
+          .form-elements__radio-btns
+            .form-elements__block-title Radio buttons
+            .form-elements__radio-btns-flex-wrap
+              +radio("sex", "Мужчина", true) 
+              +radio("sex", "Женщина", false)  
+          .form-elements__likes
+            .form-elements__block-title Like button
+            .form-elements__likes-flex-wrap
+              +like-btn({numberOfLikes: "2", active: false, iconColor: "gradient", borderColor: "solid-color"})
+              +like-btn({numberOfLikes: "12", active: true, iconColor: "gradient", borderColor: "solid-color"})  
       .form-elements__footer
         .form-elements__facilities
           +facility({type: "Комфорт", name: "Шумопоглощающие стены", icon: "icon-insert_emoticon"})
