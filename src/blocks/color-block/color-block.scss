@@ -1,9 +1,10 @@
 .color-block {
+  font-family: $font-family;
+  font-size: 19px;
+
 	display: flex;
 	justify-items: center;
 	align-items: center;
-	font-family: 'Montserrat';
-	font-size: 19px;
 	
 	&__name {
 		font-weight: bold;

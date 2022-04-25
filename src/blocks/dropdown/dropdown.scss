@@ -1,7 +1,10 @@
 .dropdown {
 
-  font-family: 'Montserrat';
+  font-family: $font-family;
+  color: $font-color;
+  background-color: $white;
   font-size: 12px;
+
   max-width: 320px;
 
   &__label {

@@ -1,7 +1,9 @@
 .like-btn {
-  font-family: 'Montserrat';
+  font-family: $font-family;
+  color: $font-color;
+  background-color: $white;
   font-size: 10px;
-  font-weight: normal;
+
   color: $primaryColor;
 
   border-radius: 10px;

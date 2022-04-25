@@ -2,9 +2,10 @@
 
 .review{
   
-  font-family: 'Montserrat';
+  font-family: $font-family;
+  color: $font-color;
+  background-color: $white;
   font-size: 14px;
-  color: $dark-shade-75;
 
   &__user{
     display: flex;

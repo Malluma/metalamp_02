@@ -1,0 +1,7 @@
+mixin toggle(value, checked)
+  .toggle
+    label.toggle__label
+      input.toggle__hidden-input(type="checkbox" role="switch" checked=checked)
+      .toggle__visible-input
+        .toggle__visible-input-internal
+      .toggle__label-txt= value

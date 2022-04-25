@@ -1,6 +1,7 @@
 .text-field {
 
-  font-family: 'Montserrat';
+  font-family: $font-family;
+  background: $background-color;
 
   &__label {
     display: block;
@@ -27,7 +28,6 @@
     font-size: 14px;
     display: block;
     margin: 0;
-    background: $white;
     border: 1px solid $dark-shade-25;
     border-radius: 4px;
     box-sizing: border-box;

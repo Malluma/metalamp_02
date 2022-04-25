@@ -7,6 +7,7 @@ include ../../blocks/facility/facility.pug
 include ../../blocks/review/review.pug
 include ../../blocks/like-btn/like-btn.pug
 include ../../blocks/radio/radio.pug
+include ../../blocks/toggle/toggle.pug
 
 doctype html
 html(lang="ru")
@@ -90,6 +91,11 @@ html(lang="ru")
             .form-elements__radio-btns-flex-wrap
               +radio("sex", "Мужчина", true) 
               +radio("sex", "Женщина", false)  
+          .form-elements__toggles
+            .form-elements__block-title Toggle
+            .form-elements__toggles-flex-wrap
+              +toggle("Получать спецпредложения", true) 
+              +toggle("Получать спецпредложения", false) 
           .form-elements__likes
             .form-elements__block-title Like button
             .form-elements__likes-flex-wrap

@@ -1,8 +1,10 @@
 .facility{
 
-  font-family: 'Montserrat';
+  font-family: $font-family;
+  color: $font-color;
+  background-color: $white;
   font-size: 14px;
-  color: $dark-shade-75;
+
   border-bottom: $dark-shade-10; 
   display: flex;
   padding-top: 1.5em;
