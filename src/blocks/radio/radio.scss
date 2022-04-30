@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .radio {
   font-family: $font-family;
   font-size: 14px;
@@ -21,8 +23,8 @@
   &__visible-input {
     border: 1px solid $dark-shade-25;
     border-radius: 50%;
-    width: 1.12em;
-    height: 1.12em;
+    width: 1.28em;
+    height: 1.28em;
     margin-right: 0.7em;
     display: flex;
     align-items: center;
@@ -30,8 +32,8 @@
 
     &-internal {
       border-radius: 50%;
-      width: 0.83em;
-      height: 0.83em;
+      width: 0.84em;
+      height: 0.84em;
       background: $white;
     }
 

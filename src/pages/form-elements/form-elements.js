@@ -1,6 +1,12 @@
 import './form-elements.scss';
 
-import textField from '../../blocks/text-field/text-field';
-import dropdown from '../../blocks/dropdown/dropdown';
-import dateDropdown from '../../blocks/date-dropdown/date-dropdown';
-import checkboxList from '../../blocks/checkbox-list/checkbox-list';
+import '../../blocks/dropdown/dropdown';
+import '../../blocks/date-dropdown/date-dropdown';
+import '../../blocks/checkbox-list/checkbox-list';
+import '../../blocks/facility/facility';
+import '../../blocks/like-btn/like-btn';
+import '../../blocks/radio/radio';
+import '../../blocks/rating/rating.js';
+import '../../blocks/review/review';
+import '../../blocks/text-field/text-field';
+import '../../blocks/toggle/toggle';

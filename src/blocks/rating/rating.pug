@@ -1,0 +1,9 @@
+mixin rating(name, rating, itemsNumber)
+  .rating
+    - let index = 0
+    while index < itemsNumber
+      input.rating__item(class = `${index<rating? "icon-star": "icon-star_border"}` type="radio" name= name)
+      //input.rating__item(type="radio" name= name)
+      - index++
+    
+      

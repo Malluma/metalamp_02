@@ -1,6 +1,7 @@
 /*@import "~normalize.css";*/
+@import '../../styles/variables';
 @import '../../styles/Montserrat.css';
 
 .html{
-	font-family: 'Montserrat';
+	font-family: $font-family;
 }

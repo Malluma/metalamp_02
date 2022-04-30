@@ -1,3 +1,4 @@
+import './checkbox-list.scss';
 import CheckboxList from './Checkbox-list-class';
 
 const checkboxLists = document.querySelectorAll(".js-checkbox-list");

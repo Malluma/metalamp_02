@@ -8,6 +8,7 @@ include ../../blocks/review/review.pug
 include ../../blocks/like-btn/like-btn.pug
 include ../../blocks/radio/radio.pug
 include ../../blocks/toggle/toggle.pug
+include ../../blocks/rating/rating.pug
 
 doctype html
 html(lang="ru")
@@ -101,6 +102,10 @@ html(lang="ru")
             .form-elements__likes-flex-wrap
               +like-btn({numberOfLikes: "2", active: false, iconColor: "gradient", borderColor: "solid-color"})
               +like-btn({numberOfLikes: "12", active: true, iconColor: "gradient", borderColor: "solid-color"})  
+          .form-elements__block-title Rate button
+          .form-elements__rating
+            +rating("form-elements__01", 4, 5)
+            +rating("form-elements__02", 5, 5)
       .form-elements__footer
         .form-elements__facilities
           +facility({type: "Комфорт", name: "Шумопоглощающие стены", icon: "icon-insert_emoticon"})

@@ -1,3 +1,6 @@
+@import '../../styles/variables';
+@import '../checkbox/checkbox.scss';
+
 .checkbox-list {
   font-family: $font-family;
   color: $dark-shade-100;

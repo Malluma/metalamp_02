@@ -1,3 +1,5 @@
+import './text-field.scss'
+
 import $ from "jquery";
 import "jquery-mask-plugin";
 

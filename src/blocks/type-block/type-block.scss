@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 @mixin font ($size, $weight: 400, $dark: 1) {
   font-size: $size;
   font-weight: $weight;
@@ -5,7 +7,6 @@
 }
 
 .type-block {
-  font-family: $font-family;
   display: flex;
 
   &__tag {

@@ -1,24 +1,9 @@
 @import '../../styles/variables.scss';
 @import '../../styles/Montserrat.css';
-@import '../../styles/brands-icons.css';
-@import '../../styles/material-icons.css';
-
-@import '../../blocks/btn-expand/btn-expand.scss';
-@import '../../blocks/btn-icon/btn-icon.scss';
-@import '../../blocks/text-field/text-field';
-@import '../../blocks/dropdown/dropdown.scss';
-@import '../../blocks/date-dropdown/date-dropdown.scss';
-@import '../../blocks/checkbox/checkbox.scss';
-@import '../../blocks/checkbox-list/checkbox-list.scss';
-@import '../../blocks/facility/facility.scss';
-@import '../../blocks/review/review.scss';
-@import '../../blocks/like-btn/like-btn.scss';
-@import '../../blocks/radio/radio.scss';
-@import '../../blocks/toggle/toggle.scss';
 
 body {
   margin: 0;
-  font-family: 'Montserrat';
+  font-family: $font-family;
 
   .form-elements {
     margin-top: 72px;
@@ -75,6 +60,7 @@ body {
     
     &__likes{
       width: 90px;
+      margin-bottom: 2.55rem;
       &-flex-wrap{
         display: flex;
         justify-content: space-between;
@@ -83,22 +69,31 @@ body {
 
     &__radio-btns {
       width: 13.875rem;
-      margin-bottom: 2.555rem;
+      margin-bottom: 2.55rem;
       &-flex-wrap{
         display: flex;
-        gap: 1.2rem;
+        gap: 1.3rem;
       }
     }
 
     &__toggles{
       width: 16.31rem;
-      margin-bottom: 2.555rem;
+      margin-bottom: 2.8rem;
       &-flex-wrap{
         display: flex;
         flex-direction: column;
         gap: 0.9em;
       }
     }  
+
+    &__rating{
+      font-size: 20px;
+      margin-left: 0.1em;
+      width: 16.31rem;
+      margin-bottom: 2.8rem;
+      display: flex;
+      gap: 1em;
+    }
   }
 
 }

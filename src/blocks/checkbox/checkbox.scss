@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .checkbox {
   
   font-family: $font-family;
@@ -6,13 +8,13 @@
   text-transform: none;
   color: $dark-shade-50;
   display: flex;
-  margin-bottom: 0.75em;
+  margin-bottom: 0.74em;
 
   &__visible-input {
     border: 1px solid $dark-shade-25;
     border-radius: 4px;
-    width: 1.25em;
-    height: 1.25em;
+    width: 1.28em;
+    height: 1.28em;
     margin-right: 0.7em;
     flex-shrink: 0;
   }
