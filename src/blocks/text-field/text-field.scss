@@ -2,8 +2,6 @@
 @import '../btn-icon/btn-icon.scss';
 
 .text-field {
-
-  font-family: $font-family;
   background: $background-color;
 
   &__label {
@@ -27,7 +25,7 @@
   }
 
   &__input {
-    font-family: 'Montserrat';
+    font-family: inherit;
     font-size: 14px;
     display: block;
     margin: 0;
@@ -36,7 +34,7 @@
     box-sizing: border-box;
     width: 100%;
     color: $dark-shade-75;
-    padding: 12px 15px;
+    padding: 12px 13px;
 
     &:hover,
     &:focus {

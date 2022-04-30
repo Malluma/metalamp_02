@@ -3,9 +3,6 @@
 @import './air-datepicker.scss';
 
 .date-dropdown {
-
-  font-family: $font-family;
-  background-color: $white;
   font-size: 14px;
 
   display: flex;
@@ -41,9 +38,11 @@
   }
 
   &__input-flex-wrap{
+    margin-top: 0.4em;
     display: flex; 
     align-items: center; 
     justify-content: center;
+    position: relative;
   }
 
   &__input.date-dropdown__double{

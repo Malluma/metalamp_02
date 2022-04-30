@@ -1,14 +1,9 @@
+@import '../../styles/variables';
 @import '../like-btn/like-btn.scss';
 
 .review{
-  
-  font-family: $font-family;
   color: $font-color;
-  background-color: $white;
   font-size: 14px;
-
-  @import '../../styles/variables';
-  @import '../like-btn/like-btn.scss';
 
   &__user{
     display: flex;
