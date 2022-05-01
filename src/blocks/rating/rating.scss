@@ -4,16 +4,8 @@
   margin: 0 0 1em 0;
   padding: 0;
   border: none;
-  //background-image: url(./star_border.svg);
-  //background-size: 1.3em auto;
-  //background-repeat: space;
-  //position: relative;
-  //width: 7.3em;
-  //height: 1.25em;
   display: flex;
   gap: 0;
-
-  @import '../../styles/variables';
 
   &__item{
     margin: 0;
@@ -22,20 +14,8 @@
     height: 1.2em;
     width: 1.2em;
     font-size: inherit;
-    //-webkit-appearance: none;
-    //-moz-appearance: none;
-    appearance: none;
-    //background-size: 1.25em auto;
-    //background-repeat: space;
-  
-    &:checked, &:hover{
-      //background-image: url(./star.svg);
-    }
-
-    &:hover ~ & {
-      //background-image: url(./star_border.svg);
-    }
-
-    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;  
   }
 }
