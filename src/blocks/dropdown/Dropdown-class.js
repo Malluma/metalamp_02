@@ -1,7 +1,6 @@
 class Dropdown {
 
   constructor(dropdownHtml) {
-
     this.dropdownHtml = dropdownHtml;
     this.listHtml = this.dropdownHtml.querySelector(".js-dropdown__list");
     this.expandBtn = this.dropdownHtml.querySelector(".js-dropdown__expand-btn");
@@ -61,7 +60,6 @@ class Dropdown {
     //по этому массиву подсчитываем сгруппированное количество (number) и формируем текст инпута каждый раз при нажатии кнопок + и -,
     // например: "3 гостей, 1 младенец"
     const listArray = JSON.parse(this.listHtml.dataset.list); //все пункты списка с количеством и склонениями
-
     for (const el of listArray) {
       const elementInGroupedArray = this.groupedListArray.find((elGrouped) => elGrouped.key === el.declensions[0])
       if (elementInGroupedArray) {

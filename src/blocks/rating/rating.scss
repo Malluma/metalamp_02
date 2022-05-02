@@ -10,12 +10,16 @@
   &__item{
     margin: 0;
     padding: 0;
-    color: $primaryColor;
     height: 1.2em;
     width: 1.2em;
     font-size: inherit;
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;  
+    appearance: none; 
+    
+    color: transparent;
+    background: $primaryGradient;
+    -webkit-background-clip: text;
+    background-clip: text;
   }
 }

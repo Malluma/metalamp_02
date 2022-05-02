@@ -1,8 +1,10 @@
 mixin rating(name, rating, itemsNumber)
   .rating.js-rating
     - let index = 0
+    - let checked = false
     while (index < itemsNumber)
-      input.rating__item.js-rating__item(class = `${index<rating? "icon-star": "icon-star_border"}` checked= `${index===(rating+1)}` type="radio" name= name value= index+1)
+      - checked = (index+1 === rating) ? true : false;
+      input.rating__item.js-rating__item(class = `${index<rating? "icon-star": "icon-star_border"}` checked= checked  type="radio" name= name value= index+1)
       - index++
     
       
