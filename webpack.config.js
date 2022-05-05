@@ -36,17 +36,23 @@ module.exports = {
       maxInitialRequests: Infinity,
       minSize: 0,
       cacheGroups: {
-      vendor: {
+      libs: {
         test: /[\\/]node_modules[\\/]/,
         name(module) {
-          // получает имя, то есть node_modules/packageName/not/this/part.js
-          // или node_modules/packageName
-          const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-
-          // имена npm-пакетов можно, не опасаясь проблем, использовать 
-          // в URL, но некоторые серверы не любят символы наподобие @
-          return `npm.${packageName.replace('@', '')}`;
-        },}}
+          // получает "packageName" из node_modules/packageName/not/this/part.js
+          // или из node_modules/packageName
+          const packageNameArr = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/);       
+          
+          if (packageNameArr !== null){
+            console.log(`name 1: npm.${packageNameArr[1].replace('@', '')}`)
+            return `npm.${packageNameArr[1].replace('@', '')}`;
+         } else {
+            //ситуация с css nouislider    
+            const moduleFileName = module.identifier().split('/').reduceRight((item) => item).match(/\w*/);        
+            return `npm.${moduleFileName[0]}`;
+          }
+     },
+    }}
     },
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()]
   },

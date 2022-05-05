@@ -39,6 +39,7 @@
 		"core-js-pure": "^3.20.2",
 		"jquery": "^3.6.0",
 		"jquery-mask-plugin": "^1.14.16",
-		"normalize.css": "^8.0.1"
+		"normalize.css": "^8.0.1",
+		"nouislider": "^15.6.0"
 	}
 }
