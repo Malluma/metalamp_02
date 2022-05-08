@@ -19,7 +19,6 @@ body {
       display: flex;
       justify-content: space-between;
       margin-bottom: 5rem;
-
     }
 
     &__block-title{
@@ -94,6 +93,11 @@ body {
       display: flex;
       gap: 1em;
     }
+
+    &__range-slider{
+      width: 16.56rem;
+    }
+
   }
 
 }

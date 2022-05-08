@@ -1,2 +1,7 @@
-mixin range-slider()
-  .range-slider.js-range-slider Range slider
+mixin range-slider(options)
+  - const {label, rangeStart, rangeEnd, min, max} = options;
+  .range-slider
+    .range-slider__label-wrap
+      .range-slider__label= label
+      .range-slider__range= `${new Intl.NumberFormat('ru-RU').format(rangeStart)}₽ - ${new Intl.NumberFormat('ru-RU').format(rangeEnd)}₽`
+    .range-slider__slider.js-range-slider__slider(data-options= options)

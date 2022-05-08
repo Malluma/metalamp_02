@@ -1,0 +1,43 @@
+
+/* Custom styles for noUiSlider*/
+
+.noUi-handle{
+  background: $secondaryGradient;
+  border: 4px $secondaryColor;
+  border-radius: 9px;
+  box-shadow: none;
+}
+
+.noUi-horizontal {
+  height: 5.5px;
+}
+
+.noUi-target {
+  background: $background-color;
+  border-radius: 3px;
+  border: 1px solid $dark-shade-25;
+  box-shadow: none;
+}
+
+.noUi-handle:before, .noUi-handle:after {
+  display: none;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 1.27em;
+  height: 1.27em;
+  border-radius: 50%;
+  border: 2px solid $background-color;
+  right: -1px;
+  top: -5px;
+}
+
+.noUi-connect {
+  background: $secondaryGradient;
+  height: 6px;
+  top: -1px;
+}
+
+.noUi-connects {
+  overflow: visible;
+}

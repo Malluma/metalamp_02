@@ -1,21 +1,9 @@
-//import noUiSlider from 'nouislider';
-//import 'nouislider/dist/nouislider.css';
-
-import * as noUiSlider from 'nouislider';
-//import 'nouislider/dist/nouislider.css';
-
+import 'nouislider/dist/nouislider.css';
 import './range-slider.scss';
+import RangeSlider from './RangeSlider-class.js';
 
-const rangeSliders = document.querySelectorAll('.js-range-slider');
+const rangeSliders = document.querySelectorAll('.js-range-slider__slider');
 
 rangeSliders.forEach((rangeSlider) => {
-  noUiSlider.create(rangeSlider, {
-    start: [20, 80],
-    connect: true,
-    range: {
-        'min': 0,
-        'max': 100
-    }
-  });
-  console.log(rangeSlider);
+  const rangeSliderInstance = new RangeSlider(rangeSlider);
 })

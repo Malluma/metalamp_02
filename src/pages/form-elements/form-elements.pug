@@ -108,7 +108,8 @@ html(lang="ru")
             +rating("form-elements__01", 4, 5)
             +rating("form-elements__02", 5, 5)
         .form-elements__top-column3
-          +range-slider()
+          .form-elements__range-slider
+            +range-slider({label: "Range slider", rangeStart: "5000", rangeEnd: "10000", min: "0", max: "15000"})
       .form-elements__footer
         .form-elements__facilities
           +facility({type: "Комфорт", name: "Шумопоглощающие стены", icon: "icon-insert_emoticon"})
