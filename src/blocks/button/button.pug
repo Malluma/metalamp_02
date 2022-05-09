@@ -1,0 +1,5 @@
+mixin button(options)
+  - const {text, type, submit, hover} = options
+  - const typeClass = `button__${type}`
+  button.button(class= typeClass)
+    .button__internal= text

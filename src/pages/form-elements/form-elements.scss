@@ -96,6 +96,19 @@ body {
 
     &__range-slider{
       width: 16.56rem;
+      margin-bottom: 30px;
+    }
+
+    &__buttons-double{
+      width: 224px;
+      margin-bottom: 30px;
+      display: flex;
+      gap: 19px;
+    }
+
+    &__buttons-single-long{
+      width: 320px;
+      margin-bottom: 40px;
     }
 
   }

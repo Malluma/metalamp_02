@@ -10,6 +10,7 @@ include ../../blocks/radio/radio.pug
 include ../../blocks/toggle/toggle.pug
 include ../../blocks/rating/rating.pug
 include ../../blocks/range-slider/range-slider.pug
+include ../../blocks/button/button.pug
 
 doctype html
 html(lang="ru")
@@ -110,6 +111,18 @@ html(lang="ru")
         .form-elements__top-column3
           .form-elements__range-slider
             +range-slider({label: "Range slider", rangeStart: "5000", rangeEnd: "10000", min: "0", max: "15000"})
+          .form-elements__block-title Buttons
+          .form-elements__buttons-double
+            +button({text: "Click me", type: "background"})
+            +button({text: "Click me", type: "background", hover: true})
+          .form-elements__buttons-double
+            +button({text: "Click me", type: "border"})
+            +button({text: "Click me", type: "border", hover: true})
+          .form-elements__buttons-double
+            +button({text: "Click me", type: "text-only"})
+            +button({text: "Click me", type: "text-only", hover: true})
+          .form-elements__buttons-single-long
+            +button({text: "Перейти к оплате", type: "background", submit: true})
       .form-elements__footer
         .form-elements__facilities
           +facility({type: "Комфорт", name: "Шумопоглощающие стены", icon: "icon-insert_emoticon"})

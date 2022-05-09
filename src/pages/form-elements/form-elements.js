@@ -11,3 +11,4 @@ import '../../blocks/review/review';
 import '../../blocks/text-field/text-field';
 import '../../blocks/toggle/toggle';
 import '../../blocks/range-slider/range-slider'
+import '../../blocks/button/button'
