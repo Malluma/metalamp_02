@@ -15,13 +15,14 @@ body {
       margin-top: 30px;
       margin-left: 30px;
     }
-    &__top{
+
+    &__top {
       display: flex;
       justify-content: space-between;
       margin-bottom: 5rem;
     }
 
-    &__block-title{
+    &__block-title {
       font-size: 12px;
       font-weight: bold;
       text-transform: uppercase;
@@ -32,35 +33,42 @@ body {
       width: 320px;
       margin-bottom: 20px;
     }
+
     &__text-field-short {
       width: 266px;
       margin-bottom: 20px;
     }
+
     &__expandable-checkbox {
       width: 250px;
       margin-bottom: 20px;
     }
+
     &__checkbox {
       width: 13.875rem;
       margin-bottom: 2.555rem;
     }
-    &__footer{
+
+    &__footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    &__facilities{
+
+    &__facilities {
       width: 280px;
       margin-bottom: 20px;
     }
-    &__review{
+
+    &__review {
       width: 709px;
     }
-    
-    &__likes{
+
+    &__likes {
       width: 90px;
       margin-bottom: 2.55rem;
-      &-flex-wrap{
+
+      &-flex-wrap {
         display: flex;
         justify-content: space-between;
       }
@@ -69,23 +77,25 @@ body {
     &__radio-btns {
       width: 13.875rem;
       margin-bottom: 2.55rem;
-      &-flex-wrap{
+
+      &-flex-wrap {
         display: flex;
         gap: 1.3rem;
       }
     }
 
-    &__toggles{
+    &__toggles {
       width: 16.31rem;
       margin-bottom: 2.8rem;
-      &-flex-wrap{
+
+      &-flex-wrap {
         display: flex;
         flex-direction: column;
         gap: 0.9em;
       }
-    }  
+    }
 
-    &__rating{
+    &__rating {
       font-size: 20px;
       margin-left: 0.1em;
       width: 16.31rem;
@@ -94,19 +104,20 @@ body {
       gap: 1em;
     }
 
-    &__range-slider{
+    &__range-slider {
       width: 16.56rem;
       margin-bottom: 30px;
     }
 
-    &__buttons-double{
-      width: 224px;
+    &__buttons-double {
+      width: 220px;
       margin-bottom: 30px;
       display: flex;
-      gap: 19px;
+      //justify-content: flex-start;
+      gap: 16px;
     }
 
-    &__buttons-single-long{
+    &__buttons-single-long {
       width: 320px;
       margin-bottom: 40px;
     }

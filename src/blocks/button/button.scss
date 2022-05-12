@@ -1,36 +1,77 @@
 @import '../../styles/variables';
 
 .button{
+  font-family: inherit;
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
   border: none;
   border-radius: 22px;
-  padding: 0;
+  padding: 0.18em;
+  width: 100%;
 
-  &__internal {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 22px;
-    padding: 1.1em 1.6em;
-
-    background: $background-color;
-    //background-color: red;
+  &:focus{
+    outline: none;
   }
 
   &__background{
     background: $primaryGradient;
     color: $background-color;
-    padding: 0.1em 0.15em;
-    
-  }
-
-  &__border{
-    background: $background-color;
-    border: 2px solid $primaryColor;
-    box-sizing: border-box;
-    //padding: 1.2em 1.6em;
+    &:hover, &:focus, &_hover{
+      opacity: 0.5;
+    } 
   }
   
+  &__border{
+    background: $primaryGradient;
+    color: $primaryColor;
+    &:hover, &:focus, &_hover{
+      background: $primaryGradient-50;
+    }
+  }
+
+  &__text-only{
+    width:fit-content;
+    background: none; 
+  }
+
+  &__align-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__icon{
+    font-size: 18px;
+    color: $background-color;
+    padding-right: 0.6em;
+    margin-top: 0.2em;
+    &_invisible-for-aligning{
+      opacity: 0;
+    }
+  }
+
+  &__internal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    padding: 1.05em 1.5em;
+
+    &-background{
+      background: inherit;
+    }
+    &-border{
+      background: $background-color;
+    }
+    &-text-only{
+      background: none;
+      color: $primaryColor;
+      padding: 0;
+      &:hover, &:focus, &_hover{
+        color: $dark-shade-50;
+      }
+    }   
+  }
+
 }

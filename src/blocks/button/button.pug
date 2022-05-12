@@ -1,5 +1,17 @@
 mixin button(options)
   - const {text, type, submit, hover} = options
-  - const typeClass = `button__${type}`
-  button.button(class= typeClass)
-    .button__internal= text
+  - const hoverClass = hover? `button__${type}_hover`: "";
+  - const internalHoverClass = hover? `button__internal-${type}_hover`: "";
+  - const typeClass = `button__${type} ${hoverClass}`
+  - const internalTypeClass = `button__internal-${type} ${internalHoverClass}`
+  - const submitIconClass = 'icon-arrow_forward';
+
+  if submit
+    button.button(class= typeClass)
+      .button__align-wrap
+        .button__icon.button__icon_invisible-for-aligning(class= submitIconClass)
+        .button__internal(class= internalTypeClass)= text
+        .button__icon.button__icon-visible(class= submitIconClass)
+  else
+    button.button(class= typeClass)
+      .button__internal(class= internalTypeClass)= text

@@ -21,5 +21,9 @@
     background: $primaryGradient;
     -webkit-background-clip: text;
     background-clip: text;
+
+    &:focus{
+      outline: none;
+    }
   }
 }
