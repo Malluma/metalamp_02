@@ -11,6 +11,7 @@ include ../../blocks/toggle/toggle.pug
 include ../../blocks/rating/rating.pug
 include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/button/button.pug
+include ../../blocks/pagination/pagination.pug
 
 doctype html
 html(lang="ru")
@@ -123,6 +124,9 @@ html(lang="ru")
             +button({text: "Click me", type: "text-only", hover: true})
           .form-elements__buttons-single-long
             +button({text: "Перейти к оплате", type: "background", submit: true})
+          .form-elements__block-title Pagination
+          .form-elements__pagination
+            +pagination()
       .form-elements__footer
         .form-elements__facilities
           +facility({type: "Комфорт", name: "Шумопоглощающие стены", icon: "icon-insert_emoticon"})
