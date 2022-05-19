@@ -10,14 +10,18 @@ $(() => {
 
     const currentElId = `js-air-datepicker_double${index}`;
     const $startDateInput = $(startDateInput);
+    const $hiddenDateInput = $startDateInput.prev();
     const $startDateLabel = $startDateInput.parent().parent();
     const $endDateLabel = $startDateLabel.next();
     const endDateInput = $endDateLabel.find('.js-date-dropdown__double-end')[0];
+    const hiddenDateInput = $hiddenDateInput.html();
+    //$hiddenDateInput.addClass(currentElId);
     $(startDateInput).addClass(currentElId);
     $(endDateInput).addClass(currentElId);
     const datepicker2FieldsInstance = new Datepicker2Fields({
       startDateInput: startDateInput,
       endDateInput: endDateInput,
+      hiddenDateInput: $hiddenDateInput.html(),
       id: currentElId
     });
 

@@ -37,6 +37,10 @@
     }
   }
 
+  &__input-hidden{
+    display: none;
+  }
+
   &__input-flex-wrap{
     margin-top: 0.4em;
     display: flex; 

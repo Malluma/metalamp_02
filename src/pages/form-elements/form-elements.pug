@@ -29,61 +29,21 @@ html(lang="ru")
             +text-field({label: "text field", sublabel:"Default", placeholder: "Email"})
           .form-elements__text-field
             +text-field({label:"text field", sublabel: "Hover / Focus", value: "This is pretty awesome", dateMasked: false, focus: true})
-          .form-elements__text-field
+          .form-elements__text-field-dropdown
             +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: false, applyCleanBtns: true,
               list: [{name: "Взрослые", number: 0, declensions: ["гость", "гостя", "гостей"]},
                     {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
                     {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
-          .form-elements__text-field
+          .form-elements__text-field-masked
             +text-field({label: "masked text field", placeholder: "ДД.ММ.ГГГГ", positioningClass: "form-elements__text-field", dateMasked: true})
           .form-elements__text-field
-            +date-dropdown({type: "double", label_1: "date dropdown", label_2: "date dropdown" })
+            +date-dropdown({type: "double", label_1: "date dropdown", label_2: "date dropdown", value_1: "19.08.2019", value_2: "23.08.2019" })
           .form-elements__text-field
-            +date-dropdown({type: "single", label_1: "filter date dropdown"})
+            +date-dropdown({type: "double", label_1: "date dropdown", label_2: "date dropdown", value_1: "23.08.2019" })
+          .form-elements__text-field
+            +date-dropdown({type: "single", label_1: "filter date dropdown", value_1: "19.08.2019", value_2: "23.08.2019"})
           .form-elements__text-field
             +text-field({type: "subscription", label: "subscription text field", placeholder: "Email"})    
-          .form-elements__text-field-short
-            +checkbox-list({label: "rich checkbox buttons", type: "rich", list: [
-                      {label: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", id: "wideСorridor", checked: false},                                  
-                      {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера.", id: "assistantForTheDisabled", checked: false}]})      
-          .form-elements__text-field-short
-            +dropdown({label: "dropdown", sublabel:"Default", initValue: "удобства", expanded: false, applyCleanBtns: false,
-              list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},
-                    {name: "Кровати", number: 2, declensions: ["кровать", "кровати", "кроватей"]},
-                    {name: "Ванные комнаты", number: 1, declensions: ["ванная комната", "ванных комнаты", "ванных комнат"]}]})
-          .form-elements__text-field-short
-            +dropdown({label: "dropdown", sublabel:"Expanded", initValue: "удобства", expanded: true, applyCleanBtns: false,
-              list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},
-                    {name: "Кровати", number: 2, declensions: ["кровать", "кровати", "кроватей"]},
-                    {name: "Ванные комнаты", number: 1, declensions: ["ванная комната", "ванных комнаты", "ванных комнат"]}]})
-          .form-elements__expandable-checkbox
-            +checkbox-list({label: "expandable checkbox list", expandable: true, collapsed: true, list: [
-                      {label: "Завтрак", id: "breakfast", checked: false}, 
-                      {label: "Письменный стол", id: "desk", checked: true},
-                      {label: "Стул для кормления", id: "chairForFeeding", checked: true},
-                      {label: "Кроватка", id: "crib", checked: true},
-                      {label: "Телевизор", id: "tv", checked: false},                
-                      {label: "Шампунь", id: "shampoo", checked: false}]})
-          .form-elements__expandable-checkbox
-            +checkbox-list({label: "expandable checkbox list", expandable: true, list: [
-                      {label: "Завтрак", id: "breakfast", checked: false}, 
-                      {label: "Письменный стол", id: "desk", checked: true},
-                      {label: "Стул для кормления", id: "chairForFeeding", checked: true},
-                      {label: "Кроватка", id: "crib", checked: true},
-                      {label: "Телевизор", id: "tv", checked: false},                
-                      {label: "Шампунь", id: "shampoo", checked: false}]})
-          .form-elements__text-field
-            +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true, applyCleanBtns: true,
-              list: [{name: "Взрослые", number: 0, declensions: ["гость", "гостя", "гостей"]},
-                    {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
-                    {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], 
-                    notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
-          .form-elements__text-field
-            +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true, applyCleanBtns: true,
-              list: [{name: "Взрослые", number: 2, declensions: ["гость", "гостя", "гостей"]},
-                    {name: "Дети", number: 1, declensions: ["гость", "гостя", "гостей"]},
-                    {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], 
-                    notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
         .form-elements__top-column2
           .form-elements__checkbox
             +checkbox-list({label: "checkbox buttons", list: [
@@ -127,6 +87,52 @@ html(lang="ru")
           .form-elements__block-title Pagination
           .form-elements__pagination
             +pagination()
+      .form-elements__middle
+        .form-elements__top-column1
+          .form-elements__text-field-short
+            +dropdown({label: "dropdown", sublabel:"Default", initValue: "удобства", expanded: false, applyCleanBtns: false,
+              list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},
+                    {name: "Кровати", number: 2, declensions: ["кровать", "кровати", "кроватей"]},
+                    {name: "Ванные комнаты", number: 1, declensions: ["ванная комната", "ванных комнаты", "ванных комнат"]}]})
+          .form-elements__text-field-short
+            +dropdown({label: "dropdown", sublabel:"Expanded", initValue: "удобства", expanded: true, applyCleanBtns: false,
+              list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},
+                    {name: "Кровати", number: 2, declensions: ["кровать", "кровати", "кроватей"]},
+                    {name: "Ванные комнаты", number: 1, declensions: ["ванная комната", "ванных комнаты", "ванных комнат"]}]})
+          .form-elements__expandable-checkbox
+            +checkbox-list({label: "expandable checkbox list", expandable: true, collapsed: true, list: [
+                      {label: "Завтрак", id: "breakfast", checked: false}, 
+                      {label: "Письменный стол", id: "desk", checked: true},
+                      {label: "Стул для кормления", id: "chairForFeeding", checked: true},
+                      {label: "Кроватка", id: "crib", checked: true},
+                      {label: "Телевизор", id: "tv", checked: false},                
+                      {label: "Шампунь", id: "shampoo", checked: false}]})
+          .form-elements__expandable-checkbox
+            +checkbox-list({label: "expandable checkbox list", expandable: true, list: [
+                      {label: "Завтрак", id: "breakfast", checked: false}, 
+                      {label: "Письменный стол", id: "desk", checked: true},
+                      {label: "Стул для кормления", id: "chairForFeeding", checked: true},
+                      {label: "Кроватка", id: "crib", checked: true},
+                      {label: "Телевизор", id: "tv", checked: false},                
+                      {label: "Шампунь", id: "shampoo", checked: false}]})
+        .form-elements__top-column2
+          .form-elements__text-field
+            +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true, applyCleanBtns: true,
+              list: [{name: "Взрослые", number: 0, declensions: ["гость", "гостя", "гостей"]},
+                    {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
+                    {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], 
+                    notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
+          .form-elements__text-field-short
+            +checkbox-list({label: "rich checkbox buttons", type: "rich", list: [
+                      {label: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", id: "wideСorridor", checked: false},                                  
+                      {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера.", id: "assistantForTheDisabled", checked: false}]})      
+        .form-elements__top-column3
+          .form-elements__text-field
+            +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true, applyCleanBtns: true,
+              list: [{name: "Взрослые", number: 2, declensions: ["гость", "гостя", "гостей"]},
+                    {name: "Дети", number: 1, declensions: ["гость", "гостя", "гостей"]},
+                    {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], 
+                    notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
       .form-elements__footer
         .form-elements__facilities
           +facility({type: "Комфорт", name: "Шумопоглощающие стены", icon: "icon-insert_emoticon"})

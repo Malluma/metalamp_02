@@ -7,7 +7,8 @@ body {
 
   .form-elements {
     margin-top: 72px;
-    max-width: 1132.26px;
+    //max-width: 1132.26px;
+    max-width: 1185px;
     margin-left: auto;
     margin-right: auto;
 
@@ -17,6 +18,12 @@ body {
     }
 
     &__top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5rem;
+    }
+
+    &__middle{
       display: flex;
       justify-content: space-between;
       margin-bottom: 5rem;
@@ -32,6 +39,16 @@ body {
     &__text-field {
       width: 320px;
       margin-bottom: 20px;
+    }
+
+    &__text-field-dropdown {
+      width: 320px;
+      margin-bottom: 23px;
+    }
+
+    &__text-field-masked {
+      width: 320px;
+      margin-bottom: 40px;
     }
 
     &__text-field-short {

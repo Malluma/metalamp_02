@@ -86,7 +86,6 @@ class Pagination {
 
   addEllipsisAndLastNumber(lastNum, insert, lastGroupNum){
     const diff = Math.abs((lastGroupNum - lastNum));
-    console.log(`addEllipsisAndLastNumber lastNum: ${lastNum}, insert: ${insert}, lastGroupNum: ${lastGroupNum}. DIFF: ${diff}`)
     if (diff === 1) {//add 4th number without ellipsis
       this.createListItem({text: lastNum, insert: insert});
     }else if (diff > 1) {
@@ -169,7 +168,6 @@ class Pagination {
   }
 
   updateDescription(){
-    console.log("updateDescription")
     const activePage = this.getPageValue(this.activeItem);
     const itemsOnPageFrom = 12 * (activePage-1) + 1;
     const itemsOnPageTo = 12 * activePage;
