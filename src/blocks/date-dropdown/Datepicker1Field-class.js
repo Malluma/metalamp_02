@@ -1,5 +1,5 @@
 import AirDatepicker from 'air-datepicker';
-import {createAirDatepickerOptions} from './utilityForDatepickerClasses';
+import {createAirDatepickerOptions, formatDateStr} from './utilityForDatepickerClasses';
 
 class Datepicker1Field {
 
@@ -31,18 +31,59 @@ class Datepicker1Field {
       content: 'применить',
       className: 'js-date-dropdown__applyBtn',
       onClick: (datepicker) => {
-        let [startDate, endDate] = datepicker.selectedDates;
-        const options = {
-          month: 'short',
-          day: 'numeric'
-        };
-        startDate = startDate.toLocaleDateString('ru-RU', options).slice(0, -1);
-        endDate = endDate.toLocaleDateString('ru-RU', options).slice(0, -1)
 
-        this.dateInput.value = `${startDate} - ${endDate}`;
         datepicker.hide();
+
       }
     }
+  }
+
+  createSelectedDatesArray(){
+
+    const result = [];
+    const inputValue = this.dateInput.dataset.value;
+   
+    if (inputValue){
+      const [startDate, endDate] = inputValue.split('-');
+      const startDateFromLocal = startDate ? formatDateStr(startDate) : '';
+      const endDateFromLocal = endDate ? formatDateStr(endDate) : '';
+    
+      if (startDateFromLocal){
+        result.push(new Date(startDateFromLocal));
+      }
+      if (endDateFromLocal){
+        result.push(new Date(endDateFromLocal));
+      }
+    }
+   
+    return result;
+  }
+
+  getDateFormatOptionForPluginCalendar(){
+
+    function dateFormat(date){
+
+      function formatSingleDate(dateToFormat){
+        let resultDate = dateToFormat ? dateToFormat.toLocaleDateString('ru-RU', options) : '';
+        const lastSymbolIsDot = resultDate.length > 1 && resultDate[resultDate.length-1] === '.';
+        if (lastSymbolIsDot){
+          resultDate = resultDate.slice(0, -1);  
+        }
+        return resultDate;
+      }
+
+      const options = {month: 'short', day: 'numeric'};
+      let [startDate, endDate] = date;
+      
+      const startDateFormat = formatSingleDate(startDate);
+      const endDateFormat = formatSingleDate(endDate);
+      
+      return `${startDateFormat} - ${endDateFormat}`  
+     
+    }
+
+    return dateFormat;
+
   }
 
 }

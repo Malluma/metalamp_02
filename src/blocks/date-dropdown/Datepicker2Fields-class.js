@@ -1,32 +1,38 @@
 import AirDatepicker from 'air-datepicker';
-import {createAirDatepickerOptions, onSelectAirDP} from './utilityForDatepickerClasses';
+import {createAirDatepickerOptions, formatDateStr} from './utilityForDatepickerClasses';
 
 class Datepicker2Fields {
 
   constructor(options) {
 
-    console.log(`START CLASS CONSTRUCTOR ${options.id}`);
     this.dateInput1 = options.startDateInput;
     this.dateInput2 = options.endDateInput;
-    //this.onlySecondDate = false;
-    //this.firstStart = true;
+    this.onlySecondDateAtStart = this.dateInput1.value === '' && this.dateInput2.value;
 
     this.airDatepicker = new AirDatepicker(`.${options.id}`,
       createAirDatepickerOptions(this.createClearBtn(), this.createApplyBtn(), this));
 
+    this.connectGivenDatesWithAirDatepicker();
+    
+    this.handleDate2Click = this.handleDate2Click.bind(this);
+    this.dateInput2.addEventListener('click', this.handleDate2Click)
+
+  }
+
+  connectGivenDatesWithAirDatepicker(){
+    if(this.onlyEndDateIsGiven()) {
+      this.airDatepicker.setFocusDate(formatDateStr(this.dateInput2.value));
+    }
+
+    //to fix circle if only 1 date is given
     if (this.airDatepicker.selectedDates.length === 1) {
       this.airDatepicker.setFocusDate(this.airDatepicker.selectedDates[0]);
       if (this.dateInput2) {
         this.onlySecondDate = true;
       } 
-
     }
-
     
     if(this.dateInput1.value && this.dateInput2.value) {
-      console.log('class constructor airDatepicker.selectedDates 1')
-      console.log(this.airDatepicker.selectedDates)
-      console.log(`this.dateInput1.value: ${this.dateInput1.value} this.dateInput2.value: ${this.dateInput2.value}`)
       const [startDate, endDate] = this.airDatepicker.selectedDates;
       const selectedDates = [];
       if (startDate){
@@ -39,19 +45,7 @@ class Datepicker2Fields {
       if (selectedDates.length > 0) {
         this.airDatepicker.selectDate(selectedDates);
       }
-      console.log('class constructor airDatepicker.selectedDates 2')
-      console.log(this.airDatepicker.selectedDates)
-      console.log(`this.dateInput1.value: ${this.dateInput1.value} this.dateInput2.value: ${this.dateInput2.value}`)
-
     }
-  
-
-    
-    this.handleDate2Click = this.handleDate2Click.bind(this);
-    this.dateInput2.addEventListener('click', this.handleDate2Click)
-
-    //this.firstStart = false;
-    console.log(`END CLASS CONSTRUCTOR ${options.id}`)
   }
 
   createClearBtn() {
@@ -78,7 +72,6 @@ class Datepicker2Fields {
       className: 'js-date-dropdown__applyBtn',
       onClick: (datepicker) => {
         const [startDate, endDate] = datepicker.selectedDates;
-        //console.log(`start date: ${startDate} end date: ${endDate}`)
         if (startDate){
           this.dateInput1.value = startDate.toLocaleDateString();
         }
@@ -92,6 +85,32 @@ class Datepicker2Fields {
 
   handleDate2Click(){
     this.airDatepicker.show();
+  }
+
+  createSelectedDatesArray(){
+    const result = [];
+    const inputStart = this.dateInput1;
+    const inputEnd = this.dateInput2;
+
+    if (this.onlyEndDateIsGiven()){
+      return undefined;
+    }
+
+    const startDateFromLocal = (inputStart && inputStart.value) ? formatDateStr(inputStart.value) : '';
+    const endDateFromLocal =  (inputEnd && inputEnd.value) ? formatDateStr(inputEnd.value) : '';
+  
+    if (startDateFromLocal){
+      result.push(startDateFromLocal);
+    }
+    if (endDateFromLocal){
+      result.push(endDateFromLocal);
+    }
+  
+    return result;
+  }
+
+  onlyEndDateIsGiven(){
+    return this.dateInput1.value === '' && this.dateInput2.value;
   }
 
 }
