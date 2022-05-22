@@ -13,6 +13,7 @@ import '../../blocks/toggle/toggle';
 import '../../blocks/range-slider/range-slider';
 import '../../blocks/button/button';
 import initPagination from '../../blocks/pagination/pagination';
+import '../../blocks/bullet-list/bullet-list';
 
 const itemsOnPage = 12;
 const itemsTotalAmount = 180;

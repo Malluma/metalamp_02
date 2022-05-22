@@ -6,27 +6,20 @@ body {
   font-family: $font-family;
 
   .form-elements {
-    margin-top: 72px;
-    //max-width: 1132.26px;
-    max-width: 1185px;
+    margin-top: 70px;
+    max-width: 1132.26px;
+    //max-width: 1185px;
     margin-left: auto;
     margin-right: auto;
+
+    &__main{
+      display: flex;
+      gap: 7.9rem;
+    }
 
     &__logo {
       margin-top: 30px;
       margin-left: 30px;
-    }
-
-    &__top {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 5rem;
-    }
-
-    &__middle{
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 5rem;
     }
 
     &__block-title {
@@ -34,6 +27,13 @@ body {
       font-weight: bold;
       text-transform: uppercase;
       margin-bottom: 1rem;
+    }
+
+    &__block-title-bullet-list{
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
     }
 
     &__text-field {
@@ -51,19 +51,58 @@ body {
       margin-bottom: 40px;
     }
 
+    &__date-dropdown-double {
+      width: 320px;
+      margin-bottom: 40px;
+    }
+
+    &__filter-dropdown{
+      width: 267px;
+      margin-bottom: 42px;
+    }
+
     &__text-field-short {
       width: 266px;
       margin-bottom: 20px;
     }
 
+    &__subscription {
+      width: 266px;
+      margin-bottom: 99px;
+    }
+
+    &__open-dropdown-column1 {
+      width: 266px;
+      margin-bottom: 55px;
+    }
+
+    &__open-dropdown-column2 {
+      width: 320px;
+      margin-bottom: 99px;
+    }
+
+    &__open-dropdown-column3 {
+      width: 320px;
+      margin-bottom: 100px;
+    }
+
     &__expandable-checkbox {
       width: 250px;
-      margin-bottom: 20px;
+      margin-bottom: 49px;
+
+      &_open {
+        margin-bottom: 82px;
+      }
     }
 
     &__checkbox {
       width: 13.875rem;
-      margin-bottom: 2.555rem;
+      margin-bottom: 2.6rem;
+    }
+
+    &__rich-checkbox {
+      width: 260px;
+      margin-bottom: 20px;
     }
 
     &__footer {
@@ -74,6 +113,7 @@ body {
 
     &__facilities {
       width: 280px;
+      margin-left: 5px;
       margin-bottom: 20px;
     }
 
@@ -93,7 +133,7 @@ body {
 
     &__radio-btns {
       width: 13.875rem;
-      margin-bottom: 2.55rem;
+      margin-bottom: 2.5rem;
 
       &-flex-wrap {
         display: flex;
@@ -116,31 +156,49 @@ body {
       font-size: 20px;
       margin-left: 0.1em;
       width: 16.31rem;
-      margin-bottom: 2.8rem;
+      margin-bottom: 11rem;
       display: flex;
       gap: 1em;
     }
 
     &__range-slider {
       width: 16.56rem;
-      margin-bottom: 30px;
+      margin-bottom: 45px;
     }
 
     &__buttons-double {
-      width: 220px;
-      margin-bottom: 30px;
+      width: 218px;
+      margin-bottom: 29px;
       display: flex;
-      //justify-content: flex-start;
+      gap: 20px;
+    }
+
+    &__buttons-double-no-border {
+      width: 150px;
+      margin-bottom: 29px;
+      display: flex;
       gap: 16px;
+      //background: red;
     }
 
     &__buttons-single-long {
       width: 320px;
-      margin-bottom: 40px;
+      margin-bottom: 39px;
     }
 
     &__pagination{
       width: 350px;
+      margin-bottom: 236px;
+    }
+
+    &__bullet-list{
+      width: 260px;
+    }
+
+    &__columns2-3-main{
+      display: flex;
+      margin-bottom: 212px;
+      gap: 4.5rem;
     }
 
   }
