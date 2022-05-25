@@ -1,13 +1,15 @@
 include ../btn-expand/btn-expand.pug
 
 mixin dropdown(params)
-  - const { label, sublabel, initValue, expanded, placeholder, list, applyCleanBtns } = params;
+  - const { label, sublabel, initValue, expanded, placeholder, list, applyCleanBtns, roundedBottomCorners } = params;
   - const listIsHidden = expanded ? "" : "dropdown__list_is-hidden";
+  - const focus = expanded ? "dropdown__input_focus" : "";
+  - const roundedBottomCornersClass = roundedBottomCorners && !expanded ? "dropdown__input_rounded-bottom-corners" : ""
   .dropdown(class= "js-dropdown")
     label.dropdown__label
       .dropdown__label-wrapper #[span(class="dropdown__label-span") #{label}] #[span(class="dropdown__sublabel-span") #{sublabel}]
       .dropdown__input-flex-wrap
-        input.dropdown__input(class= "js-dropdown__input" readonly type= "text" value= initValue, placeholder= placeholder)
+        input.dropdown__input(class= `js-dropdown__input ${roundedBottomCornersClass} ${focus}` readonly type= "text" value= initValue, placeholder= placeholder data-roundedBottomCorners= `${roundedBottomCorners}`)
         +btn-expand('js-dropdown__expand-btn')
       .dropdown__list.js-dropdown__list(class= listIsHidden, data-list= list)
         each obj, index in list

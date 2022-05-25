@@ -1,0 +1,18 @@
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+
+mixin room-search(options)
+  form.room-search
+    .room-search__title Найдём номера под ваши пожелания
+    .room-search__arrival-departure
+      +date-dropdown({type: "double", label_1: "прибытие", label_2: "выезд" })
+    .room-search__guests
+      +dropdown({label: "гости", initValue: "Сколько гостей", expanded: false, applyCleanBtns: true, roundedBottomCorners: true,
+        list: [{name: "Взрослые", number: 0, declensions: ["гость", "гостя", "гостей"]},
+              {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
+              {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
+    .room-search__submit
+      +button({text: "Подобрать номер", type: "background", submit: true})
+
+

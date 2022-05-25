@@ -5,6 +5,7 @@ class Dropdown {
     this.listHtml = this.dropdownHtml.querySelector(".js-dropdown__list");
     this.expandBtn = this.dropdownHtml.querySelector(".js-dropdown__expand-btn");
     this.input = this.dropdownHtml.querySelector(".js-dropdown__input");
+    this.roundedBottomCorners = this.input.dataset.roundedbottomcorners;
     this.plusBtns = this.dropdownHtml.querySelectorAll(".js-dropdown__plus-btn");
     this.numberElems = this.dropdownHtml.querySelectorAll(".js-dropdown__number");
     this.minusBtns = this.dropdownHtml.querySelectorAll(".js-dropdown__minus-btn");
@@ -27,6 +28,7 @@ class Dropdown {
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.handleNumberChange = this.handleNumberChange.bind(this);
     this.closeMessage = this.closeMessage.bind(this);
+    this.handlePageClickToCloseDropdown = this.handlePageClickToCloseDropdown.bind(this);
   }
 
   addEventListeners() {
@@ -83,7 +85,18 @@ class Dropdown {
   }
 
   toggleDropdown() {
+  
     this.listHtml.classList.toggle("dropdown__list_is-hidden");
+    if (this.roundedBottomCorners === "true"){
+      this.input.classList.toggle("dropdown__input_rounded-bottom-corners");
+    }
+
+    if (!this.listHtml.classList.contains('dropdown__list_is-hidden')){
+      document.addEventListener('click', this.handlePageClickToCloseDropdown)
+    }
+
+    this.input.classList.remove('dropdown__input_focus');
+
   }
 
   updateGroupedListArray(number, currentItemKey) {
@@ -175,6 +188,17 @@ class Dropdown {
     this.updateResultText();
     if (this.cantBeSeparateSelected()) {
      this.toggleDropdown();
+    }
+
+  }
+
+  handlePageClickToCloseDropdown(e){
+
+    const dropdownWithinBoundaries = e.composedPath().includes(this.dropdownHtml);
+  
+    if ( ! dropdownWithinBoundaries ) {
+      this.toggleDropdown();
+      document.removeEventListener("click", this.handlePageClickToCloseDropdown);
     }
 
   }

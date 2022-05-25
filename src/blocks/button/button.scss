@@ -7,7 +7,7 @@
   text-transform: uppercase;
   border: none;
   border-radius: 22px;
-  padding: 0.16em;
+  padding: 0.12em 0.35em 0.2em 0em;
   width: 100%;
 
   &:focus{
@@ -17,6 +17,7 @@
   &__background{
     background: $primaryGradient;
     color: $background-color;
+    padding: 0.12em 0.35em 0.2em 0em;
     &:hover, &:focus, &_hover{
       opacity: 0.5;
     } 
@@ -25,6 +26,7 @@
   &__border{
     background: $primaryGradient;
     color: $primaryColor;
+    padding: 0.16em;
     &:hover, &:focus, &_hover{
       background: $primaryGradient-50;
     }
@@ -44,7 +46,7 @@
   &__icon{
     font-size: 18px;
     color: $background-color;
-    padding-right: 0.6em;
+    padding-right: 0.5em;
     margin-top: 0.2em;
     &_invisible-for-aligning{
       opacity: 0;
@@ -56,7 +58,6 @@
     align-items: center;
     justify-content: center;
     border-radius: 22px;
-    //padding: 1.05em 1.5em;
     padding: 1.05em 0.6em;
 
     &-background{

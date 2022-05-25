@@ -10,7 +10,8 @@ html(lang="ru")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Colors & Type
   body
-    +logo('color-and-type__logo')
+    .color-and-type__logo
+      +logo()
     .content-wrapper
       .color-blocks
         +color-block('Dark Shade 100%', '#1F2041', 'dark-shade-100', 'colors-and-type__color-block')

@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+@import '../../styles/Montserrat.css';
+
+body{
+  margin: 0;
+  font-family: $font-family;
+
+  .cards{
+
+    margin-top: 70px;
+    max-width: 1132.26px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__logo {
+      margin-top: 30px;
+      margin-left: 30px;
+    }
+
+    &__columns{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__room-search{
+      width: 23.75rem;
+    }
+
+
+
+  }
+}

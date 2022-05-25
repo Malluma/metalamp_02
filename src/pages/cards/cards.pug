@@ -1,0 +1,20 @@
+include ../../blocks/logo/logo.pug
+include ../../blocks/room-search/room-search.pug
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Cards
+  body
+    .cards__logo
+      +logo()
+    .cards
+      .cards__columns
+        .cards__column1
+          .cards__room-search
+            +room-search()
+        .cards__column2
+        .cards__column3

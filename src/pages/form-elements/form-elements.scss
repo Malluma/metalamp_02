@@ -8,7 +8,6 @@ body {
   .form-elements {
     margin-top: 70px;
     max-width: 1132.26px;
-    //max-width: 1185px;
     margin-left: auto;
     margin-right: auto;
 
@@ -73,17 +72,24 @@ body {
 
     &__open-dropdown-column1 {
       width: 266px;
-      margin-bottom: 55px;
+      //margin-bottom: 55px;
+      margin-bottom: 20px;
+
+      &_expanded{
+        position: relative;
+        z-index: 99;
+        margin-bottom: 172px;
+      }
     }
 
     &__open-dropdown-column2 {
       width: 320px;
-      margin-bottom: 99px;
+      margin-bottom: 256px;
     }
 
     &__open-dropdown-column3 {
       width: 320px;
-      margin-bottom: 100px;
+      margin-bottom: 257px;
     }
 
     &__expandable-checkbox {
@@ -178,7 +184,6 @@ body {
       margin-bottom: 29px;
       display: flex;
       gap: 16px;
-      //background: red;
     }
 
     &__buttons-single-long {
