@@ -1,8 +1,8 @@
 @import '../../styles/variables';
 
 .room-search{
-
-  padding: 2.35em 1.8em 1.8em 1.8em;
+  
+  padding: 2.5em 1.8em 1.85em 1.8em;
   box-shadow: $card-shadow;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -11,7 +11,8 @@
   &__title{
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 0.95em;
+    margin: 0;
+    margin-bottom: 0.98em;
   }
 
   &__arrival-departure{

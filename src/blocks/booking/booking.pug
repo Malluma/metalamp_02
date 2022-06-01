@@ -1,0 +1,42 @@
+include ../button/button.pug
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown/dropdown.pug
+
+mixin booking(options)
+  - const {number, roomType, price, discount, extraServiceFee, dates, guests} = options
+  - const priceStr = new Intl.NumberFormat('ru-RU').format(price)
+  - const discountStr = new Intl.NumberFormat('ru-RU').format(discount)
+  - const extraServiceFeeStr = new Intl.NumberFormat('ru-RU').format(extraServiceFee)
+  
+  form.booking.js-booking(data-price= price data-discount= discount data-extraServiceFee= extraServiceFee)
+    .booking__head
+      .booking__room
+        .booking__room-number
+          span.booking__room-number-sign №
+          span.booking__room-number-digit= `  ${number}`
+        span.booking__room-type= `${roomType}`
+      .booking__price= `${priceStr}₽ ` 
+        span.booking__price-per-day в сутки
+    .booking__dates
+      +date-dropdown(dates)
+    .booking__guests
+      +dropdown(guests)
+    .booking__cost
+      .js-booking__cost-calc
+      .js-booking__cost-sum
+    .booking__service-charge
+      .booking__service-charge-text
+        .booking__service-charge-label= `Сбор за услуги: скидка ${discountStr}₽` 
+        .booking__service-charge-i i
+      .booking__service-charge-sum 0₽
+    .booking__service-charge.booking__service-charge_2
+      .booking__service-charge-text
+        .booking__service-charge-label Сбор за дополнительные услуги 
+        .booking__service-charge-i i
+      .booking__service-charge-sum= `${extraServiceFeeStr}₽`
+    .booking__total
+      .booking__total-text Итого
+      .booking__total-dots
+      .booking__total-sum.js-booking__total-sum
+    .booking__submit
+      +button({text: "Забронировать", type: "background", submit: true}) 

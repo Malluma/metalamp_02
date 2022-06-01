@@ -7,7 +7,7 @@ mixin button(options)
   - const submitIconClass = 'icon-arrow_forward';
 
   if submit
-    button.button(class= typeClass)
+    button.button(class= typeClass type= 'submit')
       .button__align-wrap
         .button__icon.button__icon_invisible-for-aligning(class= submitIconClass)
         .button__internal(class= internalTypeClass)= text

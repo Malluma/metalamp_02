@@ -1,5 +1,7 @@
-@import '../../styles/variables.scss';
 @import '../../styles/Montserrat.css';
+@import '../../styles/variables.scss';
+
+$card-width: 23.75rem;
 
 body{
   margin: 0;
@@ -23,7 +25,18 @@ body{
     }
 
     &__room-search{
-      width: 23.75rem;
+      width: $card-width;
+      margin-bottom: 2.4rem;
+    }
+
+    &__registration{
+      width: $card-width;
+      margin-bottom: 2rem;
+    }
+
+    &__booking{
+      width: $card-width;
+      margin-bottom: 2.4rem;
     }
 
 

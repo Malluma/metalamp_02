@@ -1,8 +1,8 @@
-import './date-dropdown.scss';
-
 import $ from 'jquery';
 import Datepicker1Field from './Datepicker1Field-class';
 import Datepicker2Fields from './Datepicker2Fields-class';
+
+import './date-dropdown.scss';
 
 $(() => {
   //single date dropdown

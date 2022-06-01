@@ -1,10 +1,10 @@
+include ../button/button.pug
 include ../date-dropdown/date-dropdown.pug
 include ../dropdown/dropdown.pug
-include ../button/button.pug
 
 mixin room-search(options)
   form.room-search
-    .room-search__title Найдём номера под ваши пожелания
+    h2.room-search__title Найдём номера под ваши пожелания
     .room-search__arrival-departure
       +date-dropdown({type: "double", label_1: "прибытие", label_2: "выезд" })
     .room-search__guests

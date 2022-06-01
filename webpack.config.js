@@ -32,27 +32,26 @@ module.exports = {
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {
-      chunks: 'all',
+      //chunks: 'all',
       maxInitialRequests: Infinity,
       minSize: 0,
       cacheGroups: {
-      libs: {
+        node_modules: {
         test: /[\\/]node_modules[\\/]/,
+        chunks: 'all',
         name(module) {
           // получает "packageName" из node_modules/packageName/not/this/part.js
           // или из node_modules/packageName
           const packageNameArr = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/);       
-          
           if (packageNameArr !== null){
-            console.log(`name 1: npm.${packageNameArr[1].replace('@', '')}`)
-            return `npm.${packageNameArr[1].replace('@', '')}`;
+            //console.log(`name 1: npm.${packageNameArr[1].replace('@', '')}`)
+            return `vendors/${packageNameArr[1].replace('@', '')}`;
          } else {
             //ситуация с css nouislider    
             const moduleFileName = module.identifier().split('/').reduceRight((item) => item).match(/\w*/);        
-            return `npm.${moduleFileName[0]}`;
-          }
-     },
-    }}
+            return `vendors/${moduleFileName[0]}`;
+          }},}
+  }
     },
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()]
   },
@@ -65,6 +64,7 @@ module.exports = {
       filename: `${page}.html`,
       template: `${pagesDir}/${page}/${page}.pug`,
       chunks: [page],
+      inject: 'body',
       minify: {
         collapseWhitespace: mode === 'production',
       }

@@ -6,7 +6,7 @@ function createAirDatepickerOptions(clearBtn, applyBtn, localDatepicker) {
   const selectedDatesArray = localDatepicker.createSelectedDatesArray();
  
   let startDate = (selectedDatesArray && selectedDatesArray.length > 0) ? selectedDatesArray[0] : '';
-  if (selectedDatesArray === undefined){//only dateEnd is given at first start
+  if (selectedDatesArray === undefined && localDatepicker.dateInput2.value){//only dateEnd is given at first start
     startDate = formatDateStr(localDatepicker.dateInput2.value);
   }
 
@@ -17,8 +17,6 @@ function createAirDatepickerOptions(clearBtn, applyBtn, localDatepicker) {
     range: true,
     dynamicRange: true,
     moveToOtherMonthsOnSelect: false,
-    startDate: startDate,
-    selectedDates: selectedDatesArray,
     navTitles: {
       days: 'MMMM yyyy',
       months: 'yyyy',
@@ -27,11 +25,18 @@ function createAirDatepickerOptions(clearBtn, applyBtn, localDatepicker) {
     prevHtml: "<div class ='icon-arrow_back'></div>",
     nextHtml: "<div class ='icon-arrow_forward'></div>",
     onSelect: (dp) => onSelectAirDP(dp, localDatepicker),
-    onShow: (dp) => onSelectAirDP(dp, localDatepicker)
+    onShow: (dp) => onSelectAirDP(dp, localDatepicker),
+    onHide: (isFinished) => onHideAirDP(isFinished, localDatepicker)
   }
 
   if (singleDropdown){
     options.dateFormat = localDatepicker.getDateFormatOptionForPluginCalendar();
+  }
+  if (selectedDatesArray !== undefined){
+    options.selectedDates = selectedDatesArray;
+  }
+  if (startDate){
+    options.startDate = startDate;
   }
 
   return options;
@@ -74,6 +79,37 @@ function onSelectAirDP({datepicker}, localDatepicker) {
         localDatepicker.dateInput2.value = endDate.toLocaleDateString();
       }
     }
+  }
+
+}
+
+function onHideAirDP(isFinished, localDatepicker) {
+
+  if (!isFinished){
+    return;
+  }
+  
+  if (localDatepicker.dontSetInputDatesFromPrevDates){
+    localDatepicker.dontSetInputDatesFromPrevDates = false;
+    return;
+  }
+
+  setInputDatesFromPrevDates(localDatepicker.airDatepicker, localDatepicker);
+
+}
+
+function setInputDatesFromPrevDates(airDP, localDatepicker){
+
+  localDatepicker.setInputDatesFromPrev();
+  const selectedDates = localDatepicker.createSelectedDatesArray();
+
+  const airDPSelectedDatesCopy = [... airDP.selectedDates];
+  airDPSelectedDatesCopy.forEach((selectedDate) => {
+    airDP.unselectDate(selectedDate);
+  })
+
+  if (selectedDates !== undefined){
+    airDP.selectDate(selectedDates);
   }
 
 }

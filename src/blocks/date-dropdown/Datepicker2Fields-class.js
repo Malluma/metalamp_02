@@ -7,6 +7,7 @@ class Datepicker2Fields {
 
     this.dateInput1 = options.startDateInput;
     this.dateInput2 = options.endDateInput;
+    this.setPrevInputDates();
     this.onlySecondDateAtStart = this.dateInput1.value === '' && this.dateInput2.value;
 
     this.airDatepicker = new AirDatepicker(`.${options.id}`,
@@ -16,7 +17,18 @@ class Datepicker2Fields {
     
     this.handleDate2Click = this.handleDate2Click.bind(this);
     this.dateInput2.addEventListener('click', this.handleDate2Click)
+    this.dontSetInputDatesFromPrevDates = false;
 
+  }
+
+  setPrevInputDates(){
+    this.prevDate1 = this.dateInput1.value;
+    this.prevDate2 = this.dateInput2.value;
+  }
+
+  setInputDatesFromPrev(){
+    this.dateInput1.value = this.prevDate1;
+    this.dateInput2.value = this.prevDate2;
   }
 
   connectGivenDatesWithAirDatepicker(){
@@ -71,6 +83,7 @@ class Datepicker2Fields {
       content: 'применить',
       className: 'js-date-dropdown__applyBtn',
       onClick: (datepicker) => {
+
         const [startDate, endDate] = datepicker.selectedDates;
         if (startDate){
           this.dateInput1.value = startDate.toLocaleDateString();
@@ -78,7 +91,14 @@ class Datepicker2Fields {
         if (endDate) {
           this.dateInput2.value = endDate.toLocaleDateString();
         }
+
+        this.setPrevInputDates();
+
+        //to help to catch date change in other blocks
+        this.dateInput1.dispatchEvent(new Event('change')); 
+        this.dontSetInputDatesFromPrevDates = true;  
         datepicker.hide();
+        
       }
     }
   }
@@ -104,6 +124,10 @@ class Datepicker2Fields {
     }
     if (endDateFromLocal){
       result.push(endDateFromLocal);
+    }
+
+    if (!startDateFromLocal && !endDateFromLocal){
+      return undefined;
     }
   
     return result;

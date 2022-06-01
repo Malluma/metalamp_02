@@ -1,18 +1,18 @@
-include ../../blocks/logo/logo.pug
-include ../../blocks/text-field/text-field.pug
-include ../../blocks/dropdown/dropdown.pug
-include ../../blocks/date-dropdown/date-dropdown.pug
-include ../../blocks/checkbox-list/checkbox-list.pug
-include ../../blocks/facility/facility.pug
-include ../../blocks/review/review.pug
-include ../../blocks/like-btn/like-btn.pug
-include ../../blocks/radio/radio.pug
-include ../../blocks/toggle/toggle.pug
-include ../../blocks/rating/rating.pug
-include ../../blocks/range-slider/range-slider.pug
-include ../../blocks/button/button.pug
-include ../../blocks/pagination/pagination.pug
 include ../../blocks/bullet-list/bullet-list.pug
+include ../../blocks/button/button.pug
+include ../../blocks/checkbox-list/checkbox-list.pug
+include ../../blocks/date-dropdown/date-dropdown.pug
+include ../../blocks/dropdown/dropdown.pug
+include ../../blocks/facility/facility.pug
+include ../../blocks/like-btn/like-btn.pug
+include ../../blocks/logo/logo.pug
+include ../../blocks/pagination/pagination.pug
+include ../../blocks/radio/radio.pug
+include ../../blocks/range-slider/range-slider.pug
+include ../../blocks/rating/rating.pug
+include ../../blocks/review/review.pug
+include ../../blocks/text-field/text-field.pug
+include ../../blocks/toggle/toggle.pug
 
 doctype html
 html(lang="ru")
@@ -37,7 +37,7 @@ html(lang="ru")
                     {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
                     {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
           .form-elements__text-field-masked
-            +text-field({label: "masked text field", placeholder: "ДД.ММ.ГГГГ", positioningClass: "form-elements__text-field", dateMasked: true})      
+            +text-field({label: "masked text field", placeholder: "ДД.ММ.ГГГГ", dateMasked: true})      
           .form-elements__date-dropdown-double
             +date-dropdown({type: "double", label_1: "date dropdown", label_2: "date dropdown", value_2: "19.08.2019" })
           .form-elements__filter-dropdown 
@@ -45,12 +45,12 @@ html(lang="ru")
           .form-elements__subscription
             +text-field({type: "subscription", label: "subscription text field", placeholder: "Email"})
           .form-elements__open-dropdown-column1
-            +dropdown({label: "dropdown", sublabel:"Default", initValue: "удобства", expanded: false, applyCleanBtns: false,
+            +dropdown({label: "dropdown", sublabel:"Default", initValue: "Удобства", expanded: false, applyCleanBtns: false,
               list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},
                     {name: "Кровати", number: 2, declensions: ["кровать", "кровати", "кроватей"]},
                     {name: "Ванные комнаты", number: 0, declensions: ["ванная комната", "ванных комнаты", "ванных комнат"]}]})
           .form-elements__open-dropdown-column1.form-elements__open-dropdown-column1_expanded
-            +dropdown({label: "dropdown", sublabel:"Expanded", initValue: "удобства", expanded: true, applyCleanBtns: false,
+            +dropdown({label: "dropdown", sublabel:"Expanded", initValue: "Удобства", expanded: true, applyCleanBtns: false,
               list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},
                     {name: "Кровати", number: 2, declensions: ["кровать", "кровати", "кроватей"]},
                     {name: "Ванные комнаты", number: 0, declensions: ["ванная комната", "ванных комнаты", "ванных комнат"]}]})
@@ -117,7 +117,7 @@ html(lang="ru")
               .form-elements__buttons-double
                 +button({text: "Click me", type: "background"})
                 +button({text: "Click me", type: "background", hover: true})
-              .form-elements__buttons-double
+              .form-elements__buttons-double.form-elements__buttons-double_border
                 +button({text: "Click me", type: "border"})
                 +button({text: "Click me", type: "border", hover: true})
               .form-elements__buttons-double-no-border
