@@ -1,0 +1,92 @@
+@import '../../styles/variables';
+
+.room{
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: $card-shadow;
+  border-radius: 4px;
+
+  &__description{
+    padding: 1em 1.1em 1.1em 1.2em;
+    box-sizing: border-box;
+  }
+
+  &__img{
+    width: 100%;
+    max-height: 9.4em;
+    object-fit: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  &__head{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.7em;
+    margin-bottom: 0.6em;
+    border-bottom: 1px solid $dark-shade-10;
+  }
+
+  &__number-type{
+    font-weight: 700;
+    letter-spacing: -3px;
+    display: flex;
+  }
+
+  &__number{
+    margin-right: 0.1em;
+    &-sign{
+      font-size: 14px;
+      margin-right: 2px;
+    }
+
+    &-digit{
+      font-size: 19px;
+      letter-spacing: normal;
+    }
+  
+  }
+
+  &__type{
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: normal;
+    color: $primaryColor;
+    align-self: flex-end; 
+    margin-bottom: 0.1em;
+  }
+
+  &__price{
+    font-size: 14px;
+    font-weight: 700;
+    color: $dark-shade-50;
+    align-items: flex-end;
+    align-self: flex-end;
+    margin-bottom: 0.1em;
+
+    &-per-day{
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+
+  &__rating{
+    font-size: 20px;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__reviews{
+    font-size: 14px;
+    color: $dark-shade-50;
+    align-self: center;
+    &-number{
+      font-weight: 700;
+    }
+  }
+
+}

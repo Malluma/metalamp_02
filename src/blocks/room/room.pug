@@ -1,0 +1,24 @@
+include ../rating/rating.pug
+
+mixin room(options)
+  - const {number, roomType, price, otzyvy, reviews, roomImgSrc } = options
+  - const priceStr = new Intl.NumberFormat('ru-RU').format(price)
+  
+  article.room
+    img(class= "room__img" src= roomImgSrc alt= `room ${number}`)
+    .room__description
+      .room__head
+        .room__number-type
+          .room__number
+            span.room__number-sign №
+            span.room__number-digit= `  ${number}`
+          span.room__type= `${roomType}`
+        .room__price= `${priceStr}₽ ` 
+          span.room__price-per-day в сутки
+      .room__rating
+        +rating(`room__number`, 5, 5)
+        .room__reviews
+          span.room__reviews-number= reviews
+          span.room__reviews-txt  Отзывов
+          
+        

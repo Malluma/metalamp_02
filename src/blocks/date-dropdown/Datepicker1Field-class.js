@@ -4,13 +4,25 @@ import {createAirDatepickerOptions, formatDateStr} from './utilityForDatepickerC
 class Datepicker1Field {
 
   constructor(options) {
+
     this.dateInput = options.startEndDateInput;
     this.dateInputValue = this.dateInput.dataset.value;
+    this.alwaysShow = this.dateInput.dataset.alwaysshow;
     this.setPrevInputDates();
     this.dontSetInputDatesFromPrevDates = false;
 
     this.airDatepicker = new AirDatepicker(`.${options.id}`, 
       createAirDatepickerOptions(this.createClearBtn(), this.createApplyBtn(), this));
+    
+    if (this.alwaysShow){
+      this.makeAlwaysShownCalendar() 
+    }
+  }
+
+  makeAlwaysShownCalendar(){
+    this.airDatepicker.show();
+    this.dateInput.classList.add('date-dropdown__input-hidden');
+    this.dateInput.nextElementSibling.classList.add('date-dropdown__input-hidden');
   }
 
   setPrevInputDates(){
