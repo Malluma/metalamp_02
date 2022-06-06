@@ -1,11 +1,14 @@
 include ../rating/rating.pug
+include ../carousel/carousel.pug
 
 mixin room(options)
-  - const {number, roomType, price, otzyvy, reviews, roomImgSrc } = options
+  - const {number, roomType, price, otzyvy, reviews, roomImages, rating } = options
   - const priceStr = new Intl.NumberFormat('ru-RU').format(price)
   
   article.room
-    img(class= "room__img" src= roomImgSrc alt= `room ${number}`)
+    //img(class= "room__img" src= roomImgSrc alt= `room ${number}`)
+    .room__images
+      +carousel({items:roomImages})
     .room__description
       .room__head
         .room__number-type
@@ -16,7 +19,7 @@ mixin room(options)
         .room__price= `${priceStr}₽ ` 
           span.room__price-per-day в сутки
       .room__rating
-        +rating(`room__number`, 5, 5)
+        +rating(`room__number`, rating.rating, rating.itemsNumber)
         .room__reviews
           span.room__reviews-number= reviews
           span.room__reviews-txt  Отзывов

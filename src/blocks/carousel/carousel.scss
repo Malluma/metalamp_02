@@ -1,0 +1,69 @@
+@import '../../styles/variables';
+
+.carousel{
+  display: flex;
+  align-items: flex-end;
+  border-radius: inherit;
+  overflow: hidden;
+  max-height: inherit;
+  position: relative;
+  
+  &__btn{
+    font-size: 14px;
+    color: $background-color;
+    border: none;
+    background: none;
+    position: absolute;
+    z-index: 99;
+    top: 44%;
+
+    &:hover{
+      font-size: 16px;  
+    }
+    
+
+    &-back{
+      transform: rotate(90deg);
+      left: 3%;
+    }
+
+    &-forward{
+      transform: rotate(270deg);
+      right: 3%;
+    }
+  }
+
+  &__item{
+    width: 100%;
+    object-fit: cover;
+    transition: 0.4s all ease-in-out;
+  }
+
+  &__track{
+    display: flex;
+    position: absolute;
+    z-index: 99;
+    bottom: 10%;
+    right: 6%;
+
+    &-item{
+      width: 0.45em;
+      height: 0.45em;
+      border: 1px solid $background-color;
+      border-radius: 50%;
+      box-sizing: border-box;
+      margin-left: 0.25em;
+      box-shadow:  0px 5px 5px rgba(31, 32, 65, 0.3);
+  
+      &_active{
+        background-color: $background-color;
+      }
+    }
+  }
+
+
+
+
+
+
+}

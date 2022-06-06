@@ -4,9 +4,14 @@ class Rating {
 
     this.ratingHtml = ratingHtml;
     this.itemsHtml = this.ratingHtml.querySelectorAll('.js-rating__item');
-
-    this.bindMethods();
-    this.addEventListeners();
+    
+    console.log('ratingHtml.dataset.canBeEdited')
+    console.log(ratingHtml.dataset)
+    if (ratingHtml.dataset.canbeedited === 'true'){
+      console.log("if (ratingHtml.dataset.canbeedited === 'true'){")
+      this.bindMethods();
+      this.addEventListeners();
+    }
 
   }
 

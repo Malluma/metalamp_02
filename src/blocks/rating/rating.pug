@@ -1,5 +1,5 @@
-mixin rating(name, rating, itemsNumber)
-  .rating.js-rating
+mixin rating(name, rating, itemsNumber, canBeEdited="false")
+  .rating.js-rating(data-canBeEdited= canBeEdited)
     - let index = 0
     - let checked = false
     while (index < itemsNumber)

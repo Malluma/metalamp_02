@@ -98,8 +98,8 @@ html(lang="ru")
                   +like-btn({numberOfLikes: "12", active: true, iconColor: "gradient", borderColor: "solid-color"})  
               .form-elements__block-title Rate button
               .form-elements__rating
-                +rating("form-elements__01", 4, 5)
-                +rating("form-elements__02", 5, 5)
+                +rating("form-elements__01", 4, 5, canBeEdited= "true")
+                +rating("form-elements__02", 5, 5, canBeEdited= "true")
               .form-elements__open-dropdown-column2
                 +dropdown({label: "dropdown", initValue: "Сколько гостей", expanded: true, applyCleanBtns: true, roundedBottomCorners: true,
                   list: [{name: "Взрослые", number: 0, declensions: ["гость", "гостя", "гостей"]},
