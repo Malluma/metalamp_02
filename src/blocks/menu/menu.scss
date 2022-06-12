@@ -1,0 +1,125 @@
+@import '../../styles/variables';
+@import '../../styles/material-icons.css';
+
+.menu{
+
+  font-size: 14px;
+  color: $dark-shade-50;
+  background-color: $background-color;
+
+  &__list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex; 
+
+    @media screen and (max-width: 900px) {
+      display: none;
+      &_full-screen-open{
+        padding: 0.5em;
+        padding-bottom: 6em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: x-large;
+        
+        position: fixed;
+        background: $background-color;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        transform: translateX(0);
+        transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+      
+      }
+    }
+  }
+
+  &__item{
+    margin-right: 1.45em;
+    &-href{
+      text-decoration: none;
+      color: $dark-shade-50;
+      display: flex;
+      &:focus, &:hover{
+        outline: none;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+      &_active{
+        color: $dark-shade-75;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__sublist{
+    opacity: 1;
+    display: block;
+    list-style-type: none;
+    margin-top: 0.5em;
+    padding: 0.5em 0.8em;
+    position: absolute;
+    background-color: $background-color;
+    box-shadow: $card-shadow;
+    border-radius: 4px;
+    transition: opacity 0.4s ease-out;
+
+    &_hidden{
+      display: none;
+    }
+
+    &_unvisible{
+      opacity: 0;
+      transition: 0.4s ease-in-out;
+    }
+
+  }
+
+  &__subitem{
+    margin-bottom: 1em;
+  }
+
+  &__expand-btn{
+    padding-left: 0.4em;
+    margin-right: 0.3em;
+    margin-top: 0.2em;
+  }
+
+  &__toggle-btn{
+    background: none;
+    border: none;
+    outline: none;
+    padding: 1em;
+    display: none;
+    z-index: 100; 
+    border-radius: 4px;
+
+    &:hover > .menu__hamburger, &:focus > .menu__hamburger{
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border: none;
+    }
+
+    &_full-screen-open{
+      position: fixed;
+      top: 0;
+      left: 0;
+
+    }
+
+    @media screen and (max-width: 900px) {
+      display: block;
+    }
+  }
+
+  &__hamburger{
+    background-color: $dark-shade-50;
+    width: 2em;
+    height: 3px; 
+    margin-bottom: 0.5em;
+  }
+
+}
+ 

@@ -1,0 +1,24 @@
+include ../../blocks/button/button.pug
+include ../../blocks/logo/logo.pug
+include ../../blocks/menu/menu.pug
+
+mixin header(options)
+  - const {userName= false, menuItems} = options
+  .header
+    .header__container
+      .header__logo
+        +logo
+      .header__container-right
+        .header__menu
+          +menu(menuItems)
+        if (!userName)
+          .header__btns
+            .header__btns-login
+              +button({text: "Войти", type: "border", narrow: "true"}) 
+            .header__btns-registration
+              +button({text: "Зарегистрироваться", type: "background", narrow: "true"}) 
+        else
+          .header__user= userName
+         
+
+

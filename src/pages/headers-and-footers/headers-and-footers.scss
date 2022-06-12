@@ -1,0 +1,29 @@
+@import '../../styles/Montserrat.css';
+@import '../../styles/variables.scss';
+
+body{
+  margin: 0;
+  font-family: $font-family;
+  //background-color: #E5E5E5;
+  background-color: #F4F4F6;
+
+
+  .headers-and-footers{
+
+    //max-width: 1160px;
+    //margin-left: auto;
+    //margin-right: auto;
+
+    &__logo {
+      margin-top: 30px;
+      margin-bottom: 3.5rem;
+      margin-left: 30px;
+    }
+
+    &__header{
+      box-shadow: $card-shadow;
+      margin-bottom: 2.5rem;
+    }
+
+  }
+}

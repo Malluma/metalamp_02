@@ -1,9 +1,10 @@
 mixin button(options)
-  - const {text, type, submit, hover} = options
+  - const {text, type, submit, hover, narrow= false} = options
   - const hoverClass = hover? `button__${type}_hover`: "";
   - const internalHoverClass = hover? `button__internal-${type}_hover`: "";
   - const typeClass = `button__${type} ${hoverClass}`
-  - const internalTypeClass = `button__internal-${type} ${internalHoverClass}`
+  - const narrowClass = narrow ? "button__internal_narrow" : ""
+  - const internalTypeClass = `button__internal-${type} ${internalHoverClass} ${narrowClass}`
   - const submitIconClass = 'icon-arrow_forward';
 
   if submit

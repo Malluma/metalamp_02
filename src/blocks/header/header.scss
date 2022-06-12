@@ -1,0 +1,53 @@
+@import '../../styles/variables';
+
+.header{
+  font-size: 14px;
+  height: 70px;
+  background-color: $background-color;
+  padding: 0 0.5rem;
+
+  &__container{
+    max-width: 1160px;
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo{
+    align-self: center;
+    margin-right: 0.5em;
+  }
+
+  &__container-right{
+    display:flex;
+    align-items: center;
+  }
+
+  &__menu{
+    margin-right: 0.1em;
+  }
+
+  &__btns{
+    display: flex;
+    gap: 1.4em;
+    &-login{
+      width: 6.2em;
+    }
+    &-registration{
+      width: 14em;
+    }
+
+  }
+
+  &__user{
+    color: $dark-shade-50;
+    padding: 0.5em 0 0.5em 1.5em;
+    border-left: 1px solid $dark-shade-10;
+  }
+
+ 
+}

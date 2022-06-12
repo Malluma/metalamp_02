@@ -62,6 +62,10 @@
     border-radius: 22px;
     padding: 1.05em 0.6em;
 
+    &_narrow{
+      padding: 0.65em 0.6em;
+    }
+
     &-background{
       background: inherit;
     }

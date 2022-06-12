@@ -1,0 +1,28 @@
+include ../../blocks/header/header.pug
+include ../../blocks/logo-ui-kit/logo-ui-kit.pug
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Headers and footers
+  body
+    .headers-and-footers
+      .headers-and-footers__logo
+        +logo-ui-kit()
+      .headers-and-footers__header
+        +header({menuItems:[
+          {name: "О нас", active: "true"}, {name: "Услуги", 
+          subItems:[{name: "Организация свадьбы"}, {name: "Корпоративные мероприятия"}, {name: "Прокат велосипедов"}]},
+          {name: "Вакансии"}, {name: "Новости"},
+          {name: "Соглашения", subItems:[{name: "Соглашение о предоставлении контактной информации"}, {name: "Соглашение о рекламе"}]}
+        ] })
+      .headers-and-footers__header
+        +header({userName: "Юлий Цезарь", menuItems:[
+          {name: "О нас", active: "true"}, {name: "Услуги", 
+          subItems:[{name: "Организация свадьбы"}, {name: "Корпоративные мероприятия"}, {name: "Прокат велосипедов"}]},
+          {name: "Вакансии"}, {name: "Новости"},
+          {name: "Соглашения", subItems:[{name: "Соглашение о предоставлении контактной информации"}, {name: "Соглашение о рекламе"}]}
+        ] })

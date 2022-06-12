@@ -6,6 +6,7 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: $card-shadow;
   border-radius: 4px;
+  background-color: $background-color;
 
   &__description{
     padding: 1.25em 1.1em 1.1em 1.2em;
