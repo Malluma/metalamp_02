@@ -1,3 +1,4 @@
+include ../../blocks/footer/footer.pug
 include ../../blocks/header/header.pug
 include ../../blocks/logo-ui-kit/logo-ui-kit.pug
 
@@ -26,3 +27,7 @@ html(lang="ru")
           {name: "Вакансии"}, {name: "Новости"},
           {name: "Соглашения", subItems:[{name: "Соглашение о предоставлении контактной информации"}, {name: "Соглашение о рекламе"}]}
         ] })
+      .headers-and-footers__footer
+        +footer({})
+      .headers-and-footers__footer.headers-and-footers__footer_mobile
+        +footer({mobile: "true"})

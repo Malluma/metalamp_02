@@ -1,0 +1,164 @@
+@import '../../styles/variables';
+
+.footer{
+  font-size: 14px;
+  height: 443px;
+  background-color: $background-color;
+  padding: 0 0.5rem;
+  margin-bottom: 1em;
+
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+
+  &__container{
+    max-width: 1160px;
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__logo{
+    align-self: center;
+    margin-right: 0.5em;
+    margin-bottom: 1em;
+    &_mobile{
+      margin-bottom: 1em;
+      margin-right: 0;
+    }
+  }
+
+  &__main{
+    padding-top: 7.1em;
+    padding-bottom: 5.6em;
+    display: flex;
+    justify-content: space-between;
+    &-without-container{
+      border-bottom: 1px solid $dark-shade-25;
+      margin-bottom: 1.9em;
+    }
+  }
+
+  &__column{
+
+    padding-top: 0.3em;
+
+    &-title{
+      font-size: 12px;
+      color: $dark-shade-100;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1.7em;
+      &_subscription{
+        margin-bottom: 1.5em;
+      }
+    }
+    &-list{
+      color: $dark-shade-50;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    &-item{
+      margin-bottom: 1.45em;
+    }
+  }
+
+  &__nav{
+    margin-right: 1em;
+    flex-grow: 1; 
+  }
+  &__about
+   {
+    flex-grow: 2.1; 
+   } 
+  &__support{
+    flex-grow: 1.2; 
+    
+  }
+
+
+  &__reward-txt, &__subscription-txt{
+    color: $dark-shade-75;
+    line-height: 24px;
+    margin-bottom: 1.25em;
+  }
+
+  &__column1{
+    max-width: 260px;
+    margin-right: 2.9em;
+
+  }
+
+  &__subscription{
+    width: 260px;
+    margin-bottom: 1em;
+  }
+
+  &__bottom{
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  &__copyright{
+    font-size: 14px;
+    color: $dark-shade-75;
+    &_mobile{
+      margin-bottom: 1.9em;
+    }
+  }
+
+  &__social{
+    font-size: 22px;
+    display: flex;
+    justify-content: flex-end;
+    &_mobile{
+      padding-right: 1em;
+    }
+    &-item{
+      color: transparent;
+      background: $primaryGradient;
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      margin-left: 0.97em;
+      &_twitter{
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__mobile{
+    height: 367px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $background-color;
+    &-align-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+  }
+
+  &__mobile_hidden{
+    display: none;
+
+    @media screen and (max-width: 900px) {
+      display: flex;
+      //position: fixed;
+      //top: 0;
+      //bottom: 0;
+      //left: 0;
+      //right: 0;
+      z-index: 999;
+      //transform: translateX(0);
+      //transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+    }
+  }
+
+}
