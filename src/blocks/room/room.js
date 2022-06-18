@@ -2,5 +2,5 @@ import './room.scss';
 
 //import Booking from './Booking-class'
 
-import '../carousel/carousel'
+import '../carousel_0/carousel'
 import '../rating/rating';

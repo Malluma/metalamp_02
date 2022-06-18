@@ -6,7 +6,6 @@ mixin room(options)
   - const priceStr = new Intl.NumberFormat('ru-RU').format(price)
   
   article.room
-    //img(class= "room__img" src= roomImgSrc alt= `room ${number}`)
     .room__images
       +carousel({items:roomImages})
     .room__description

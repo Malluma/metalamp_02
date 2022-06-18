@@ -4,11 +4,12 @@ mixin carousel(options)
     button.carousel__btn.carousel__btn-back(class= "js-carousel__btn-back icon-expand_more")
     button.carousel__btn.carousel__btn-forward(class= "js-carousel__btn-forward icon-expand_more")
     //.carousel__items
-    each item in items
-      image.carousel__item.js-carousel__item(src= item.src)
+    each item, index in items
+      - const active = index === 1 ? "carousel__item_active": ""
+      image.carousel__item.js-carousel__item(src= item.src class= active)
     .carousel__track
       each item, index in items
-        - const activeClass = (index === 0) ? 'carousel__track-item_active' : ''
+        - const activeClass = (index === 0) ? "carousel__track-item_active" : ""
         .carousel__track-item.js-carousel__track-item(class = activeClass)
 
 

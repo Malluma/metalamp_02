@@ -4,23 +4,44 @@ import {createAirDatepickerOptions, formatDateStr} from './utilityForDatepickerC
 class Datepicker1Field {
 
   constructor(options) {
-
+  
     this.dateInput = options.startEndDateInput;
     this.dateInputValue = this.dateInput.dataset.value;
-    this.alwaysShow = this.dateInput.dataset.alwaysshow;
+    this.alwaysShow = this.dateInput.dataset.alwaysshow === "true" ? true : false;
     this.setPrevInputDates();
     this.dontSetInputDatesFromPrevDates = false;
-
-    this.airDatepicker = new AirDatepicker(`.${options.id}`, 
-      createAirDatepickerOptions(this.createClearBtn(), this.createApplyBtn(), this));
     
+    this.dateInput.classList.add(options.id);
+
     if (this.alwaysShow){
-      this.makeAlwaysShownCalendar() 
+      this.hideInput(); 
+    }
+  
+    this.airDatepicker = new AirDatepicker(`.${options.id}`, 
+    createAirDatepickerOptions(this.createClearBtn(), this.createApplyBtn(), this, this.alwaysShow));
+    
+    this.bindMethods();
+    this.addEventListeners();
+
+  }
+
+  bindMethods(){
+    this.handleApplyBtnClick = this.handleApplyBtnClick.bind(this);
+    this.handleKeyboardApplyBtnClick = this.handleKeyboardApplyBtnClick.bind(this);
+  }
+  addEventListeners(){
+    this.dateInput.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
+  }
+
+  handleKeyboardApplyBtnClick(event){
+    event.preventDefault();
+    console.log(this.bothDatesSelected())
+    if(event.key === "Tab" && this.bothDatesSelected()){
+      this.handleApplyBtnClick(this.airDatepicker)
     }
   }
 
-  makeAlwaysShownCalendar(){
-    this.airDatepicker.show();
+  hideInput(){
     this.dateInput.classList.add('date-dropdown__input-hidden');
     this.dateInput.nextElementSibling.classList.add('date-dropdown__input-hidden');
   }
@@ -57,18 +78,25 @@ class Datepicker1Field {
       content: 'применить',
       className: 'js-date-dropdown__applyBtn',
       onClick: (datepicker) => {
-        
-        this.setNewDateValues(datepicker);
-        this.setPrevInputDates();
-        //to help to catch date change in other blocks
-        this.dateInput.dispatchEvent(new Event('change')); 
-        this.dontSetInputDatesFromPrevDates = true;  
-        datepicker.hide();
-
+        this.handleApplyBtnClick(datepicker)
       }
     }
   }
 
+  handleApplyBtnClick(datepicker){
+    this.setNewDateValues(datepicker);
+    this.setPrevInputDates();
+    //to help to catch date change in other blocks
+    this.dateInput.dispatchEvent(new Event('change')); 
+    this.dontSetInputDatesFromPrevDates = true;  
+    datepicker.hide();
+  }
+
+  bothDatesSelected(){
+    let [startDate, endDate] = this.airDatepicker.selectedDates;
+    return startDate && endDate
+  }
+  
   setNewDateValues(pluginDP){
     let [startDate, endDate] = pluginDP.selectedDates;
         
@@ -86,6 +114,7 @@ class Datepicker1Field {
 
     this.dateInputValue = `${startDate}-${endDate}`;
   }
+
   createSelectedDatesArray(){
     
     const result = [];

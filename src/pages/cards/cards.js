@@ -1,5 +1,7 @@
 import './cards.scss';
 
+import '../../page-layout/ui-kit-template/ui-kit-template';
+
 import '../../blocks/booking/booking';
 import '../../blocks/date-dropdown/date-dropdown';
 import '../../blocks/login/login';

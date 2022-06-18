@@ -1,0 +1,14 @@
+extends ../../page-layout/template/template.pug
+
+include ../../blocks/carousel/carousel.pug
+include ../../blocks/footer/footer.pug
+include ../../blocks/header/header.pug
+
+block vars
+  - const pageTitle = "Landing page"
+  - const userName = ""
+block content
+  .landing__description Лучшие номера для вашей работы, отдыха и просто вдохновения  
+    .landing__main
+      //+carousel({items:[{src: require("../../assets/images/background1.png")}, {src: require("../../assets/images/background2.png")}, {src: require("../../assets/images/background3.png")}]})
+    

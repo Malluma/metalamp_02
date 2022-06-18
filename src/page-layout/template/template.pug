@@ -1,0 +1,24 @@
+//include ../../blocks/footer/footer.pug
+//include ../../blocks/header/header.pug
+
+doctype html
+html(lang="ru")
+  block vars
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title #{pageTitle}
+  body
+    .page-template__header
+      +header({userName: userName, menuItems:[
+        {name: "О нас", active: "true"}, {name: "Услуги", 
+        subItems:[{name: "Организация свадьбы"}, {name: "Корпоративные мероприятия"}, {name: "Прокат велосипедов"}]},
+        {name: "Вакансии"}, {name: "Новости"},
+        {name: "Соглашения", subItems:[{name: "Соглашение о предоставлении контактной информации"}, {name: "Соглашение о рекламе"}]}
+      ] })
+
+    block content
+
+    .page-template__footer
+      +footer({})

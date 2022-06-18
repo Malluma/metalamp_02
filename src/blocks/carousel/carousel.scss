@@ -4,7 +4,7 @@
   display: flex;
   align-items: flex-end;
   border-radius: inherit;
-  overflow: hidden;
+  //overflow: hidden;
   max-height: inherit;
   position: relative;
   
@@ -36,7 +36,12 @@
   &__item{
     width: 100%;
     object-fit: cover;
+    opacity: 0;
     transition: 0.4s all ease-in-out;
+    &_active{
+      opacity: 1;
+      transition: 0.4s all ease-in-out;
+    }
   }
 
   &__track{

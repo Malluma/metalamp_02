@@ -1,70 +1,57 @@
-@import '../../styles/Montserrat.css';
-@import '../../styles/variables.scss';
-
 $card-width: 23.75rem;
 
-body{
-  margin: 0;
-  font-family: $font-family;
-  background-color: #F4F4F6;
+.cards{
 
-  .cards{
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
 
-    max-width: 1160px;
-    margin-left: auto;
-    margin-right: auto;
-
-    &__logo {
-      margin-top: 30px;
-      margin-left: 30px;
-    }
-
-    &__columns{
-      display: flex;
-    }
-
-    &__column1{
-      margin-top: 6.24em;
-      margin-right: 2.5em;
-    }
-
-    &__column2{
-      margin-top: 6.29em;
-      margin-right: 2.4em;
-    }
-
-    &__column3{
-      margin-top: 2.5em;
-    }
-
-    &__room-search{
-      width: $card-width;
-      margin-bottom: 2.4rem;
-    }
-
-    &__registration{
-      width: $card-width;
-      margin-bottom: 2rem;
-    }
-
-    &__booking{
-      width: $card-width;
-      margin-bottom: 2.4rem;
-    }
-
-    &__login{
-      width: $card-width;
-      margin-bottom: 2rem;
-    }
-
-    &__calendar{
-      margin-bottom: 29rem;
-    }
-
-    &__room-card{
-      width: 17rem;
-      margin-bottom: 2.4rem;
-    }
-
+  &__columns{
+    display: flex;
   }
+
+  &__column1{
+    margin-top: 6.24em;
+    margin-right: 2.5em;
+  }
+
+  &__column2{
+    margin-top: 6.29em;
+    margin-right: 2.4em;
+  }
+
+  &__column3{
+    margin-top: 2.5em;
+  }
+
+  &__room-search{
+    width: $card-width;
+    margin-bottom: 2.4rem;
+  }
+
+  &__registration{
+    width: $card-width;
+    margin-bottom: 2rem;
+  }
+
+  &__booking{
+    width: $card-width;
+    margin-bottom: 2.4rem;
+  }
+
+  &__login{
+    width: $card-width;
+    margin-bottom: 2rem;
+  }
+
+  &__calendar{
+    margin-bottom: 2.4rem;
+    padding-top: 3.5em;
+  }
+
+  &__room-card{
+    width: 17rem;
+    margin-bottom: 2.4rem;
+  }
+
 }

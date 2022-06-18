@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-function createAirDatepickerOptions(clearBtn, applyBtn, localDatepicker) {
+function createAirDatepickerOptions(clearBtn, applyBtn, localDatepicker, inline = false) {
   
   const singleDropdown = localDatepicker.dateInput;
   const selectedDatesArray = localDatepicker.createSelectedDatesArray();
@@ -24,6 +24,8 @@ function createAirDatepickerOptions(clearBtn, applyBtn, localDatepicker) {
     },
     prevHtml: "<div class ='icon-arrow_back'></div>",
     nextHtml: "<div class ='icon-arrow_forward'></div>",
+    inline: inline,
+    keyboardNav: true,
     onSelect: (dp) => onSelectAirDP(dp, localDatepicker),
     onShow: (dp) => onSelectAirDP(dp, localDatepicker),
     onHide: (isFinished) => onHideAirDP(isFinished, localDatepicker)

@@ -15,10 +15,49 @@ class Datepicker2Fields {
 
     this.connectGivenDatesWithAirDatepicker();
     
-    this.handleDate2Click = this.handleDate2Click.bind(this);
-    this.dateInput2.addEventListener('click', this.handleDate2Click)
+    this.bindMethods();
+    this.addEventListeners();
     this.dontSetInputDatesFromPrevDates = false;
 
+  }
+
+  bindMethods(){
+    this.handleDate2Click = this.handleDate2Click.bind(this);
+    this.handleKeyboardApplyBtnClick = this.handleKeyboardApplyBtnClick.bind(this);
+  }
+  addEventListeners(){
+    this.dateInput2.addEventListener('click', this.handleDate2Click)
+    this.dateInput1.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
+    this.dateInput2.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
+  }
+
+  handleKeyboardApplyBtnClick(event){
+    event.preventDefault();
+    if(event.key === "Tab" && this.bothDatesSelected()){
+      this.handleApplyBtnClick(this.airDatepicker)
+    }
+  }
+
+  bothDatesSelected(){
+    let [startDate, endDate] = this.airDatepicker.selectedDates;
+    return startDate && endDate
+  }
+
+  handleApplyBtnClick(datepicker){
+    const [startDate, endDate] = datepicker.selectedDates;
+    if (startDate){
+      this.dateInput1.value = startDate.toLocaleDateString();
+    }
+    if (endDate) {
+      this.dateInput2.value = endDate.toLocaleDateString();
+    }
+
+    this.setPrevInputDates();
+
+    //to help to catch date change in other blocks
+    this.dateInput1.dispatchEvent(new Event('change')); 
+    this.dontSetInputDatesFromPrevDates = true;  
+    datepicker.hide();
   }
 
   setPrevInputDates(){
@@ -83,22 +122,7 @@ class Datepicker2Fields {
       content: 'применить',
       className: 'js-date-dropdown__applyBtn',
       onClick: (datepicker) => {
-
-        const [startDate, endDate] = datepicker.selectedDates;
-        if (startDate){
-          this.dateInput1.value = startDate.toLocaleDateString();
-        }
-        if (endDate) {
-          this.dateInput2.value = endDate.toLocaleDateString();
-        }
-
-        this.setPrevInputDates();
-
-        //to help to catch date change in other blocks
-        this.dateInput1.dispatchEvent(new Event('change')); 
-        this.dontSetInputDatesFromPrevDates = true;  
-        datepicker.hide();
-        
+        this.handleApplyBtnClick(datepicker)
       }
     }
   }

@@ -1,3 +1,5 @@
+extends ../../page-layout/ui-kit-template/ui-kit-template.pug
+
 include ../../blocks/booking/booking.pug
 include ../../blocks/date-dropdown/date-dropdown.pug
 include ../../blocks/login/login.pug
@@ -6,41 +8,35 @@ include ../../blocks/registration/registration.pug
 include ../../blocks/room/room.pug
 include ../../blocks/room-search/room-search.pug
 
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Cards
-  body
-    .cards__logo
-      +logo-ui-kit()
-    .cards
-      .cards__columns
-        .cards__column1
-          .cards__room-search
-            +room-search()
-          .cards__registration
-            +registration()
-        .cards__column2
-          .cards__booking
-            +booking({number: "888", roomType: "люкс", price: "9990", discount: "2179", extraServiceFee: "300",
-              dates: {type: "double", label_1: "прибытие", label_2: "выезд", value_1: "19.08.2019", value_2: "23.08.2019" },
-              guests: {label: "гости", initValue: "Сколько гостей", expanded: false, applyCleanBtns: true, roundedBottomCorners: true,
-              list: [{name: "Взрослые", number: 3, declensions: ["гость", "гостя", "гостей"]},
-                    {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
-                    {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]}})
-          .cards__login
-            +login()
-        .cards__column3
-          .cards__calendar
-            +date-dropdown({type: "single", text_value: '19 авг - 23 авг', value_1: "19.08.2019-23.08.2019", alwaysShow: "true"})
-          .cards__room-card
-            +room({number: "888", roomType: "люкс", price: "9990", reviews: 145, rating: {rating: 5, itemsNumber: 5},
-            roomImages: [{src: require("../../assets/images/room-888.png")}, {src: require("../../assets/images/room-second.png")}, {src: require("../../assets/images/room-888.png")}, {src: require("../../assets/images/room-second.png")}]})
-          .cards__room-card
-            +room({number: "840", roomType: "", price: "9900", reviews: 65, rating: {rating: 4, itemsNumber: 5},
-            roomImages: [{src: require("../../assets/images/room-840.png")}, {src: require("../../assets/images/room-second.png")}, {src: require("../../assets/images/room-840.png")}, {src: require("../../assets/images/room-second.png")}]})
+block vars
+  - const pageTitle = "Cards"
+  - const background = "grey"
+block content
+  .cards
+    .cards__columns
+      .cards__column1
+        .cards__room-search
+          +room-search()
+        .cards__registration
+          +registration()
+      .cards__column2
+        .cards__booking
+          +booking({number: "888", roomType: "люкс", price: "9990", discount: "2179", extraServiceFee: "300",
+            dates: {type: "double", label_1: "прибытие", label_2: "выезд", value_1: "19.08.2019", value_2: "23.08.2019" },
+            guests: {label: "гости", initValue: "Сколько гостей", expanded: false, applyCleanBtns: true, roundedBottomCorners: true,
+            list: [{name: "Взрослые", number: 3, declensions: ["гость", "гостя", "гостей"]},
+                  {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
+                  {name: "Младенцы", number: 0, declensions: ["младенец", "младенца", "младенцев"], notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]}})
+        .cards__login
+          +login()
+      .cards__column3
+        .cards__calendar
+          +date-dropdown({type: "single", text_value: '19 авг - 23 авг', value_1: "19.08.2019-23.08.2019", alwaysShow: "true"})
+        .cards__room-card
+          +room({number: "888", roomType: "люкс", price: "9990", reviews: 145, rating: {rating: 5, itemsNumber: 5},
+          roomImages: [{src: require("../../assets/images/room-888.png")}, {src: require("../../assets/images/room-second.png")}, {src: require("../../assets/images/room-888.png")}, {src: require("../../assets/images/room-second.png")}]})
+        .cards__room-card
+          +room({number: "840", roomType: "", price: "9900", reviews: 65, rating: {rating: 4, itemsNumber: 5},
+          roomImages: [{src: require("../../assets/images/room-840.png")}, {src: require("../../assets/images/room-second.png")}, {src: require("../../assets/images/room-840.png")}, {src: require("../../assets/images/room-second.png")}]})
           
 

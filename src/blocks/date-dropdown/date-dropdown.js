@@ -14,8 +14,6 @@ $(() => {
     const $startDateLabel = $startDateInput.parent().parent();
     const $endDateLabel = $startDateLabel.next();
     const endDateInput = $endDateLabel.find('.js-date-dropdown__double-end')[0];
-    const hiddenDateInput = $hiddenDateInput.html();
-    //$hiddenDateInput.addClass(currentElId);
     $(startDateInput).addClass(currentElId);
     $(endDateInput).addClass(currentElId);
     const datepicker2FieldsInstance = new Datepicker2Fields({
@@ -30,7 +28,6 @@ $(() => {
   $('.js-date-dropdown__single').each((index, startEndDateInput) => {
 
     const currentElId = `js-air-datepicker_single${index}`;
-    $(startEndDateInput).addClass(currentElId);
     const datepicker1FieldInstance = new Datepicker1Field({
       startEndDateInput: startEndDateInput,
       id: currentElId

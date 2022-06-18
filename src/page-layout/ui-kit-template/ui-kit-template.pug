@@ -1,0 +1,16 @@
+include ../../blocks/logo-ui-kit/logo-ui-kit.pug
+
+doctype html
+html(lang="ru")
+  block vars
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title #{pageTitle}
+  body
+    - const backgroundClass = background === "grey" ? ".ui-kit-template__background-grey" : ""
+    .ui-kit-template(class= backgroundClass)
+      .ui-kit-template__logo
+        +logo-ui-kit()
+      block content
