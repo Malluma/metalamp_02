@@ -6,6 +6,8 @@ mixin button(options)
   - const narrowClass = narrow ? "button__internal_narrow" : ""
   - const internalTypeClass = `button__internal-${type} ${internalHoverClass} ${narrowClass}`
   - const submitIconClass = 'icon-arrow_forward';
+  - const tabIndexButton = type === "text-only" ? "-1": " "
+  - const tabIndexInternal = type === "text-only" ? "0": " "
 
   if submit
     button.button(class= typeClass type= 'submit')
@@ -14,5 +16,5 @@ mixin button(options)
         .button__internal(class= internalTypeClass)= text
         .button__icon.button__icon-visible(class= submitIconClass)
   else
-    button.button(class= typeClass)
-      .button__internal(class= internalTypeClass)= text
+    button.button(class= typeClass data-key=type tabindex= tabIndexButton)
+      .button__internal(class= internalTypeClass tabindex= tabIndexInternal)= text

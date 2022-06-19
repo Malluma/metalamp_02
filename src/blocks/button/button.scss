@@ -9,7 +9,6 @@
   border-radius: 22px;
   padding: 0.12em 0.35em 0.2em 0em;
   width: 100%;
-  //width:fit-content;
 
   &:focus{
     outline: none;
@@ -21,6 +20,7 @@
     color: $background-color;
     padding: 0.12em 0.35em 0.2em 0em;
     &:hover, &:focus, &_hover{
+      outline: none;
       opacity: 0.5;
     } 
   }
@@ -30,6 +30,7 @@
     color: $primaryColor;
     padding: 0.17em;
     &:hover, &:focus, &_hover{
+      outline: none;
       background: $primaryGradient-50;
     }
   }
@@ -78,6 +79,8 @@
       color: $primaryColor;
       padding: 0;
       &:hover, &:focus, &_hover{
+        outline: none;
+        border: none;
         color: $dark-shade-50;
       }
     }   

@@ -33,6 +33,7 @@ class Rating {
 
   handleMouseOutItem(e) {
     const checkedItem = this.ratingHtml.querySelector('.js-rating__item:checked');
+    console.log(checkedItem)
     this.setVisualRating(checkedItem);
   }
 

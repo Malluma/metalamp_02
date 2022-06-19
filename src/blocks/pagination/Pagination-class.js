@@ -17,12 +17,21 @@ class Pagination {
 
   bindMethods() {
     this.handlePageClick = this.handlePageClick.bind(this);
+    this.handleKeyUpEnter = this.handleKeyUpEnter.bind(this);
   }
 
   addEventListeners() {
     this.paginationItems.forEach((item) => {
       item.addEventListener("click", this.handlePageClick);
+      item.addEventListener("keyup", this.handleKeyUpEnter);
     })
+  }
+
+  handleKeyUpEnter(event){
+    event.preventDefault();
+    if(event.key === 'Enter'){
+      this.handlePageClick(event);
+    }
   }
 
   getPageValue(index){
@@ -107,6 +116,7 @@ class Pagination {
 
     const newPageItem = document.createElement('li');
     newPageItem.className = this.generateClassNamesForListItem(active, btn);
+    newPageItem.tabIndex = 0;
     newPageItem.textContent = text;
   
     if (insert === 'begining') {
