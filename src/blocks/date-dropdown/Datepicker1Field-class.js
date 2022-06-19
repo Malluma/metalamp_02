@@ -35,7 +35,6 @@ class Datepicker1Field {
 
   handleKeyboardApplyBtnClick(event){
     event.preventDefault();
-    console.log(this.bothDatesSelected())
     if(event.key === "Tab" && this.bothDatesSelected()){
       this.handleApplyBtnClick(this.airDatepicker)
     }

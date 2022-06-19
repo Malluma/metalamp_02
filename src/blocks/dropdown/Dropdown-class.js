@@ -29,6 +29,7 @@ class Dropdown {
     this.handleNumberChange = this.handleNumberChange.bind(this);
     this.closeMessage = this.closeMessage.bind(this);
     this.handlePageClickToCloseDropdown = this.handlePageClickToCloseDropdown.bind(this);
+    this.handleKeyboardToggleClick = this.handleKeyboardToggleClick.bind(this);
   }
 
   addEventListeners() {
@@ -49,6 +50,15 @@ class Dropdown {
       this.cleanBtn.addEventListener("click", this.handleCleanClick);
     }
 
+    this.input.addEventListener("keyup", this.handleKeyboardToggleClick);
+
+  }
+  
+  handleKeyboardToggleClick(event){
+    event.preventDefault();
+    if(event.key === "Enter"){
+      this.toggleDropdown();
+    }
   }
 
   createGroupedListArray() {

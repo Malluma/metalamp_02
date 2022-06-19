@@ -1,12 +1,17 @@
 mixin like-btn(options)
   - const {numberOfLikes, active, iconColor, borderColor} = options
-  - const iconColorClass = active ? `like-btn__icon_${iconColor}` : "like-btn__icon_unactive"
-  - const borderColorClass = active ? `like-btn_border-${borderColor}` : "like-btn_border_unactive"
+  
+  - const iconColorClass = `like-btn__icon_${iconColor}`
+  - const borderColorClass = `like-btn_border-${borderColor}`
+  - const iconUnactiveClass = active ? "" : "like-btn__icon_unactive"
+  - const borderUnactiveClass = active ? "" : "like-btn_border_unactive"
+  - const materialIconClass = active ? "icon-favorite": "icon-favorite_border"
 
-  .like-btn(class = borderColorClass)
+  - const likeBtnClass = `js-like-btn ${borderColorClass} ${borderUnactiveClass}`
+  - const iconClass = `js-like-btn__icon ${iconColorClass} ${iconUnactiveClass} ${materialIconClass}`
+  - const initiallyLiked = active ? "true" : "false" 
+
+  .like-btn(class = likeBtnClass tabindex = 0 data-liked= initiallyLiked)
     .like-btn__internal
-      if active
-        .like-btn__icon.icon-favorite(class= iconColorClass)
-      else
-        .like-btn__icon.icon-favorite_border(class= iconColorClass)
-      .like-btn__number= numberOfLikes
+      .like-btn__icon(class= iconClass)
+      .like-btn__number.js-like-btn__number= numberOfLikes

@@ -118,6 +118,11 @@
     font-size: 18px;
     text-align: center;
     align-items: center;
+    &:focus, &:active, &:hover{
+      outline: none;
+      border-color: $dark-shade-75; 
+      color: $dark-shade-75;
+    }
     &:disabled{
       border-color: $dark-shade-25; 
       color: $dark-shade-25; 
