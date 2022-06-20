@@ -8,11 +8,12 @@ mixin menu(items)
       each item in items
         - const {name, active = false, subItems = []} = item
         - const itemClasses = active ? "menu__item-href_active" : ""
-        li.menu__item
+        li.menu__item(tabindex=-1)
           a.menu__item-href(href="#" class= itemClasses)= name
             if (subItems.length > 0)
-              span.menu__expand-btn.js-menu__expand-btn(class= "icon-expand_more")
-              ul.menu__sublist.menu__sublist_hidden.menu__sublist_unvisible
-                each subItem in subItems
-                  li.menu__subitem
-                    a.menu__item-href(href="#")= subItem.name          
+              span.menu__expand-btn.js-menu__expand-btn(class= "icon-expand_more" tabindex=-1)
+          if (subItems.length > 0)
+            ul.menu__sublist.menu__sublist_hidden.menu__sublist_unvisible(tabindex=-1)
+              each subItem in subItems
+                li.menu__subitem(tabindex= -1)
+                  a.menu__item-href(href="#")= subItem.name          

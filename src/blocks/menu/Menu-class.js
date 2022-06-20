@@ -10,21 +10,23 @@ class Menu{
     this.bindMethods();
     this.addEventListeners();
     
-    
   }
 
   bindMethods(){
     this.handleExpandBtnClick = this.handleExpandBtnClick.bind(this);
     this.handleToggleMenu = this.handleToggleMenu.bind(this);
+    this.handleExpandableItemKeyUp = this.handleExpandableItemKeyUp.bind(this);
   }
 
   addEventListeners(){
-
     this.expandBtns.forEach((btn) => {
       btn.addEventListener("click", this.handleExpandBtnClick); 
+      const listItem = btn.parentElement.parentElement;
+      listItem.addEventListener("keyup", this.handleExpandableItemKeyUp);
     })
 
     this.toggleBtn.addEventListener("click", this.handleToggleMenu);
+
   }
   
 
@@ -34,15 +36,18 @@ class Menu{
   }
 
   handleExpandBtnClick(e) {
-    const btn = e.target;
-    const sublist = btn.parentElement.nextElementSibling;
+    const submenuToggleBtn = e.target;
+    this.toggleSubmenu(submenuToggleBtn);
+  }
+
+  toggleSubmenu(toggleBtn){
+    const sublist = toggleBtn.parentElement.nextElementSibling;
     
     if(sublist.classList.contains("menu__sublist_hidden")){
       sublist.classList.remove("menu__sublist_hidden")
       setTimeout(() => {
         sublist.classList.remove("menu__sublist_unvisible");
           }, 20)
-    
     } else {
 
       sublist.classList.add("menu__sublist_unvisible");
@@ -50,7 +55,15 @@ class Menu{
         sublist.classList.add("menu__sublist_hidden")
           }, 400)
     }   
-  };
+  }
+
+  handleExpandableItemKeyUp(event){
+    event.preventDefault();
+    if(event.key === 'Enter'){
+      const submenuToggleBtn = event.target.querySelector('.js-menu__expand-btn');
+      this.toggleSubmenu(submenuToggleBtn);
+    }
+  }
 
 }
 
