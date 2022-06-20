@@ -1,13 +1,6 @@
 @import '../../styles/Montserrat.css';
 @import '../../styles/variables.scss';
 
-body{
-  margin: 0;
-  font-family: $font-family;
-  background-color: $background-color;
-
-  &__main{
-    height: 1022px;
-    //background-image: url();
-  }
+.landing{
+  height: 830px;
 }

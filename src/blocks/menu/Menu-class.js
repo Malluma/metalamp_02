@@ -6,7 +6,6 @@ class Menu{
     this.list = menu.querySelector('.js-menu__list')
     this.expandBtns = menu.querySelectorAll('.js-menu__expand-btn');
     this.toggleBtn = menu.querySelector('.js-menu__toggle-btn');
-    console.log(this.list)
 
     this.bindMethods();
     this.addEventListeners();
