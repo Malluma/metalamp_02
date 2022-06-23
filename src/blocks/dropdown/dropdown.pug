@@ -23,7 +23,7 @@ mixin dropdown(params)
                     .dropdown__notSeparatelyMessage.js-dropdown__notSeparatelyMessage= obj.notSeparatelyMessage
         if (applyCleanBtns)
           .dropdown__list-footer
-            .dropdown__list-footer-btn.js-dropdown__clean-btn Очистить
-            .dropdown__list-footer-btn.js-dropdown__apply-btn Применить
+            button.dropdown__list-footer-btn.js-dropdown__clean-btn(tabindex=0) Очистить
+            button.dropdown__list-footer-btn.js-dropdown__apply-btn(tabindex=0) Применить
     
 

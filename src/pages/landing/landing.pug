@@ -3,11 +3,16 @@ extends ../../page-layout/template/template.pug
 include ../../blocks/carousel-background/carousel-background.pug
 include ../../blocks/footer/footer.pug
 include ../../blocks/header/header.pug
+include ../../blocks/room-search/room-search.pug
 
 block vars
   - const pageTitle = "Landing page"
   - const userName = ""
 block content
-  .landing  
-    +carousel-background({items:[{src: require("../../assets/images/background1.png")}, {src: require("../../assets/images/background2.png")}, {src: require("../../assets/images/background3.png")}]})
-    
+  .landing
+    .landing__main  
+      +carousel-background({items:[{src: require("../../assets/images/background1.png")}, {src: require("../../assets/images/background2.png")}, {src: require("../../assets/images/background3.png")}]})
+      .landing__container
+        .landing__room-search
+          +room-search()
+        .landing__description Лучшие номера для вашей работы, отдыха и просто вдохновения

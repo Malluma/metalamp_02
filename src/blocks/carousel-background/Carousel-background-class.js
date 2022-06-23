@@ -8,7 +8,7 @@ class CarouselBackground {
    
     this.bindMethods();
 
-    setInterval(this.handleBtnForwardClick, 6000);
+    //setInterval(this.handleBtnForwardClick, 7000);
   }
 
   bindMethods() {

@@ -14,7 +14,7 @@ class Dropdown {
     this.initValue = this.input.value;
     this.notSeparatelyMessageHtml = undefined;
     this.groupedListArray = []
-
+   
     this.createGroupedListArray();
     this.updateResultText();
     this.bindMethods();
@@ -55,7 +55,6 @@ class Dropdown {
   }
   
   handleKeyboardToggleClick(event){
-    event.preventDefault();
     if(event.key === "Enter"){
       this.toggleDropdown();
     }
