@@ -1,0 +1,85 @@
+extends ../../page-layout/template/template.pug
+
+include ../../blocks/checkbox-list/checkbox-list.pug
+include ../../blocks/date-dropdown/date-dropdown.pug
+include ../../blocks/dropdown/dropdown.pug
+include ../../blocks/footer/footer.pug
+include ../../blocks/header/header.pug
+include ../../blocks/pagination/pagination.pug
+include ../../blocks/range-slider/range-slider.pug
+include ../../blocks/room/room.pug
+
+block vars
+  - const pageTitle = "Search room page"
+  - const userName = ""
+block content
+  .search-room
+    .search-room__container
+      aside.search-room__aside
+        .search-room__period
+          +date-dropdown({type: "single", label_1: "Даты пребывания в отеле", text_value: '19 авг - 23 авг', value_1: "19.08.2019-23.08.2019"})
+        .search-room__guests
+          +dropdown({label: "Гости", initValue: "Количество гостей", expanded: false, applyCleanBtns: true, roundedBottomCorners: true,
+              list: [{name: "Взрослые", number: 3, declensions: ["гость", "гостя", "гостей"]},
+                    {name: "Дети", number: 0, declensions: ["гость", "гостя", "гостей"]},
+                    {name: "Младенцы", number: 1, declensions: ["младенец", "младенца", "младенцев"], notSeparatelyMessage: "Младенцы могут заехать только вместе со взрослыми."}]})
+        .search-room__price-range
+          +range-slider({label: "Диапазон цены", rangeStart: "5000", rangeEnd: "10000", min: "0", max: "15000"})
+        .search-room__price-range-description Стоимость за сутки пребывания в номере
+        .search-room__home-rules
+          +checkbox-list({label: "Правила дома", list: [
+                    {label: "Можно курить", id: "canSmoke", checked: false}, 
+                    {label: "Можно с питомцами", id: "withPets", checked: true},
+                    {label: "Можно пригласить гостей (до 10 человек)", id: guests10, checked: true}]}) 
+        .search-room__availability 
+          +checkbox-list({label: "Доступность", type: "rich", list: [
+                          {label: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", id: "wideСorridor", checked: false},                                  
+                          {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера.", id: "assistantForTheDisabled", checked: false}]})                              \
+        .search-room__facilities
+          +dropdown({label: "Удобства номера", initValue: "Удобства", expanded: false, applyCleanBtns: false,
+              list: [{name: "Спальни", number: 2, declensions: ["спальня", "спальни", "спален"]},
+                    {name: "Кровати", number: 2, declensions: ["кровать", "кровати", "кроватей"]},
+                    {name: "Ванные комнаты", number: 0, declensions: ["ванная комната", "ванных комнаты", "ванных комнат"]}]})
+        .search-room__additional-amenities
+          +checkbox-list({label: "Дополнительные удобства", expandable: true, collapsed: true, list: [
+                        {label: "Завтрак", id: "breakfast", checked: false}, 
+                        {label: "Письменный стол", id: "desk", checked: true},
+                        {label: "Стул для кормления", id: "chairForFeeding", checked: true},
+                        {label: "Кроватка", id: "crib", checked: true},
+                        {label: "Телевизор", id: "tv", checked: false},                
+                        {label: "Шампунь", id: "shampoo", checked: false}]})               
+      .search-room__main
+        h1.search-room__title Номера, которые мы для вас подобрали
+        .search-room__rooms
+          -
+            const roomsData = [
+              {number: "888", roomType: "люкс", price: "9990", reviews: 145, rating: {rating: 5, itemsNumber: 5},
+               roomImages: [require("../../assets/images/room-888.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-888.png"), require("../../assets/images/room-second.png")]},
+              {number: "840", roomType: "", price: "9900", reviews: 65, rating: {rating: 4, itemsNumber: 5},
+               roomImages: [require("../../assets/images/room-840.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-840.png"), require("../../assets/images/room-second.png")]},
+              {number: "980", roomType: "люкс", price: "8500", reviews: 35, rating: {rating: 3, itemsNumber: 5},
+               roomImages: [require("../../assets/images/room-980.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-980.png"), require("../../assets/images/room-second.png")]},
+              {number: "856", roomType: "", price: "7300", reviews: 19, rating: {rating: 5, itemsNumber: 5},
+               roomImages: [require("../../assets/images/room-856.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-856.png"), require("../../assets/images/room-second.png")]},
+              {number: "740", roomType: "", price: "6000", reviews: 44, rating: {rating: 4, itemsNumber: 5},
+               roomImages: [require("../../assets/images/room-740.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-740.png"), require("../../assets/images/room-second.png")]},
+              {number: "982", roomType: "", price: "5800", reviews: 56, rating: {rating: 3, itemsNumber: 5},
+               roomImages: [require("../../assets/images/room-982.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-982.png"), require("../../assets/images/room-second.png")]},
+              {number: "678", roomType: "", price: "5500", reviews: 45, rating: {rating: 5, itemsNumber: 5},
+               roomImages: [require("../../assets/images/room-678.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-678.png"), require("../../assets/images/room-second.png")]},
+              {number: "450", roomType: "", price: "5300", reviews: 39, rating: {rating: 4, itemsNumber: 5},
+               roomImages: [require("../../assets/images/room-450.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-450.png"), require("../../assets/images/room-second.png")]},
+              {number: "350", roomType: "", price: "5000", reviews: 77, rating: {rating: 3, itemsNumber: 5},
+               roomImages: [require("../../assets/images/room-350.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-350.png"), require("../../assets/images/room-second.png")]},
+              {number: "666", roomType: "", price: "5000", reviews: 25, rating: {rating: 5, itemsNumber: 5},
+               roomImages: [require("../../assets/images/room-666.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-666.png"), require("../../assets/images/room-second.png")]},
+              {number: "444", roomType: "", price: "5000", reviews: 15, rating: {rating: 3, itemsNumber: 5},
+               roomImages: [require("../../assets/images/room-444.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-444.png"), require("../../assets/images/room-second.png")]},
+              {number: "352", roomType: "", price: "5000", reviews: 55, rating: {rating: 3, itemsNumber: 5},
+               roomImages: [require("../../assets/images/room-second.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-second.png")]}
+              ]
+          each room in roomsData
+            +room(room)
+        .search-room__pagination
+          +pagination()
+      

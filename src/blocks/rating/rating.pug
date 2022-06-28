@@ -2,9 +2,10 @@ mixin rating(name, rating, itemsNumber, canBeEdited="false")
   .rating.js-rating(data-canBeEdited= canBeEdited)
     - let index = 0
     - let checked = false
+    - const disabled = (canBeEdited === "true") ? false : true;
     while (index < itemsNumber)
       - checked = (index+1 === rating) ? true : false;
-      input.rating__item.js-rating__item(class = `${index<rating? "icon-star": "icon-star_border"}` checked= checked  type="radio" name= name value= index+1)
+      input.rating__item.js-rating__item(class = `${index<rating? "icon-star": "icon-star_border"}` checked= checked type="radio" name= name value= index+1 disabled= disabled)
       - index++
     
       
