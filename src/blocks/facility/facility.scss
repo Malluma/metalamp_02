@@ -6,13 +6,15 @@
 
   border-bottom: $dark-shade-10; 
   display: flex;
-  padding-top: 1.5em;
-  padding-bottom: 1.3em;
-  border-bottom: 1px solid $dark-shade-10;
+  //padding-bottom: 1.3em;
+  //margin-left: 0.1em;
+  //border-bottom: 1px solid $dark-shade-10;
 
   &__icon{
-    font-size: 2.8em;
-    padding-right: 0.35em;
+    font-size: 2.9em;
+    padding-right: 0.1em;
+    width: 3rem;
+    height: 3rem;
     
     color: transparent;
     background: $primaryGradient;

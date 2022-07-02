@@ -3,14 +3,12 @@ extends ../../page-layout/template/template.pug
 include ../../blocks/checkbox-list/checkbox-list.pug
 include ../../blocks/date-dropdown/date-dropdown.pug
 include ../../blocks/dropdown/dropdown.pug
-include ../../blocks/footer/footer.pug
-include ../../blocks/header/header.pug
 include ../../blocks/pagination/pagination.pug
 include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/room/room.pug
 
 block vars
-  - const pageTitle = "Search room page"
+  - const pageTitle = "Search room"
   - const userName = ""
 block content
   .search-room
@@ -54,7 +52,7 @@ block content
           -
             const roomsData = [
               {number: "888", roomType: "люкс", price: "9990", reviews: 145, rating: {rating: 5, itemsNumber: 5},
-               roomImages: [require("../../assets/images/room-888.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-888.png"), require("../../assets/images/room-second.png")]},
+               roomImages: [require("../../assets/images/room-888.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-888-02.png"), require("../../assets/images/room-888-03.png")]},
               {number: "840", roomType: "", price: "9900", reviews: 65, rating: {rating: 4, itemsNumber: 5},
                roomImages: [require("../../assets/images/room-840.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-840.png"), require("../../assets/images/room-second.png")]},
               {number: "980", roomType: "люкс", price: "8500", reviews: 35, rating: {rating: 3, itemsNumber: 5},

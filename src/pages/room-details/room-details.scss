@@ -1,0 +1,113 @@
+@import '../../styles/Montserrat.css';
+@import '../../styles/variables.scss';
+
+.room-details{
+  font-size: 14px;
+  color: $dark-shade-75;
+
+  border-bottom: 1px solid $dark-shade-25;
+
+  &__container{
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+  }
+
+  &__images-grid{
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1fr;
+    grid-template-rows: repeat(2, 16.8vw);
+
+    margin-bottom: 4.4rem;
+  }
+
+  &__grid-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__grid-image-1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  &__grid-image-2{
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+
+  &__title{
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 1.2rem;
+    &_facilities{
+      margin-bottom: 1.5rem;
+    }
+    &_rules{
+      margin-left: 1.2rem;
+    }
+  }
+
+  &__reviews-title-flex{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__main{
+    margin-right: 6%;
+  }
+
+  &__top-flex{
+    display: flex;
+  }
+
+  &__bottom-flex{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+  }
+
+  &__info{
+    margin-right: 6.7rem;
+    margin-bottom: 1.9rem;
+  }
+
+  &__facility{
+    margin-left: 0.4rem;
+    margin-bottom: 2.6rem;
+    &_cosiness{
+      margin-bottom: 0;
+    }
+  }
+
+  &__reviews{
+    margin-bottom: 2rem;
+    &-number{
+      margin-top: 0.2rem
+    }
+  }
+
+  &__review{
+    margin-bottom: 1.5rem;
+  }
+
+  &__rules{
+    width: 16rem;
+  }
+
+  &__cancellation{
+    line-height: 171%;
+    width: 22rem;
+  }
+
+  &__booking{
+    width: 51.5rem;
+    //width: 23.75rem;
+    //width: 380px;
+  }
+
+}

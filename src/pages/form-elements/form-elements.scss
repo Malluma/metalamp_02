@@ -97,7 +97,7 @@ body {
       margin-bottom: 49px;
 
       &_open {
-        margin-bottom: 82px;
+        margin-bottom: 103px;
       }
     }
 
@@ -119,8 +119,14 @@ body {
 
     &__facilities {
       width: 280px;
-      margin-left: 5px;
+      margin-left: 3px;
       margin-bottom: 20px;
+    }
+
+    &__facility{
+      padding-bottom: 1em;
+      margin-bottom: 1.5em;
+      border-bottom: 1px solid $dark-shade-10;
     }
 
     &__review {
@@ -162,7 +168,7 @@ body {
       font-size: 20px;
       margin-left: 0.1em;
       width: 16.31rem;
-      margin-bottom: 11rem;
+      margin-bottom: 12.3rem;
       display: flex;
       gap: 1em;
     }

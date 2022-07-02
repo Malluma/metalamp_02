@@ -1,66 +1,67 @@
 @font-face {
-	font-family: "material-icons";
-	src: url("../assets/material-icons/material-icons.eot?7eqj6r");
-	src: url("../assets/material-icons/material-icons.eot?7eqj6r#iefix") format("embedded-opentype"),
-		url("../assets/material-icons/material-icons.ttf?7eqj6r") format("truetype"),
-		url("../assets/material-icons/material-icons.woff?7eqj6r") format("woff"),
-		url("../assets/material-icons/material-icons.svg?7eqj6r#material-icons") format("svg");
-	font-weight: normal;
-	font-style: normal;
-	font-display: block;
+  font-family: 'material-icons';
+  src:  url('../assets/material-icons/material-icons.eot?otzt2q');
+  src:  url('../assets/material-icons/material-icons.eot?otzt2q#iefix') format('embedded-opentype'),
+    url('../assets/material-icons/material-icons.ttf?otzt2q') format('truetype'),
+    url('../assets/material-icons/material-icons.woff?otzt2q') format('woff'),
+    url('../assets/material-icons/material-icons.svg?otzt2q#material-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
 [class^="icon-"]::before,
 [class*=" icon-"]::before {
-	/* use !important to prevent issues with browser extensions that change fonts */
-	font-family: "material-icons" !important;
-	speak: never;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'material-icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-expand_more:before {
-	content: "\e903";
+.icon-whatshot:before {
+  content: "\e90c";
 }
-
 .icon-arrow_back:before {
   content: "\e90b";
 }
-
+.icon-expand_more:before {
+  content: "\e903";
+}
 .icon-arrow_forward:before {
-	content: "\e904";
+  content: "\e904";
 }
 .icon-favorite:before {
-	content: "\e905";
+  content: "\e905";
 }
 .icon-insert_emoticon:before {
-	content: "\e906";
+  content: "\e906";
 }
 .icon-location_city:before {
-	content: "\e907";
+  content: "\e907";
 }
 .icon-favorite_border:before {
-	content: "\e908";
+  content: "\e908";
 }
 .icon-star:before {
-	content: "\e909";
+  content: "\e909";
 }
 .icon-star_border:before {
-	content: "\e90a";
+  content: "\e90a";
 }
 .icon-twitter:before {
-	content: "\e900";
+  content: "\e900";
 }
 .icon-facebook:before {
-	content: "\e901";
+  content: "\e901";
 }
 .icon-instagram:before {
-	content: "\e902";
+  content: "\e902";
 }
