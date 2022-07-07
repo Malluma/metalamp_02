@@ -2,6 +2,7 @@ extends ../../page-layout/template/template.pug
 
 include ../../blocks/booking/booking.pug
 include ../../blocks/bullet-list/bullet-list.pug
+include ../../blocks/diagram/diagram.pug
 include ../../blocks/facility/facility.pug
 include ../../blocks/review/review.pug
 
@@ -25,8 +26,13 @@ block content
               +facility({type: "Удобство", name: "Окно в каждой из спален", icon: "icon-location_city"}) 
             .room-details__facility.room-details__facility_cosiness
               +facility({type: "Уют", name: "Номер оснащен камином", icon: "icon-whatshot"}) 
-          .room-details__diagram
-            h2.room-details__title Впечатления от номера
+          .room-details__impression
+            h2.room-details__title.room-details__title_impression Впечатления от номера
+            .room-details__diagram
+              +diagram([{name: "Великолепно", number: "520", percent: "49.5", index: 1},
+                        {name: "Удовлетворительно", number: "260", percent: "24.5", index: 3},
+                        {name: "Хорошо", number: "260", percent: "24.5", index: 2},
+                        {name: "Разочарован", number: "0", percent: "0", index: 4}])
         .room-details__reviews
           .room-details__reviews-title-flex
             h2.room-details__title Отзывы посетителей номера
@@ -42,7 +48,7 @@ block content
             h2.room-details__title.h2.room-details__title_rules Правила
             +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
           .room-details__cancellation
-            h2.room-details__title Отмена
+            h2.room-details__title.h2.room-details__title_cancellation Отмена
             .room-details__cancellation-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
       .room-details__booking
         +booking({number: "888", roomType: "люкс", price: "9990", discount: "2179", extraServiceFee: "300",

@@ -19,7 +19,7 @@
     grid-template-columns: 1.15fr 1fr 1fr;
     grid-template-rows: repeat(2, 16.8vw);
 
-    margin-bottom: 4.4rem;
+    margin-bottom: 4.3rem;
   }
 
   &__grid-image{
@@ -43,12 +43,14 @@
     font-size: 19px;
     font-weight: 700;
     margin: 0;
-    margin-bottom: 1.2rem;
-    &_facilities{
-      margin-bottom: 1.5rem;
-    }
+    margin-bottom: 1.35rem;
+    
+    &_facilities{margin-bottom: 1.6rem;}
+    &_impression{margin-bottom: 1.2rem;}
+    &_cancellation{margin-bottom: 1.15rem;}
     &_rules{
-      margin-left: 1.2rem;
+      margin-left: 1.3rem;
+      margin-bottom: 1.15rem;
     }
   }
 
@@ -58,7 +60,7 @@
   }
 
   &__main{
-    margin-right: 6%;
+    margin-right: 6.1%;
   }
 
   &__top-flex{
@@ -67,8 +69,7 @@
 
   &__bottom-flex{
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 4rem;
+    margin-bottom: 3.85rem;
   }
 
   &__info{
@@ -78,16 +79,16 @@
 
   &__facility{
     margin-left: 0.4rem;
-    margin-bottom: 2.6rem;
+    margin-bottom: 2.5rem;
     &_cosiness{
       margin-bottom: 0;
     }
   }
 
   &__reviews{
-    margin-bottom: 2rem;
+    margin-bottom: 2.1rem;
     &-number{
-      margin-top: 0.2rem
+      margin-top: 0.4rem
     }
   }
 
@@ -97,11 +98,13 @@
 
   &__rules{
     width: 16rem;
+    margin-right: 6.6rem;
+    line-height: 171%;
   }
 
   &__cancellation{
     line-height: 171%;
-    width: 22rem;
+    width: 21.6rem;
   }
 
   &__booking{

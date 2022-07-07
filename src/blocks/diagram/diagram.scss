@@ -1,0 +1,66 @@
+@import '../../styles/variables';
+
+.diagram {
+  font-size: 14px;
+  color: $dark-shade-75;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+
+  &__svg{
+    margin-right: 2.1em;
+  }
+  
+  &__item {
+    fill: none;
+    stroke-width: 1.1;
+    margin-right: 2px;
+  }
+  
+  &__legend{
+    margin-top: 2.3em;
+
+    &-item{
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.43em;
+      &-circle{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 0.3em;
+    
+        &-1{background: $gradient-3;}
+        &-2{background: $secondaryGradient;}
+        &-3{background: $primaryGradient;}
+        &-4{background: $gradient-4;}
+      }
+    }
+  }
+
+  &__active-sector{
+    color: $primaryColor;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    box-sizing: border-box;
+    padding-bottom: 0.35rem;
+  
+    &-number{
+      font-size: 24px;
+      margin-bottom: 0.05rem;
+    }
+    &-txt{
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    }
+
+}

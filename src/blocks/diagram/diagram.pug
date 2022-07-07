@@ -1,0 +1,28 @@
+mixin diagram(items)
+
+  //- const{items} = options
+  .diagram
+    svg.diagram__svg(class="chart" width="120" height="120" viewBox="0 0 33 33" transform="rotate(90)")
+      linearGradient(id="gradient1" gradientUnits="objectBoundingBox" gradientTransform="rotate(50,0.5,0.5)")
+        stop(offset="0%" stop-color="#FFE39C")
+        stop(offset="100%" stop-color="#FFBA9C")
+      linearGradient(id="gradient2" gradientUnits="objectBoundingBox" gradientTransform="rotate(50,0.5,0.5)")
+        stop(offset="0%" stop-color="#6FCF97")
+        stop(offset="100%" stop-color="#66D2EA")
+      linearGradient(id="gradient3" gradientUnits="objectBoundingBox" gradientTransform="rotate(50,0.5,0.5)")
+        stop(offset="0%" stop-color="#BC9CFF")
+        stop(offset="100%" stop-color="#8BA4F9")
+      - let indent = 0
+      each obj, index in items
+        if (obj.percent !== 0)
+          circle.diagram__item(r="15.9" cx="50%" cy="50%" stroke= `url('#gradient${obj.index}')` stroke-dasharray= `${obj.percent} 100` stroke-dashoffset= -indent)
+          - indent = indent + Number(obj.percent) + 0.5
+      .diagram__active-sector
+        .diagram__active-sector-number 260
+        .diagram__active-sector-txt голосов
+    .diagram__legend
+      - items.sort((a, b) => a.index > b.index ? 1 : -1)
+      each obj, index in items
+        .diagram__legend-item
+          .diagram__legend-item-circle(class= `diagram__legend-item-circle-${obj.index}`)
+          .diagram__legend-item-name= obj.name
