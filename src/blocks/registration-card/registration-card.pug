@@ -4,29 +4,29 @@ include ../text-field/text-field.pug
 include ../toggle/toggle.pug
 
 
-mixin registration()
-  form.registration
-    h2.registration__title Регистрация аккаунта
-    .registration__name
+mixin registration-card()
+  form.registration-card
+    h2.registration-card__title Регистрация аккаунта
+    .registration-card__name
       +text-field({placeholder: "Имя"})
-    .registration__surname
+    .registration-card__surname
       +text-field({placeholder: "Фамилия"})
-    .registration__sex
+    .registration-card__sex
       +radio("sex", "Мужчина", true) 
       +radio("sex", "Женщина", false)  
-    .registration__birth-date
+    .registration-card__birth-date
       +text-field({label: "Дата рождения", placeholder: "ДД.ММ.ГГГГ", dateMasked: true})  
-    .registration__email
+    .registration-card__email
       +text-field({label: "Данные для входа в сервис", placeholder: "Email"})
-    .registration__password
+    .registration-card__password
       +text-field({placeholder: "Пароль"})
-    .registration__receive-special-offers
+    .registration-card__receive-special-offers
       +toggle("Получать спецпредложения", false) 
-    .registration__submit
+    .registration-card__submit
       +button({text: "Перейти к оплате", type: "background", submit: true})  
-    .registration__login
-      .registration__login-label Уже есть аккаунт на Toxin
-      .registration__login-btn
+    .registration-card__login
+      .registration-card__login-label Уже есть аккаунт на Toxin
+      .registration-card__login-btn
         +button({text: "Войти", type: "border"}) 
 
 

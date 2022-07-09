@@ -1,0 +1,16 @@
+extends ../../page-layout/template/template.pug
+
+include ../../blocks/carousel-background/carousel-background.pug
+include ../../blocks/registration-card/registration-card.pug
+
+
+block vars
+  - const pageTitle = "Registration"
+  - const userName = ""
+block content
+  .registration
+     .registration__main  
+      +carousel-background({items:[{src: require("../../assets/images/background4.png")}, {src: require("../../assets/images/background1.png")}]})
+      .registration__container
+        .registration__registration-card
+          +registration-card()

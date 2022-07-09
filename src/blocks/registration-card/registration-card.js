@@ -1,5 +1,5 @@
 
-import './registration.scss';
+import './registration-card.scss';
 
 import '../button/button';
 import '../radio/radio';

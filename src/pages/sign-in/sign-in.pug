@@ -1,0 +1,16 @@
+extends ../../page-layout/template/template.pug
+
+include ../../blocks/carousel-background/carousel-background.pug
+include ../../blocks/login/login.pug
+
+
+block vars
+  - const pageTitle = "Sign in"
+  - const userName = ""
+block content
+  .sign-in
+     .sign-in__main  
+      +carousel-background({items:[{src: require("../../assets/images/background4.png")}, {src: require("../../assets/images/background1.png")}]})
+      .sign-in__container
+        .sign-in__login-card
+          +login()

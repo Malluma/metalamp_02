@@ -4,7 +4,7 @@ include ../../blocks/booking/booking.pug
 include ../../blocks/date-dropdown/date-dropdown.pug
 include ../../blocks/login/login.pug
 include ../../blocks/logo-ui-kit/logo-ui-kit.pug
-include ../../blocks/registration/registration.pug
+include ../../blocks/registration-card/registration-card.pug
 include ../../blocks/room/room.pug
 include ../../blocks/room-search/room-search.pug
 
@@ -18,7 +18,7 @@ block content
         .cards__room-search
           +room-search()
         .cards__registration
-          +registration()
+          +registration-card()
       .cards__column2
         .cards__booking
           +booking({number: "888", roomType: "люкс", price: "9990", discount: "2179", extraServiceFee: "300",
