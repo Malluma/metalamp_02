@@ -10,13 +10,27 @@
   max-width: 800px;
 
   &__svg{
-    margin-right: 2.1em;
+    margin-right: 1.45em;
+    position: relative;
+    z-index: 3;
   }
   
   &__item {
     fill: none;
     stroke-width: 1.1;
-    margin-right: 2px;
+    cursor: pointer;
+
+    animation-name: render;
+    animation-duration: 0.7s; 
+
+    transition-property: all; 
+    transition-duration: 0.7s;
+
+    &:hover, &:focus {
+      opacity: 0.7;
+      stroke-width: 3;
+      outline: none;
+    }
   }
   
   &__legend{
@@ -48,10 +62,15 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     box-sizing: border-box;
     padding-bottom: 0.35rem;
+
+    &-color-1{color: $color-3;}
+    &-color-2{color: $secondaryColor;}
+    &-color-3{color: $primaryColor;}
+    &-color-4{color: $color-4;}
   
     &-number{
       font-size: 24px;
@@ -61,6 +80,12 @@
       font-size: 12px;
       text-transform: uppercase;
     }
+  }
+
+  @keyframes render {
+    0% {
+      stroke-dasharray: 0 100;
     }
+  }
 
 }

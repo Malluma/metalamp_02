@@ -46,7 +46,10 @@
     margin-bottom: 1.35rem;
     
     &_facilities{margin-bottom: 1.6rem;}
-    &_impression{margin-bottom: 1.2rem;}
+    &_impression{
+      margin-bottom: 0.8rem;
+      margin-left: 0.65rem;
+    }
     &_cancellation{margin-bottom: 1.15rem;}
     &_rules{
       margin-left: 1.3rem;
@@ -73,7 +76,7 @@
   }
 
   &__info{
-    margin-right: 6.7rem;
+    margin-right: 6rem;
     margin-bottom: 1.9rem;
   }
 

@@ -66,6 +66,7 @@
     box-shadow: $card-shadow;
     border-radius: 4px;
     transition: opacity 0.4s ease-out;
+    z-index: 3;
 
     &_hidden{
       display: none;

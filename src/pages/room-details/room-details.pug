@@ -29,10 +29,10 @@ block content
           .room-details__impression
             h2.room-details__title.room-details__title_impression Впечатления от номера
             .room-details__diagram
-              +diagram([{name: "Великолепно", number: "520", percent: "49.5", index: 1},
+              +diagram({activeSectorNumber: "260", items: [{name: "Великолепно", number: "520", percent: "49.5", index: 1},
                         {name: "Удовлетворительно", number: "260", percent: "24.5", index: 3},
                         {name: "Хорошо", number: "260", percent: "24.5", index: 2},
-                        {name: "Разочарован", number: "0", percent: "0", index: 4}])
+                        {name: "Разочарован", number: "0", percent: "0", index: 4}]})
         .room-details__reviews
           .room-details__reviews-title-flex
             h2.room-details__title Отзывы посетителей номера
