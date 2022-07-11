@@ -8,6 +8,10 @@
   border-radius: 4px;
   background-color: $background-color;
   max-width: 16.9rem;
+  &:focus, &:hover{
+    outline: none;
+  }
+
 
   &__description{
     padding: 1.25em 1.1em 1.1em 1.2em;

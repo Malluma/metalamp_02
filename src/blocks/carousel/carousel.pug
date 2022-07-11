@@ -1,8 +1,8 @@
 mixin carousel(options)
   -const {items} = options
-  .carousel.js-carousel
-    button.carousel__btn.carousel__btn-back(class= "js-carousel__btn-back icon-expand_more")
-    button.carousel__btn.carousel__btn-forward(class= "js-carousel__btn-forward icon-expand_more")
+  .carousel.js-carousel(tabindex=0)
+    .carousel__btn.js-carousel__btn.carousel__btn-back(class= "js-carousel__btn-back icon-expand_more")
+    .carousel__btn.js-carousel__btn.carousel__btn-forward(class= "js-carousel__btn-forward icon-expand_more")
     each item, index in items
       - const active = index === 1 ? "carousel__item_active": ""
       image.carousel__item.js-carousel__item(src= item class= active)

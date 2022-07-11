@@ -2,6 +2,31 @@
 @import '../../styles/Montserrat.css';
 @import '../../styles/variables';
 
-.html{
-	font-family: $font-family;
+body{
+  margin: 0;
+  font-family: $font-family;
+  background-color: $background-color;
+}
+
+.index{
+  &__title{
+    margin-left: 3rem;
+  }
+  &__pages{
+    width: 180px;
+    margin: 2rem 3rem;
+  }
+
+  &__page{
+    margin-bottom: 0.5rem;
+    &-link{
+      text-decoration: none;
+      color: $dark-shade-75;
+      &:focus, &:hover{
+        outline: none;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
 }

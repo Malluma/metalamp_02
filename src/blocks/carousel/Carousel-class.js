@@ -1,12 +1,15 @@
 class Carousel {
 
   constructor(carouselHtml) {
+    
     this.carouselHtml = carouselHtml;
     this.itemsHtml = this.carouselHtml.querySelectorAll(".js-carousel__item");
     this.trackItemsHtml = this.carouselHtml.querySelectorAll(".js-carousel__track-item");
     this.btnBack = this.carouselHtml.querySelector(".js-carousel__btn-back");
     this.btnForward = this.carouselHtml.querySelector(".js-carousel__btn-forward");
-    this.itemWidth = this.carouselHtml.clientWidth;
+    this.itemWidth = this.carouselHtml.offsetWidth;
+    console.log('width')
+    console.log(this.itemWidth)
     this.activeItem = 0;
    
     this.bindMethods();
@@ -16,11 +19,13 @@ class Carousel {
   bindMethods() {
     this.handleBtnBackClick = this.handleBtnBackClick.bind(this);
     this.handleBtnForwardClick = this.handleBtnForwardClick.bind(this);
+    this.handleLeftRightKeysPress = this.handleLeftRightKeysPress.bind(this);
   }
 
   addEventListeners() {
     this.btnBack.addEventListener("click", this.handleBtnBackClick);
     this.btnForward.addEventListener("click", this.handleBtnForwardClick);
+    this.carouselHtml.addEventListener("keyup", this.handleLeftRightKeysPress);
   }
 
   handleBtnBackClick(){
@@ -56,6 +61,15 @@ class Carousel {
   updateTrack(prevActive){
     this.trackItemsHtml[prevActive].classList.remove('carousel__track-item_active');
     this.trackItemsHtml[this.activeItem].classList.add('carousel__track-item_active');
+  }
+
+  handleLeftRightKeysPress(event){
+
+    if(event.key === 'ArrowLeft'){
+      this.handleBtnBackClick();
+    } else if (event.key === 'ArrowRight'){
+      this.handleBtnForwardClick();
+    }
   }
 
 }

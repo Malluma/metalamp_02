@@ -2,10 +2,11 @@ include ../rating/rating.pug
 include ../carousel/carousel.pug
 
 mixin room(options)
-  - const {number, roomType, price, otzyvy, reviews, roomImages, rating } = options
+  - const {number, roomType, price, otzyvy, reviews, roomImages, rating, focused, groupID } = options
   - const priceStr = new Intl.NumberFormat('ru-RU').format(price)
+  - const roomIsFocused = (focused === "true") ? true : false;
   
-  article.room
+  article.room.js-room(tabindex=0 autofocus= roomIsFocused)
     .room__images
       +carousel({items:roomImages})
     .room__description
