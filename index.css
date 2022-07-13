@@ -27,14 +27,18 @@ body {
   margin: 0;
   font-family: Montserrat, Arial, sans-serif;
   background-color: #ffffff;
+  margin-left: 1rem;
 }
 
 .index__title {
   margin-left: 3rem;
 }
+.index__ul-title {
+  margin-left: 3.7rem;
+}
 .index__pages {
   width: 180px;
-  margin: 2rem 3rem;
+  margin: 1rem 4rem;
 }
 .index__page {
   margin-bottom: 0.5rem;
