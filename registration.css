@@ -1,0 +1,775 @@
+/*!*****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/Montserrat.css ***!
+  \*****************************************************************************/
+@font-face {
+	font-family: "Montserrat";
+	src: url(assets/Montserrat-Bold.woff) format("woff"),
+		url(assets/Montserrat-Bold.ttf) format("truetype"),
+		url(assets/Montserrat-Bold.svg) format("svg");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url(assets/Montserrat-Regular.woff) format("woff"),
+		url(assets/Montserrat-Regular.ttf) format("truetype"),
+		url(assets/Montserrat-Regular.svg) format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/pages/registration/registration.scss ***!
+  \**********************************************************************************************************************************************************************************************************/
+.registration__main {
+  height: 685px;
+  position: relative;
+}
+.registration__container {
+  max-width: 1160px;
+  height: inherit;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.registration__registration-card {
+  width: 23.75rem;
+  margin: 0 auto;
+  padding-top: 1.2rem;
+}
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/page-layout/template/template.scss ***!
+  \********************************************************************************************************************************************************************************************************/
+body {
+  margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  background-color: #ffffff;
+}
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/footer/footer.scss ***!
+  \***********************************************************************************************************************************************************************************************/
+.footer {
+  font-size: 14px;
+  height: 443px;
+  background-color: #ffffff;
+  padding: 0 0.5rem;
+  margin-bottom: 1em;
+}
+@media screen and (max-width: 900px) {
+  .footer {
+    display: none;
+  }
+}
+.footer__container {
+  max-width: 1160px;
+  height: inherit;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer__logo {
+  align-self: center;
+  margin-right: 0.5em;
+  margin-bottom: 1em;
+}
+.footer__logo_mobile {
+  margin-bottom: 1em;
+  margin-right: 0;
+}
+.footer__main {
+  padding-top: 7.1em;
+  padding-bottom: 5.6em;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__main-without-container {
+  border-bottom: 1px solid rgba(31, 32, 65, 0.25);
+  margin-bottom: 1.9em;
+}
+.footer__column {
+  padding-top: 0.3em;
+}
+.footer__column-title {
+  font-size: 12px;
+  color: #1f2041;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.7em;
+}
+.footer__column-title_subscription {
+  margin-bottom: 1.5em;
+}
+.footer__column-list {
+  color: rgba(31, 32, 65, 0.5);
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.footer__column-item {
+  margin-bottom: 1.45em;
+}
+.footer__nav {
+  margin-right: 1em;
+  flex-grow: 1;
+}
+.footer__about {
+  flex-grow: 2.1;
+}
+.footer__support {
+  flex-grow: 1.2;
+}
+.footer__reward-txt, .footer__subscription-txt {
+  color: rgba(31, 32, 65, 0.75);
+  line-height: 24px;
+  margin-bottom: 1.25em;
+}
+.footer__column1 {
+  max-width: 260px;
+  margin-right: 2.9em;
+}
+.footer__subscription {
+  width: 260px;
+  margin-bottom: 1em;
+}
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__copyright {
+  font-size: 14px;
+  color: rgba(31, 32, 65, 0.75);
+}
+.footer__copyright_mobile {
+  margin-bottom: 1.9em;
+}
+.footer__social {
+  font-size: 22px;
+  display: flex;
+  justify-content: flex-end;
+}
+.footer__social_mobile {
+  padding-right: 1em;
+}
+.footer__social-item {
+  color: transparent;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-left: 0.97em;
+}
+.footer__social-item_twitter {
+  font-size: 20px;
+}
+.footer__mobile {
+  height: 367px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+.footer__mobile-align-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__mobile_hidden {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .footer__mobile_hidden {
+    display: flex;
+    z-index: 999;
+  }
+}
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/text-field/text-field.scss ***!
+  \*******************************************************************************************************************************************************************************************************/
+.btn-icon__flex-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.btn-icon__pic {
+  font-size: 18px;
+  position: absolute;
+  left: -30px;
+  color: transparent;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.text-field {
+  background: #ffffff;
+}
+.text-field__label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.text-field__label-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.text-field__label-span {
+  font-weight: bold;
+}
+.text-field__sublabel-span {
+  color: rgba(31, 32, 65, 0.5);
+  align-self: flex-start;
+}
+.text-field__input {
+  font-family: inherit;
+  font-size: 14px;
+  display: block;
+  margin: 0;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+  color: rgba(31, 32, 65, 0.75);
+  padding: 12px 14px;
+}
+.text-field__input:hover, .text-field__input:focus {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  outline: none;
+}
+.text-field__input::placeholder {
+  color: rgba(31, 32, 65, 0.25);
+}
+.text-field__input_focus {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+.text-field__input-flex-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/header/header.scss ***!
+  \***********************************************************************************************************************************************************************************************/
+.header {
+  font-size: 14px;
+  height: 70px;
+  background-color: #ffffff;
+  padding: 0 0.5rem;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+.header__container {
+  max-width: 1160px;
+  height: inherit;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  align-self: center;
+  margin-right: 0.5em;
+}
+.header__container-right {
+  display: flex;
+  align-items: center;
+}
+.header__menu {
+  margin-right: 0.1em;
+}
+.header__btns {
+  display: flex;
+  gap: 1.4em;
+}
+.header__btns-login {
+  width: 6.2em;
+}
+.header__btns-registration {
+  width: 14em;
+}
+.header__user {
+  color: rgba(31, 32, 65, 0.5);
+  padding: 0.5em 0 0.5em 1.5em;
+  border-left: 1px solid rgba(31, 32, 65, 0.1);
+}
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/button/button.scss ***!
+  \***********************************************************************************************************************************************************************************************/
+.button {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 22px;
+  padding: 0.12em 0.35em 0.2em 0em;
+  width: 100%;
+  display: block;
+  text-decoration: none;
+}
+.button:focus {
+  outline: none;
+}
+.button__background {
+  width: 100%;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  color: #ffffff;
+  padding: 0.12em 0.35em 0.2em 0em;
+}
+.button__background:hover, .button__background:focus, .button__background_hover {
+  outline: none;
+  opacity: 0.5;
+}
+.button__border {
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  color: #bc9cff;
+  padding: 0.17em;
+}
+.button__border:hover, .button__border:focus, .button__border_hover {
+  outline: none;
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.5), rgba(139, 164, 249, 0.5));
+}
+.button__text-only {
+  width: fit-content;
+  background: none;
+}
+.button__align-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.button__icon {
+  font-size: 18px;
+  color: #ffffff;
+  padding-right: 0.5em;
+  margin-top: 0.2em;
+}
+.button__icon_invisible-for-aligning {
+  opacity: 0;
+}
+.button__internal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  padding: 1.05em 0.6em;
+}
+.button__internal_narrow {
+  padding: 0.65em 0.6em;
+}
+.button__internal-background {
+  background: inherit;
+}
+.button__internal-border {
+  background: #ffffff;
+}
+.button__internal-text-only {
+  background: none;
+  color: #bc9cff;
+  padding: 0;
+}
+.button__internal-text-only:hover, .button__internal-text-only:focus, .button__internal-text-only_hover {
+  outline: none;
+  border: none;
+  color: rgba(31, 32, 65, 0.5);
+}
+/*!*********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/material-icons.css ***!
+  \*********************************************************************************/
+@font-face {
+  font-family: 'material-icons';
+  src:  url(assets/material-icons.eot);
+  src:  url(assets/material-icons.eot#iefix) format('embedded-opentype'),
+    url(assets/material-icons.ttf) format('truetype'),
+    url(assets/material-icons.woff) format('woff'),
+    url(assets/material-icons.svg#material-icons) format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'material-icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-whatshot:before {
+  content: "\e90c";
+}
+.icon-arrow_back:before {
+  content: "\e90b";
+}
+.icon-expand_more:before {
+  content: "\e903";
+}
+.icon-arrow_forward:before {
+  content: "\e904";
+}
+.icon-favorite:before {
+  content: "\e905";
+}
+.icon-insert_emoticon:before {
+  content: "\e906";
+}
+.icon-location_city:before {
+  content: "\e907";
+}
+.icon-favorite_border:before {
+  content: "\e908";
+}
+.icon-star:before {
+  content: "\e909";
+}
+.icon-star_border:before {
+  content: "\e90a";
+}
+.icon-twitter:before {
+  content: "\e900";
+}
+.icon-facebook:before {
+  content: "\e901";
+}
+.icon-instagram:before {
+  content: "\e902";
+}
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/menu/menu.scss ***!
+  \*******************************************************************************************************************************************************************************************/
+.menu {
+  font-size: 14px;
+  color: rgba(31, 32, 65, 0.5);
+  background-color: #ffffff;
+}
+.menu__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+@media screen and (max-width: 900px) {
+  .menu__list {
+    display: none;
+  }
+  .menu__list_full-screen-open {
+    padding: 0.5em;
+    padding-bottom: 6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: x-large;
+    position: fixed;
+    background: #ffffff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    transform: translateX(0);
+    transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+  }
+}
+.menu__item {
+  margin-right: 1.45em;
+}
+.menu__item-href {
+  text-decoration: none;
+  color: rgba(31, 32, 65, 0.5);
+  display: flex;
+}
+.menu__item-href:focus, .menu__item-href:hover {
+  outline: none;
+  color: rgba(31, 32, 65, 0.75);
+  font-weight: 700;
+}
+.menu__sublist {
+  opacity: 1;
+  display: block;
+  list-style-type: none;
+  margin-top: 0.5em;
+  padding: 0.8em 1em 0 1em;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: opacity 0.4s ease-out;
+  z-index: 3;
+}
+.menu__sublist_hidden {
+  display: none;
+}
+.menu__sublist_unvisible {
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+}
+.menu__subitem {
+  margin-bottom: 1em;
+}
+.menu__expand-btn {
+  padding-left: 0.4em;
+  margin-right: 0.3em;
+  margin-top: 0.2em;
+}
+.menu__toggle-btn {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 1em;
+  display: none;
+  z-index: 100;
+  border-radius: 4px;
+}
+.menu__toggle-btn:hover > .menu__hamburger, .menu__toggle-btn:focus > .menu__hamburger {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+}
+.menu__toggle-btn_full-screen-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+@media screen and (max-width: 900px) {
+  .menu__toggle-btn {
+    display: block;
+  }
+}
+.menu__hamburger {
+  background-color: rgba(31, 32, 65, 0.5);
+  width: 2em;
+  height: 3px;
+  margin-bottom: 0.5em;
+}
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/carousel/carousel.scss ***!
+  \***************************************************************************************************************************************************************************************************/
+.carousel {
+  display: flex;
+  align-items: flex-end;
+  border-radius: inherit;
+  height: inherit;
+  position: absolute;
+  width: 100%;
+}
+.carousel:focus {
+  outline: none;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+}
+.carousel__btn {
+  font-size: 14px;
+  color: #ffffff;
+  border: none;
+  background: none;
+  position: absolute;
+  z-index: 99;
+  top: 44%;
+  display: none;
+}
+.carousel__btn_visible {
+  display: block;
+}
+.carousel__btn:hover {
+  font-size: 16px;
+}
+.carousel__btn-back {
+  transform: rotate(90deg);
+  left: 3%;
+}
+.carousel__btn-forward {
+  transform: rotate(270deg);
+  right: 3%;
+}
+.carousel__item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 1s all ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.carousel__item_active {
+  opacity: 1;
+}
+.carousel__track {
+  display: flex;
+  position: absolute;
+  z-index: 99;
+  bottom: 10%;
+  right: 6%;
+}
+.carousel__track-item {
+  width: 0.45em;
+  height: 0.45em;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-left: 0.25em;
+  box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+}
+.carousel__track-item_active {
+  background-color: #ffffff;
+}
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/registration-card/registration-card.scss ***!
+  \*********************************************************************************************************************************************************************************************************************/
+.registration-card {
+  padding: 2.5em 1.8em 1.85em 1.8em;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+.registration-card__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 0.7em;
+}
+.registration-card__name {
+  margin-bottom: 0.3em;
+}
+.registration-card__surname {
+  margin-bottom: 0.6em;
+  background-color: red;
+}
+.registration-card__sex {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1.5em;
+}
+.registration-card__birth-date {
+  margin-bottom: 1.3em;
+}
+.registration-card__email {
+  margin-bottom: 0.3em;
+}
+.registration-card__password {
+  margin-bottom: 0.6em;
+}
+.registration-card__receive-special-offers {
+  margin-bottom: 1.55em;
+}
+.registration-card__submit {
+  margin-bottom: 1.8em;
+}
+.registration-card__login {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.registration-card__login-label {
+  flex-grow: 3;
+}
+.registration-card__login-btn {
+  flex-grow: 2.7;
+}
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/radio/radio.scss ***!
+  \*********************************************************************************************************************************************************************************************/
+.radio {
+  font-size: 14px;
+}
+.radio__label {
+  display: flex;
+}
+.radio__label-txt {
+  color: rgba(31, 32, 65, 0.5);
+}
+.radio__hidden-input:checked ~ .radio__label-txt {
+  color: rgba(31, 32, 65, 0.75);
+}
+.radio__hidden-input:hover ~ .radio__label-txt, .radio__hidden-input:focus ~ .radio__label-txt {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.radio__visible-input {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.radio__visible-input-internal {
+  border-radius: 50%;
+  width: 0.84em;
+  height: 0.84em;
+  background: #ffffff;
+}
+.radio__hidden-input:checked + .radio__visible-input {
+  border-color: #bc9cff;
+}
+.radio__hidden-input:checked + .radio__visible-input > .radio__visible-input-internal {
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+}
+.radio__hidden-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/toggle/toggle.scss ***!
+  \***********************************************************************************************************************************************************************************************/
+.toggle {
+  color: rgba(31, 32, 65, 0.75);
+  font-size: 14px;
+}
+.toggle__label {
+  display: flex;
+  align-items: flex-start;
+}
+.toggle__hidden-input:hover ~ .toggle__label-txt {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.toggle__hidden-input:focus ~ .toggle__label-txt {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.toggle__hidden-input {
+  margin: 0;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+}
+.toggle__visible-input {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 0.21em;
+  min-width: 40px;
+  margin-right: 0.75em;
+  display: flex;
+  align-items: center;
+}
+.toggle__hidden-input:checked + .toggle__visible-input {
+  border-color: #bc9cff;
+}
+.toggle__visible-input-internal {
+  border-radius: 50%;
+  width: 0.83em;
+  height: 0.83em;
+  background-color: rgba(31, 32, 65, 0.25);
+  margin-left: 0;
+}
+.toggle__hidden-input:checked + .toggle__visible-input > .toggle__visible-input-internal {
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  margin-left: auto;
+}
+
+/*# sourceMappingURL=registration.css.map*/

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","mappings":";;;;;;;;;;;;;;;;;;;;;;ACAA","sources":["webpack://metalamp_02/./src/pages/index/index.js","webpack://metalamp_02/./src/pages/index/index.scss?0efb"],"sourcesContent":["import './index.scss';\n","// extracted by mini-css-extract-plugin\nexport {};"],"names":[],"sourceRoot":""}

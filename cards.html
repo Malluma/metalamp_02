@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cards</title>
+  <link href="cards.css" rel="stylesheet"></head>
+  <body>
+    <div class="ui-kit-template .ui-kit-template__background-grey">
+      <div class="ui-kit-template__logo">
+        <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.999 32.471a1.416 1.416 0 0 1-1.412-1.412c0-5.435-4.447-9.882-9.882-9.882a1.416 1.416 0 0 1-1.412-1.412c0-.776.635-1.412 1.412-1.412 7.023 0 12.706 5.683 12.706 12.706 0 .777-.636 1.412-1.412 1.412ZM36.707 19.765c0 .777-.636 1.412-1.412 1.412a9.851 9.851 0 0 0-8.118 4.27 14.448 14.448 0 0 0-1.411-2.752 12.588 12.588 0 0 1 9.529-4.341c.776 0 1.412.635 1.412 1.411Z" fill="#1F2041" fill-opacity=".25"></path>
+          <path d="M24 48C10.765 48 0 37.235 0 24S10.765 0 24 0s24 10.765 24 24-10.765 24-24 24Zm0-45.176C12.318 2.824 2.824 12.318 2.824 24c0 11.682 9.494 21.176 21.176 21.176 11.682 0 21.176-9.494 21.176-21.176 0-11.682-9.494-21.176-21.176-21.176Z" fill="#1F2041" fill-opacity=".25"></path>
+        </svg>
+      </div>
+      <div class="cards">
+        <div class="cards__columns">
+          <div class="cards__column1">
+            <div class="cards__room-search">
+              <form class="room-search">
+                <h2 class="room-search__title">Найдём номера под ваши пожелания</h2>
+                <div class="room-search__arrival-departure">
+                  <div class="date-dropdown">
+                    <label class="date-dropdown__label">прибытие
+                      <div class="date-dropdown__input-flex-wrap">   
+                        <input class="date-dropdown__input js-date-dropdown__double-start" readonly="readonly" type="text" placeholder="ДД.ММ.ГГГГ">
+                        <div class="btn-expand">
+                          <div class="btn-expand__flex-wrap">
+                            <div class="btn-expand__pic icon-expand_more"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                    <label class="date-dropdown__label">выезд
+                      <div class="date-dropdown__input-flex-wrap">
+                        <input class="date-dropdown__input js-date-dropdown__double-end" readonly="readonly" type="text" placeholder="ДД.ММ.ГГГГ" tabindex="-1">
+                        <div class="btn-expand">
+                          <div class="btn-expand__flex-wrap">
+                            <div class="btn-expand__pic icon-expand_more"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="room-search__guests">
+                  <div class="dropdown js-dropdown">
+                    <label class="dropdown__label">
+                      <div class="dropdown__label-wrapper"><span class="dropdown__label-span">гости</span> <span class="dropdown__sublabel-span"></span></div>
+                      <div class="dropdown__input-flex-wrap">
+                        <input class="dropdown__input js-dropdown__input dropdown__input_rounded-bottom-corners" readonly="readonly" type="text" value="Сколько гостей" data-roundedbottomcorners="true">
+                        <div class="btn-expand js-dropdown__expand-btn">
+                          <div class="btn-expand__flex-wrap">
+                            <div class="btn-expand__pic icon-expand_more"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dropdown__list js-dropdown__list dropdown__list_is-hidden" data-list="[{&quot;name&quot;:&quot;Взрослые&quot;,&quot;number&quot;:0,&quot;declensions&quot;:[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]},{&quot;name&quot;:&quot;Дети&quot;,&quot;number&quot;:0,&quot;declensions&quot;:[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]},{&quot;name&quot;:&quot;Младенцы&quot;,&quot;number&quot;:0,&quot;declensions&quot;:[&quot;младенец&quot;,&quot;младенца&quot;,&quot;младенцев&quot;],&quot;notSeparatelyMessage&quot;:&quot;Младенцы могут заехать только вместе со взрослыми.&quot;}]">
+                        <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Взрослые</span>
+                          <div class="dropdown__number-wrap">
+                            <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="гость">0</span>
+                            <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
+                          </div>
+                        </div>
+                        <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Дети</span>
+                          <div class="dropdown__number-wrap">
+                            <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="гость">0</span>
+                            <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
+                          </div>
+                        </div>
+                        <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Младенцы</span>
+                          <div class="dropdown__number-wrap">
+                            <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="младенец" data-notseparately="Младенцы могут заехать только вместе со взрослыми.">0</span>
+                            <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button" data-notseparately="Младенцы могут заехать только вместе со взрослыми.">+</button>
+                            <div class="dropdown__notSeparatelyMessage js-dropdown__notSeparatelyMessage">Младенцы могут заехать только вместе со взрослыми.</div>
+                          </div>
+                        </div>
+                        <div class="dropdown__list-footer">
+                          <button class="dropdown__list-footer-btn js-dropdown__clean-btn" tabindex="0">Очистить</button>
+                          <button class="dropdown__list-footer-btn js-dropdown__apply-btn" tabindex="0">Применить</button>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="room-search__submit">
+                  <a class="button button__background" type="submit" href="./search-room.html">
+                    <div class="button__align-wrap">
+                      <div class="button__icon button__icon_invisible-for-aligning icon-arrow_forward"></div>
+                      <div class="button__internal button__internal-background">Подобрать номер</div>
+                      <div class="button__icon button__icon-visible icon-arrow_forward"></div>
+                    </div>
+                  </a>
+                </div>
+              </form>
+            </div>
+            <div class="cards__registration">
+              <form class="registration-card">
+                <h2 class="registration-card__title">Регистрация аккаунта</h2>
+                <div class="registration-card__name">
+                  <div class="text-field">
+                    <label class="text-field__label">
+                      <div class="text-field__label-wrapper"><span class="text-field__label-span"></span> <span class="text-field__sublabel-span"></span></div>
+                      <div>
+                        <input class="text-field__input" type="text" placeholder="Имя">
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="registration-card__surname">
+                  <div class="text-field">
+                    <label class="text-field__label">
+                      <div class="text-field__label-wrapper"><span class="text-field__label-span"></span> <span class="text-field__sublabel-span"></span></div>
+                      <div>
+                        <input class="text-field__input" type="text" placeholder="Фамилия">
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="registration-card__sex">
+                  <div class="radio">
+                    <label class="radio__label">
+                      <input class="radio__hidden-input" type="radio" name="sex" value="Мужчина" checked="checked">
+                      <div class="radio__visible-input">
+                        <div class="radio__visible-input-internal"></div>
+                      </div>
+                      <div class="radio__label-txt">Мужчина</div>
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label class="radio__label">
+                      <input class="radio__hidden-input" type="radio" name="sex" value="Женщина">
+                      <div class="radio__visible-input">
+                        <div class="radio__visible-input-internal"></div>
+                      </div>
+                      <div class="radio__label-txt">Женщина</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="registration-card__birth-date">
+                  <div class="text-field">
+                    <label class="text-field__label">
+                      <div class="text-field__label-wrapper"><span class="text-field__label-span">Дата рождения</span> <span class="text-field__sublabel-span"></span></div>
+                      <div>
+                        <input class="text-field__input text-field__input_masked js-text-field__input_masked" type="text" placeholder="ДД.ММ.ГГГГ">
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="registration-card__email">
+                  <div class="text-field">
+                    <label class="text-field__label">
+                      <div class="text-field__label-wrapper"><span class="text-field__label-span">Данные для входа в сервис</span> <span class="text-field__sublabel-span"></span></div>
+                      <div>
+                        <input class="text-field__input" type="text" placeholder="Email">
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="registration-card__password">
+                  <div class="text-field">
+                    <label class="text-field__label">
+                      <div class="text-field__label-wrapper"><span class="text-field__label-span"></span> <span class="text-field__sublabel-span"></span></div>
+                      <div>
+                        <input class="text-field__input" type="text" placeholder="Пароль">
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="registration-card__receive-special-offers">
+                  <div class="toggle">
+                    <label class="toggle__label">
+                      <input class="toggle__hidden-input" type="checkbox" role="switch">
+                      <div class="toggle__visible-input">
+                        <div class="toggle__visible-input-internal"></div>
+                      </div>
+                      <div class="toggle__label-txt">Получать спецпредложения</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="registration-card__submit">
+                  <button class="button button__background" type="submit" href="">
+                    <div class="button__align-wrap">
+                      <div class="button__icon button__icon_invisible-for-aligning icon-arrow_forward"></div>
+                      <div class="button__internal button__internal-background">Перейти к оплате</div>
+                      <div class="button__icon button__icon-visible icon-arrow_forward"></div>
+                    </div>
+                  </button>
+                </div>
+                <div class="registration-card__login">
+                  <div class="registration-card__login-label">Уже есть аккаунт на Toxin</div>
+                  <div class="registration-card__login-btn">
+                    <a class="button button__border" data-key="border" tabindex="" href="./sign-in.html">
+                      <div class="button__internal button__internal-border" tabindex=" ">Войти</div>
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="cards__column2">
+            <div class="cards__booking">
+              <form class="booking js-booking" data-price="9990" data-discount="2179" data-extraservicefee="300">
+                <div class="booking__head">
+                  <div class="booking__room">
+                    <div class="booking__room-number"><span class="booking__room-number-sign">№</span><span class="booking__room-number-digit">  888</span></div><span class="booking__room-type">люкс</span>
+                  </div>
+                  <div class="booking__price">9 990₽ <span class="booking__price-per-day">в сутки</span></div>
+                </div>
+                <div class="booking__dates">
+                  <div class="date-dropdown">
+                    <label class="date-dropdown__label">прибытие
+                      <div class="date-dropdown__input-flex-wrap">   
+                        <input class="date-dropdown__input js-date-dropdown__double-start" readonly="readonly" type="text" value="19.08.2019" placeholder="ДД.ММ.ГГГГ">
+                        <div class="btn-expand">
+                          <div class="btn-expand__flex-wrap">
+                            <div class="btn-expand__pic icon-expand_more"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                    <label class="date-dropdown__label">выезд
+                      <div class="date-dropdown__input-flex-wrap">
+                        <input class="date-dropdown__input js-date-dropdown__double-end" readonly="readonly" type="text" value="23.08.2019" placeholder="ДД.ММ.ГГГГ" tabindex="-1">
+                        <div class="btn-expand">
+                          <div class="btn-expand__flex-wrap">
+                            <div class="btn-expand__pic icon-expand_more"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="booking__guests">
+                  <div class="dropdown js-dropdown">
+                    <label class="dropdown__label">
+                      <div class="dropdown__label-wrapper"><span class="dropdown__label-span">гости</span> <span class="dropdown__sublabel-span"></span></div>
+                      <div class="dropdown__input-flex-wrap">
+                        <input class="dropdown__input js-dropdown__input dropdown__input_rounded-bottom-corners" readonly="readonly" type="text" value="Сколько гостей" data-roundedbottomcorners="true">
+                        <div class="btn-expand js-dropdown__expand-btn">
+                          <div class="btn-expand__flex-wrap">
+                            <div class="btn-expand__pic icon-expand_more"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dropdown__list js-dropdown__list dropdown__list_is-hidden" data-list="[{&quot;name&quot;:&quot;Взрослые&quot;,&quot;number&quot;:3,&quot;declensions&quot;:[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]},{&quot;name&quot;:&quot;Дети&quot;,&quot;number&quot;:0,&quot;declensions&quot;:[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]},{&quot;name&quot;:&quot;Младенцы&quot;,&quot;number&quot;:0,&quot;declensions&quot;:[&quot;младенец&quot;,&quot;младенца&quot;,&quot;младенцев&quot;],&quot;notSeparatelyMessage&quot;:&quot;Младенцы могут заехать только вместе со взрослыми.&quot;}]">
+                        <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Взрослые</span>
+                          <div class="dropdown__number-wrap">
+                            <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="гость">3</span>
+                            <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
+                          </div>
+                        </div>
+                        <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Дети</span>
+                          <div class="dropdown__number-wrap">
+                            <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="гость">0</span>
+                            <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
+                          </div>
+                        </div>
+                        <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Младенцы</span>
+                          <div class="dropdown__number-wrap">
+                            <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="младенец" data-notseparately="Младенцы могут заехать только вместе со взрослыми.">0</span>
+                            <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button" data-notseparately="Младенцы могут заехать только вместе со взрослыми.">+</button>
+                            <div class="dropdown__notSeparatelyMessage js-dropdown__notSeparatelyMessage">Младенцы могут заехать только вместе со взрослыми.</div>
+                          </div>
+                        </div>
+                        <div class="dropdown__list-footer">
+                          <button class="dropdown__list-footer-btn js-dropdown__clean-btn" tabindex="0">Очистить</button>
+                          <button class="dropdown__list-footer-btn js-dropdown__apply-btn" tabindex="0">Применить</button>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="booking__cost">
+                  <div class="js-booking__cost-calc"></div>
+                  <div class="js-booking__cost-sum"></div>
+                </div>
+                <div class="booking__service-charge">
+                  <div class="booking__service-charge-text">
+                    <div class="booking__service-charge-label">Сбор за услуги: скидка 2 179₽</div>
+                    <div class="booking__service-charge-i">i</div>
+                  </div>
+                  <div class="booking__service-charge-sum">0₽</div>
+                </div>
+                <div class="booking__service-charge booking__service-charge_2">
+                  <div class="booking__service-charge-text">
+                    <div class="booking__service-charge-label">Сбор за дополнительные услуги </div>
+                    <div class="booking__service-charge-i">i</div>
+                  </div>
+                  <div class="booking__service-charge-sum">300₽</div>
+                </div>
+                <div class="booking__total">
+                  <div class="booking__total-text">Итого</div>
+                  <div class="booking__total-dots"></div>
+                  <div class="booking__total-sum js-booking__total-sum"></div>
+                </div>
+                <div class="booking__submit">
+                  <button class="button button__background" type="submit" href="">
+                    <div class="button__align-wrap">
+                      <div class="button__icon button__icon_invisible-for-aligning icon-arrow_forward"></div>
+                      <div class="button__internal button__internal-background">Забронировать</div>
+                      <div class="button__icon button__icon-visible icon-arrow_forward"></div>
+                    </div>
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="cards__login">
+              <form class="login">
+                <h2 class="login__title">Войти</h2>
+                <div class="login__email">
+                  <div class="text-field">
+                    <label class="text-field__label">
+                      <div class="text-field__label-wrapper"><span class="text-field__label-span"></span> <span class="text-field__sublabel-span"></span></div>
+                      <div>
+                        <input class="text-field__input" type="text" placeholder="Email">
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="login__password">
+                  <div class="text-field">
+                    <label class="text-field__label">
+                      <div class="text-field__label-wrapper"><span class="text-field__label-span"></span> <span class="text-field__sublabel-span"></span></div>
+                      <div>
+                        <input class="text-field__input" type="text" placeholder="Пароль">
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="login__submit">
+                  <button class="button button__background" type="submit" href="">
+                    <div class="button__align-wrap">
+                      <div class="button__icon button__icon_invisible-for-aligning icon-arrow_forward"></div>
+                      <div class="button__internal button__internal-background">Войти</div>
+                      <div class="button__icon button__icon-visible icon-arrow_forward"></div>
+                    </div>
+                  </button>
+                </div>
+                <div class="login__registration">
+                  <div class="login__registration-label">Нет аккаунта на Toxin?</div>
+                  <div class="login__registration-btn">
+                    <a class="button button__border" data-key="border" tabindex="" href="./registration.html">
+                      <div class="button__internal button__internal-border" tabindex=" ">Создать</div>
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="cards__column3">
+            <div class="cards__calendar">
+              <div class="date-dropdown">
+                <label class="date-dropdown__label">
+                  <div class="date-dropdown__input-flex-wrap">
+                    <input class="date-dropdown__input js-date-dropdown__single" readonly="readonly" type="text" value="19 авг - 23 авг" data-value="19.08.2019-23.08.2019" data-alwaysshow="true" placeholder="ДД.ММ - ДД.ММ">
+                    <div class="btn-expand">
+                      <div class="btn-expand__flex-wrap">
+                        <div class="btn-expand__pic icon-expand_more"></div>
+                      </div>
+                    </div>
+                    <!--.date-dropdown__plugin-dp gergr-->
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="cards__room-card">
+              <article class="room js-room" tabindex="0" autofocus>
+                <div class="room__images">
+                  <div class="carousel js-carousel" tabindex="0">
+                    <div class="carousel__btn js-carousel__btn carousel__btn-back js-carousel__btn-back icon-expand_more"></div>
+                    <div class="carousel__btn js-carousel__btn carousel__btn-forward js-carousel__btn-forward icon-expand_more"></div>
+                    <image class="carousel__item js-carousel__item carousel__item_active" src="assets/room-888.png"></image>
+                    <image class="carousel__item js-carousel__item" src="assets/room-second.png"></image>
+                    <image class="carousel__item js-carousel__item" src="assets/room-888-02.png"></image>
+                    <image class="carousel__item js-carousel__item" src="assets/room-888-03.png"></image>
+                    <div class="carousel__track">
+                      <div class="carousel__track-item js-carousel__track-item carousel__track-item_active"></div>
+                      <div class="carousel__track-item js-carousel__track-item"></div>
+                      <div class="carousel__track-item js-carousel__track-item"></div>
+                      <div class="carousel__track-item js-carousel__track-item"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="room__description js-room__description">
+                  <div class="room__head">
+                    <div class="room__number-type">
+                      <div class="room__number"><span class="room__number-sign">№</span><span class="room__number-digit">  888</span></div><span class="room__type">люкс</span>
+                    </div>
+                    <div class="room__price">9 990₽ <span class="room__price-per-day">в сутки</span></div>
+                  </div>
+                  <div class="room__rating">
+                    <div class="rating js-rating" data-canbeedited="false">
+                      <input class="rating__item js-rating__item icon-star" type="radio" name="room__number" value="1" disabled="disabled">
+                      <input class="rating__item js-rating__item icon-star" type="radio" name="room__number" value="2" disabled="disabled">
+                      <input class="rating__item js-rating__item icon-star" type="radio" name="room__number" value="3" disabled="disabled">
+                      <input class="rating__item js-rating__item icon-star" type="radio" name="room__number" value="4" disabled="disabled">
+                      <input class="rating__item js-rating__item icon-star" checked="checked" type="radio" name="room__number" value="5" disabled="disabled">
+                    </div>
+                    <div class="room__reviews"><span class="room__reviews-number">145</span><span class="room__reviews-txt"> Отзывов</span></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="cards__room-card">
+              <article class="room js-room" tabindex="0">
+                <div class="room__images">
+                  <div class="carousel js-carousel" tabindex="0">
+                    <div class="carousel__btn js-carousel__btn carousel__btn-back js-carousel__btn-back icon-expand_more"></div>
+                    <div class="carousel__btn js-carousel__btn carousel__btn-forward js-carousel__btn-forward icon-expand_more"></div>
+                    <image class="carousel__item js-carousel__item carousel__item_active" src="assets/room-840.png"></image>
+                    <image class="carousel__item js-carousel__item" src="assets/room-second.png"></image>
+                    <image class="carousel__item js-carousel__item" src="assets/room-840.png"></image>
+                    <image class="carousel__item js-carousel__item" src="assets/room-second.png"></image>
+                    <div class="carousel__track">
+                      <div class="carousel__track-item js-carousel__track-item carousel__track-item_active"></div>
+                      <div class="carousel__track-item js-carousel__track-item"></div>
+                      <div class="carousel__track-item js-carousel__track-item"></div>
+                      <div class="carousel__track-item js-carousel__track-item"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="room__description js-room__description">
+                  <div class="room__head">
+                    <div class="room__number-type">
+                      <div class="room__number"><span class="room__number-sign">№</span><span class="room__number-digit">  840</span></div><span class="room__type"></span>
+                    </div>
+                    <div class="room__price">9 900₽ <span class="room__price-per-day">в сутки</span></div>
+                  </div>
+                  <div class="room__rating">
+                    <div class="rating js-rating" data-canbeedited="false">
+                      <input class="rating__item js-rating__item icon-star" type="radio" name="room__number" value="1" disabled="disabled">
+                      <input class="rating__item js-rating__item icon-star" type="radio" name="room__number" value="2" disabled="disabled">
+                      <input class="rating__item js-rating__item icon-star" type="radio" name="room__number" value="3" disabled="disabled">
+                      <input class="rating__item js-rating__item icon-star" checked="checked" type="radio" name="room__number" value="4" disabled="disabled">
+                      <input class="rating__item js-rating__item icon-star_border" type="radio" name="room__number" value="5" disabled="disabled">
+                    </div>
+                    <div class="room__reviews"><span class="room__reviews-number">65</span><span class="room__reviews-txt"> Отзывов</span></div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script defer="defer" src="runtime.js"></script><script defer="defer" src="vendors/jquery.js"></script><script defer="defer" src="vendors/jquery-mask-plugin.js"></script><script defer="defer" src="vendors/air-datepicker.js"></script><script defer="defer" src="cards.js"></script></body>
+</html>

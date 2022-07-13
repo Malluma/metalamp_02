@@ -1,0 +1,150 @@
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/pages/colors-and-type/colors-and-type.scss ***!
+  \****************************************************************************************************************************************************************************************************************/
+.colors-and-type__content-wrapper {
+  max-width: 1132.26px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 72px;
+}
+.colors-and-type__color-block {
+  margin-bottom: 20px;
+}
+.colors-and-type__type-block {
+  margin-bottom: 51px;
+  max-width: 436px;
+}
+/*!*****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/Montserrat.css ***!
+  \*****************************************************************************/
+@font-face {
+	font-family: "Montserrat";
+	src: url(assets/Montserrat-Bold.woff) format("woff"),
+		url(assets/Montserrat-Bold.ttf) format("truetype"),
+		url(assets/Montserrat-Bold.svg) format("svg");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url(assets/Montserrat-Regular.woff) format("woff"),
+		url(assets/Montserrat-Regular.ttf) format("truetype"),
+		url(assets/Montserrat-Regular.svg) format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/page-layout/ui-kit-template/ui-kit-template.scss ***!
+  \**********************************************************************************************************************************************************************************************************************/
+body {
+  margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  background-color: #ffffff;
+}
+body .ui-kit-template__background-grey {
+  background-color: #F4F4F6;
+}
+body .ui-kit-template__logo {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/type-block/type-block.scss ***!
+  \*******************************************************************************************************************************************************************************************************/
+.type-block {
+  display: flex;
+}
+.type-block__tag {
+  margin-right: 30px;
+  min-width: 37px;
+  text-align: right;
+}
+.type-block__tag_H1 {
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.25);
+}
+.type-block__tag_H2 {
+  font-size: 19px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.25);
+}
+.type-block__tag_H3 {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.25);
+}
+.type-block__tag_body {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.25);
+}
+.type-block__description_H1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2041;
+}
+.type-block__description_H2 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #1f2041;
+}
+.type-block__description_H3 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f2041;
+  text-transform: uppercase;
+}
+.type-block__description_body {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.75);
+}
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/color-block/color-block.scss ***!
+  \*********************************************************************************************************************************************************************************************************/
+.color-block {
+  font-size: 19px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.color-block__name {
+  font-weight: bold;
+}
+.color-block__code {
+  font-weight: 400;
+}
+.color-block__rectangle {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  margin-right: 40px;
+}
+.color-block__dark-shade-100 {
+  background-color: #1f2041;
+}
+.color-block__dark-shade-75 {
+  background-color: rgba(31, 32, 65, 0.75);
+}
+.color-block__dark-shade-50 {
+  background-color: rgba(31, 32, 65, 0.5);
+}
+.color-block__dark-shade-25 {
+  background-color: rgba(31, 32, 65, 0.25);
+}
+.color-block__dark-shade-5 {
+  background-color: rgba(31, 32, 65, 0.05);
+}
+.color-block__purple {
+  background-color: #bc9cff;
+}
+.color-block__green {
+  background-color: #6fcf97;
+}
+
+/*# sourceMappingURL=colors-and-type.css.map*/
