@@ -6,10 +6,9 @@ mixin menu(items)
       .menu__hamburger
     ul.menu__list.js-menu__list
       each item in items
-        - const {name, active = false, subItems = []} = item
-        - const itemClasses = active ? "menu__item-href_active" : ""
+        - const {name, subItems = []} = item
         li.menu__item(tabindex=-1)
-          a.menu__item-href(href="#" class= itemClasses)= name
+          a.menu__item-href(href="#")= name
             if (subItems.length > 0)
               span.menu__expand-btn.js-menu__expand-btn(class= "icon-expand_more" tabindex=-1)
           if (subItems.length > 0)

@@ -9,7 +9,7 @@ mixin room(options)
   article.room.js-room(tabindex=0 autofocus= roomIsFocused)
     .room__images
       +carousel({items:roomImages})
-    .room__description
+    .room__description.js-room__description
       .room__head
         .room__number-type
           .room__number
@@ -23,5 +23,3 @@ mixin room(options)
         .room__reviews
           span.room__reviews-number= reviews
           span.room__reviews-txt  Отзывов
-          
-        

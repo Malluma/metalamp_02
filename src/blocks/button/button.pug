@@ -1,5 +1,5 @@
 mixin button(options)
-  - const {text, type, submit, hover, narrow= false} = options
+  - const {text, type, submit, hover, narrow= false, href= ""} = options
   - const hoverClass = hover? `button__${type}_hover`: "";
   - const internalHoverClass = hover? `button__internal-${type}_hover`: "";
   - const typeClass = `button__${type} ${hoverClass}`
@@ -8,13 +8,14 @@ mixin button(options)
   - const submitIconClass = 'icon-arrow_forward';
   - const tabIndexButton = type === "text-only" ? "-1": " "
   - const tabIndexInternal = type === "text-only" ? "0": " "
+  - const tagBtn = href  ? "a" : "button";
 
   if submit
-    button.button(class= typeClass type= 'submit')
+    #{tagBtn}.button(class= typeClass type= 'submit' href= href)
       .button__align-wrap
         .button__icon.button__icon_invisible-for-aligning(class= submitIconClass)
         .button__internal(class= internalTypeClass)= text
         .button__icon.button__icon-visible(class= submitIconClass)
   else
-    button.button(class= typeClass data-key=type tabindex= tabIndexButton)
+    #{tagBtn}.button(class= typeClass data-key=type tabindex= tabIndexButton href= href)
       .button__internal(class= internalTypeClass tabindex= tabIndexInternal)= text

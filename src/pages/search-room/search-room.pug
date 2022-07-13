@@ -77,7 +77,8 @@ block content
                roomImages: [require("../../assets/images/room-second.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-second.png"), require("../../assets/images/room-second.png")]}
               ]
           each room in roomsData
-            +room(room)
+            .search-room__room-card
+              +room(room)
         .search-room__pagination
           +pagination()
       

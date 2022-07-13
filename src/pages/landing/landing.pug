@@ -1,6 +1,6 @@
 extends ../../page-layout/template/template.pug
 
-include ../../blocks/carousel-background/carousel-background.pug
+include ../../blocks/carousel/carousel.pug
 include ../../blocks/room-search/room-search.pug
 
 block vars
@@ -9,7 +9,7 @@ block vars
 block content
   .landing
     .landing__main  
-      +carousel-background({items:[{src: require("../../assets/images/background1.png")}, {src: require("../../assets/images/background2.png")}, {src: require("../../assets/images/background3.png")}]})
+      +carousel({track: "false", autoImagesChange: "true", items:[require("../../assets/images/background1.png"), require("../../assets/images/background2.png"), require("../../assets/images/background3.png")]})
       .landing__container
         .landing__room-search
           +room-search()

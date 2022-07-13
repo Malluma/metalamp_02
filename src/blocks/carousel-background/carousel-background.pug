@@ -1,8 +1,0 @@
-mixin carousel-background(options)
-  -const {items} = options
-  .carousel-background.js-carousel-background
-    each item, index in items
-      - const active = index === 0 ? "carousel-background__item_active" : ""
-      image.carousel-background__item.js-carousel-background__item(class= active src= item.src)
-
-

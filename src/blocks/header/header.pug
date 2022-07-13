@@ -14,9 +14,9 @@ mixin header(options)
         if (!userName)
           .header__btns
             .header__btns-login
-              +button({text: "Войти", type: "border", narrow: "true"}) 
+              +button({text: "Войти", type: "border", narrow: "true", href: "./sign-in.html"}) 
             .header__btns-registration
-              +button({text: "Зарегистрироваться", type: "background", narrow: "true"}) 
+              +button({text: "Зарегистрироваться", type: "background", narrow: "true", href: "./registration.html"}) 
         else
           .header__user= userName
          

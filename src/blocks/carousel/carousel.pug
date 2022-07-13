@@ -1,14 +1,14 @@
 mixin carousel(options)
-  -const {items} = options
-  .carousel.js-carousel(tabindex=0)
+  - const {items, track = true, autoImagesChange = false} = options
+  .carousel.js-carousel(data-autoimageschange= autoImagesChange tabindex=0)
     .carousel__btn.js-carousel__btn.carousel__btn-back(class= "js-carousel__btn-back icon-expand_more")
     .carousel__btn.js-carousel__btn.carousel__btn-forward(class= "js-carousel__btn-forward icon-expand_more")
     each item, index in items
-      - const active = index === 1 ? "carousel__item_active": ""
-      image.carousel__item.js-carousel__item(src= item class= active)
-    .carousel__track
-      each item, index in items
-        - const activeClass = (index === 0) ? "carousel__track-item_active" : ""
-        .carousel__track-item.js-carousel__track-item(class = activeClass)
-
+      - const active = index === 0 ? "carousel__item_active" : ""
+      image.carousel__item.js-carousel__item(class= active src= item)
+    if (track === true)
+      .carousel__track
+          each item, index in items
+            - const activeClass = (index === 0) ? "carousel__track-item_active" : ""
+            .carousel__track-item.js-carousel__track-item(class = activeClass)
 
