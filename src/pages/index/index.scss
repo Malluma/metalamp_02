@@ -6,15 +6,20 @@ body{
   margin: 0;
   font-family: $font-family;
   background-color: $background-color;
+  margin-left: 1rem;
 }
 
 .index{
   &__title{
     margin-left: 3rem;
   }
+  &__ul-title{
+    margin-left: 3.7rem;
+  }
+
   &__pages{
     width: 180px;
-    margin: 2rem 3rem;
+    margin: 1rem 4rem;
   }
 
   &__page{
