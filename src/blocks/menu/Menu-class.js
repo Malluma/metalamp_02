@@ -14,7 +14,7 @@ class Menu{
 
   bindMethods(){
     this.handleExpandBtnClick = this.handleExpandBtnClick.bind(this);
-    this.handleToggleMenu = this.handleToggleMenu.bind(this);
+    //this.handleToggleMenu = this.handleToggleMenu.bind(this);
     this.handleExpandableItemKeyUp = this.handleExpandableItemKeyUp.bind(this);
   }
 
@@ -25,15 +25,15 @@ class Menu{
       listItem.addEventListener("keyup", this.handleExpandableItemKeyUp);
     })
 
-    this.toggleBtn.addEventListener("click", this.handleToggleMenu);
+    //this.toggleBtn.addEventListener("click", this.handleToggleMenu);
 
   }
   
 
-  handleToggleMenu(){
-    this.list.classList.toggle('menu__list_full-screen-open');
-    this.toggleBtn.classList.toggle('menu__toggle-btn_full-screen-open');
-  }
+  //handleToggleMenu(){
+  //  this.list.classList.toggle('menu__list_full-screen-open');
+  //  this.toggleBtn.classList.toggle('menu__toggle-btn_full-screen-open');
+  //}
 
   handleExpandBtnClick(e) {
     const submenuToggleBtn = e.target;

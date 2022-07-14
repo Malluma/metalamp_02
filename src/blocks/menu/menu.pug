@@ -1,9 +1,9 @@
 mixin menu(items)
   nav.menu.js-menu
-    button.menu__toggle-btn.js-menu__toggle-btn(aria-label="toggle navigation")
-      .menu__hamburger
-      .menu__hamburger
-      .menu__hamburger
+    //button.menu__toggle-btn.js-menu__toggle-btn(aria-label="open/close menu")
+    //  .menu__hamburger
+    //  .menu__hamburger
+    //  .menu__hamburger
     ul.menu__list.js-menu__list
       each item in items
         - const {name, subItems = []} = item

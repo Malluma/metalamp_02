@@ -4,11 +4,15 @@ include ../../blocks/menu/menu.pug
 
 mixin header(options)
   - const {userName= false, menuItems} = options
-  .header
+  .header.js-header
     .header__container
       .header__logo
         +logo
-      .header__container-right
+      button.header__burger-btn.js-header__burger-btn(aria-label="open/close menu")
+          .header__burger-btn-strip
+          .header__burger-btn-strip
+          .header__burger-btn-strip
+      .header__menu-container.js-header__menu-container
         .header__menu
           +menu(menuItems)
         if (!userName)
