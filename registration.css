@@ -33,6 +33,11 @@
   margin-right: auto;
   position: relative;
 }
+@media screen and (max-width: 900px) {
+  .registration__container {
+    padding: 0 1rem;
+  }
+}
 .registration__registration-card {
   width: 23.75rem;
   margin: 0 auto;

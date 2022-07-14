@@ -33,6 +33,11 @@
   margin-right: auto;
   display: flex;
 }
+@media screen and (max-width: 900px) {
+  .room-details__container {
+    padding: 0 1rem;
+  }
+}
 .room-details__images-grid {
   display: grid;
   grid-template-columns: 1.15fr 1fr 1fr;

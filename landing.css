@@ -33,6 +33,11 @@
   margin-right: auto;
   position: relative;
 }
+@media screen and (max-width: 900px) {
+  .landing__container {
+    padding: 0 1rem;
+  }
+}
 .landing__room-search {
   width: 23.75rem;
   position: absolute;

@@ -33,8 +33,13 @@
   margin-right: auto;
   position: relative;
 }
+@media screen and (max-width: 900px) {
+  .sign-in__container {
+    padding: 0 1rem;
+  }
+}
 .sign-in__login-card {
-  width: 23.75rem;
+  max-width: 23.75rem;
   margin: 0 auto;
   padding-top: 10.7rem;
 }

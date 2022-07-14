@@ -37,12 +37,22 @@
   margin-right: auto;
   display: flex;
 }
+@media screen and (max-width: 900px) {
+  .search-room__container {
+    flex-direction: column;
+  }
+}
 .search-room__aside {
-  width: 59rem;
+  width: 65rem;
   margin-right: 3.7rem;
 }
+@media screen and (max-width: 900px) {
+  .search-room__aside {
+    width: 16.7rem;
+  }
+}
 .search-room__main {
-  width: 184rem;
+  max-width: 184rem;
 }
 .search-room__period {
   margin-bottom: 1.3rem;
@@ -89,6 +99,11 @@
   justify-content: center;
   margin-bottom: 4.8rem;
   margin-right: 0.8rem;
+}
+@media screen and (max-width: 900px) {
+  .search-room {
+    padding: 0 1rem;
+  }
 }
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/page-layout/template/template.scss ***!
