@@ -1036,6 +1036,43 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/blocks/header/Header-class.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/header/Header-class.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class Header {
+  constructor(header) {
+    this.header = header;
+    this.menuContainer = header.querySelector('.js-header__menu-container');
+    this.burgerBtn = header.querySelector('.js-header__burger-btn');
+    this.bindMethods();
+    this.addEventListeners();
+  }
+
+  bindMethods() {
+    this.handleToggleMenu = this.handleToggleMenu.bind(this);
+  }
+
+  addEventListeners() {
+    this.burgerBtn.addEventListener("click", this.handleToggleMenu);
+  }
+
+  handleToggleMenu() {
+    this.menuContainer.classList.toggle('header__menu-container_mobile');
+  }
+
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
+
+/***/ }),
+
 /***/ "./src/blocks/header/header.js":
 /*!*************************************!*\
   !*** ./src/blocks/header/header.js ***!
@@ -1046,9 +1083,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header.scss */ "./src/blocks/header/header.scss");
 /* harmony import */ var _blocks_button_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../blocks/button/button */ "./src/blocks/button/button.js");
 /* harmony import */ var _blocks_menu_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../blocks/menu/menu */ "./src/blocks/menu/menu.js");
+/* harmony import */ var _Header_class__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header-class */ "./src/blocks/header/Header-class.js");
 
 
 
+
+const headers = document.querySelectorAll(".js-header");
+headers.forEach(header => {
+  const headerInstance = new _Header_class__WEBPACK_IMPORTED_MODULE_3__["default"](header);
+});
 
 /***/ }),
 
@@ -1073,8 +1116,8 @@ class Menu {
   }
 
   bindMethods() {
-    this.handleExpandBtnClick = this.handleExpandBtnClick.bind(this);
-    this.handleToggleMenu = this.handleToggleMenu.bind(this);
+    this.handleExpandBtnClick = this.handleExpandBtnClick.bind(this); //this.handleToggleMenu = this.handleToggleMenu.bind(this);
+
     this.handleExpandableItemKeyUp = this.handleExpandableItemKeyUp.bind(this);
   }
 
@@ -1083,14 +1126,12 @@ class Menu {
       btn.addEventListener("click", this.handleExpandBtnClick);
       const listItem = btn.parentElement.parentElement;
       listItem.addEventListener("keyup", this.handleExpandableItemKeyUp);
-    });
-    this.toggleBtn.addEventListener("click", this.handleToggleMenu);
-  }
+    }); //this.toggleBtn.addEventListener("click", this.handleToggleMenu);
+  } //handleToggleMenu(){
+  //  this.list.classList.toggle('menu__list_full-screen-open');
+  //  this.toggleBtn.classList.toggle('menu__toggle-btn_full-screen-open');
+  //}
 
-  handleToggleMenu() {
-    this.list.classList.toggle('menu__list_full-screen-open');
-    this.toggleBtn.classList.toggle('menu__toggle-btn_full-screen-open');
-  }
 
   handleExpandBtnClick(e) {
     const submenuToggleBtn = e.target;

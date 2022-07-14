@@ -8,7 +8,7 @@
   <link href="room-details.css" rel="stylesheet"></head>
   <body>
     <div class="page-template__header">
-      <div class="header">
+      <div class="header js-header">
         <div class="header__container">
           <div class="header__logo">
             <div class="logo">
@@ -38,14 +38,18 @@
               </svg>
             </div>
           </div>
-          <div class="header__container-right">
+          <button class="header__burger-btn js-header__burger-btn" aria-label="open/close menu">
+            <div class="header__burger-btn-strip"></div>
+            <div class="header__burger-btn-strip"></div>
+            <div class="header__burger-btn-strip"></div>
+          </button>
+          <div class="header__menu-container js-header__menu-container">
             <div class="header__menu">
               <nav class="menu js-menu">
-                <button class="menu__toggle-btn js-menu__toggle-btn" aria-label="toggle navigation">
-                  <div class="menu__hamburger"></div>
-                  <div class="menu__hamburger"></div>
-                  <div class="menu__hamburger"></div>
-                </button>
+                <!--button.menu__toggle-btn.js-menu__toggle-btn(aria-label="open/close menu")-->
+                <!--  .menu__hamburger-->
+                <!--  .menu__hamburger-->
+                <!--  .menu__hamburger-->
                 <ul class="menu__list js-menu__list">
                   <li class="menu__item" tabindex="-1"><a class="menu__item-href" href="#">О нас</a>
                   </li>

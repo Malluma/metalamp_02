@@ -269,28 +269,85 @@ body {
 .header__logo {
   align-self: center;
   margin-right: 0.5em;
+  z-index: 3;
 }
-.header__container-right {
+.header__menu-container {
   display: flex;
   align-items: center;
+  margin-right: 5px;
+}
+@media screen and (max-width: 900px) {
+  .header__menu-container {
+    display: none;
+  }
+  .header__menu-container_mobile {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 4rem;
+    position: fixed;
+    background: #ffffff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transform: translateX(0);
+    transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+  }
 }
 .header__menu {
   margin-right: 0.1em;
 }
 .header__btns {
   display: flex;
-  gap: 1.4em;
+  gap: 1.5rem;
 }
 .header__btns-login {
-  width: 6.2em;
+  width: 5.1rem;
 }
 .header__btns-registration {
-  width: 14em;
+  width: 12rem;
+}
+@media screen and (max-width: 900px) {
+  .header__btns {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: x-large;
+  }
 }
 .header__user {
   color: rgba(31, 32, 65, 0.5);
   padding: 0.5em 0 0.5em 1.5em;
   border-left: 1px solid rgba(31, 32, 65, 0.1);
+}
+.header__burger-btn {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 1em;
+  z-index: 3;
+  border-radius: 4px;
+  display: none;
+}
+.header__burger-btn-strip {
+  background-color: rgba(31, 32, 65, 0.5);
+  width: 2em;
+  height: 3px;
+  margin-bottom: 0.5em;
+}
+.header__burger-btn:hover > .header__burger-btn-strip, .header__burger-btn:focus > .header__burger-btn-strip {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+}
+@media screen and (max-width: 900px) {
+  .header__burger-btn {
+    display: block;
+  }
 }
 /*!***********************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/button/button.scss ***!
@@ -446,6 +503,7 @@ body {
 /*!*******************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/menu/menu.scss ***!
   \*******************************************************************************************************************************************************************************************/
+@charset "UTF-8";
 .menu {
   font-size: 14px;
   color: rgba(31, 32, 65, 0.5);
@@ -459,25 +517,12 @@ body {
 }
 @media screen and (max-width: 900px) {
   .menu__list {
-    display: none;
-  }
-  .menu__list_full-screen-open {
-    padding: 0.5em;
-    padding-bottom: 6em;
-    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    font-size: x-large;
-    position: fixed;
-    background: #ffffff;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 99;
-    transform: translateX(0);
-    transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+    font-size: large;
   }
 }
 .menu__item {
@@ -492,6 +537,11 @@ body {
   outline: none;
   color: rgba(31, 32, 65, 0.75);
   font-weight: 700;
+}
+@media screen and (max-width: 900px) {
+  .menu__item {
+    margin-bottom: 1rem;
+  }
 }
 .menu__sublist {
   opacity: 1;
@@ -526,11 +576,11 @@ body {
   border: none;
   outline: none;
   padding: 1em;
-  display: none;
   z-index: 100;
   border-radius: 4px;
+  display: none;
 }
-.menu__toggle-btn:hover > .menu__hamburger, .menu__toggle-btn:focus > .menu__hamburger {
+л .menu__toggle-btn:hover > .menu__hamburger, .menu__toggle-btn:focus > .menu__hamburger {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border: none;
 }
