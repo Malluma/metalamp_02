@@ -39,7 +39,9 @@
   }
 }
 .registration__registration-card {
-  width: 23.75rem;
+  max-width: 23.75rem;
+  min-width: 15rem;
+  width: 100%;
   margin: 0 auto;
   padding-top: 1.2rem;
 }
@@ -170,6 +172,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: center;
   background-color: #ffffff;
 }
