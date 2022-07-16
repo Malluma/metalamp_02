@@ -13,6 +13,7 @@
     margin-right: auto;
     display: flex;
     @media screen and (max-width: 900px) {
+      flex-direction: column;
       padding: 0 1rem;
     }
   }
@@ -71,11 +72,17 @@
 
   &__top-flex{
     display: flex;
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+    }
   }
 
   &__bottom-flex{
     display: flex;
     margin-bottom: 3.85rem;
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+    }
   }
 
   &__info{
@@ -114,7 +121,9 @@
   }
 
   &__booking{
-    width: 51.5rem;
+    max-width: 51.5rem;
+    min-width: 20rem;
+    width: 100%;
   }
 
 }

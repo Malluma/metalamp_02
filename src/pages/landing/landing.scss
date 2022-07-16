@@ -21,6 +21,8 @@
 
   &__room-search{
     max-width: 23.75rem;
+    min-width: 15rem;
+    width: 100%;
     position: absolute;
     top: 4.35rem;
   }
