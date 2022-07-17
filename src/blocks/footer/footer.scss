@@ -12,8 +12,7 @@
   }
 
   &__container{
-    max-width: 1160px;
-    height: inherit;
+    //max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -148,17 +147,9 @@
 
   &__mobile_hidden{
     display: none;
-
     @media screen and (max-width: 900px) {
       display: flex;
-      //position: fixed;
-      //top: 0;
-      //bottom: 0;
-      //left: 0;
-      //right: 0;
       z-index: 999;
-      //transform: translateX(0);
-      //transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
     }
   }
 
