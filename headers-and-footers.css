@@ -57,8 +57,6 @@ body .headers-and-footers__footer_mobile {
   }
 }
 .footer__container {
-  max-width: 1160px;
-  height: inherit;
   margin-left: auto;
   margin-right: auto;
 }

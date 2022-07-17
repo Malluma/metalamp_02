@@ -43,16 +43,13 @@
   }
 }
 .search-room__aside {
-  width: 65rem;
+  width: 67rem;
   margin-right: 3.7rem;
 }
 @media screen and (max-width: 900px) {
   .search-room__aside {
     width: 16.7rem;
   }
-}
-.search-room__main {
-  max-width: 184rem;
 }
 .search-room__period {
   margin-bottom: 1.3rem;
@@ -87,8 +84,9 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  column-gap: 0.6rem;
   row-gap: 1.2rem;
+  justify-content: flex-start;
   margin-bottom: 1.7rem;
 }
 .search-room__room-card {
@@ -129,8 +127,6 @@ body {
   }
 }
 .footer__container {
-  max-width: 1160px;
-  height: inherit;
   margin-left: auto;
   margin-right: auto;
 }
