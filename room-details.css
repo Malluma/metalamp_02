@@ -1256,6 +1256,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  background-color: transparent;
 }
 .dropdown__input::placeholder {
   color: rgba(31, 32, 65, 0.25);

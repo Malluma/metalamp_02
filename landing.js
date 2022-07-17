@@ -715,39 +715,56 @@ class Dropdown {
   }
 
   bindMethods() {
-    this.handleApplyClick = this.handleApplyClick.bind(this);
-    this.handleCleanClick = this.handleCleanClick.bind(this);
-    this.toggleDropdown = this.toggleDropdown.bind(this);
-    this.handleNumberChange = this.handleNumberChange.bind(this);
-    this.closeMessage = this.closeMessage.bind(this);
-    this.handlePageClickToCloseDropdown = this.handlePageClickToCloseDropdown.bind(this);
-    this.handleKeyboardToggleClick = this.handleKeyboardToggleClick.bind(this);
+    this.handleExpandBtnClick = this.handleExpandBtnClick.bind(this);
+    this.handleInputKeyUp = this.handleInputKeyUp.bind(this);
+    this.handleInputClick = this.handleInputClick.bind(this);
+    this.handleApplyBtnClick = this.handleApplyBtnClick.bind(this);
+    this.handleCleanBtnClick = this.handleCleanBtnClick.bind(this);
+    this.handleCounterBtnClick = this.handleCounterBtnClick.bind(this);
+    this.handleDocumentClick = this.handleDocumentClick.bind(this);
   }
 
   addEventListeners() {
-    this.expandBtn.addEventListener("click", this.toggleDropdown);
+    this.expandBtn.addEventListener("click", this.handleExpandBtnClick);
+    this.input.addEventListener("keyup", this.handleInputKeyUp);
+    this.input.addEventListener("click", this.handleInputClick);
     this.plusBtns.forEach(plusBtn => {
-      plusBtn.addEventListener("click", this.handleNumberChange);
+      plusBtn.addEventListener("click", this.handleCounterBtnClick);
     });
     this.minusBtns.forEach(minusBtn => {
-      minusBtn.addEventListener("click", this.handleNumberChange);
+      minusBtn.addEventListener("click", this.handleCounterBtnClick);
       const numberElem = minusBtn.nextElementSibling;
       minusBtn.disabled = numberElem.textContent === "0" ? true : false;
     });
 
     if (this.cleanBtn) {
       this.setCleanBtnVisibility();
-      this.applyBtn.addEventListener("click", this.handleApplyClick);
-      this.cleanBtn.addEventListener("click", this.handleCleanClick);
+      this.applyBtn.addEventListener("click", this.handleApplyBtnClick);
+      this.cleanBtn.addEventListener("click", this.handleCleanBtnClick);
     }
-
-    this.input.addEventListener("keyup", this.handleKeyboardToggleClick);
   }
 
-  handleKeyboardToggleClick(event) {
+  handleExpandBtnClick(event) {
+    event.preventDefault();
+    this.toggleDropdown();
+  }
+
+  handleInputKeyUp(event) {
+    event.preventDefault();
+
     if (event.key === "Enter") {
       this.toggleDropdown();
     }
+
+    if (event.key === "Escape") {
+      console.log('Escape');
+      this.toggleDropdown();
+    }
+  }
+
+  handleInputClick(event) {
+    event.preventDefault();
+    this.toggleDropdown();
   }
 
   createGroupedListArray() {
@@ -791,7 +808,7 @@ class Dropdown {
     }
 
     if (!this.listHtml.classList.contains('dropdown__list_is-hidden')) {
-      document.addEventListener('click', this.handlePageClickToCloseDropdown);
+      document.addEventListener('click', this.handleDocumentClick);
     }
 
     this.input.classList.remove('dropdown__input_focus');
@@ -834,7 +851,7 @@ class Dropdown {
     }
   }
 
-  handleNumberChange(e) {
+  handleCounterBtnClick(e) {
     let numberElem;
     let number;
     let btnMinus;
@@ -860,7 +877,7 @@ class Dropdown {
     this.setCleanBtnVisibility();
   }
 
-  handleCleanClick() {
+  handleCleanBtnClick() {
     this.numberElems.forEach(numberElem => {
       numberElem.textContent = "0";
       let btnMinus = numberElem.previousElementSibling;
@@ -871,7 +888,8 @@ class Dropdown {
     this.input.value = this.initValue;
   }
 
-  handleApplyClick() {
+  handleApplyBtnClick(event) {
+    event.preventDefault();
     this.updateResultText();
 
     if (this.cantBeSeparateSelected()) {
@@ -879,12 +897,13 @@ class Dropdown {
     }
   }
 
-  handlePageClickToCloseDropdown(e) {
+  handleDocumentClick(e) {
+    e.preventDefault();
     const dropdownWithinBoundaries = e.composedPath().includes(this.dropdownHtml);
 
     if (!dropdownWithinBoundaries) {
       this.toggleDropdown();
-      document.removeEventListener("click", this.handlePageClickToCloseDropdown);
+      document.removeEventListener("click", this.handleDocumentClick);
     }
   } //- for example infants can't be selected separately
 
