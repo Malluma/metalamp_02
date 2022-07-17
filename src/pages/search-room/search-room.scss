@@ -18,21 +18,35 @@
     margin-right: auto;
     display: flex;
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 530px) {
       flex-direction: column;
     }
   }
 
   &__aside{
     width: 67rem;
+    min-width: 13rem;
     margin-right: 3.7rem;
-    @media screen and (max-width: 900px) {
-      width: 16.7rem;
-    }
-  }
 
-  &__main{
-    //max-width: 184rem;
+    @media screen and (max-width: 900px) {
+      margin-right: 1rem;
+    }
+    @media screen and (max-width: 530px) {
+      width: 100%;
+      max-width: 67rem;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 1.5rem;
+      row-gap: 1.2rem;
+  
+      &-part1{
+        width: 13rem;
+      }
+      &-part2{
+        width: 12rem;
+      }
+    }
+
   }
 
   &__period{margin-bottom: 1.3rem;}
@@ -78,8 +92,8 @@
     margin-right: 0.8rem;
   }
 
-  @media screen and (max-width: 900px) {
-    padding: 0 1rem;
+  @media screen and (max-width: 1185px) {
+    padding: 0 0.5rem;
   }
 
 }
