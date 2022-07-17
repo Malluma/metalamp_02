@@ -37,18 +37,35 @@
   margin-right: auto;
   display: flex;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 530px) {
   .search-room__container {
     flex-direction: column;
   }
 }
 .search-room__aside {
   width: 67rem;
+  min-width: 13rem;
   margin-right: 3.7rem;
 }
 @media screen and (max-width: 900px) {
   .search-room__aside {
-    width: 16.7rem;
+    margin-right: 1rem;
+  }
+}
+@media screen and (max-width: 530px) {
+  .search-room__aside {
+    width: 100%;
+    max-width: 67rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 1.2rem;
+  }
+  .search-room__aside-part1 {
+    width: 13rem;
+  }
+  .search-room__aside-part2 {
+    width: 12rem;
   }
 }
 .search-room__period {
@@ -98,9 +115,9 @@
   margin-bottom: 4.8rem;
   margin-right: 0.8rem;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1185px) {
   .search-room {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
 }
 /*!********************************************************************************************************************************************************************************************************!*\
@@ -340,7 +357,7 @@ body {
   align-items: center;
   margin-right: 5px;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 920px) {
   .header__menu-container {
     display: none;
   }
@@ -376,7 +393,7 @@ body {
 .header__btns-registration {
   width: 12rem;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 920px) {
   .header__btns {
     flex-direction: column;
     align-items: center;
@@ -408,7 +425,7 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border: none;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 920px) {
   .header__burger-btn {
     display: block;
   }
@@ -1214,7 +1231,7 @@ body {
   padding-right: 6px;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   position: absolute;
-  z-index: 998;
+  z-index: 3;
   width: 100%;
 }
 .dropdown__list_is-hidden {

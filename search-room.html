@@ -92,231 +92,235 @@
     <div class="search-room">
       <div class="search-room__container">
         <aside class="search-room__aside">
-          <div class="search-room__period">
-            <div class="date-dropdown">
-              <label class="date-dropdown__label">Даты пребывания в отеле
-                <div class="date-dropdown__input-flex-wrap">
-                  <input class="date-dropdown__input js-date-dropdown__single" readonly="readonly" type="text" value="19 авг - 23 авг" data-value="19.08.2019-23.08.2019" placeholder="ДД.ММ - ДД.ММ">
-                  <div class="btn-expand">
-                    <div class="btn-expand__flex-wrap">
-                      <div class="btn-expand__pic icon-expand_more"></div>
+          <div class="search-room__aside-part1">
+            <div class="search-room__period">
+              <div class="date-dropdown">
+                <label class="date-dropdown__label">Даты пребывания в отеле
+                  <div class="date-dropdown__input-flex-wrap">
+                    <input class="date-dropdown__input js-date-dropdown__single" readonly="readonly" type="text" value="19 авг - 23 авг" data-value="19.08.2019-23.08.2019" placeholder="ДД.ММ - ДД.ММ">
+                    <div class="btn-expand">
+                      <div class="btn-expand__flex-wrap">
+                        <div class="btn-expand__pic icon-expand_more"></div>
+                      </div>
                     </div>
+                    <!--.date-dropdown__plugin-dp gergr-->
                   </div>
-                  <!--.date-dropdown__plugin-dp gergr-->
-                </div>
-              </label>
-            </div>
-          </div>
-          <div class="search-room__guests">
-            <div class="dropdown js-dropdown">
-              <label class="dropdown__label">
-                <div class="dropdown__label-wrapper"><span class="dropdown__label-span">Гости</span> <span class="dropdown__sublabel-span"></span></div>
-                <div class="dropdown__input-flex-wrap">
-                  <input class="dropdown__input js-dropdown__input dropdown__input_rounded-bottom-corners" readonly="readonly" type="text" value="Количество гостей" data-roundedbottomcorners="true">
-                  <div class="btn-expand js-dropdown__expand-btn">
-                    <div class="btn-expand__flex-wrap">
-                      <div class="btn-expand__pic icon-expand_more"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="dropdown__list js-dropdown__list dropdown__list_is-hidden" data-list="[{&quot;name&quot;:&quot;Взрослые&quot;,&quot;number&quot;:3,&quot;declensions&quot;:[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]},{&quot;name&quot;:&quot;Дети&quot;,&quot;number&quot;:0,&quot;declensions&quot;:[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]},{&quot;name&quot;:&quot;Младенцы&quot;,&quot;number&quot;:1,&quot;declensions&quot;:[&quot;младенец&quot;,&quot;младенца&quot;,&quot;младенцев&quot;],&quot;notSeparatelyMessage&quot;:&quot;Младенцы могут заехать только вместе со взрослыми.&quot;}]">
-                  <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Взрослые</span>
-                    <div class="dropdown__number-wrap">
-                      <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="гость">3</span>
-                      <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
-                    </div>
-                  </div>
-                  <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Дети</span>
-                    <div class="dropdown__number-wrap">
-                      <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="гость">0</span>
-                      <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
-                    </div>
-                  </div>
-                  <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Младенцы</span>
-                    <div class="dropdown__number-wrap">
-                      <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="младенец" data-notseparately="Младенцы могут заехать только вместе со взрослыми.">1</span>
-                      <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button" data-notseparately="Младенцы могут заехать только вместе со взрослыми.">+</button>
-                      <div class="dropdown__notSeparatelyMessage js-dropdown__notSeparatelyMessage">Младенцы могут заехать только вместе со взрослыми.</div>
-                    </div>
-                  </div>
-                  <div class="dropdown__list-footer">
-                    <button class="dropdown__list-footer-btn js-dropdown__clean-btn" tabindex="0">Очистить</button>
-                    <button class="dropdown__list-footer-btn js-dropdown__apply-btn" tabindex="0">Применить</button>
-                  </div>
-                </div>
-              </label>
-            </div>
-          </div>
-          <div class="search-room__price-range">
-            <div class="range-slider">
-              <div class="range-slider__label-wrap">
-                <div class="range-slider__label">Диапазон цены</div>
-                <div class="range-slider__range">5 000₽ - 10 000₽</div>
-              </div>
-              <div class="range-slider__slider js-range-slider__slider" data-options="{&quot;label&quot;:&quot;Диапазон цены&quot;,&quot;rangeStart&quot;:&quot;5000&quot;,&quot;rangeEnd&quot;:&quot;10000&quot;,&quot;min&quot;:&quot;0&quot;,&quot;max&quot;:&quot;15000&quot;}"></div>
-            </div>
-          </div>
-          <div class="search-room__price-range-description">Стоимость за сутки пребывания в номере</div>
-          <div class="search-room__home-rules">
-            <div class="checkbox-list">
-              <div class="checkbox-list__label-flex-wrap js-checkbox-list__label-flex-wrap" tabindex="0">
-                <div class="checkbox-list__label">Правила дома</div>
-              </div>
-              <div class="checkbox-list__list js-checkbox-list__list"> 
-                <div class="checkbox">
-                  <label class="checkbox__label">
-                    <input class="checkbox__hidden-input" type="checkbox" name="canSmoke">
-                    <div class="checkbox__visible-input"></div>
-                    <div class="checkbox__label-flex-wrap">
-                      <div class="checkbpx__label-text">Можно курить</div>
-                    </div>
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label class="checkbox__label">
-                    <input class="checkbox__hidden-input" type="checkbox" name="withPets" checked="checked">
-                    <div class="checkbox__visible-input"></div>
-                    <div class="checkbox__label-flex-wrap">
-                      <div class="checkbpx__label-text">Можно с питомцами</div>
-                    </div>
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label class="checkbox__label">
-                    <input class="checkbox__hidden-input" type="checkbox" checked="checked">
-                    <div class="checkbox__visible-input"></div>
-                    <div class="checkbox__label-flex-wrap">
-                      <div class="checkbpx__label-text">Можно пригласить гостей (до 10 человек)</div>
-                    </div>
-                  </label>
-                </div>
+                </label>
               </div>
             </div>
-          </div>
-          <div class="search-room__availability"> 
-            <div class="checkbox-list">
-              <div class="checkbox-list__label-flex-wrap js-checkbox-list__label-flex-wrap" tabindex="0">
-                <div class="checkbox-list__label">Доступность</div>
+            <div class="search-room__guests">
+              <div class="dropdown js-dropdown">
+                <label class="dropdown__label">
+                  <div class="dropdown__label-wrapper"><span class="dropdown__label-span">Гости</span> <span class="dropdown__sublabel-span"></span></div>
+                  <div class="dropdown__input-flex-wrap">
+                    <input class="dropdown__input js-dropdown__input dropdown__input_rounded-bottom-corners" readonly="readonly" type="text" value="Количество гостей" data-roundedbottomcorners="true">
+                    <div class="btn-expand js-dropdown__expand-btn">
+                      <div class="btn-expand__flex-wrap">
+                        <div class="btn-expand__pic icon-expand_more"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dropdown__list js-dropdown__list dropdown__list_is-hidden" data-list="[{&quot;name&quot;:&quot;Взрослые&quot;,&quot;number&quot;:3,&quot;declensions&quot;:[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]},{&quot;name&quot;:&quot;Дети&quot;,&quot;number&quot;:0,&quot;declensions&quot;:[&quot;гость&quot;,&quot;гостя&quot;,&quot;гостей&quot;]},{&quot;name&quot;:&quot;Младенцы&quot;,&quot;number&quot;:1,&quot;declensions&quot;:[&quot;младенец&quot;,&quot;младенца&quot;,&quot;младенцев&quot;],&quot;notSeparatelyMessage&quot;:&quot;Младенцы могут заехать только вместе со взрослыми.&quot;}]">
+                    <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Взрослые</span>
+                      <div class="dropdown__number-wrap">
+                        <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="гость">3</span>
+                        <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
+                      </div>
+                    </div>
+                    <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Дети</span>
+                      <div class="dropdown__number-wrap">
+                        <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="гость">0</span>
+                        <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
+                      </div>
+                    </div>
+                    <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Младенцы</span>
+                      <div class="dropdown__number-wrap">
+                        <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="младенец" data-notseparately="Младенцы могут заехать только вместе со взрослыми.">1</span>
+                        <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button" data-notseparately="Младенцы могут заехать только вместе со взрослыми.">+</button>
+                        <div class="dropdown__notSeparatelyMessage js-dropdown__notSeparatelyMessage">Младенцы могут заехать только вместе со взрослыми.</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__list-footer">
+                      <button class="dropdown__list-footer-btn js-dropdown__clean-btn" tabindex="0">Очистить</button>
+                      <button class="dropdown__list-footer-btn js-dropdown__apply-btn" tabindex="0">Применить</button>
+                    </div>
+                  </div>
+                </label>
               </div>
-              <div class="checkbox-list__list js-checkbox-list__list"> 
-                <div class="checkbox">
-                  <label class="checkbox__label">
-                    <input class="checkbox__hidden-input" type="checkbox" name="wideСorridor">
-                    <div class="checkbox__visible-input"></div>
-                    <div class="checkbox__label-flex-wrap">
-                      <div class="checkbpx__label-text checkbox__label-text_rich">Широкий коридор</div>
-                      <div class="checkbox__description">Ширина коридоров в номере не менее 91 см.</div>
-                    </div>
-                  </label>
+            </div>
+            <div class="search-room__price-range">
+              <div class="range-slider">
+                <div class="range-slider__label-wrap">
+                  <div class="range-slider__label">Диапазон цены</div>
+                  <div class="range-slider__range">5 000₽ - 10 000₽</div>
                 </div>
-                <div class="checkbox">
-                  <label class="checkbox__label">
-                    <input class="checkbox__hidden-input" type="checkbox" name="assistantForTheDisabled">
-                    <div class="checkbox__visible-input"></div>
-                    <div class="checkbox__label-flex-wrap">
-                      <div class="checkbpx__label-text checkbox__label-text_rich">Помощник для инвалидов</div>
-                      <div class="checkbox__description">На 1 этаже вас встретит специалист  и проводит до номера.</div>
-                    </div>
-                  </label>
+                <div class="range-slider__slider js-range-slider__slider" data-options="{&quot;label&quot;:&quot;Диапазон цены&quot;,&quot;rangeStart&quot;:&quot;5000&quot;,&quot;rangeEnd&quot;:&quot;10000&quot;,&quot;min&quot;:&quot;0&quot;,&quot;max&quot;:&quot;15000&quot;}"></div>
+              </div>
+            </div>
+            <div class="search-room__price-range-description">Стоимость за сутки пребывания в номере</div>
+            <div class="search-room__home-rules">
+              <div class="checkbox-list">
+                <div class="checkbox-list__label-flex-wrap js-checkbox-list__label-flex-wrap" tabindex="0">
+                  <div class="checkbox-list__label">Правила дома</div>
+                </div>
+                <div class="checkbox-list__list js-checkbox-list__list"> 
+                  <div class="checkbox">
+                    <label class="checkbox__label">
+                      <input class="checkbox__hidden-input" type="checkbox" name="canSmoke">
+                      <div class="checkbox__visible-input"></div>
+                      <div class="checkbox__label-flex-wrap">
+                        <div class="checkbpx__label-text">Можно курить</div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="checkbox__label">
+                      <input class="checkbox__hidden-input" type="checkbox" name="withPets" checked="checked">
+                      <div class="checkbox__visible-input"></div>
+                      <div class="checkbox__label-flex-wrap">
+                        <div class="checkbpx__label-text">Можно с питомцами</div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="checkbox__label">
+                      <input class="checkbox__hidden-input" type="checkbox" checked="checked">
+                      <div class="checkbox__visible-input"></div>
+                      <div class="checkbox__label-flex-wrap">
+                        <div class="checkbpx__label-text">Можно пригласить гостей (до 10 человек)</div>
+                      </div>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="search-room__facilities">
-            <div class="dropdown js-dropdown">
-              <label class="dropdown__label">
-                <div class="dropdown__label-wrapper"><span class="dropdown__label-span">Удобства номера</span> <span class="dropdown__sublabel-span"></span></div>
-                <div class="dropdown__input-flex-wrap">
-                  <input class="dropdown__input js-dropdown__input" readonly="readonly" type="text" value="Удобства" data-roundedbottomcorners="undefined">
-                  <div class="btn-expand js-dropdown__expand-btn">
-                    <div class="btn-expand__flex-wrap">
-                      <div class="btn-expand__pic icon-expand_more"></div>
-                    </div>
+          <div class="search-room__aside-part2">
+            <div class="search-room__availability"> 
+              <div class="checkbox-list">
+                <div class="checkbox-list__label-flex-wrap js-checkbox-list__label-flex-wrap" tabindex="0">
+                  <div class="checkbox-list__label">Доступность</div>
+                </div>
+                <div class="checkbox-list__list js-checkbox-list__list"> 
+                  <div class="checkbox">
+                    <label class="checkbox__label">
+                      <input class="checkbox__hidden-input" type="checkbox" name="wideСorridor">
+                      <div class="checkbox__visible-input"></div>
+                      <div class="checkbox__label-flex-wrap">
+                        <div class="checkbpx__label-text checkbox__label-text_rich">Широкий коридор</div>
+                        <div class="checkbox__description">Ширина коридоров в номере не менее 91 см.</div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="checkbox__label">
+                      <input class="checkbox__hidden-input" type="checkbox" name="assistantForTheDisabled">
+                      <div class="checkbox__visible-input"></div>
+                      <div class="checkbox__label-flex-wrap">
+                        <div class="checkbpx__label-text checkbox__label-text_rich">Помощник для инвалидов</div>
+                        <div class="checkbox__description">На 1 этаже вас встретит специалист  и проводит до номера.</div>
+                      </div>
+                    </label>
                   </div>
                 </div>
-                <div class="dropdown__list js-dropdown__list dropdown__list_is-hidden" data-list="[{&quot;name&quot;:&quot;Спальни&quot;,&quot;number&quot;:2,&quot;declensions&quot;:[&quot;спальня&quot;,&quot;спальни&quot;,&quot;спален&quot;]},{&quot;name&quot;:&quot;Кровати&quot;,&quot;number&quot;:2,&quot;declensions&quot;:[&quot;кровать&quot;,&quot;кровати&quot;,&quot;кроватей&quot;]},{&quot;name&quot;:&quot;Ванные комнаты&quot;,&quot;number&quot;:0,&quot;declensions&quot;:[&quot;ванная комната&quot;,&quot;ванных комнаты&quot;,&quot;ванных комнат&quot;]}]">
-                  <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Спальни</span>
-                    <div class="dropdown__number-wrap">
-                      <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="спальня">2</span>
-                      <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
-                    </div>
-                  </div>
-                  <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Кровати</span>
-                    <div class="dropdown__number-wrap">
-                      <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="кровать">2</span>
-                      <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
-                    </div>
-                  </div>
-                  <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Ванные комнаты</span>
-                    <div class="dropdown__number-wrap">
-                      <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="ванная комната">0</span>
-                      <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
-                    </div>
-                  </div>
-                </div>
-              </label>
-            </div>
-          </div>
-          <div class="search-room__additional-amenities">
-            <div class="checkbox-list js-checkbox-list">
-              <div class="checkbox-list__label-flex-wrap js-checkbox-list__label-flex-wrap" tabindex="0">
-                <div class="checkbox-list__label">Дополнительные удобства</div>
-                <div class="checkbox-list__btn-expand icon-expand_more js-checkbox-list__btn-expand"></div>
               </div>
-              <div class="checkbox-list__list js-checkbox-list__list checkbox-list__hidden"> 
-                <div class="checkbox">
-                  <label class="checkbox__label">
-                    <input class="checkbox__hidden-input" type="checkbox" name="breakfast">
-                    <div class="checkbox__visible-input"></div>
-                    <div class="checkbox__label-flex-wrap">
-                      <div class="checkbpx__label-text">Завтрак</div>
+            </div>
+            <div class="search-room__facilities">
+              <div class="dropdown js-dropdown">
+                <label class="dropdown__label">
+                  <div class="dropdown__label-wrapper"><span class="dropdown__label-span">Удобства номера</span> <span class="dropdown__sublabel-span"></span></div>
+                  <div class="dropdown__input-flex-wrap">
+                    <input class="dropdown__input js-dropdown__input" readonly="readonly" type="text" value="Удобства" data-roundedbottomcorners="undefined">
+                    <div class="btn-expand js-dropdown__expand-btn">
+                      <div class="btn-expand__flex-wrap">
+                        <div class="btn-expand__pic icon-expand_more"></div>
+                      </div>
                     </div>
-                  </label>
+                  </div>
+                  <div class="dropdown__list js-dropdown__list dropdown__list_is-hidden" data-list="[{&quot;name&quot;:&quot;Спальни&quot;,&quot;number&quot;:2,&quot;declensions&quot;:[&quot;спальня&quot;,&quot;спальни&quot;,&quot;спален&quot;]},{&quot;name&quot;:&quot;Кровати&quot;,&quot;number&quot;:2,&quot;declensions&quot;:[&quot;кровать&quot;,&quot;кровати&quot;,&quot;кроватей&quot;]},{&quot;name&quot;:&quot;Ванные комнаты&quot;,&quot;number&quot;:0,&quot;declensions&quot;:[&quot;ванная комната&quot;,&quot;ванных комнаты&quot;,&quot;ванных комнат&quot;]}]">
+                    <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Спальни</span>
+                      <div class="dropdown__number-wrap">
+                        <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="спальня">2</span>
+                        <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
+                      </div>
+                    </div>
+                    <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Кровати</span>
+                      <div class="dropdown__number-wrap">
+                        <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="кровать">2</span>
+                        <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
+                      </div>
+                    </div>
+                    <div class="dropdown__item js-dropdown__item"><span class="dropdown__item-text">Ванные комнаты</span>
+                      <div class="dropdown__number-wrap">
+                        <button class="dropdown__counter-btn js-dropdown__minus-btn" disabled="disabled" type="button">-</button><span class="dropdown__number js-dropdown__number" data-key="ванная комната">0</span>
+                        <button class="dropdown__counter-btn js-dropdown__plus-btn" type="button">+</button>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="search-room__additional-amenities">
+              <div class="checkbox-list js-checkbox-list">
+                <div class="checkbox-list__label-flex-wrap js-checkbox-list__label-flex-wrap" tabindex="0">
+                  <div class="checkbox-list__label">Дополнительные удобства</div>
+                  <div class="checkbox-list__btn-expand icon-expand_more js-checkbox-list__btn-expand"></div>
                 </div>
-                <div class="checkbox">
-                  <label class="checkbox__label">
-                    <input class="checkbox__hidden-input" type="checkbox" name="desk" checked="checked">
-                    <div class="checkbox__visible-input"></div>
-                    <div class="checkbox__label-flex-wrap">
-                      <div class="checkbpx__label-text">Письменный стол</div>
-                    </div>
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label class="checkbox__label">
-                    <input class="checkbox__hidden-input" type="checkbox" name="chairForFeeding" checked="checked">
-                    <div class="checkbox__visible-input"></div>
-                    <div class="checkbox__label-flex-wrap">
-                      <div class="checkbpx__label-text">Стул для кормления</div>
-                    </div>
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label class="checkbox__label">
-                    <input class="checkbox__hidden-input" type="checkbox" name="crib" checked="checked">
-                    <div class="checkbox__visible-input"></div>
-                    <div class="checkbox__label-flex-wrap">
-                      <div class="checkbpx__label-text">Кроватка</div>
-                    </div>
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label class="checkbox__label">
-                    <input class="checkbox__hidden-input" type="checkbox" name="tv">
-                    <div class="checkbox__visible-input"></div>
-                    <div class="checkbox__label-flex-wrap">
-                      <div class="checkbpx__label-text">Телевизор</div>
-                    </div>
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label class="checkbox__label">
-                    <input class="checkbox__hidden-input" type="checkbox" name="shampoo">
-                    <div class="checkbox__visible-input"></div>
-                    <div class="checkbox__label-flex-wrap">
-                      <div class="checkbpx__label-text">Шампунь</div>
-                    </div>
-                  </label>
+                <div class="checkbox-list__list js-checkbox-list__list checkbox-list__hidden"> 
+                  <div class="checkbox">
+                    <label class="checkbox__label">
+                      <input class="checkbox__hidden-input" type="checkbox" name="breakfast">
+                      <div class="checkbox__visible-input"></div>
+                      <div class="checkbox__label-flex-wrap">
+                        <div class="checkbpx__label-text">Завтрак</div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="checkbox__label">
+                      <input class="checkbox__hidden-input" type="checkbox" name="desk" checked="checked">
+                      <div class="checkbox__visible-input"></div>
+                      <div class="checkbox__label-flex-wrap">
+                        <div class="checkbpx__label-text">Письменный стол</div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="checkbox__label">
+                      <input class="checkbox__hidden-input" type="checkbox" name="chairForFeeding" checked="checked">
+                      <div class="checkbox__visible-input"></div>
+                      <div class="checkbox__label-flex-wrap">
+                        <div class="checkbpx__label-text">Стул для кормления</div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="checkbox__label">
+                      <input class="checkbox__hidden-input" type="checkbox" name="crib" checked="checked">
+                      <div class="checkbox__visible-input"></div>
+                      <div class="checkbox__label-flex-wrap">
+                        <div class="checkbpx__label-text">Кроватка</div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="checkbox__label">
+                      <input class="checkbox__hidden-input" type="checkbox" name="tv">
+                      <div class="checkbox__visible-input"></div>
+                      <div class="checkbox__label-flex-wrap">
+                        <div class="checkbpx__label-text">Телевизор</div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="checkbox__label">
+                      <input class="checkbox__hidden-input" type="checkbox" name="shampoo">
+                      <div class="checkbox__visible-input"></div>
+                      <div class="checkbox__label-flex-wrap">
+                        <div class="checkbpx__label-text">Шампунь</div>
+                      </div>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
