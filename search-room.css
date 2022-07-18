@@ -144,6 +144,7 @@ body {
   }
 }
 .footer__container {
+  max-width: 1160px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1569,7 +1570,7 @@ body {
 .carousel__track {
   display: flex;
   position: absolute;
-  z-index: 99;
+  z-index: 1;
   bottom: 10%;
   right: 6%;
 }
