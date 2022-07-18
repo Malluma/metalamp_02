@@ -14,15 +14,14 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 1190px) {
       padding: 0 1rem;
     }
   }
 
   &__room-search{
     max-width: 23.75rem;
-    min-width: 15rem;
-    width: 100%;
+    min-width: 16rem;
     position: absolute;
     top: 4.35rem;
   }
@@ -32,7 +31,7 @@
     color: $dark-shade-75;
     line-height: 1.5rem;
     text-align: right;
-    width: 17rem;
+    max-width: 17rem;
     position: absolute;
     bottom: 1.4rem;
     right: 0;

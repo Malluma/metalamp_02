@@ -1,24 +1,24 @@
-@import '../../styles/Montserrat.css';
-@import '../../styles/variables.scss';
+@import "../../styles/Montserrat.css";
+@import "../../styles/variables.scss";
 
-.room-details{
+.room-details {
   font-size: 14px;
   color: $dark-shade-75;
 
   border-bottom: 1px solid $dark-shade-25;
 
-  &__container{
+  &__container {
     max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    @media screen and (max-width: 900px) {
-      flex-direction: column;
+    @media screen and (max-width: 1190px) {
       padding: 0 1rem;
+      flex-direction: column;
     }
   }
 
-  &__images-grid{
+  &__images-grid {
     display: grid;
     grid-template-columns: 1.15fr 1fr 1fr;
     grid-template-rows: repeat(2, 16.8vw);
@@ -26,104 +26,107 @@
     margin-bottom: 4.3rem;
   }
 
-  &__grid-image{
+  &__grid-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  &__grid-image-1{
+  &__grid-image-1 {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
   }
 
-  &__grid-image-2{
+  &__grid-image-2 {
     transform: matrix(-1, 0, 0, 1, 0, 0);
   }
 
-  &__title{
+  &__title {
     font-size: 19px;
     font-weight: 700;
     margin: 0;
     margin-bottom: 1.35rem;
-    
-    &_facilities{margin-bottom: 1.6rem;}
-    &_impression{
+
+    &_facilities {
+      margin-bottom: 1.6rem;
+    }
+    &_impression {
       margin-bottom: 0.8rem;
       margin-left: 0.65rem;
     }
-    &_cancellation{margin-bottom: 1.15rem;}
-    &_rules{
+    &_cancellation {
+      margin-bottom: 1.15rem;
+    }
+    &_rules {
       margin-left: 1.3rem;
       margin-bottom: 1.15rem;
     }
   }
 
-  &__reviews-title-flex{
+  &__reviews-title-flex {
     display: flex;
     justify-content: space-between;
   }
 
-  &__main{
+  &__main {
     margin-right: 6.1%;
   }
 
-  &__top-flex{
+  &__top-flex {
     display: flex;
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 500px) {
       flex-direction: column;
     }
   }
 
-  &__bottom-flex{
+  &__bottom-flex {
     display: flex;
     margin-bottom: 3.85rem;
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 500px) {
       flex-direction: column;
     }
   }
 
-  &__info{
+  &__info {
     margin-right: 6rem;
     margin-bottom: 1.9rem;
   }
 
-  &__facility{
+  &__facility {
     margin-left: 0.4rem;
     margin-bottom: 2.5rem;
-    &_cosiness{
+    &_cosiness {
       margin-bottom: 0;
     }
   }
 
-  &__reviews{
+  &__reviews {
     margin-bottom: 2.1rem;
-    &-number{
-      margin-top: 0.4rem
+    &-number {
+      margin-top: 0.4rem;
     }
   }
 
-  &__review{
+  &__review {
     margin-bottom: 1.5rem;
   }
 
-  &__rules{
+  &__rules {
     width: 16rem;
     margin-right: 6.6rem;
     line-height: 171%;
   }
 
-  &__cancellation{
+  &__cancellation {
     line-height: 171%;
     width: 21.6rem;
   }
 
-  &__booking{
+  &__booking {
     max-width: 51.5rem;
     min-width: 20rem;
     width: 100%;
   }
-
 }
