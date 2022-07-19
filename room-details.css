@@ -42,7 +42,7 @@
 .room-details__images-grid {
   display: grid;
   grid-template-columns: 1.15fr 1fr 1fr;
-  grid-template-rows: repeat(2, 16.8vw);
+  grid-template-rows: repeat(2, 16.65vw);
   margin-bottom: 4.3rem;
 }
 .room-details__grid-image {
@@ -84,14 +84,27 @@
   justify-content: space-between;
 }
 .room-details__main {
-  margin-right: 6.1%;
+  margin-right: 4.5rem;
+}
+@media screen and (max-width: 900px) {
+  .room-details__main {
+    margin-right: 0.5rem;
+  }
 }
 .room-details__top-flex {
   display: flex;
+  justify-content: flex-start;
+  column-gap: 6rem;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
+  .room-details__top-flex {
+    column-gap: 2rem;
+  }
+}
+@media screen and (max-width: 600px) {
   .room-details__top-flex {
     flex-direction: column;
+    margin-bottom: 3rem;
   }
 }
 .room-details__bottom-flex {
@@ -104,7 +117,6 @@
   }
 }
 .room-details__info {
-  margin-right: 6rem;
   margin-bottom: 1.9rem;
 }
 .room-details__facility {
@@ -116,6 +128,7 @@
 }
 .room-details__reviews {
   margin-bottom: 2.1rem;
+  max-width: 45rem;
 }
 .room-details__reviews-number {
   margin-top: 0.4rem;
@@ -133,9 +146,13 @@
   width: 21.6rem;
 }
 .room-details__booking {
-  max-width: 51.5rem;
-  min-width: 20rem;
-  width: 100%;
+  max-width: 26rem;
+  min-width: 16rem;
+}
+@media screen and (max-width: 1190px) {
+  .room-details__booking {
+    margin-bottom: 3rem;
+  }
 }
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/page-layout/template/template.scss ***!
@@ -1392,6 +1409,7 @@ body {
   justify-content: space-between;
   align-items: center;
   max-width: 800px;
+  min-width: 320px;
 }
 .diagram__svg {
   margin-right: 1.45em;
