@@ -1,41 +1,42 @@
-@import '../../styles/variables';
-@import '../checkbox/checkbox.scss';
+@import "../../styles/variables";
+@import "../checkbox/checkbox.scss";
 
 .checkbox-list {
-  color: $dark-shade-100;
+  color: $color-main-darkest;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   padding-right: 0;
 
-  &:focus, &:hover{
+  &:focus,
+  &:hover {
     outline: none;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
-  &__label-flex-wrap{
-    display: flex; 
-    align-items: center; 
+  &__label-flex-wrap {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 1.4em;
-    &:focus, &:hover{
+    &:focus,
+    &:hover {
       outline: none;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
 
-  &__btn-expand{
-    color: $dark-shade-75;
+  &__btn-expand {
+    color: $color-main-darker;
     font-size: 13px;
   }
 
-  &__btn-expand-rotate{
+  &__btn-expand-rotate {
     transform: rotate(-180deg);
     padding-left: 0;
   }
 
-  &__hidden{
+  &__hidden {
     display: none;
   }
-
 }

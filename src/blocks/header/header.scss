@@ -1,13 +1,13 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
-.header{
+.header {
   font-size: 14px;
   height: 70px;
   background-color: $background-color;
   padding: 0 0.5rem;
-  box-shadow: $shadow-5;
+  box-shadow: $shadow-lightest;
 
-  &__container{
+  &__container {
     max-width: 1160px;
     height: inherit;
     margin-left: auto;
@@ -18,20 +18,20 @@
     align-items: center;
   }
 
-  &__logo{
+  &__logo {
     align-self: center;
     margin-right: 0.5em;
     z-index: 3;
   }
 
-  &__menu-container{
-    display:flex;
+  &__menu-container {
+    display: flex;
     align-items: center;
     margin-right: 5px;
 
     @media screen and (max-width: 920px) {
       display: none;
-      &_mobile{
+      &_mobile {
         display: block;
         flex-direction: column;
         align-items: center;
@@ -47,23 +47,23 @@
         height: 100%;
         z-index: 2;
         transform: translateX(0);
-        transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+        transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
       }
     }
   }
 
-  &__menu{
+  &__menu {
     margin-right: 0.1em;
   }
 
-  &__btns{
+  &__btns {
     display: flex;
     gap: 1.5rem;
 
-    &-login{
+    &-login {
       width: 5.1rem;
     }
-    &-registration{
+    &-registration {
       width: 12rem;
     }
 
@@ -73,32 +73,32 @@
       justify-content: space-evenly;
       font-size: x-large;
     }
-
   }
 
-  &__user{
-    color: $dark-shade-50;
+  &__user {
+    color: $color-main-dark;
     padding: 0.5em 0 0.5em 1.5em;
-    border-left: 1px solid $dark-shade-10;
+    border-left: 1px solid $color-main-lighter;
   }
 
-  &__burger-btn{
+  &__burger-btn {
     background: none;
     border: none;
     outline: none;
     padding: 1em;
-    z-index: 3; 
+    z-index: 3;
     border-radius: 4px;
     display: none;
 
-    &-strip{
-      background-color: $dark-shade-50;
+    &-strip {
+      background-color: $color-main-dark;
       width: 2em;
-      height: 3px; 
+      height: 3px;
       margin-bottom: 0.5em;
     }
 
-    &:hover > .header__burger-btn-strip, &:focus > .header__burger-btn-strip{
+    &:hover > .header__burger-btn-strip,
+    &:focus > .header__burger-btn-strip {
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border: none;
     }
@@ -107,6 +107,4 @@
       display: block;
     }
   }
-
- 
 }

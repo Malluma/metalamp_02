@@ -12,18 +12,18 @@ class Diagram {
   }
 
   bindMethods() {
-    this.handleSectorClick = this.handleSectorClick.bind(this);
-    this.handleSectorEnterPress = this.handleSectorEnterPress.bind(this);
+    this.handleItemClick = this.handleItemClick.bind(this);
+    this.handleItemKeyUp = this.handleItemKeyUp.bind(this);
   }
 
   addEventListeners() {
     this.diagramSectors.forEach((sector) => {
-       sector.addEventListener('click', this.handleSectorClick);
-       sector.addEventListener("keyup", this.handleSectorEnterPress);
+       sector.addEventListener('click', this.handleItemClick);
+       sector.addEventListener("keyup", this.handleItemKeyUp);
     })
   }
 
-  handleSectorClick(event){
+  handleItemClick(event){
     const currentSector = event.target;
     const sectorColorIndex = currentSector.dataset.index;
     this.removeSectorColorClasses();
@@ -37,9 +37,9 @@ class Diagram {
     }
   }
 
-  handleSectorEnterPress(event){
+  handleItemKeyUp(event){
     if(event.key === "Enter"){
-      this.handleSectorClick(event);
+      this.handleItemClick(event);
     }
   }
 

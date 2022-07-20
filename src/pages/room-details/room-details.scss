@@ -3,9 +3,9 @@
 
 .room-details {
   font-size: 14px;
-  color: $dark-shade-75;
+  color: $color-main-darker;
 
-  border-bottom: 1px solid $dark-shade-25;
+  border-bottom: 1px solid $color-main-light;
 
   &__container {
     max-width: 1160px;
@@ -136,7 +136,7 @@
   &__booking {
     max-width: 26rem;
     min-width: 16rem;
-  
+
     @media screen and (max-width: 1190px) {
       margin-bottom: 3rem;
     }

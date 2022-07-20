@@ -1,52 +1,51 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .color-block {
   font-size: 19px;
 
-	display: flex;
-	justify-items: center;
-	align-items: center;
-	
-	&__name {
-		font-weight: bold;
-	}
+  display: flex;
+  justify-items: center;
+  align-items: center;
 
-	&__code {
-		font-weight: 400;
-	}
-	&__rectangle {
-		width: 70px;
-		height: 70px;
-		border-radius: 6px;
-		margin-right: 40px;
-	}
+  &__name {
+    font-weight: bold;
+  }
 
-	&__dark-shade-100 {
-		background-color: $dark-shade-100;
-	}
+  &__code {
+    font-weight: 400;
+  }
+  &__rectangle {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    margin-right: 40px;
+  }
 
-	&__dark-shade-75 {
-		background-color: $dark-shade-75;
-	}
+  &__dark-shade-100 {
+    background-color: $color-main-darkest;
+  }
 
-	&__dark-shade-50 {
-		background-color: $dark-shade-50;
-	}
+  &__dark-shade-75 {
+    background-color: $color-main-darker;
+  }
 
-	&__dark-shade-25 {
-		background-color: $dark-shade-25;
-	}
+  &__dark-shade-50 {
+    background-color: $color-main-dark;
+  }
 
-	&__dark-shade-5 {
-		background-color: $dark-shade-5;
-	}
+  &__dark-shade-25 {
+    background-color: $color-main-light;
+  }
 
-	&__purple {
-		background-color: $primaryColor;
-	}
+  &__dark-shade-5 {
+    background-color: $color-main-lightest;
+  }
 
-	&__green {
-		background-color: $secondaryColor;
-	}
+  &__purple {
+    background-color: $primaryColor;
+  }
 
+  &__green {
+    background-color: $secondaryColor;
+  }
 }

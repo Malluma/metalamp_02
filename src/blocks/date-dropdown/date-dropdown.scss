@@ -1,6 +1,6 @@
-@import '../../styles/variables';
-@import '../btn-expand/btn-expand.scss';
-@import './air-datepicker.scss';
+@import "../../styles/variables";
+@import "../btn-expand/btn-expand.scss";
+@import "./air-datepicker.scss";
 
 .date-dropdown {
   font-size: 14px;
@@ -15,42 +15,41 @@
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
-    color: $dark-shade-100;
+    color: $color-main-darkest;
     flex-grow: 1;
   }
 
   &__input {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-size: 14px;
     display: block;
     margin: 0;
-    background: $white;
-    border: 1px solid $dark-shade-25;
+    background: $background-color;
+    border: 1px solid $color-main-light;
     border-radius: 4px;
     box-sizing: border-box;
     width: 100%;
-    color: $dark-shade-75;
+    color: $color-main-darker;
     //padding: 12px 16px;
     padding: 12px 0px 12px 13px;
 
     &:hover,
     &:focus {
-      border: 1px solid $dark-shade-50;
+      border: 1px solid $color-main-dark;
       outline: none;
     }
   }
 
-  &__input-hidden{
+  &__input-hidden {
     opacity: 0;
     padding: 0;
   }
 
-  &__input-flex-wrap{
+  &__input-flex-wrap {
     margin-top: 0.4em;
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     justify-content: center;
     position: relative;
   }
-
 }

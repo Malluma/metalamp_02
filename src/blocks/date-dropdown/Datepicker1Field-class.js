@@ -27,13 +27,13 @@ class Datepicker1Field {
 
   bindMethods(){
     this.handleApplyBtnClick = this.handleApplyBtnClick.bind(this);
-    this.handleKeyboardApplyBtnClick = this.handleKeyboardApplyBtnClick.bind(this);
+    this.handleDateInputKeyDown = this.handleDateInputKeyDown.bind(this);
   }
   addEventListeners(){
-    this.dateInput.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
+    this.dateInput.addEventListener("keydown", this.handleDateInputKeyDown);
   }
 
-  handleKeyboardApplyBtnClick(event){
+  handleDateInputKeyDown(event){
     event.preventDefault();
     if(event.key === "Tab" && this.bothDatesSelected()){
       this.handleApplyBtnClick(this.airDatepicker)

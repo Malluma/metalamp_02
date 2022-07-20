@@ -1,39 +1,37 @@
-@import '../../styles/variables';
-@import '../../styles/material-icons.css';
+@import "../../styles/variables";
+@import "../../styles/material-icons.css";
 
-.menu{
-
+.menu {
   font-size: 14px;
-  color: $dark-shade-50;
+  color: $color-main-dark;
   background-color: $background-color;
-  
 
-  &__list{
+  &__list {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    display: flex; 
+    display: flex;
 
     @media screen and (max-width: 900px) {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        font-size: large;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: large;
     }
-  
   }
 
-  &__item{
+  &__item {
     margin-right: 1.45em;
-    &-href{
+    &-href {
       text-decoration: none;
-      color: $dark-shade-50;
+      color: $color-main-dark;
       display: flex;
-      &:focus, &:hover{
+      &:focus,
+      &:hover {
         outline: none;
-        color: $dark-shade-75;
+        color: $color-main-darker;
         font-weight: 700;
       }
     }
@@ -43,7 +41,7 @@
     }
   }
 
-  &__sublist{
+  &__sublist {
     opacity: 1;
     display: block;
     list-style-type: none;
@@ -56,46 +54,44 @@
     transition: opacity 0.4s ease-out;
     z-index: 3;
 
-    &_hidden{
+    &_hidden {
       display: none;
     }
 
-    &_unvisible{
+    &_unvisible {
       opacity: 0;
       transition: 0.4s ease-in-out;
     }
-
   }
 
-  &__subitem{
+  &__subitem {
     margin-bottom: 1em;
   }
 
-  &__expand-btn{
+  &__expand-btn {
     padding-left: 0.4em;
     margin-right: 0.3em;
     margin-top: 0.2em;
   }
 
-  &__toggle-btn{
+  &__toggle-btn {
     background: none;
     border: none;
     outline: none;
     padding: 1em;
-    z-index: 100; 
+    z-index: 100;
     border-radius: 4px;
-    display: none;л
-
-    &:hover > .menu__hamburger, &:focus > .menu__hamburger{
+    display: none;
+    л &:hover > .menu__hamburger,
+    &:focus > .menu__hamburger {
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border: none;
     }
 
-    &_full-screen-open{
+    &_full-screen-open {
       position: fixed;
       top: 0;
       left: 0;
-
     }
 
     @media screen and (max-width: 900px) {
@@ -103,11 +99,10 @@
     }
   }
 
-  &__hamburger{
-    background-color: $dark-shade-50;
+  &__hamburger {
+    background-color: $color-main-dark;
     width: 2em;
-    height: 3px; 
+    height: 3px;
     margin-bottom: 0.5em;
   }
-
 }

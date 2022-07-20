@@ -12,20 +12,20 @@ class Room {
   }
 
   bindMethods() {
-    this.handleRoomFocus = this.handleRoomFocus.bind(this);
+    this.handleRoomFocusIn = this.handleRoomFocusIn.bind(this);
     this.handleRoomFocusOut = this.handleRoomFocusOut.bind(this);
-    this.handleEnterPress = this.handleEnterPress.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleRoomKeyUp = this.handleRoomKeyUp.bind(this);
+    this.handleDescriptionClick = this.handleDescriptionClick.bind(this);
   }
 
   addEventListeners() {
-    this.room.addEventListener('focusin', this.handleRoomFocus);
+    this.room.addEventListener('focusin', this.handleRoomFocusIn);
     this.room.addEventListener('focusout', this.handleRoomFocusOut);
-    this.room.addEventListener('keyup', this.handleEnterPress);
-    this.roomDescription.addEventListener('click', this.handleClick);
+    this.room.addEventListener('keyup', this.handleRoomKeyUp);
+    this.roomDescription.addEventListener('click', this.handleDescriptionClick);
    }
 
-  handleRoomFocus(event){
+  handleRoomFocusIn(event){
 
     this.carouselBtns.forEach((btn) => {
       btn.classList.add('carousel__btn_visible');
@@ -41,14 +41,13 @@ class Room {
    
   }
 
-  handleEnterPress(event){
+  handleRoomKeyUp(event){
     if(event.key === "Enter"){
       this.redirectToRoomDetailsPage(); 
     }
   }
 
-  handleClick(){
-    console.log('click!')
+  handleDescriptionClick(){
     this.redirectToRoomDetailsPage(); 
   }
 

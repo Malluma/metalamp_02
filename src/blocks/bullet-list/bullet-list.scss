@@ -1,27 +1,26 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
-.bullet-list{
+.bullet-list {
   font-size: 14px;
-  color: $dark-shade-75;
+  color: $color-main-darker;
   margin: 0;
   padding: 0;
   list-style-type: none;
   //background-color: red;
 
-  &__item{
+  &__item {
     padding-bottom: 0.7em;
     padding-left: 1.5em;
     position: relative;
     line-height: 1.7em;
 
-
-    &::before{
-      content: '';
+    &::before {
+      content: "";
       position: absolute;
       left: 0;
       top: 0.45em;
       border-radius: 50%;
-      background-color: $dark-shade-25;
+      background-color: $color-main-light;
       padding: 0.36em;
     }
   }

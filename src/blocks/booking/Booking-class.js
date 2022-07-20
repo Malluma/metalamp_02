@@ -19,19 +19,18 @@ class Booking {
   }
 
   bindMethods() {
-    this.handleDataChange = this.handleDataChange.bind(this);
+    this.handleDateDropdownDoubleStartChange = this.handleDateDropdownDoubleStartChange.bind(this);
   }
 
   addEventListeners() {
-    this.date1Html.addEventListener("change", this.handleDataChange)
+    this.date1Html.addEventListener("change", this.handleDateDropdownDoubleStartChange)
   }
 
   init(){
     this.updateCost();
   }
 
-  handleDataChange(e){
-    console.log('handleDataChange')
+  handleDateDropdownDoubleStartChange(e){
     this.updateCost();
   }
 

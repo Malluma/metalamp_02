@@ -16,21 +16,21 @@ class Pagination {
   }
 
   bindMethods() {
-    this.handlePageClick = this.handlePageClick.bind(this);
-    this.handleKeyUpEnter = this.handleKeyUpEnter.bind(this);
+    this.handleItemClick = this.handleItemClick.bind(this);
+    this.handleItemKeyUp = this.handleItemKeyUp.bind(this);
   }
 
   addEventListeners() {
     this.paginationItems.forEach((item) => {
-      item.addEventListener("click", this.handlePageClick);
-      item.addEventListener("keyup", this.handleKeyUpEnter);
+      item.addEventListener("click", this.handleItemClick);
+      item.addEventListener("keyup", this.handleItemKeyUp);
     })
   }
 
-  handleKeyUpEnter(event){
+  handleItemKeyUp(event){
     event.preventDefault();
     if(event.key === 'Enter'){
-      this.handlePageClick(event);
+      this.handleItemClick(event);
     }
   }
 
@@ -155,7 +155,7 @@ class Pagination {
     return `pagination__item ${activeClass} ${nextPrevBtnClass}`; 
   }
 
-  handlePageClick(e) {
+  handleItemClick(e) {
     const currentPageItem = e.target;
     if (currentPageItem.classList.contains('icon-arrow_forward')){
       const nextItem = this.paginationItems[this.activeItem+1];

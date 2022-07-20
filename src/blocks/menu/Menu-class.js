@@ -14,26 +14,18 @@ class Menu{
 
   bindMethods(){
     this.handleExpandBtnClick = this.handleExpandBtnClick.bind(this);
-    //this.handleToggleMenu = this.handleToggleMenu.bind(this);
-    this.handleExpandableItemKeyUp = this.handleExpandableItemKeyUp.bind(this);
+    this.handleItemHrefKeyUp = this.handleItemHrefKeyUp.bind(this);
   }
 
   addEventListeners(){
     this.expandBtns.forEach((btn) => {
       btn.addEventListener("click", this.handleExpandBtnClick); 
       const listItem = btn.parentElement.parentElement;
-      listItem.addEventListener("keyup", this.handleExpandableItemKeyUp);
+      listItem.addEventListener("keyup", this.handleItemHrefKeyUp);
     })
-
-    //this.toggleBtn.addEventListener("click", this.handleToggleMenu);
 
   }
   
-
-  //handleToggleMenu(){
-  //  this.list.classList.toggle('menu__list_full-screen-open');
-  //  this.toggleBtn.classList.toggle('menu__toggle-btn_full-screen-open');
-  //}
 
   handleExpandBtnClick(e) {
     const submenuToggleBtn = e.target;
@@ -57,7 +49,7 @@ class Menu{
     }   
   }
 
-  handleExpandableItemKeyUp(event){
+  handleItemHrefKeyUp(event){
     event.preventDefault();
     if(event.key === 'Enter'){
       const submenuToggleBtn = event.target.querySelector('.js-menu__expand-btn');

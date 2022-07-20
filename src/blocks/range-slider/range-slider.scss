@@ -1,23 +1,22 @@
-@import '../../styles/variables';
-@import './nouislider.scss';
+@import "../../styles/variables";
+@import "./nouislider.scss";
 
-.range-slider{
-
+.range-slider {
   font-size: 12px;
-  
-  &__label-wrap{
+
+  &__label-wrap {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.9em;
   }
-  
-  &__label{
+
+  &__label {
     text-transform: uppercase;
-    color: $dark-shade-100;
+    color: $color-main-darkest;
     font-weight: 700;
   }
 
-  &__range{
-    color: $dark-shade-50;
+  &__range {
+    color: $color-main-dark;
   }
 }

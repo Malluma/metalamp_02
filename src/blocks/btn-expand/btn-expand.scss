@@ -1,19 +1,17 @@
-@import '../../styles/variables';
-@import '../../styles/material-icons.css';
+@import "../../styles/variables";
+@import "../../styles/material-icons.css";
 
-.btn-expand{
-
-  &__flex-wrap{
+.btn-expand {
+  &__flex-wrap {
     position: relative;
     display: flex;
     align-items: center;
   }
-  
-  &__pic{
-    color: $dark-shade-50;
+
+  &__pic {
+    color: $color-main-dark;
     font-size: 13px;
     position: absolute;
     left: -30px;
   }
-
 }

@@ -1,29 +1,29 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
-.toggle{
+.toggle {
   color: $font-color;
   font-size: 14px;
 
-  &__label{
+  &__label {
     display: flex;
     align-items: flex-start;
-    .toggle__hidden-input:hover~&-txt {
+    .toggle__hidden-input:hover ~ &-txt {
       text-shadow: $shadow;
     }
-    .toggle__hidden-input:focus~&-txt {
+    .toggle__hidden-input:focus ~ &-txt {
       text-shadow: $shadow;
     }
   }
 
-  &__hidden-input{
+  &__hidden-input {
     margin: 0;
     width: 0px;
     height: 0px;
     opacity: 0;
   }
 
-  &__visible-input{
-    border: 1px solid $dark-shade-25;
+  &__visible-input {
+    border: 1px solid $color-main-light;
     border-radius: 10px;
     box-sizing: border-box;
     padding: 0.21em;
@@ -33,22 +33,20 @@
     display: flex;
     align-items: center;
 
-    .toggle__hidden-input:checked+&{
+    .toggle__hidden-input:checked + & {
       border-color: $primaryColor;
     }
 
-    &-internal{
+    &-internal {
       border-radius: 50%;
       width: 0.83em;
       height: 0.83em;
-      background-color: $dark-shade-25;
+      background-color: $color-main-light;
       margin-left: 0;
-      .toggle__hidden-input:checked+.toggle__visible-input>&{
+      .toggle__hidden-input:checked + .toggle__visible-input > & {
         background: $primaryGradient;
         margin-left: auto;
       }
     }
   }
-
-
 }

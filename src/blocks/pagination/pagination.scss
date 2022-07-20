@@ -1,12 +1,10 @@
+@import "../../styles/variables";
 
-@import '../../styles/variables';
-
-.pagination{
-
+.pagination {
   font-size: 12px;
-  color: $dark-shade-50;
+  color: $color-main-dark;
 
-  &__list{
+  &__list {
     list-style-type: none;
     display: flex;
     justify-content: flex-start;
@@ -14,7 +12,7 @@
     margin-bottom: 0.8em;
   }
 
-  &__item{
+  &__item {
     padding: 1em;
     width: 1.35em;
     height: 1.35em;
@@ -23,41 +21,43 @@
     align-items: center;
     cursor: default;
 
-    &_active{
+    &_active {
       font-weight: 700;
       color: $background-color;
       background: $primaryGradient;
       border-radius: 50%;
-      &:hover, &:focus{
+      &:hover,
+      &:focus {
         outline: none;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       }
     }
 
-    &_next-prev-btn{
+    &_next-prev-btn {
       font-size: 1.45em;
       font-weight: 700;
       color: $background-color;
       background: $secondaryGradient;
       border-radius: 50%;
       padding: 0.5em;
-      &:hover, &:focus{
+      &:hover,
+      &:focus {
         outline: none;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       }
     }
 
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
       outline: none;
       font-weight: 700;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
 
-  &__description{
+  &__description {
     font-size: 14px;
-    color: $dark-shade-75;
+    color: $color-main-darker;
     padding-left: 0.4em;
   }
-
 }

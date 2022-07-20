@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .like-btn {
   color: $font-color;
@@ -10,7 +10,8 @@
   padding: 0.1em;
   min-width: 25px;
 
-  &:hover, &:focus{
+  &:hover,
+  &:focus {
     outline: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
@@ -24,8 +25,8 @@
   }
 
   &_border_unactive {
-    color: $dark-shade-25;
-    background: $dark-shade-25;
+    color: $color-main-light;
+    background: $color-main-light;
   }
 
   &__internal {
@@ -37,7 +38,7 @@
     border-radius: 10px;
     min-width: 24px;
 
-    background-color: $white;
+    background-color: $background-color;
   }
 
   &__icon {
@@ -55,11 +56,9 @@
       color: $primaryColor;
     }
 
-    &_unactive{
-      background: $white;
-      color: $dark-shade-25;
+    &_unactive {
+      background: $background-color;
+      color: $color-main-light;
     }
-    
   }
-
 }

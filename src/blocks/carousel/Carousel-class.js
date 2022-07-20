@@ -22,13 +22,13 @@ class Carousel {
   bindMethods() {
     this.handleBtnBackClick = this.handleBtnBackClick.bind(this);
     this.handleBtnForwardClick = this.handleBtnForwardClick.bind(this);
-    this.handleLeftRightKeysPress = this.handleLeftRightKeysPress.bind(this);
+    this.handleCarouselKeyUp = this.handleCarouselKeyUp.bind(this);
   }
 
   addEventListeners() {
     this.btnBack.addEventListener("click", this.handleBtnBackClick);
     this.btnForward.addEventListener("click", this.handleBtnForwardClick);
-    this.carouselHtml.addEventListener("keyup", this.handleLeftRightKeysPress);
+    this.carouselHtml.addEventListener("keyup", this.handleCarouselKeyUp);
   }
 
   handleBtnForwardClick(){
@@ -66,7 +66,7 @@ class Carousel {
     }
   }
 
-  handleLeftRightKeysPress(event){
+  handleCarouselKeyUp(event){
 
     if(event.key === 'ArrowLeft'){
       this.handleBtnBackClick();

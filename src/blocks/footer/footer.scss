@@ -1,6 +1,6 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
-.footer{
+.footer {
   font-size: 14px;
   height: 443px;
   background-color: $background-color;
@@ -11,125 +11,120 @@
     display: none;
   }
 
-  &__container{
+  &__container {
     max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  &__logo{
+  &__logo {
     align-self: center;
     margin-right: 0.5em;
     margin-bottom: 1em;
-    &_mobile{
+    &_mobile {
       margin-bottom: 1em;
       margin-right: 0;
     }
   }
 
-  &__main{
+  &__main {
     padding-top: 7.1em;
     padding-bottom: 5.6em;
     display: flex;
     justify-content: space-between;
-    &-without-container{
-      border-bottom: 1px solid $dark-shade-25;
+    &-without-container {
+      border-bottom: 1px solid $color-main-light;
       margin-bottom: 1.9em;
     }
   }
 
-  &__column{
-
+  &__column {
     padding-top: 0.3em;
 
-    &-title{
+    &-title {
       font-size: 12px;
-      color: $dark-shade-100;
+      color: $color-main-darkest;
       font-weight: 700;
       text-transform: uppercase;
       margin-bottom: 1.7em;
-      &_subscription{
+      &_subscription {
         margin-bottom: 1.5em;
       }
     }
-    &-list{
-      color: $dark-shade-50;
+    &-list {
+      color: $color-main-dark;
       margin: 0;
       padding: 0;
       list-style-type: none;
     }
 
-    &-item{
+    &-item {
       margin-bottom: 1.45em;
     }
   }
 
-  &__nav{
+  &__nav {
     margin-right: 1em;
-    flex-grow: 1; 
+    flex-grow: 1;
   }
-  &__about
-   {
-    flex-grow: 2.1; 
-   } 
-  &__support{
-    flex-grow: 1.2; 
-    
+  &__about {
+    flex-grow: 2.1;
+  }
+  &__support {
+    flex-grow: 1.2;
   }
 
-
-  &__reward-txt, &__subscription-txt{
-    color: $dark-shade-75;
+  &__reward-txt,
+  &__subscription-txt {
+    color: $color-main-darker;
     line-height: 24px;
     margin-bottom: 1.25em;
   }
 
-  &__column1{
+  &__column1 {
     max-width: 260px;
     margin-right: 2.9em;
-
   }
 
-  &__subscription{
+  &__subscription {
     width: 260px;
     margin-bottom: 1em;
   }
 
-  &__bottom{
+  &__bottom {
     display: flex;
     justify-content: space-between;
-
   }
 
-  &__copyright{
+  &__copyright {
     font-size: 14px;
-    color: $dark-shade-75;
-    &_mobile{
+    color: $color-main-darker;
+    &_mobile {
       margin-bottom: 1.9em;
     }
   }
 
-  &__social{
+  &__social {
     font-size: 22px;
     display: flex;
     justify-content: flex-end;
-    &_mobile{
+    &_mobile {
       padding-right: 1em;
     }
-    &-item{
+    &-item {
       color: transparent;
       background: $primaryGradient;
       -webkit-background-clip: text;
       background-clip: text;
 
       margin-left: 0.97em;
-      &_twitter{
+      &_twitter {
         font-size: 20px;
       }
     }
   }
 
-  &__mobile{
+  &__mobile {
     height: 367px;
     display: flex;
     flex-direction: column;
@@ -137,20 +132,18 @@
     text-align: center;
     justify-content: center;
     background-color: $background-color;
-    &-align-container{
+    &-align-container {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-
   }
 
-  &__mobile_hidden{
+  &__mobile_hidden {
     display: none;
     @media screen and (max-width: 900px) {
       display: flex;
       z-index: 999;
     }
   }
-
 }

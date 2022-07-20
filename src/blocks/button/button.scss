@@ -1,6 +1,6 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
-.button{
+.button {
   font-family: inherit;
   font-size: 12px;
   font-weight: bold;
@@ -12,48 +12,52 @@
   display: block;
   text-decoration: none;
 
-  &:focus{
+  &:focus {
     outline: none;
   }
 
-  &__background{
+  &__background {
     width: 100%;
     background: $primaryGradient;
     color: $background-color;
     padding: 0.12em 0.35em 0.2em 0em;
-    &:hover, &:focus, &_hover{
+    &:hover,
+    &:focus,
+    &_hover {
       outline: none;
       opacity: 0.5;
-    } 
+    }
   }
-  
-  &__border{
+
+  &__border {
     background: $primaryGradient;
     color: $primaryColor;
     padding: 0.17em;
-    &:hover, &:focus, &_hover{
+    &:hover,
+    &:focus,
+    &_hover {
       outline: none;
       background: $primaryGradient-50;
     }
   }
 
-  &__text-only{
-    width:fit-content;
-    background: none; 
+  &__text-only {
+    width: fit-content;
+    background: none;
   }
 
-  &__align-wrap{
+  &__align-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  &__icon{
+  &__icon {
     font-size: 18px;
     color: $background-color;
     padding-right: 0.5em;
     margin-top: 0.2em;
-    &_invisible-for-aligning{
+    &_invisible-for-aligning {
       opacity: 0;
     }
   }
@@ -65,27 +69,28 @@
     border-radius: 22px;
     padding: 1.05em 0.6em;
 
-    &_narrow{
+    &_narrow {
       padding: 0.65em 0.6em;
     }
 
-    &-background{
+    &-background {
       background: inherit;
     }
-    &-border{
+    &-border {
       background: $background-color;
       //padding: 1.05em 2em;
     }
-    &-text-only{
+    &-text-only {
       background: none;
       color: $primaryColor;
       padding: 0;
-      &:hover, &:focus, &_hover{
+      &:hover,
+      &:focus,
+      &_hover {
         outline: none;
         border: none;
-        color: $dark-shade-50;
+        color: $color-main-dark;
       }
-    }   
+    }
   }
-
 }

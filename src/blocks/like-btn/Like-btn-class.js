@@ -15,16 +15,16 @@ class LikeBtn{
   }
   
   bindMethods(){
-    this.handleBtnClick = this.handleBtnClick.bind(this);
-    this.handleKeyboardToggleClick = this.handleKeyboardToggleClick.bind(this);
+    this.handleLikeBtnClick = this.handleLikeBtnClick.bind(this);
+    this.handleLikeBtnKeyUp = this.handleLikeBtnKeyUp.bind(this);
   }
 
   addEventListeners(){
-    this.likeBtnHtml.addEventListener('click', this.handleBtnClick); 
-    this.likeBtnHtml.addEventListener('keyup', this.handleKeyboardToggleClick);
+    this.likeBtnHtml.addEventListener('click', this.handleLikeBtnClick); 
+    this.likeBtnHtml.addEventListener('keyup', this.handleLikeBtnKeyUp);
   }
 
-  handleBtnClick() {
+  handleLikeBtnClick() {
     this.toggleLikesNumber();
     this.toggleVisualLikedStatus();
   };
@@ -49,10 +49,10 @@ class LikeBtn{
     this.icon.classList.toggle('icon-favorite_border');
   }
 
-  handleKeyboardToggleClick(event){
+  handleLikeBtnKeyUp(event){
     event.preventDefault();
     if(event.key === 'Enter'){
-      this.handleBtnClick();
+      this.handleLikeBtnClick();
     }
   }
 

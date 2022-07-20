@@ -1,45 +1,42 @@
-@import '../../styles/variables';
-@import '../like-btn/like-btn.scss';
+@import "../../styles/variables";
+@import "../like-btn/like-btn.scss";
 
-.review{
+.review {
   color: $font-color;
   font-size: 14px;
 
-  &__user{
+  &__user {
     display: flex;
     align-items: center;
     margin-bottom: 0.7em;
 
-    &-img{
+    &-img {
       margin-right: 0.6em;
       width: 48px;
       height: 48px;
-      border: 2px solid #FFFFFF;
+      border: 2px solid #ffffff;
       box-sizing: border-box;
-      filter: drop-shadow(0px 10px 20px $dark-shade-10);
+      filter: drop-shadow(0px 10px 20px $color-main-lighter);
       border-radius: 32px;
-
     }
-    
-    &-name{
+
+    &-name {
       font-weight: bold;
       margin-bottom: 0.43em;
     }
   }
 
-  &__main{
+  &__main {
     padding-left: 0.27em;
     display: flex;
     align-items: baseline;
   }
 
-  &__likes{
+  &__likes {
     margin-right: 1em;
   }
 
-  &__content{
+  &__content {
     line-height: 24px;
   }
-
 }
-

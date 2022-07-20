@@ -1,5 +1,5 @@
-@import '../../styles/variables';
-@import '../btn-icon/btn-icon.scss';
+@import "../../styles/variables";
+@import "../btn-icon/btn-icon.scss";
 
 .text-field {
   background: $background-color;
@@ -21,7 +21,7 @@
   }
 
   &__sublabel-span {
-    color: $dark-shade-50;
+    color: $color-main-dark;
     align-self: flex-start;
   }
 
@@ -30,33 +30,31 @@
     font-size: 14px;
     display: block;
     margin: 0;
-    border: 1px solid $dark-shade-25;
+    border: 1px solid $color-main-light;
     border-radius: 4px;
     box-sizing: border-box;
     width: 100%;
-    color: $dark-shade-75;
+    color: $color-main-darker;
     padding: 12px 14px;
 
     &:hover,
     &:focus {
-      border: 1px solid $dark-shade-50;
+      border: 1px solid $color-main-dark;
       outline: none;
     }
 
     &::placeholder {
-      color: $dark-shade-25;
+      color: $color-main-light;
     }
 
     &_focus {
-      border: 1px solid $dark-shade-50;
+      border: 1px solid $color-main-dark;
     }
-
   }
 
-  &__input-flex-wrap{
-    display: flex; 
-    align-items: center; 
+  &__input-flex-wrap {
+    display: flex;
+    align-items: center;
     justify-content: center;
   }
-
 }

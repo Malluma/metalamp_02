@@ -1,6 +1,6 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
-.room{
+.room {
   margin: 0;
   padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -8,18 +8,19 @@
   border-radius: 4px;
   background-color: $background-color;
   max-width: 16.9rem;
-  position:  relative;
+  position: relative;
 
-  &:focus, &:hover{
+  &:focus,
+  &:hover {
     outline: none;
   }
-  
-  &__description{
+
+  &__description {
     padding: 1.25em 1.1em 1.1em 1.2em;
     box-sizing: border-box;
   }
 
-  &__images{
+  &__images {
     width: 100%;
     height: 9.4em;
     object-fit: cover;
@@ -27,58 +28,57 @@
     border-top-right-radius: 4px;
   }
 
-  &__head{
+  &__head {
     display: flex;
     justify-content: space-between;
     padding-bottom: 0.7em;
     margin-bottom: 0.6em;
-    border-bottom: 1px solid $dark-shade-10;
+    border-bottom: 1px solid $color-main-lighter;
   }
 
-  &__number-type{
+  &__number-type {
     font-weight: 700;
     letter-spacing: -3px;
     display: flex;
   }
 
-  &__number{
+  &__number {
     margin-right: 0.1em;
-    &-sign{
+    &-sign {
       font-size: 14px;
       margin-right: 2px;
     }
 
-    &-digit{
+    &-digit {
       font-size: 19px;
       letter-spacing: normal;
     }
-  
   }
 
-  &__type{
+  &__type {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: normal;
     color: $primaryColor;
-    align-self: flex-end; 
+    align-self: flex-end;
     margin-bottom: 0.1em;
   }
 
-  &__price{
+  &__price {
     font-size: 14px;
     font-weight: 700;
-    color: $dark-shade-50;
+    color: $color-main-dark;
     align-items: flex-end;
     align-self: flex-end;
     margin-bottom: 0.1em;
 
-    &-per-day{
+    &-per-day {
       font-size: 12px;
       font-weight: 400;
     }
   }
 
-  &__rating{
+  &__rating {
     font-size: 20px;
     margin-left: 0.1em;
     margin-right: 0.1em;
@@ -87,13 +87,12 @@
     align-items: baseline;
   }
 
-  &__reviews{
+  &__reviews {
     font-size: 14px;
-    color: $dark-shade-50;
+    color: $color-main-dark;
     align-self: center;
-    &-number{
+    &-number {
       font-weight: 700;
     }
   }
-
 }

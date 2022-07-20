@@ -13,25 +13,25 @@ class Rating {
   }
 
   bindMethods() {
-    this.handleMouseOverAndClickItem = this.handleMouseOverAndClickItem.bind(this);
-    this.handleMouseOutItem = this.handleMouseOutItem.bind(this);
+    this.handleItemMouseOverClick = this.handleItemMouseOverClick.bind(this);
+    this.handleItemMouseOut = this.handleItemMouseOut.bind(this);
     this.setVisualRating = this.setVisualRating.bind(this);
   }
 
   addEventListeners() {
     this.itemsHtml.forEach(element => {
-      element.addEventListener('mouseover', this.handleMouseOverAndClickItem);
-      element.addEventListener('mouseout', this.handleMouseOutItem);
-      element.addEventListener('click', this.handleMouseOverAndClickItem);
+      element.addEventListener('mouseover', this.handleItemMouseOverClick);
+      element.addEventListener('mouseout', this.handleItemMouseOut);
+      element.addEventListener('click', this.handleItemMouseOverClick);
     });
   }
 
-  handleMouseOverAndClickItem(e) {
+  handleItemMouseOverClick(e) {
     const eventItem = e.target;
     this.setVisualRating(eventItem);
   }
 
-  handleMouseOutItem(e) {
+  handleItemMouseOut(e) {
     const checkedItem = this.ratingHtml.querySelector('.js-rating__item:checked');
     console.log(checkedItem)
     this.setVisualRating(checkedItem);

@@ -1,30 +1,29 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
-.facility{
+.facility {
   color: $font-color;
   font-size: 14px;
 
-  border-bottom: $dark-shade-10; 
+  border-bottom: $color-main-lighter;
   display: flex;
   //padding-bottom: 1.3em;
   //margin-left: 0.1em;
-  //border-bottom: 1px solid $dark-shade-10;
+  //border-bottom: 1px solid $color-main-lighter;
 
-  &__icon{
+  &__icon {
     font-size: 2.9em;
     padding-right: 0.1em;
     width: 3rem;
     height: 3rem;
-    
+
     color: transparent;
     background: $primaryGradient;
     -webkit-background-clip: text;
     background-clip: text;
   }
 
-  &__type{
+  &__type {
     font-weight: 700;
     margin-bottom: 0.45em;
   }
-
 }

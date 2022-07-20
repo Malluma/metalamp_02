@@ -1,14 +1,13 @@
-@import '../../styles/Montserrat.css';
-@import '../../styles/variables.scss';
+@import "../../styles/Montserrat.css";
+@import "../../styles/variables.scss";
 
-.landing{
-
-  &__main{
+.landing {
+  &__main {
     height: 830px;
     position: relative;
   }
-  
-  &__container{
+
+  &__container {
     max-width: 1160px;
     height: inherit;
     margin-left: auto;
@@ -19,16 +18,16 @@
     }
   }
 
-  &__room-search{
+  &__room-search {
     max-width: 23.75rem;
     min-width: 16rem;
     position: absolute;
     top: 4.35rem;
   }
 
-  &__description{
+  &__description {
     font-size: 14px;
-    color: $dark-shade-75;
+    color: $color-main-darker;
     line-height: 1.5rem;
     text-align: right;
     max-width: 17rem;
@@ -36,5 +35,4 @@
     bottom: 1.4rem;
     right: 0;
   }
-
 }

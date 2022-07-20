@@ -1,8 +1,8 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .diagram {
   font-size: 14px;
-  color: $dark-shade-75;
+  color: $color-main-darker;
 
   display: flex;
   justify-content: space-between;
@@ -10,52 +10,61 @@
   max-width: 800px;
   min-width: 320px;
 
-  &__svg{
+  &__svg {
     margin-right: 1.45em;
     position: relative;
     z-index: 3;
   }
-  
+
   &__item {
     fill: none;
     stroke-width: 1.1;
     cursor: pointer;
 
     animation-name: render;
-    animation-duration: 0.7s; 
+    animation-duration: 0.7s;
 
-    transition-property: all; 
+    transition-property: all;
     transition-duration: 0.7s;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       opacity: 0.7;
       stroke-width: 3;
       outline: none;
     }
   }
-  
-  &__legend{
+
+  &__legend {
     margin-top: 2.3em;
 
-    &-item{
+    &-item {
       display: flex;
       align-items: center;
       margin-bottom: 0.43em;
-      &-circle{
+      &-circle {
         width: 10px;
         height: 10px;
         border-radius: 50%;
         margin-right: 0.3em;
-    
-        &-1{background: $gradient-3;}
-        &-2{background: $secondaryGradient;}
-        &-3{background: $primaryGradient;}
-        &-4{background: $gradient-4;}
+
+        &-1 {
+          background: $gradient-3;
+        }
+        &-2 {
+          background: $secondaryGradient;
+        }
+        &-3 {
+          background: $primaryGradient;
+        }
+        &-4 {
+          background: $gradient-4;
+        }
       }
     }
   }
 
-  &__active-sector{
+  &__active-sector {
     color: $primaryColor;
     font-weight: 700;
     display: flex;
@@ -68,16 +77,24 @@
     box-sizing: border-box;
     padding-bottom: 0.35rem;
 
-    &-color-1{color: $color-3;}
-    &-color-2{color: $secondaryColor;}
-    &-color-3{color: $primaryColor;}
-    &-color-4{color: $color-4;}
-  
-    &-number{
+    &-color-1 {
+      color: $color-3;
+    }
+    &-color-2 {
+      color: $secondaryColor;
+    }
+    &-color-3 {
+      color: $primaryColor;
+    }
+    &-color-4 {
+      color: $color-4;
+    }
+
+    &-number {
       font-size: 24px;
       margin-bottom: 0.05rem;
     }
-    &-txt{
+    &-txt {
       font-size: 12px;
       text-transform: uppercase;
     }
@@ -88,5 +105,4 @@
       stroke-dasharray: 0 100;
     }
   }
-
 }

@@ -12,15 +12,15 @@ class Header{
   }
 
   bindMethods(){
-    this.handleToggleMenu = this.handleToggleMenu.bind(this);
+    this.handleBurgerBtnClick = this.handleBurgerBtnClick.bind(this);
   }
 
   addEventListeners(){
-    this.burgerBtn.addEventListener("click", this.handleToggleMenu);
+    this.burgerBtn.addEventListener("click", this.handleBurgerBtnClick);
   }
   
 
-  handleToggleMenu(){
+  handleBurgerBtnClick(){
     this.menuContainer.classList.toggle('header__menu-container_mobile');
   }
 }

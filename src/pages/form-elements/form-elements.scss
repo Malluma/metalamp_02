@@ -1,5 +1,5 @@
-@import '../../styles/Montserrat.css';
-@import '../../styles/variables.scss';
+@import "../../styles/Montserrat.css";
+@import "../../styles/variables.scss";
 
 body {
   margin: 0;
@@ -11,7 +11,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 
-    &__main{
+    &__main {
       display: flex;
       gap: 7.9rem;
     }
@@ -28,7 +28,7 @@ body {
       margin-bottom: 1rem;
     }
 
-    &__block-title-bullet-list{
+    &__block-title-bullet-list {
       font-size: 12px;
       font-weight: bold;
       text-transform: uppercase;
@@ -55,7 +55,7 @@ body {
       margin-bottom: 40px;
     }
 
-    &__filter-dropdown{
+    &__filter-dropdown {
       width: 267px;
       margin-bottom: 42px;
     }
@@ -75,7 +75,7 @@ body {
       //margin-bottom: 55px;
       margin-bottom: 20px;
 
-      &_expanded{
+      &_expanded {
         position: relative;
         z-index: 99;
         margin-bottom: 172px;
@@ -123,10 +123,10 @@ body {
       margin-bottom: 20px;
     }
 
-    &__facility{
+    &__facility {
       padding-bottom: 1em;
       margin-bottom: 1.5em;
-      border-bottom: 1px solid $dark-shade-10;
+      border-bottom: 1px solid $color-main-lighter;
     }
 
     &__review {
@@ -197,21 +197,19 @@ body {
       margin-bottom: 39px;
     }
 
-    &__pagination{
+    &__pagination {
       width: 350px;
       margin-bottom: 236px;
     }
 
-    &__bullet-list{
+    &__bullet-list {
       width: 260px;
     }
 
-    &__columns2-3-main{
+    &__columns2-3-main {
       display: flex;
       margin-bottom: 212px;
       gap: 4.5rem;
     }
-
   }
-
 }
