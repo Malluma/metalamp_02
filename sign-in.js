@@ -44,13 +44,13 @@ class Carousel {
   bindMethods() {
     this.handleBtnBackClick = this.handleBtnBackClick.bind(this);
     this.handleBtnForwardClick = this.handleBtnForwardClick.bind(this);
-    this.handleLeftRightKeysPress = this.handleLeftRightKeysPress.bind(this);
+    this.handleCarouselKeyUp = this.handleCarouselKeyUp.bind(this);
   }
 
   addEventListeners() {
     this.btnBack.addEventListener("click", this.handleBtnBackClick);
     this.btnForward.addEventListener("click", this.handleBtnForwardClick);
-    this.carouselHtml.addEventListener("keyup", this.handleLeftRightKeysPress);
+    this.carouselHtml.addEventListener("keyup", this.handleCarouselKeyUp);
   }
 
   handleBtnForwardClick() {
@@ -89,7 +89,7 @@ class Carousel {
     }
   }
 
-  handleLeftRightKeysPress(event) {
+  handleCarouselKeyUp(event) {
     if (event.key === 'ArrowLeft') {
       this.handleBtnBackClick();
     } else if (event.key === 'ArrowRight') {
@@ -155,14 +155,14 @@ class Header {
   }
 
   bindMethods() {
-    this.handleToggleMenu = this.handleToggleMenu.bind(this);
+    this.handleBurgerBtnClick = this.handleBurgerBtnClick.bind(this);
   }
 
   addEventListeners() {
-    this.burgerBtn.addEventListener("click", this.handleToggleMenu);
+    this.burgerBtn.addEventListener("click", this.handleBurgerBtnClick);
   }
 
-  handleToggleMenu() {
+  handleBurgerBtnClick() {
     this.menuContainer.classList.toggle('header__menu-container_mobile');
   }
 
@@ -231,22 +231,17 @@ class Menu {
   }
 
   bindMethods() {
-    this.handleExpandBtnClick = this.handleExpandBtnClick.bind(this); //this.handleToggleMenu = this.handleToggleMenu.bind(this);
-
-    this.handleExpandableItemKeyUp = this.handleExpandableItemKeyUp.bind(this);
+    this.handleExpandBtnClick = this.handleExpandBtnClick.bind(this);
+    this.handleItemHrefKeyUp = this.handleItemHrefKeyUp.bind(this);
   }
 
   addEventListeners() {
     this.expandBtns.forEach(btn => {
       btn.addEventListener("click", this.handleExpandBtnClick);
       const listItem = btn.parentElement.parentElement;
-      listItem.addEventListener("keyup", this.handleExpandableItemKeyUp);
-    }); //this.toggleBtn.addEventListener("click", this.handleToggleMenu);
-  } //handleToggleMenu(){
-  //  this.list.classList.toggle('menu__list_full-screen-open');
-  //  this.toggleBtn.classList.toggle('menu__toggle-btn_full-screen-open');
-  //}
-
+      listItem.addEventListener("keyup", this.handleItemHrefKeyUp);
+    });
+  }
 
   handleExpandBtnClick(e) {
     const submenuToggleBtn = e.target;
@@ -269,7 +264,7 @@ class Menu {
     }
   }
 
-  handleExpandableItemKeyUp(event) {
+  handleItemHrefKeyUp(event) {
     event.preventDefault();
 
     if (event.key === 'Enter') {

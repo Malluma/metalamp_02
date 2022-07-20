@@ -33,19 +33,18 @@ class Booking {
   }
 
   bindMethods() {
-    this.handleDataChange = this.handleDataChange.bind(this);
+    this.handleDateDropdownDoubleStartChange = this.handleDateDropdownDoubleStartChange.bind(this);
   }
 
   addEventListeners() {
-    this.date1Html.addEventListener("change", this.handleDataChange);
+    this.date1Html.addEventListener("change", this.handleDateDropdownDoubleStartChange);
   }
 
   init() {
     this.updateCost();
   }
 
-  handleDataChange(e) {
-    console.log('handleDataChange');
+  handleDateDropdownDoubleStartChange(e) {
     this.updateCost();
   }
 
@@ -167,14 +166,14 @@ class Datepicker1Field {
 
   bindMethods() {
     this.handleApplyBtnClick = this.handleApplyBtnClick.bind(this);
-    this.handleKeyboardApplyBtnClick = this.handleKeyboardApplyBtnClick.bind(this);
+    this.handleDateInputKeyDown = this.handleDateInputKeyDown.bind(this);
   }
 
   addEventListeners() {
-    this.dateInput.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
+    this.dateInput.addEventListener("keydown", this.handleDateInputKeyDown);
   }
 
-  handleKeyboardApplyBtnClick(event) {
+  handleDateInputKeyDown(event) {
     event.preventDefault();
 
     if (event.key === "Tab" && this.bothDatesSelected()) {
@@ -339,16 +338,16 @@ class Datepicker2Fields {
 
   bindMethods() {
     this.handleDate2Click = this.handleDate2Click.bind(this);
-    this.handleKeyboardApplyBtnClick = this.handleKeyboardApplyBtnClick.bind(this);
+    this.handleDateInputKeyDown = this.handleDateInputKeyDown.bind(this);
   }
 
   addEventListeners() {
     this.dateInput2.addEventListener('click', this.handleDate2Click);
-    this.dateInput1.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
-    this.dateInput2.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
+    this.dateInput1.addEventListener("keydown", this.handleDateInputKeyDown);
+    this.dateInput2.addEventListener("keydown", this.handleDateInputKeyDown);
   }
 
-  handleKeyboardApplyBtnClick(event) {
+  handleDateInputKeyDown(event) {
     event.preventDefault();
 
     if (event.key === "Tab" && this.bothDatesSelected()) {
@@ -715,18 +714,18 @@ class Diagram {
   }
 
   bindMethods() {
-    this.handleSectorClick = this.handleSectorClick.bind(this);
-    this.handleSectorEnterPress = this.handleSectorEnterPress.bind(this);
+    this.handleItemClick = this.handleItemClick.bind(this);
+    this.handleItemKeyUp = this.handleItemKeyUp.bind(this);
   }
 
   addEventListeners() {
     this.diagramSectors.forEach(sector => {
-      sector.addEventListener('click', this.handleSectorClick);
-      sector.addEventListener("keyup", this.handleSectorEnterPress);
+      sector.addEventListener('click', this.handleItemClick);
+      sector.addEventListener("keyup", this.handleItemKeyUp);
     });
   }
 
-  handleSectorClick(event) {
+  handleItemClick(event) {
     const currentSector = event.target;
     const sectorColorIndex = currentSector.dataset.index;
     this.removeSectorColorClasses();
@@ -740,9 +739,9 @@ class Diagram {
     }
   }
 
-  handleSectorEnterPress(event) {
+  handleItemKeyUp(event) {
     if (event.key === "Enter") {
-      this.handleSectorClick(event);
+      this.handleItemClick(event);
     }
   }
 
@@ -1109,14 +1108,14 @@ class Header {
   }
 
   bindMethods() {
-    this.handleToggleMenu = this.handleToggleMenu.bind(this);
+    this.handleBurgerBtnClick = this.handleBurgerBtnClick.bind(this);
   }
 
   addEventListeners() {
-    this.burgerBtn.addEventListener("click", this.handleToggleMenu);
+    this.burgerBtn.addEventListener("click", this.handleBurgerBtnClick);
   }
 
-  handleToggleMenu() {
+  handleBurgerBtnClick() {
     this.menuContainer.classList.toggle('header__menu-container_mobile');
   }
 
@@ -1171,16 +1170,16 @@ class LikeBtn {
   }
 
   bindMethods() {
-    this.handleBtnClick = this.handleBtnClick.bind(this);
-    this.handleKeyboardToggleClick = this.handleKeyboardToggleClick.bind(this);
+    this.handleLikeBtnClick = this.handleLikeBtnClick.bind(this);
+    this.handleLikeBtnKeyUp = this.handleLikeBtnKeyUp.bind(this);
   }
 
   addEventListeners() {
-    this.likeBtnHtml.addEventListener('click', this.handleBtnClick);
-    this.likeBtnHtml.addEventListener('keyup', this.handleKeyboardToggleClick);
+    this.likeBtnHtml.addEventListener('click', this.handleLikeBtnClick);
+    this.likeBtnHtml.addEventListener('keyup', this.handleLikeBtnKeyUp);
   }
 
-  handleBtnClick() {
+  handleLikeBtnClick() {
     this.toggleLikesNumber();
     this.toggleVisualLikedStatus();
   }
@@ -1205,11 +1204,11 @@ class LikeBtn {
     this.icon.classList.toggle('icon-favorite_border');
   }
 
-  handleKeyboardToggleClick(event) {
+  handleLikeBtnKeyUp(event) {
     event.preventDefault();
 
     if (event.key === 'Enter') {
-      this.handleBtnClick();
+      this.handleLikeBtnClick();
     }
   }
 
@@ -1258,22 +1257,17 @@ class Menu {
   }
 
   bindMethods() {
-    this.handleExpandBtnClick = this.handleExpandBtnClick.bind(this); //this.handleToggleMenu = this.handleToggleMenu.bind(this);
-
-    this.handleExpandableItemKeyUp = this.handleExpandableItemKeyUp.bind(this);
+    this.handleExpandBtnClick = this.handleExpandBtnClick.bind(this);
+    this.handleItemHrefKeyUp = this.handleItemHrefKeyUp.bind(this);
   }
 
   addEventListeners() {
     this.expandBtns.forEach(btn => {
       btn.addEventListener("click", this.handleExpandBtnClick);
       const listItem = btn.parentElement.parentElement;
-      listItem.addEventListener("keyup", this.handleExpandableItemKeyUp);
-    }); //this.toggleBtn.addEventListener("click", this.handleToggleMenu);
-  } //handleToggleMenu(){
-  //  this.list.classList.toggle('menu__list_full-screen-open');
-  //  this.toggleBtn.classList.toggle('menu__toggle-btn_full-screen-open');
-  //}
-
+      listItem.addEventListener("keyup", this.handleItemHrefKeyUp);
+    });
+  }
 
   handleExpandBtnClick(e) {
     const submenuToggleBtn = e.target;
@@ -1296,7 +1290,7 @@ class Menu {
     }
   }
 
-  handleExpandableItemKeyUp(event) {
+  handleItemHrefKeyUp(event) {
     event.preventDefault();
 
     if (event.key === 'Enter') {

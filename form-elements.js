@@ -45,25 +45,25 @@ class CheckboxList {
   }
 
   bindMethods() {
-    this.handleBtnClick = this.handleBtnClick.bind(this);
-    this.handleKeyboardToggleClick = this.handleKeyboardToggleClick.bind(this);
+    this.handleBtnExpandClick = this.handleBtnExpandClick.bind(this);
+    this.handleListLabelClick = this.handleListLabelClick.bind(this);
   }
 
   addEventListeners() {
-    this.expandListBtn.addEventListener('click', this.handleBtnClick);
-    this.listLabel.addEventListener('keyup', this.handleKeyboardToggleClick);
+    this.expandListBtn.addEventListener('click', this.handleBtnExpandClick);
+    this.listLabel.addEventListener('keyup', this.handleListLabelClick);
   }
 
-  handleBtnClick() {
+  handleBtnExpandClick() {
     this.expandListBtn.classList.toggle('checkbox-list__btn-expand-rotate');
     this.list.classList.toggle('checkbox-list__hidden');
   }
 
-  handleKeyboardToggleClick(event) {
+  handleListLabelClick(event) {
     event.preventDefault();
 
     if (event.key === 'Enter') {
-      this.handleBtnClick();
+      this.handleBtnExpandClick();
     }
   }
 
@@ -126,14 +126,14 @@ class Datepicker1Field {
 
   bindMethods() {
     this.handleApplyBtnClick = this.handleApplyBtnClick.bind(this);
-    this.handleKeyboardApplyBtnClick = this.handleKeyboardApplyBtnClick.bind(this);
+    this.handleDateInputKeyDown = this.handleDateInputKeyDown.bind(this);
   }
 
   addEventListeners() {
-    this.dateInput.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
+    this.dateInput.addEventListener("keydown", this.handleDateInputKeyDown);
   }
 
-  handleKeyboardApplyBtnClick(event) {
+  handleDateInputKeyDown(event) {
     event.preventDefault();
 
     if (event.key === "Tab" && this.bothDatesSelected()) {
@@ -298,16 +298,16 @@ class Datepicker2Fields {
 
   bindMethods() {
     this.handleDate2Click = this.handleDate2Click.bind(this);
-    this.handleKeyboardApplyBtnClick = this.handleKeyboardApplyBtnClick.bind(this);
+    this.handleDateInputKeyDown = this.handleDateInputKeyDown.bind(this);
   }
 
   addEventListeners() {
     this.dateInput2.addEventListener('click', this.handleDate2Click);
-    this.dateInput1.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
-    this.dateInput2.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
+    this.dateInput1.addEventListener("keydown", this.handleDateInputKeyDown);
+    this.dateInput2.addEventListener("keydown", this.handleDateInputKeyDown);
   }
 
-  handleKeyboardApplyBtnClick(event) {
+  handleDateInputKeyDown(event) {
     event.preventDefault();
 
     if (event.key === "Tab" && this.bothDatesSelected()) {
@@ -980,16 +980,16 @@ class LikeBtn {
   }
 
   bindMethods() {
-    this.handleBtnClick = this.handleBtnClick.bind(this);
-    this.handleKeyboardToggleClick = this.handleKeyboardToggleClick.bind(this);
+    this.handleLikeBtnClick = this.handleLikeBtnClick.bind(this);
+    this.handleLikeBtnKeyUp = this.handleLikeBtnKeyUp.bind(this);
   }
 
   addEventListeners() {
-    this.likeBtnHtml.addEventListener('click', this.handleBtnClick);
-    this.likeBtnHtml.addEventListener('keyup', this.handleKeyboardToggleClick);
+    this.likeBtnHtml.addEventListener('click', this.handleLikeBtnClick);
+    this.likeBtnHtml.addEventListener('keyup', this.handleLikeBtnKeyUp);
   }
 
-  handleBtnClick() {
+  handleLikeBtnClick() {
     this.toggleLikesNumber();
     this.toggleVisualLikedStatus();
   }
@@ -1014,11 +1014,11 @@ class LikeBtn {
     this.icon.classList.toggle('icon-favorite_border');
   }
 
-  handleKeyboardToggleClick(event) {
+  handleLikeBtnKeyUp(event) {
     event.preventDefault();
 
     if (event.key === 'Enter') {
-      this.handleBtnClick();
+      this.handleLikeBtnClick();
     }
   }
 
@@ -1071,22 +1071,22 @@ class Pagination {
   }
 
   bindMethods() {
-    this.handlePageClick = this.handlePageClick.bind(this);
-    this.handleKeyUpEnter = this.handleKeyUpEnter.bind(this);
+    this.handleItemClick = this.handleItemClick.bind(this);
+    this.handleItemKeyUp = this.handleItemKeyUp.bind(this);
   }
 
   addEventListeners() {
     this.paginationItems.forEach(item => {
-      item.addEventListener("click", this.handlePageClick);
-      item.addEventListener("keyup", this.handleKeyUpEnter);
+      item.addEventListener("click", this.handleItemClick);
+      item.addEventListener("keyup", this.handleItemKeyUp);
     });
   }
 
-  handleKeyUpEnter(event) {
+  handleItemKeyUp(event) {
     event.preventDefault();
 
     if (event.key === 'Enter') {
-      this.handlePageClick(event);
+      this.handleItemClick(event);
     }
   }
 
@@ -1242,7 +1242,7 @@ class Pagination {
     return `pagination__item ${activeClass} ${nextPrevBtnClass}`;
   }
 
-  handlePageClick(e) {
+  handleItemClick(e) {
     const currentPageItem = e.target;
 
     if (currentPageItem.classList.contains('icon-arrow_forward')) {
@@ -1420,25 +1420,25 @@ class Rating {
   }
 
   bindMethods() {
-    this.handleMouseOverAndClickItem = this.handleMouseOverAndClickItem.bind(this);
-    this.handleMouseOutItem = this.handleMouseOutItem.bind(this);
+    this.handleItemMouseOverClick = this.handleItemMouseOverClick.bind(this);
+    this.handleItemMouseOut = this.handleItemMouseOut.bind(this);
     this.setVisualRating = this.setVisualRating.bind(this);
   }
 
   addEventListeners() {
     this.itemsHtml.forEach(element => {
-      element.addEventListener('mouseover', this.handleMouseOverAndClickItem);
-      element.addEventListener('mouseout', this.handleMouseOutItem);
-      element.addEventListener('click', this.handleMouseOverAndClickItem);
+      element.addEventListener('mouseover', this.handleItemMouseOverClick);
+      element.addEventListener('mouseout', this.handleItemMouseOut);
+      element.addEventListener('click', this.handleItemMouseOverClick);
     });
   }
 
-  handleMouseOverAndClickItem(e) {
+  handleItemMouseOverClick(e) {
     const eventItem = e.target;
     this.setVisualRating(eventItem);
   }
 
-  handleMouseOutItem(e) {
+  handleItemMouseOut(e) {
     const checkedItem = this.ratingHtml.querySelector('.js-rating__item:checked');
     console.log(checkedItem);
     this.setVisualRating(checkedItem);

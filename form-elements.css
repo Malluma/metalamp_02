@@ -1200,7 +1200,8 @@ body .form-elements__columns2-3-main {
   box-shadow: none;
 }
 
-.noUi-handle:before, .noUi-handle:after {
+.noUi-handle:before,
+.noUi-handle:after {
   display: none;
 }
 
@@ -1333,7 +1334,7 @@ body .form-elements__columns2-3-main {
   margin-right: 0.6em;
   width: 48px;
   height: 48px;
-  border: 2px solid #FFFFFF;
+  border: 2px solid #ffffff;
   box-sizing: border-box;
   filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
   border-radius: 32px;

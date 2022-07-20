@@ -44,13 +44,13 @@ class Carousel {
   bindMethods() {
     this.handleBtnBackClick = this.handleBtnBackClick.bind(this);
     this.handleBtnForwardClick = this.handleBtnForwardClick.bind(this);
-    this.handleLeftRightKeysPress = this.handleLeftRightKeysPress.bind(this);
+    this.handleCarouselKeyUp = this.handleCarouselKeyUp.bind(this);
   }
 
   addEventListeners() {
     this.btnBack.addEventListener("click", this.handleBtnBackClick);
     this.btnForward.addEventListener("click", this.handleBtnForwardClick);
-    this.carouselHtml.addEventListener("keyup", this.handleLeftRightKeysPress);
+    this.carouselHtml.addEventListener("keyup", this.handleCarouselKeyUp);
   }
 
   handleBtnForwardClick() {
@@ -89,7 +89,7 @@ class Carousel {
     }
   }
 
-  handleLeftRightKeysPress(event) {
+  handleCarouselKeyUp(event) {
     if (event.key === 'ArrowLeft') {
       this.handleBtnBackClick();
     } else if (event.key === 'ArrowRight') {
@@ -141,25 +141,25 @@ class CheckboxList {
   }
 
   bindMethods() {
-    this.handleBtnClick = this.handleBtnClick.bind(this);
-    this.handleKeyboardToggleClick = this.handleKeyboardToggleClick.bind(this);
+    this.handleBtnExpandClick = this.handleBtnExpandClick.bind(this);
+    this.handleListLabelClick = this.handleListLabelClick.bind(this);
   }
 
   addEventListeners() {
-    this.expandListBtn.addEventListener('click', this.handleBtnClick);
-    this.listLabel.addEventListener('keyup', this.handleKeyboardToggleClick);
+    this.expandListBtn.addEventListener('click', this.handleBtnExpandClick);
+    this.listLabel.addEventListener('keyup', this.handleListLabelClick);
   }
 
-  handleBtnClick() {
+  handleBtnExpandClick() {
     this.expandListBtn.classList.toggle('checkbox-list__btn-expand-rotate');
     this.list.classList.toggle('checkbox-list__hidden');
   }
 
-  handleKeyboardToggleClick(event) {
+  handleListLabelClick(event) {
     event.preventDefault();
 
     if (event.key === 'Enter') {
-      this.handleBtnClick();
+      this.handleBtnExpandClick();
     }
   }
 
@@ -222,14 +222,14 @@ class Datepicker1Field {
 
   bindMethods() {
     this.handleApplyBtnClick = this.handleApplyBtnClick.bind(this);
-    this.handleKeyboardApplyBtnClick = this.handleKeyboardApplyBtnClick.bind(this);
+    this.handleDateInputKeyDown = this.handleDateInputKeyDown.bind(this);
   }
 
   addEventListeners() {
-    this.dateInput.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
+    this.dateInput.addEventListener("keydown", this.handleDateInputKeyDown);
   }
 
-  handleKeyboardApplyBtnClick(event) {
+  handleDateInputKeyDown(event) {
     event.preventDefault();
 
     if (event.key === "Tab" && this.bothDatesSelected()) {
@@ -394,16 +394,16 @@ class Datepicker2Fields {
 
   bindMethods() {
     this.handleDate2Click = this.handleDate2Click.bind(this);
-    this.handleKeyboardApplyBtnClick = this.handleKeyboardApplyBtnClick.bind(this);
+    this.handleDateInputKeyDown = this.handleDateInputKeyDown.bind(this);
   }
 
   addEventListeners() {
     this.dateInput2.addEventListener('click', this.handleDate2Click);
-    this.dateInput1.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
-    this.dateInput2.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
+    this.dateInput1.addEventListener("keydown", this.handleDateInputKeyDown);
+    this.dateInput2.addEventListener("keydown", this.handleDateInputKeyDown);
   }
 
-  handleKeyboardApplyBtnClick(event) {
+  handleDateInputKeyDown(event) {
     event.preventDefault();
 
     if (event.key === "Tab" && this.bothDatesSelected()) {
@@ -1075,14 +1075,14 @@ class Header {
   }
 
   bindMethods() {
-    this.handleToggleMenu = this.handleToggleMenu.bind(this);
+    this.handleBurgerBtnClick = this.handleBurgerBtnClick.bind(this);
   }
 
   addEventListeners() {
-    this.burgerBtn.addEventListener("click", this.handleToggleMenu);
+    this.burgerBtn.addEventListener("click", this.handleBurgerBtnClick);
   }
 
-  handleToggleMenu() {
+  handleBurgerBtnClick() {
     this.menuContainer.classList.toggle('header__menu-container_mobile');
   }
 
@@ -1135,22 +1135,17 @@ class Menu {
   }
 
   bindMethods() {
-    this.handleExpandBtnClick = this.handleExpandBtnClick.bind(this); //this.handleToggleMenu = this.handleToggleMenu.bind(this);
-
-    this.handleExpandableItemKeyUp = this.handleExpandableItemKeyUp.bind(this);
+    this.handleExpandBtnClick = this.handleExpandBtnClick.bind(this);
+    this.handleItemHrefKeyUp = this.handleItemHrefKeyUp.bind(this);
   }
 
   addEventListeners() {
     this.expandBtns.forEach(btn => {
       btn.addEventListener("click", this.handleExpandBtnClick);
       const listItem = btn.parentElement.parentElement;
-      listItem.addEventListener("keyup", this.handleExpandableItemKeyUp);
-    }); //this.toggleBtn.addEventListener("click", this.handleToggleMenu);
-  } //handleToggleMenu(){
-  //  this.list.classList.toggle('menu__list_full-screen-open');
-  //  this.toggleBtn.classList.toggle('menu__toggle-btn_full-screen-open');
-  //}
-
+      listItem.addEventListener("keyup", this.handleItemHrefKeyUp);
+    });
+  }
 
   handleExpandBtnClick(e) {
     const submenuToggleBtn = e.target;
@@ -1173,7 +1168,7 @@ class Menu {
     }
   }
 
-  handleExpandableItemKeyUp(event) {
+  handleItemHrefKeyUp(event) {
     event.preventDefault();
 
     if (event.key === 'Enter') {
@@ -1231,22 +1226,22 @@ class Pagination {
   }
 
   bindMethods() {
-    this.handlePageClick = this.handlePageClick.bind(this);
-    this.handleKeyUpEnter = this.handleKeyUpEnter.bind(this);
+    this.handleItemClick = this.handleItemClick.bind(this);
+    this.handleItemKeyUp = this.handleItemKeyUp.bind(this);
   }
 
   addEventListeners() {
     this.paginationItems.forEach(item => {
-      item.addEventListener("click", this.handlePageClick);
-      item.addEventListener("keyup", this.handleKeyUpEnter);
+      item.addEventListener("click", this.handleItemClick);
+      item.addEventListener("keyup", this.handleItemKeyUp);
     });
   }
 
-  handleKeyUpEnter(event) {
+  handleItemKeyUp(event) {
     event.preventDefault();
 
     if (event.key === 'Enter') {
-      this.handlePageClick(event);
+      this.handleItemClick(event);
     }
   }
 
@@ -1402,7 +1397,7 @@ class Pagination {
     return `pagination__item ${activeClass} ${nextPrevBtnClass}`;
   }
 
-  handlePageClick(e) {
+  handleItemClick(e) {
     const currentPageItem = e.target;
 
     if (currentPageItem.classList.contains('icon-arrow_forward')) {
@@ -1568,25 +1563,25 @@ class Rating {
   }
 
   bindMethods() {
-    this.handleMouseOverAndClickItem = this.handleMouseOverAndClickItem.bind(this);
-    this.handleMouseOutItem = this.handleMouseOutItem.bind(this);
+    this.handleItemMouseOverClick = this.handleItemMouseOverClick.bind(this);
+    this.handleItemMouseOut = this.handleItemMouseOut.bind(this);
     this.setVisualRating = this.setVisualRating.bind(this);
   }
 
   addEventListeners() {
     this.itemsHtml.forEach(element => {
-      element.addEventListener('mouseover', this.handleMouseOverAndClickItem);
-      element.addEventListener('mouseout', this.handleMouseOutItem);
-      element.addEventListener('click', this.handleMouseOverAndClickItem);
+      element.addEventListener('mouseover', this.handleItemMouseOverClick);
+      element.addEventListener('mouseout', this.handleItemMouseOut);
+      element.addEventListener('click', this.handleItemMouseOverClick);
     });
   }
 
-  handleMouseOverAndClickItem(e) {
+  handleItemMouseOverClick(e) {
     const eventItem = e.target;
     this.setVisualRating(eventItem);
   }
 
-  handleMouseOutItem(e) {
+  handleItemMouseOut(e) {
     const checkedItem = this.ratingHtml.querySelector('.js-rating__item:checked');
     console.log(checkedItem);
     this.setVisualRating(checkedItem);
@@ -1650,20 +1645,20 @@ class Room {
   }
 
   bindMethods() {
-    this.handleRoomFocus = this.handleRoomFocus.bind(this);
+    this.handleRoomFocusIn = this.handleRoomFocusIn.bind(this);
     this.handleRoomFocusOut = this.handleRoomFocusOut.bind(this);
-    this.handleEnterPress = this.handleEnterPress.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleRoomKeyUp = this.handleRoomKeyUp.bind(this);
+    this.handleDescriptionClick = this.handleDescriptionClick.bind(this);
   }
 
   addEventListeners() {
-    this.room.addEventListener('focusin', this.handleRoomFocus);
+    this.room.addEventListener('focusin', this.handleRoomFocusIn);
     this.room.addEventListener('focusout', this.handleRoomFocusOut);
-    this.room.addEventListener('keyup', this.handleEnterPress);
-    this.roomDescription.addEventListener('click', this.handleClick);
+    this.room.addEventListener('keyup', this.handleRoomKeyUp);
+    this.roomDescription.addEventListener('click', this.handleDescriptionClick);
   }
 
-  handleRoomFocus(event) {
+  handleRoomFocusIn(event) {
     this.carouselBtns.forEach(btn => {
       btn.classList.add('carousel__btn_visible');
     });
@@ -1675,14 +1670,13 @@ class Room {
     });
   }
 
-  handleEnterPress(event) {
+  handleRoomKeyUp(event) {
     if (event.key === "Enter") {
       this.redirectToRoomDetailsPage();
     }
   }
 
-  handleClick() {
-    console.log('click!');
+  handleDescriptionClick() {
     this.redirectToRoomDetailsPage();
   }
 

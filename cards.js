@@ -33,19 +33,18 @@ class Booking {
   }
 
   bindMethods() {
-    this.handleDataChange = this.handleDataChange.bind(this);
+    this.handleDateDropdownDoubleStartChange = this.handleDateDropdownDoubleStartChange.bind(this);
   }
 
   addEventListeners() {
-    this.date1Html.addEventListener("change", this.handleDataChange);
+    this.date1Html.addEventListener("change", this.handleDateDropdownDoubleStartChange);
   }
 
   init() {
     this.updateCost();
   }
 
-  handleDataChange(e) {
-    console.log('handleDataChange');
+  handleDateDropdownDoubleStartChange(e) {
     this.updateCost();
   }
 
@@ -151,13 +150,13 @@ class Carousel {
   bindMethods() {
     this.handleBtnBackClick = this.handleBtnBackClick.bind(this);
     this.handleBtnForwardClick = this.handleBtnForwardClick.bind(this);
-    this.handleLeftRightKeysPress = this.handleLeftRightKeysPress.bind(this);
+    this.handleCarouselKeyUp = this.handleCarouselKeyUp.bind(this);
   }
 
   addEventListeners() {
     this.btnBack.addEventListener("click", this.handleBtnBackClick);
     this.btnForward.addEventListener("click", this.handleBtnForwardClick);
-    this.carouselHtml.addEventListener("keyup", this.handleLeftRightKeysPress);
+    this.carouselHtml.addEventListener("keyup", this.handleCarouselKeyUp);
   }
 
   handleBtnForwardClick() {
@@ -196,7 +195,7 @@ class Carousel {
     }
   }
 
-  handleLeftRightKeysPress(event) {
+  handleCarouselKeyUp(event) {
     if (event.key === 'ArrowLeft') {
       this.handleBtnBackClick();
     } else if (event.key === 'ArrowRight') {
@@ -263,14 +262,14 @@ class Datepicker1Field {
 
   bindMethods() {
     this.handleApplyBtnClick = this.handleApplyBtnClick.bind(this);
-    this.handleKeyboardApplyBtnClick = this.handleKeyboardApplyBtnClick.bind(this);
+    this.handleDateInputKeyDown = this.handleDateInputKeyDown.bind(this);
   }
 
   addEventListeners() {
-    this.dateInput.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
+    this.dateInput.addEventListener("keydown", this.handleDateInputKeyDown);
   }
 
-  handleKeyboardApplyBtnClick(event) {
+  handleDateInputKeyDown(event) {
     event.preventDefault();
 
     if (event.key === "Tab" && this.bothDatesSelected()) {
@@ -435,16 +434,16 @@ class Datepicker2Fields {
 
   bindMethods() {
     this.handleDate2Click = this.handleDate2Click.bind(this);
-    this.handleKeyboardApplyBtnClick = this.handleKeyboardApplyBtnClick.bind(this);
+    this.handleDateInputKeyDown = this.handleDateInputKeyDown.bind(this);
   }
 
   addEventListeners() {
     this.dateInput2.addEventListener('click', this.handleDate2Click);
-    this.dateInput1.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
-    this.dateInput2.addEventListener("keydown", this.handleKeyboardApplyBtnClick);
+    this.dateInput1.addEventListener("keydown", this.handleDateInputKeyDown);
+    this.dateInput2.addEventListener("keydown", this.handleDateInputKeyDown);
   }
 
-  handleKeyboardApplyBtnClick(event) {
+  handleDateInputKeyDown(event) {
     event.preventDefault();
 
     if (event.key === "Tab" && this.bothDatesSelected()) {
@@ -1132,25 +1131,25 @@ class Rating {
   }
 
   bindMethods() {
-    this.handleMouseOverAndClickItem = this.handleMouseOverAndClickItem.bind(this);
-    this.handleMouseOutItem = this.handleMouseOutItem.bind(this);
+    this.handleItemMouseOverClick = this.handleItemMouseOverClick.bind(this);
+    this.handleItemMouseOut = this.handleItemMouseOut.bind(this);
     this.setVisualRating = this.setVisualRating.bind(this);
   }
 
   addEventListeners() {
     this.itemsHtml.forEach(element => {
-      element.addEventListener('mouseover', this.handleMouseOverAndClickItem);
-      element.addEventListener('mouseout', this.handleMouseOutItem);
-      element.addEventListener('click', this.handleMouseOverAndClickItem);
+      element.addEventListener('mouseover', this.handleItemMouseOverClick);
+      element.addEventListener('mouseout', this.handleItemMouseOut);
+      element.addEventListener('click', this.handleItemMouseOverClick);
     });
   }
 
-  handleMouseOverAndClickItem(e) {
+  handleItemMouseOverClick(e) {
     const eventItem = e.target;
     this.setVisualRating(eventItem);
   }
 
-  handleMouseOutItem(e) {
+  handleItemMouseOut(e) {
     const checkedItem = this.ratingHtml.querySelector('.js-rating__item:checked');
     console.log(checkedItem);
     this.setVisualRating(checkedItem);
@@ -1252,20 +1251,20 @@ class Room {
   }
 
   bindMethods() {
-    this.handleRoomFocus = this.handleRoomFocus.bind(this);
+    this.handleRoomFocusIn = this.handleRoomFocusIn.bind(this);
     this.handleRoomFocusOut = this.handleRoomFocusOut.bind(this);
-    this.handleEnterPress = this.handleEnterPress.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleRoomKeyUp = this.handleRoomKeyUp.bind(this);
+    this.handleDescriptionClick = this.handleDescriptionClick.bind(this);
   }
 
   addEventListeners() {
-    this.room.addEventListener('focusin', this.handleRoomFocus);
+    this.room.addEventListener('focusin', this.handleRoomFocusIn);
     this.room.addEventListener('focusout', this.handleRoomFocusOut);
-    this.room.addEventListener('keyup', this.handleEnterPress);
-    this.roomDescription.addEventListener('click', this.handleClick);
+    this.room.addEventListener('keyup', this.handleRoomKeyUp);
+    this.roomDescription.addEventListener('click', this.handleDescriptionClick);
   }
 
-  handleRoomFocus(event) {
+  handleRoomFocusIn(event) {
     this.carouselBtns.forEach(btn => {
       btn.classList.add('carousel__btn_visible');
     });
@@ -1277,14 +1276,13 @@ class Room {
     });
   }
 
-  handleEnterPress(event) {
+  handleRoomKeyUp(event) {
     if (event.key === "Enter") {
       this.redirectToRoomDetailsPage();
     }
   }
 
-  handleClick() {
-    console.log('click!');
+  handleDescriptionClick() {
     this.redirectToRoomDetailsPage();
   }
 

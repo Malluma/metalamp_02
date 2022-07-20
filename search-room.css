@@ -1390,7 +1390,8 @@ body {
   box-shadow: none;
 }
 
-.noUi-handle:before, .noUi-handle:after {
+.noUi-handle:before,
+.noUi-handle:after {
   display: none;
 }
 
