@@ -23,22 +23,17 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/pages/form-elements/form-elements.scss ***!
   \************************************************************************************************************************************************************************************************************/
 body {
-  margin: 0;
   font-family: Montserrat, Arial, sans-serif;
 }
 body .form-elements {
-  margin-top: 70px;
-  max-width: 1132.26px;
+  margin-top: 3.8rem;
+  max-width: 1171px;
   margin-left: auto;
   margin-right: auto;
 }
 body .form-elements__main {
   display: flex;
   gap: 7.9rem;
-}
-body .form-elements__logo {
-  margin-top: 30px;
-  margin-left: 30px;
 }
 body .form-elements__block-title {
   font-size: 12px;
@@ -194,6 +189,21 @@ body .form-elements__columns2-3-main {
   display: flex;
   margin-bottom: 212px;
   gap: 4.5rem;
+}
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/page-layout/ui-kit-template/ui-kit-template.scss ***!
+  \**********************************************************************************************************************************************************************************************************************/
+body {
+  margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  background-color: #ffffff;
+}
+body .ui-kit-template__background-grey {
+  background-color: #F4F4F6;
+}
+body .ui-kit-template__logo {
+  margin-top: 1.9rem;
+  margin-left: 1.9rem;
 }
 /*!*********************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/bullet-list/bullet-list.scss ***!
@@ -1372,9 +1382,6 @@ body .form-elements__columns2-3-main {
   background-clip: text;
 }
 
-.text-field {
-  background: #ffffff;
-}
 .text-field__label {
   display: block;
   text-transform: uppercase;
@@ -1393,6 +1400,7 @@ body .form-elements__columns2-3-main {
   align-self: flex-start;
 }
 .text-field__input {
+  background: #ffffff;
   font-family: inherit;
   font-size: 14px;
   display: block;

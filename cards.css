@@ -10,15 +10,15 @@
   display: flex;
 }
 .cards__column1 {
-  margin-top: 6.24em;
+  margin-top: 4.2rem;
   margin-right: 2.5em;
 }
 .cards__column2 {
-  margin-top: 6.29em;
+  margin-top: 4.3em;
   margin-right: 2.4em;
 }
 .cards__column3 {
-  margin-top: 2.5em;
+  margin-top: 0.4rem;
 }
 .cards__room-search {
   width: 23.75rem;
@@ -77,8 +77,8 @@ body .ui-kit-template__background-grey {
   background-color: #F4F4F6;
 }
 body .ui-kit-template__logo {
-  margin-top: 30px;
-  margin-left: 30px;
+  margin-top: 1.9rem;
+  margin-left: 1.9rem;
 }
 /*!*************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/booking/booking.scss ***!
@@ -920,12 +920,13 @@ body .ui-kit-template__logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 4px;
 }
 .login__registration-label {
   flex-grow: 8;
 }
 .login__registration-btn {
-  flex-grow: 2.7;
+  flex-grow: 2.6;
 }
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/text-field/text-field.scss ***!
@@ -945,9 +946,6 @@ body .ui-kit-template__logo {
   background-clip: text;
 }
 
-.text-field {
-  background: #ffffff;
-}
 .text-field__label {
   display: block;
   text-transform: uppercase;
@@ -966,6 +964,7 @@ body .ui-kit-template__logo {
   align-self: flex-start;
 }
 .text-field__input {
+  background: #ffffff;
   font-family: inherit;
   font-size: 14px;
   display: block;
@@ -1014,7 +1013,6 @@ body .ui-kit-template__logo {
 }
 .registration-card__surname {
   margin-bottom: 0.6em;
-  background-color: red;
 }
 .registration-card__sex {
   display: flex;
@@ -1041,6 +1039,7 @@ body .ui-kit-template__logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 5px;
 }
 .registration-card__login-label {
   flex-grow: 3;
@@ -1350,6 +1349,9 @@ body .ui-kit-template__logo {
 }
 .room-search__guests {
   margin-bottom: 1.95em;
+}
+.room-search__submit {
+  max-width: 19.7rem;
 }
 
 /*# sourceMappingURL=cards.css.map*/

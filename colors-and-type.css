@@ -49,8 +49,8 @@ body .ui-kit-template__background-grey {
   background-color: #F4F4F6;
 }
 body .ui-kit-template__logo {
-  margin-top: 30px;
-  margin-left: 30px;
+  margin-top: 1.9rem;
+  margin-left: 1.9rem;
 }
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/type-block/type-block.scss ***!

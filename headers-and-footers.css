@@ -27,19 +27,38 @@ body {
   font-family: Montserrat, Arial, sans-serif;
   background-color: #F4F4F6;
 }
-body .headers-and-footers__logo {
-  margin-top: 30px;
-  margin-bottom: 3.5rem;
-  margin-left: 30px;
+body .headers-and-footers {
+  margin-top: 3.6rem;
 }
-body .headers-and-footers__header, body .headers-and-footers__footer {
+body .headers-and-footers__header {
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   margin-bottom: 2.5rem;
 }
+body .headers-and-footers__footer {
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2.55rem;
+}
 body .headers-and-footers__footer_mobile {
   max-width: 768px;
+  box-sizing: border-box;
+  padding-right: 7px;
   margin-left: auto;
   margin-right: auto;
+}
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/page-layout/ui-kit-template/ui-kit-template.scss ***!
+  \**********************************************************************************************************************************************************************************************************************/
+body {
+  margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  background-color: #ffffff;
+}
+body .ui-kit-template__background-grey {
+  background-color: #F4F4F6;
+}
+body .ui-kit-template__logo {
+  margin-top: 1.9rem;
+  margin-left: 1.9rem;
 }
 /*!***********************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/blocks/footer/footer.scss ***!
@@ -57,7 +76,7 @@ body .headers-and-footers__footer_mobile {
   }
 }
 .footer__container {
-  max-width: 1160px;
+  max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -74,7 +93,7 @@ body .headers-and-footers__footer_mobile {
   padding-top: 7.1em;
   padding-bottom: 5.6em;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .footer__main-without-container {
   border-bottom: 1px solid rgba(31, 32, 65, 0.25);
@@ -103,14 +122,13 @@ body .headers-and-footers__footer_mobile {
   margin-bottom: 1.45em;
 }
 .footer__nav {
-  margin-right: 1em;
-  flex-grow: 1;
+  margin-right: 3.6rem;
 }
 .footer__about {
-  flex-grow: 2.1;
+  margin-right: 5.8rem;
 }
 .footer__support {
-  flex-grow: 1.2;
+  margin-right: 3.2rem;
 }
 .footer__reward-txt, .footer__subscription-txt {
   color: rgba(31, 32, 65, 0.75);
@@ -119,10 +137,10 @@ body .headers-and-footers__footer_mobile {
 }
 .footer__column1 {
   max-width: 260px;
-  margin-right: 2.9em;
+  margin-right: 2.6rem;
 }
 .footer__subscription {
-  width: 260px;
+  max-width: 260px;
   margin-bottom: 1em;
 }
 .footer__bottom {
@@ -140,9 +158,10 @@ body .headers-and-footers__footer_mobile {
   font-size: 22px;
   display: flex;
   justify-content: flex-end;
+  margin-right: 10px;
 }
 .footer__social_mobile {
-  padding-right: 1em;
+  margin-right: 19px;
 }
 .footer__social-item {
   color: transparent;
@@ -167,6 +186,7 @@ body .headers-and-footers__footer_mobile {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 2px;
 }
 .footer__mobile_hidden {
   display: none;
@@ -195,9 +215,6 @@ body .headers-and-footers__footer_mobile {
   background-clip: text;
 }
 
-.text-field {
-  background: #ffffff;
-}
 .text-field__label {
   display: block;
   text-transform: uppercase;
@@ -216,6 +233,7 @@ body .headers-and-footers__footer_mobile {
   align-self: flex-start;
 }
 .text-field__input {
+  background: #ffffff;
   font-family: inherit;
   font-size: 14px;
   display: block;
@@ -253,7 +271,7 @@ body .headers-and-footers__footer_mobile {
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 .header__container {
-  max-width: 1160px;
+  max-width: 1170px;
   height: inherit;
   margin-left: auto;
   margin-right: auto;
@@ -295,11 +313,13 @@ body .headers-and-footers__footer_mobile {
   }
 }
 .header__menu {
-  margin-right: 0.1em;
+  margin-right: 0.05em;
 }
 .header__btns {
   display: flex;
   gap: 1.5rem;
+  margin-left: 2px;
+  margin-right: 9px;
 }
 .header__btns-login {
   width: 5.1rem;
@@ -317,8 +337,9 @@ body .headers-and-footers__footer_mobile {
 }
 .header__user {
   color: rgba(31, 32, 65, 0.5);
-  padding: 0.5em 0 0.5em 1.5em;
+  padding: 5px 4px 7px 22px;
   border-left: 1px solid rgba(31, 32, 65, 0.1);
+  padding-left: 22px;
 }
 .header__burger-btn {
   background: none;

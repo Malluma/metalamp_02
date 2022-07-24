@@ -28,7 +28,7 @@
   border-bottom: 1px solid rgba(31, 32, 65, 0.25);
 }
 .room-details__container {
-  max-width: 1160px;
+  max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -84,7 +84,7 @@
   justify-content: space-between;
 }
 .room-details__main {
-  margin-right: 4.5rem;
+  margin-right: 4.4rem;
 }
 @media screen and (max-width: 900px) {
   .room-details__main {
@@ -128,7 +128,7 @@
 }
 .room-details__reviews {
   margin-bottom: 2.1rem;
-  max-width: 45rem;
+  max-width: 44.4rem;
 }
 .room-details__reviews-number {
   margin-top: 0.4rem;
@@ -146,7 +146,7 @@
   width: 21.6rem;
 }
 .room-details__booking {
-  max-width: 26rem;
+  max-width: 23.8rem;
   min-width: 16rem;
 }
 @media screen and (max-width: 1190px) {
@@ -178,7 +178,7 @@ body {
   }
 }
 .footer__container {
-  max-width: 1160px;
+  max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -195,7 +195,7 @@ body {
   padding-top: 7.1em;
   padding-bottom: 5.6em;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .footer__main-without-container {
   border-bottom: 1px solid rgba(31, 32, 65, 0.25);
@@ -224,14 +224,13 @@ body {
   margin-bottom: 1.45em;
 }
 .footer__nav {
-  margin-right: 1em;
-  flex-grow: 1;
+  margin-right: 3.6rem;
 }
 .footer__about {
-  flex-grow: 2.1;
+  margin-right: 5.8rem;
 }
 .footer__support {
-  flex-grow: 1.2;
+  margin-right: 3.2rem;
 }
 .footer__reward-txt, .footer__subscription-txt {
   color: rgba(31, 32, 65, 0.75);
@@ -240,10 +239,10 @@ body {
 }
 .footer__column1 {
   max-width: 260px;
-  margin-right: 2.9em;
+  margin-right: 2.6rem;
 }
 .footer__subscription {
-  width: 260px;
+  max-width: 260px;
   margin-bottom: 1em;
 }
 .footer__bottom {
@@ -261,9 +260,10 @@ body {
   font-size: 22px;
   display: flex;
   justify-content: flex-end;
+  margin-right: 10px;
 }
 .footer__social_mobile {
-  padding-right: 1em;
+  margin-right: 19px;
 }
 .footer__social-item {
   color: transparent;
@@ -288,6 +288,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 2px;
 }
 .footer__mobile_hidden {
   display: none;
@@ -316,9 +317,6 @@ body {
   background-clip: text;
 }
 
-.text-field {
-  background: #ffffff;
-}
 .text-field__label {
   display: block;
   text-transform: uppercase;
@@ -337,6 +335,7 @@ body {
   align-self: flex-start;
 }
 .text-field__input {
+  background: #ffffff;
   font-family: inherit;
   font-size: 14px;
   display: block;
@@ -374,7 +373,7 @@ body {
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 .header__container {
-  max-width: 1160px;
+  max-width: 1170px;
   height: inherit;
   margin-left: auto;
   margin-right: auto;
@@ -416,11 +415,13 @@ body {
   }
 }
 .header__menu {
-  margin-right: 0.1em;
+  margin-right: 0.05em;
 }
 .header__btns {
   display: flex;
   gap: 1.5rem;
+  margin-left: 2px;
+  margin-right: 9px;
 }
 .header__btns-login {
   width: 5.1rem;
@@ -438,8 +439,9 @@ body {
 }
 .header__user {
   color: rgba(31, 32, 65, 0.5);
-  padding: 0.5em 0 0.5em 1.5em;
+  padding: 5px 4px 7px 22px;
   border-left: 1px solid rgba(31, 32, 65, 0.1);
+  padding-left: 22px;
 }
 .header__burger-btn {
   background: none;
