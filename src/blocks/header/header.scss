@@ -8,7 +8,8 @@
   box-shadow: $shadow-lightest;
 
   &__container {
-    max-width: 1160px;
+    //max-width: 1167px;
+    max-width: 1170px;
     height: inherit;
     margin-left: auto;
     margin-right: auto;
@@ -53,12 +54,14 @@
   }
 
   &__menu {
-    margin-right: 0.1em;
+    margin-right: 0.05em;
   }
 
   &__btns {
     display: flex;
     gap: 1.5rem;
+    margin-left: 2px;
+    margin-right: 9px;
 
     &-login {
       width: 5.1rem;
@@ -77,8 +80,10 @@
 
   &__user {
     color: $color-main-dark;
-    padding: 0.5em 0 0.5em 1.5em;
+    //padding: 0.5em 0 0.5em 1.45em;
+    padding: 5px 4px 7px 22px;
     border-left: 1px solid $color-main-lighter;
+    padding-left: 22px;
   }
 
   &__burger-btn {

@@ -34,13 +34,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 4px;
 
     &-label{
       flex-grow: 8;
     }
 
     &-btn{
-      flex-grow: 2.7;
+      flex-grow: 2.6;
     }
   }
 }

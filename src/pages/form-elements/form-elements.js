@@ -1,5 +1,7 @@
 import './form-elements.scss';
 
+import '../../page-layout/ui-kit-template/ui-kit-template';
+
 import '../../blocks/bullet-list/bullet-list';
 import '../../blocks/button/button';
 import '../../blocks/checkbox-list/checkbox-list';

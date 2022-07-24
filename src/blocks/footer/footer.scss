@@ -12,7 +12,8 @@
   }
 
   &__container {
-    max-width: 1160px;
+    //max-width: 1160px;
+    max-width: 1170px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -31,7 +32,7 @@
     padding-top: 7.1em;
     padding-bottom: 5.6em;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     &-without-container {
       border-bottom: 1px solid $color-main-light;
       margin-bottom: 1.9em;
@@ -64,14 +65,13 @@
   }
 
   &__nav {
-    margin-right: 1em;
-    flex-grow: 1;
+    margin-right: 3.6rem;
   }
   &__about {
-    flex-grow: 2.1;
+    margin-right: 5.8rem;
   }
   &__support {
-    flex-grow: 1.2;
+    margin-right: 3.2rem;
   }
 
   &__reward-txt,
@@ -83,11 +83,11 @@
 
   &__column1 {
     max-width: 260px;
-    margin-right: 2.9em;
+    margin-right: 2.6rem;
   }
 
   &__subscription {
-    width: 260px;
+    max-width: 260px;
     margin-bottom: 1em;
   }
 
@@ -108,8 +108,9 @@
     font-size: 22px;
     display: flex;
     justify-content: flex-end;
+    margin-right: 10px;
     &_mobile {
-      padding-right: 1em;
+      margin-right: 19px;
     }
     &-item {
       color: transparent;
@@ -136,6 +137,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-right: 2px;
     }
   }
 

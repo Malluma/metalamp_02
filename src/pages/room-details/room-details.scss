@@ -8,7 +8,7 @@
   border-bottom: 1px solid $color-main-light;
 
   &__container {
-    max-width: 1160px;
+    max-width: 1170px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -71,7 +71,7 @@
   }
 
   &__main {
-    margin-right: 4.5rem;
+    margin-right: 4.4rem;
     @media screen and (max-width: 900px) {
       margin-right: 0.5rem;
     }
@@ -112,7 +112,7 @@
 
   &__reviews {
     margin-bottom: 2.1rem;
-    max-width: 45rem;
+    max-width: 44.4rem;
     &-number {
       margin-top: 0.4rem;
     }
@@ -134,7 +134,7 @@
   }
 
   &__booking {
-    max-width: 26rem;
+    max-width: 23.8rem;
     min-width: 16rem;
 
     @media screen and (max-width: 1190px) {

@@ -2,7 +2,6 @@
 @import "../btn-icon/btn-icon.scss";
 
 .text-field {
-  background: $background-color;
 
   &__label {
     display: block;
@@ -26,6 +25,7 @@
   }
 
   &__input {
+    background: $background-color;
     font-family: inherit;
     font-size: 14px;
     display: block;

@@ -22,7 +22,6 @@
 
   &__surname{
     margin-bottom: 0.6em;
-    background-color: red;
   }
 
   &__sex{
@@ -56,6 +55,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 5px;
 
     &-label{
       flex-grow: 3;

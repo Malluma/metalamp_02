@@ -1,18 +1,13 @@
+extends ../../page-layout/ui-kit-template/ui-kit-template.pug
+
 include ../../blocks/footer/footer.pug
 include ../../blocks/header/header.pug
-include ../../blocks/logo-ui-kit/logo-ui-kit.pug
 
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Headers and footers
-  body
+block vars
+  - const pageTitle = "Headers & footers"
+  - const background = "grey"
+block content
     .headers-and-footers
-      .headers-and-footers__logo
-        +logo-ui-kit()
       .headers-and-footers__header
         +header({menuItems:[
           {name: "О нас"}, {name: "Услуги", 

@@ -3,12 +3,12 @@
 
 .sign-in{
   &__main{
-    height: 685px;
+    height: 702px;
     position: relative;
   }
   
   &__container{
-    max-width: 1160px;
+    max-width: 1170px;
     height: inherit;
     margin-left: auto;
     margin-right: auto;
@@ -23,6 +23,7 @@
     min-width: 15rem;
     margin: 0 auto;
     padding-top: 10.7rem;
+    padding-right: 7px;
   }
 
 }

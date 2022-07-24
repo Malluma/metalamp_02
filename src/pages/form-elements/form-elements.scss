@@ -2,23 +2,17 @@
 @import "../../styles/variables.scss";
 
 body {
-  margin: 0;
   font-family: $font-family;
 
   .form-elements {
-    margin-top: 70px;
-    max-width: 1132.26px;
+    margin-top: 3.8rem;
+    max-width: 1171px;
     margin-left: auto;
     margin-right: auto;
 
     &__main {
       display: flex;
       gap: 7.9rem;
-    }
-
-    &__logo {
-      margin-top: 30px;
-      margin-left: 30px;
     }
 
     &__block-title {
@@ -72,7 +66,6 @@ body {
 
     &__open-dropdown-column1 {
       width: 266px;
-      //margin-bottom: 55px;
       margin-bottom: 20px;
 
       &_expanded {

@@ -3,12 +3,12 @@
 
 .registration{
   &__main{
-    height: 685px;
+    height: 683px;
     position: relative;
   }
   
   &__container{
-    max-width: 1160px;
+    max-width: 1170px;
     height: inherit;
     margin-left: auto;
     margin-right: auto;
@@ -23,7 +23,8 @@
     min-width: 15rem;
     width: 100%;
     margin: 0 auto;
-    padding-top: 1.2rem;
+    padding-top: 1.1rem;
+    padding-right: 3px;
   }
 
 }
