@@ -12,21 +12,25 @@ class CheckboxList{
   }
   
   bindMethods(){
-    this.handleBtnExpandClick = this.handleBtnExpandClick.bind(this);
     this.handleListLabelClick = this.handleListLabelClick.bind(this);
+    this.handleListLabelKeyUp = this.handleListLabelKeyUp.bind(this);
   }
 
   addEventListeners(){
-    this.expandListBtn.addEventListener('click', this.handleBtnExpandClick); 
-    this.listLabel.addEventListener('keyup', this.handleListLabelClick);
+    this.listLabel.addEventListener('click', this.handleListLabelClick); 
+    this.listLabel.addEventListener('keyup', this.handleListLabelKeyUp);
   }
 
-  handleBtnExpandClick() {
-    this.expandListBtn.classList.toggle('checkbox-list__btn-expand-rotate');
-    this.list.classList.toggle('checkbox-list__hidden');
+  handleListLabelClick() {
+    this.toggleList();
   };
 
-  handleListLabelClick(event){
+  toggleList(){
+    this.expandListBtn.classList.toggle('checkbox-list__btn-expand-rotate');
+    this.list.classList.toggle('checkbox-list__hidden');
+  }
+
+  handleListLabelKeyUp(event){
     event.preventDefault();
     if(event.key === 'Enter'){
       this.handleBtnExpandClick();

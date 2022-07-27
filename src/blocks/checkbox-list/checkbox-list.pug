@@ -8,7 +8,7 @@ mixin checkbox-list(params)
 
   .checkbox-list(class= jsClassExpandable)
     .checkbox-list__label-flex-wrap(class= "js-checkbox-list__label-flex-wrap" tabindex=0)
-      .checkbox-list__label #{label}
+      .checkbox-list__label.js-checkbox-list__label #{label}
       if expandable
         .checkbox-list__btn-expand(class=`icon-expand_more js-checkbox-list__btn-expand ${btnRotated}`)
     .checkbox-list__list(class=`js-checkbox-list__list ${listCollapsed}`)  
