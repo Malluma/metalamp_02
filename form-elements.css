@@ -383,6 +383,7 @@ body .ui-kit-template__logo {
 .checkbox-list__label-flex-wrap:focus, .checkbox-list__label-flex-wrap:hover {
   outline: none;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 .checkbox-list__btn-expand {
   color: rgba(31, 32, 65, 0.75);

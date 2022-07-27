@@ -141,21 +141,25 @@ class CheckboxList {
   }
 
   bindMethods() {
-    this.handleBtnExpandClick = this.handleBtnExpandClick.bind(this);
     this.handleListLabelClick = this.handleListLabelClick.bind(this);
+    this.handleListLabelKeyUp = this.handleListLabelKeyUp.bind(this);
   }
 
   addEventListeners() {
-    this.expandListBtn.addEventListener('click', this.handleBtnExpandClick);
-    this.listLabel.addEventListener('keyup', this.handleListLabelClick);
+    this.listLabel.addEventListener('click', this.handleListLabelClick);
+    this.listLabel.addEventListener('keyup', this.handleListLabelKeyUp);
   }
 
-  handleBtnExpandClick() {
+  handleListLabelClick() {
+    this.toggleList();
+  }
+
+  toggleList() {
     this.expandListBtn.classList.toggle('checkbox-list__btn-expand-rotate');
     this.list.classList.toggle('checkbox-list__hidden');
   }
 
-  handleListLabelClick(event) {
+  handleListLabelKeyUp(event) {
     event.preventDefault();
 
     if (event.key === 'Enter') {
@@ -1136,25 +1140,33 @@ class Menu {
 
   bindMethods() {
     this.handleExpandBtnClick = this.handleExpandBtnClick.bind(this);
+    this.handleItemHrefClick = this.handleItemHrefClick.bind(this);
     this.handleItemHrefKeyUp = this.handleItemHrefKeyUp.bind(this);
   }
 
   addEventListeners() {
     this.expandBtns.forEach(btn => {
       btn.addEventListener("click", this.handleExpandBtnClick);
-      const listItem = btn.parentElement.parentElement;
+      const itemHref = btn.parentElement;
+      itemHref.addEventListener("click", this.handleItemHrefClick);
+      const listItem = itemHref.parentElement;
       listItem.addEventListener("keyup", this.handleItemHrefKeyUp);
     });
   }
 
   handleExpandBtnClick(e) {
-    const submenuToggleBtn = e.target;
-    this.toggleSubmenu(submenuToggleBtn);
+    const toggleBtn = e.target;
+    const sublist = toggleBtn.parentElement.nextElementSibling;
+    this.toggleSubmenu(sublist);
   }
 
-  toggleSubmenu(toggleBtn) {
-    const sublist = toggleBtn.parentElement.nextElementSibling;
+  handleItemHrefClick(e) {
+    const itemHref = e.target;
+    const sublist = itemHref.nextElementSibling;
+    this.toggleSubmenu(sublist);
+  }
 
+  toggleSubmenu(sublist) {
     if (sublist.classList.contains("menu__sublist_hidden")) {
       sublist.classList.remove("menu__sublist_hidden");
       setTimeout(() => {
