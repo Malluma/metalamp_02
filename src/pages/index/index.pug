@@ -1,13 +1,10 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Pages
-  body
+extends ../../page-layout/ui-kit-template/ui-kit-template.pug
+
+block vars
+  - const pageTitle = "Toxin pages"
+block content
     .index
-      h1.index__title Pages
+      h1.index__title Toxin pages
       h3.index__ul-title Website:
       ul.index__pages
         li.index__page

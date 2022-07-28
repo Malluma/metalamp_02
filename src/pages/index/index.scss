@@ -1,15 +1,9 @@
-/*@import "~normalize.css";*/
-@import "../../styles/Montserrat.css";
 @import "../../styles/variables";
 
-body {
-  margin: 0;
-  font-family: $font-family;
-  background-color: $background-color;
-  margin-left: 1rem;
-}
-
 .index {
+
+  margin-left: 1rem;
+
   &__title {
     margin-left: 3rem;
   }
